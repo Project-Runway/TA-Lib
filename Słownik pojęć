@@ -1,0 +1,11 @@
+Double Exponential Moving Average(Podwójna wykładnicza średnia krocząca) - średnia krocząca liczona na podstawie Wykładnicza średnia krocząca oraz podwójnej Wykładnicza średnia krocząca.
+Exponential Moving Average (Wykładnicza średnia krocząca) - jest odmianą średniej ważonej, w której znaczenie coraz bardziej odległych w czasie okresów maleje w sposób wykładniczy.
+Money Flow Index (indeks przepływów pieniężnych) - W konstrukcji jest to wskaźnik zbliżony do RSI, przy czym oprócz zmian ceny bierze pod uwagę wolumen. Sesjom wzrostowym towarzyszy pozytywny przepływ środków pieniężnych, sesjom spadkowym negatywny. Wskaźnik jest wykorzystywany jako miernik stanów wykupienia i wyprzedania rynku. Wartości oscylatora powyżej 80 pkt. sugerują bliskie maksimum rynkowe, poniżej 20 pkt. jest to stan wyprzedania rynku i w związku z tym zbliżające się minimum. Dodatkowo zalecane jest poszukiwanie dywergencji w wymienionych wyżej strefach.
+Moving Average Type (typ średnia krocząca). - metoda statystyczna używana do analizy szeregów czasowych. Znajduje zastosowanie w finansach, szczególnie w analizie technicznej.
+RangeType - zakres typu.
+RetCode - ReturnCode - wartość zwracanej funkcji.
+Simple Moving Average (Prosta średnia krocząca) - to zwykła średnia arytmetyczna wartości z ostatnich n okresów.
+Triangular Moving Average (trójkątna średnia krocząca) - średnia ważona, największą wagę otrzymują środkowe dane.
+Triple Exponential Moving Average(Potrójna wykładnicza średnia krocząca) - średnia krocząca liczona na podstawie pojedyńczej, podwójnej i potrójnej średniej kroczącej.
+Weighted Moving Average (Ważona średnia krocząca) - przypisuje różne wagi danym z poszczególnych okresów. W analizie technicznej często stosuje się średnie ważone, w których wagi maleją w postępie arytmetycznym.
+Świece japońskie - jedna z najstarszych metod analizowania oraz konstrukcji wykresów. 
