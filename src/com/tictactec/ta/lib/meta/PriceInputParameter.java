@@ -3,29 +3,46 @@ package com.tictactec.ta.lib.meta;
 import com.tictactec.ta.lib.meta.annotation.InputFlags;
 
 /**
- * This class is deprecated. Do not use it.
+ * Według autora biblioteki TA-Lib klasa jest przestarzała i nie należy jej stosowac.
+ * Rozszerze ona funkcjonalnośc klasy PriceHolder i wzbogaca ją o możliwośc odczytania flagi.
  * 
  * @deprecated
- * 
- * @author Richard Gomes
+ * @author Artur Ratajczak
  *
  */
 public class PriceInputParameter extends PriceHolder {
 
     private int flags;
     private int count;
-
+    /**
+     * Konstruktos klasy.
+     * @param flags wartosc flagi
+     * @param o tablica punktów open
+     * @param h tablica puntków high
+     * @param l tablica punktów low
+     * @param c tablica punktów close
+     * @param v tablica punktów volume
+     * @param i tablica punktów open interest
+     * @throws NullPointerException jeśli jakaś tablica ma wartośc null.
+     * @throws IllegalArgumentException jeśli długości tablic są różne.
+     */
     public PriceInputParameter(final int flags, double[] o, double[] h, double[] l, double[] c, double[] v, double[] i) 
             throws NullPointerException, IllegalArgumentException {
         super(o, h, l, c, v, i);
         initialize(flags);
     }
-    
+    /**
+     * Konsktuktor kopiujący z obiektu PriceHolder
+     * @param p Wcześniej utworzony obiekt PriceHolder.
+     */
     public PriceInputParameter(final PriceHolder p) {
         super(p.getO(), p.getH(), p.getL(), p.getC(), p.getV(), p.getI());
         initialize(flags);
     }
-    
+    /**
+     * Metoda ustawia flagę i zlicza je.
+     * @param flags
+     */
     private void initialize(final int flags) {
         this.flags = flags;
         count = 0;
@@ -38,24 +55,25 @@ public class PriceInputParameter extends PriceHolder {
     }
     
     /**
-     * @return the InputFlags passed during construction of this class
-     */
+    * Metoda zwraca flagę przekazaną poprzez konstruktor klasy.
+    * @return numer flagi
+    */
     public int getFlags() {
         return flags;
     }
     
     /**
-     * Returns the number of arrays expected to be returned by toArrays().
-     * This number is based on the flags passed during the construction of this object.
-     * 
-     * @return the number of arrays expected to be returned by toArrays()
+     * Metoda zwraca ilośc tablic oczekiwanych do zwrocenia przez metodę toArrays().
+     * Ilośc ta bazuje na podstawie przekazanej flagi przez konstruktor.
+     * @return ilośc tablic oczekiwanych do zwrocenia przez metodę toArrays().
      */
     public int getCount() {
         return count;
     }
     
     /**
-     * @return the arrays corresponding to the flags passed during construction of this object.
+     * Metoda zwraca tablicę z flagami.
+     * @return object[] z odpowiadającymi flagami
      */
     public Object[] toArrays() {
         Object objs[] = new Object[count];

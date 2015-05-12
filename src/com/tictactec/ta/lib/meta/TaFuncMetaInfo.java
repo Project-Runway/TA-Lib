@@ -55,7 +55,11 @@ import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
 
 /**
- * @deprecated in favor of CoreMetaData class
+ * Według autora biblioteki TA-LIB klasa ta jest przestarzała na rzecz klasy CoreMetaData.
+ * Większośc funkcjie z tej klasy jest zaimplementowana w klasie CoreMetaData.
+ * @deprecated
+ * @author Artur Ratajczak
+ *
  */
 public class TaFuncMetaInfo extends TaFuncSignature
 {
