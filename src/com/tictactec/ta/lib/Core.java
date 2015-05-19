@@ -59,7 +59,10 @@ public class Core {
    private Compatibility compatibility;
    
    /** Creates a new instance of Core */
-   public Core() {
+   
+   
+   // TODO: Start Stachura Bartlomiej
+public Core() {
       unstablePeriod = new int[com.tictactec.ta.lib.FuncUnstId.All
          .ordinal()];
       compatibility = Compatibility.Default;
@@ -70,7 +73,8 @@ public class Core {
       }
    }
    
-   public RetCode SetCandleSettings(CandleSettingType settingType,
+   
+public RetCode SetCandleSettings(CandleSettingType settingType,
       RangeType rangeType, int avgPeriod, double factor) {
       if (settingType.ordinal() >= CandleSettingType.AllCandleSettings
          .ordinal())
@@ -5598,6 +5602,7 @@ public class Core {
       return RetCode.Success ;
    }
    /* Generated */
+   // TODO: Koniec Stachura Bartlomiej
    public int cdlEveningStarLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
@@ -6018,7 +6023,7 @@ public class Core {
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /* Generated */ 
    public int cdlHammerLookback( )
    {
       return ((( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) +
