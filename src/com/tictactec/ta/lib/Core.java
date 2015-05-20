@@ -22673,10 +22673,30 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca podstawową wartośc różnicy
+    * @return 0
+    */
    public int subLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda oblicza różnice między n-tymi elementami zbiorów.
+    *  *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Tablica z wartościami (zbiór 1)
+    * @param inReal1 Tablica z wartościami (zbiór 2)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode sub( int startIdx,
       int endIdx,
       double inReal0[],
@@ -22699,6 +22719,22 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza różnice między n-tymi elementami zbiorów.
+    *  *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Tablica z wartościami (zbiór 1)
+    * @param inReal1 Tablica z wartościami (zbiór 2)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode sub( int startIdx,
       int endIdx,
       float inReal0[],
@@ -22722,6 +22758,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda określa przedział sumowania.
+    * @param optInTimePeriod Ilosc elementów
+    * @return Przedział dla sumy.
+    */
    public int sumLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -22730,6 +22771,23 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Metoda oblicza sumę z danego przedziału.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do sumowania
+    * @param optInTimePeriod Ilośc elementów do sumowania
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode sum( int startIdx,
       int endIdx,
       double inReal[],
@@ -22777,6 +22835,23 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza sumę z danego przedziału.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do sumowania
+    * @param optInTimePeriod Ilośc elementów do sumowania
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode sum( int startIdx,
       int endIdx,
       float inReal[],
@@ -22825,6 +22900,12 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda oblicza przedział czasowy dla T3.
+    * @param optInTimePeriod Przedział czasu
+    * @param optInVFactor wektor dodania vFactor z przedziału (0;1)
+    * @return Przedział czasowy T3.
+    */
    public int t3Lookback( int optInTimePeriod,
       double optInVFactor )
    {
@@ -22838,6 +22919,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return 6 * (optInTimePeriod-1) + (this.unstablePeriod[FuncUnstId.T3.ordinal()]) ;
    }
+   /** T3 jest typem średniej kroczącej lub funkcją wygładzającą. Opartay jest na DEMA.T3 bierze kalkulacje DEMA i dodaje do
+    * nich dodatkowy parametr zwany vFactor z przedziału od 0 do 1. Rezultat funkcji nazwany się GD lub Generalizer DEMA.
+    * <hr>
+    * Gdy parametr vFactor przyjmie wartośc 1, to T3 zachowuje się dokładnie tak samo jak DEMA.
+    * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do liczenia
+    * @param optInTimePeriod Przedział czasu
+    * @param optInVFactor Wartośc parametr dodatkowego potrzebna by obliczyc T3. Powinna się znajdowac w przedziale od 1 do 0. 
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode t3( int startIdx,
       int endIdx,
       double inReal[],
@@ -22956,6 +23058,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /** T3 jest typem średniej kroczącej lub funkcją wygładzającą. Opartay jest na DEMA.T3 bierze kalkulacje DEMA i dodaje do
+    * nich dodatkowy parametr zwany vFactor z przedziału od 0 do 1. Rezultat funkcji nazwany się GD lub Generalizer DEMA.
+    * <hr>
+    * Gdy parametr vFactor przyjmie wartośc 1, to T3 zachowuje się dokładnie tak samo jak DEMA.
+    * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do liczenia
+    * @param optInTimePeriod Przedział czasu
+    * @param optInVFactor Wartośc parametr dodatkowego potrzebna by obliczyc T3. Powinna się znajdowac w przedziale od 1 do 0. 
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode t3( int startIdx,
       int endIdx,
       float inReal[],
@@ -23075,10 +23198,29 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca podstawową wartośc tangent 
+    * @return 0 
+    */
    public int tanLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda oblicza wartośc funkcji tangent (tangens) 
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia (radiany)
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementow wyjsciowych
+    * @param outReal Tablica na elementy wyjsciowe (wyniki)
+    * @return Status
+    */
    public RetCode tan( int startIdx,
       int endIdx,
       double inReal[],
@@ -23100,6 +23242,21 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza wartośc funkcji tangent (tangens) 
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia (radiany)
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementow wyjsciowych
+    * @param outReal Tablica na elementy wyjsciowe (wyniki)
+    * @return Status
+    */
    public RetCode tan( int startIdx,
       int endIdx,
       float inReal[],
@@ -23122,10 +23279,29 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca podstawową wartoś hyperbolic tangent 
+    * @return 0
+    */
    public int tanhLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do wyliczenia (radiany)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode tanh( int startIdx,
       int endIdx,
       double inReal[],
@@ -23147,6 +23323,21 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do wyliczenia (radiany)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode tanh( int startIdx,
       int endIdx,
       float inReal[],
@@ -23169,6 +23360,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda oblicza zakres czasowy dla TEMA 
+    * @param optInTimePeriod Przedział czas
+    * @return Zakres czasu dla TEMA
+    */
    public int temaLookback( int optInTimePeriod )
    {
       int retValue;
@@ -23179,6 +23375,24 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       retValue = emaLookback ( optInTimePeriod );
       return retValue * 3;
    }
+   /**
+    * Wskaźnika Triple Exponential Moving Avarage używa się do wygładzenia cen oraz innych danych. Jest to połączenie
+    * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Zakres czasu
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode tema( int startIdx,
       int endIdx,
       double inReal[],
@@ -23255,6 +23469,24 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Wskaźnika Triple Exponential Moving Avarage używa się do wygładzenia cen oraz innych danych. Jest to połączenie
+    * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Zakres czasu
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode tema( int startIdx,
       int endIdx,
       float inReal[],
@@ -23332,10 +23564,32 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca domyślną wartośc True Range.
+    * @return 1
+    */
    public int trueRangeLookback( )
    {
       return 1;
    }
+   /**
+    * Funkcja True Range jest użyta do obliczania wielu wskaźników w szczególności do Welles Wilder DX.
+    *Jest to podstawowy wynik do określenia normalnego zakresu handlu zasobami.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Tablica cen maksymalnych
+    * @param inLow Tablica cen minimalnych
+    * @param inClose Tablica cen zamknięcia 
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode trueRange( int startIdx,
       int endIdx,
       double inHigh[],
@@ -23381,6 +23635,24 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Funkcja True Range jest użyta do obliczania wielu wskaźników w szczególności do Welles Wilder DX.
+    *Jest to podstawowy wynik do określenia normalnego zakresu handlu zasobami.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Tablica cen maksymalnych
+    * @param inLow Tablica cen minimalnych
+    * @param inClose Tablica cen zamknięcia 
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode trueRange( int startIdx,
       int endIdx,
       float inHigh[],
@@ -23427,6 +23699,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca zakres przedziału wejściowego.
+    * @param optInTimePeriod Iloś elementów wejściowych.
+    * @return zakres przedziału.
+    */
    public int trimaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -23435,6 +23712,24 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Triangular Moving Avarage (trójkątna średnia krocząca) jest to forma średniej ważonej w której rozłożenie wag przyjmuje postac trójkątną.
+    * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział wartości do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal TTablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode trima( int startIdx,
       int endIdx,
       double inReal[],
@@ -23557,6 +23852,24 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Triangular Moving Avarage (trójkątna średnia krocząca) jest to forma średniej ważonej w której rozłożenie wag przyjmuje postac trójkątną.
+    * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział wartości do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal TTablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode trima( int startIdx,
       int endIdx,
       float inReal[],
@@ -23680,6 +23993,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca przedział czasowy dla Trix.
+    * @param optInTimePeriod Przedział czasowy
+    * @return Przedział czasowy dla Trix.
+    */
    public int trixLookback( int optInTimePeriod )
    {
       int emaLookback;
@@ -23690,6 +24008,25 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       emaLookback = emaLookback ( optInTimePeriod );
       return (emaLookback*3) + rocRLookback ( 1 );
    }
+   /**
+    *Wskaźnik Trix oblicza szybkosc zmian potrójnej wykładniczej średniej kroczącej (EMA). Wartośc wskaźnika oscyluje o okolicach zera.
+    *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział czasu
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementów wyjsciowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Artur Ratajczak
+    */
    public RetCode trix( int startIdx,
       int endIdx,
       double inReal[],
@@ -23775,6 +24112,25 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       }
       return RetCode.Success ;
    }
+   /**
+    *Wskaźnik Trix oblicza szybkosc zmian potrójnej wykładniczej średniej kroczącej (EMA). Wartośc wskaźnika oscyluje o okolicach zera.
+    *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział czasu
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementów wyjsciowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Artur Ratajczak
+    */
    public RetCode trix( int startIdx,
       int endIdx,
       float inReal[],
@@ -23861,6 +24217,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca zakres przedziału wejściowego.
+    * @param optInTimePeriod Ilośc elementów wejściowych.
+    * @return Zakres przedziału.
+    */
    public int tsfLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -23869,6 +24230,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Wskaźnik Time Series Forecast wyświetla statystyczny trend cen w określonym czasie. Trend wyznaczany jest za pomocą analizy regresji liniowej.
+    *  W przeciwieństwie do wykreślonych prostych linii trendu regresji liniowej, Time Series Forecast kreśli ostatnie punkty wielu linii trendu owej regresji.
+    *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział czasowy
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode tsf( int startIdx,
       int endIdx,
       double inReal[],
@@ -23923,6 +24304,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Wskaźnik Time Series Forecast wyświetla statystyczny trend cen w określonym czasie. Trend wyznaczany jest za pomocą analizy regresji liniowej.
+    *  W przeciwieństwie do wykreślonych prostych linii trendu regresji liniowej, Time Series Forecast kreśli ostatnie punkty wielu linii trendu owej regresji.
+    *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział czasowy
+    * @param outBegIdx Początkowy indeks wyjsciowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode tsf( int startIdx,
       int endIdx,
       float inReal[],
@@ -24000,7 +24401,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia 
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24043,7 +24444,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia 
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24123,7 +24524,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod3 Trzeci przedział czasowy
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24257,7 +24658,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod3 Trzeci przedział czasowy
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24406,7 +24807,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInNbDev Wartośc oczekiwana.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica wyników z obliczoną wariacją.
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24501,7 +24902,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInNbDev Wartośc oczekiwana.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica wyników z obliczoną wariacją.
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24605,7 +25006,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode.
     * @author Artur Ratajczak
     */
@@ -24649,7 +25050,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode.
     * @author Artur Ratajczak
     */
@@ -24717,7 +25118,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Przedział czasowy (n-dni)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24834,7 +25235,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Przedział czasowy (n-dni)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24971,7 +25372,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -25054,7 +25455,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
+    * @param outReal Tablica na elementy wyjściowe (wyniki) double[]
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */

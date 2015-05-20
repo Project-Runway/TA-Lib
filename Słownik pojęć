@@ -14,3 +14,13 @@ Weighted Close - średnia wyliczona na podstawie cen maksymalnych, minimalnych o
 Wariacja - średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
 Ultimate Oscillator - jest oscylatorem, którego wynikiem jest ważona suma 3 oscylatorów o róznych przedziałaczh czasowych nakładających się na siebie.
 Typical Price - to średnia z cen maksymalnych, minimalnych i zamknięcia.
+Time Series Forecast - wskaźnik zwany inaczej ruchomą regresją liniową. Tworzony jest za pomocą ostatnich punktów z kilku regresji liniowych.
+TRIX - oblicza szybkosc zmian potrójnej wykładniczej średniej kroczącej (EMA).
+Triangular Moving Avarage (trójkątna średnia krocząca) - forma średniej ważonej w której rozłożenie wag przyjmuje postac trójkątną.
+True Range - funkcja używana do obliczania wielu wskaźników w szczególności Welles Wilder DX.
+TEMA (Triple Exponential Moving Average) - wskaźnik używany do wygładzenia cen oraz innych danych. Jego budowa zmniejsza również opóźnienia.
+tanh - tangens hiperboliczny.
+tan - tangens.
+T3 - funkcja która jest typem średniej kroczącej bądź pełni rolę funkcji wygładzającej. Powstała na bazie DEMA do którego dodaje się dodatkowy parametr vFactory.
+sum (Summation) - suma szeregu.
+sub (Subtraction) - różnica między dwoma elementami.
