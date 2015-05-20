@@ -52,7 +52,7 @@ package com.tictactec.ta.lib.meta;
  * open, high, low, close, volume and open interest.
  * 
  * Wskaźniki matematyczne korzystające z cen na wejściu, biorą tylko podzbiór komponentu OHLCVI.
- * Mogłoby się wydawa, że ta klasa może by wykorzystana w tym celu. <i>Jednak nie jest ona przeznaczona do trzymania cen dla wskaźników.<i>
+ * Mogłoby się wydawa, że ta klasa może by wykorzystana w tym celu. <i>Jednak nie jest ona przeznaczona do trzymania cen dla wskaźników.</i>
  * By to wytłumaczyc: Tablice zawarte w PriceHolder nie mogą byc inicjalizowane wartością null. Oraz wszystkie tablice muszą miec tą samą długośc.
  * 
  * @author Artur Ratajczak

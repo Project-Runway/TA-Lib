@@ -77,13 +77,13 @@ import com.tictactec.ta.lib.meta.annotation.RealRange;
 /**
  * CoreMetaData dostarcza nieskopoziomowego RTTI (Run Time Type Information) dla funkcji. Również dostarcza metod dla tych, którzy chcą wywołac funkcję używając Late Binding Techniques.
  * Te dwie funkcjonalności pozwalają na wywoływanie funkcji dynamicznie. Nawet jeźli zostaną dodane nowe funkcje do bibliooteki TA-LIB, twój kod aplikacji będzie mógł wywołac wszystkie dodane funkcje, pytając pakiet TA-Lib o:
- * 
+ * <ul>
  * <li>dostępne funkcje
  * <li>dostępne grupy funkcji
  * <li>argumenty wejściowe funkcji oraz RTTI
  * <li>argumenty wyjściowa funkcji oraz RTTI
  * <li>opcjonalne argumentu wejsciowe funkcji oraz RTTI
- *
+ *</ul>
  * @author Artur Ratajczak
  *
  */
@@ -467,7 +467,7 @@ public class CoreMetaData implements Comparable<CoreMetaData> {
     /**
      * Metoda ustawia nową wartośc typu double pobraną z obiektu typu String dla n-tego opcjonalnego paarametru wejściowego. Oczekuje się kompatybliności n-tego parametru z double.
      * @param paramIndex Indeks parametru
-     * @param value Nowa wartośc double pobrana z obiektu typu String
+     * @param string Nowa wartośc double pobrana z obiektu typu String
      * @throws IllegalArgumentException
      * @throws InternalError
      */

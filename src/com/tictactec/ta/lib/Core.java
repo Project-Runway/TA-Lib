@@ -18382,6 +18382,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   //TODO: Ratajczak Artur do samego dołu ^^
    /* Generated */
    public int minusDILookback( int optInTimePeriod )
    {
@@ -23977,10 +23978,32 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca domyślną wartośc Typical Price
+    * @return 0
+    */
    public int typPriceLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda oblicza Typical Price jest to średnia z cen maksymalnych, minimalnych i zamknięcia. Srednia ta używana jest do obliczania kilku innych wskaźników.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Startowy indeks.
+    * @param endIdx Końcowy indeks
+    * @param inHigh Tablica cen maksymalnych
+    * @param inLow Tablica cen minimalnych.
+    * @param inClose Tablica cen zamknięcia 
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Ilośc elementów wyjściowych
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode typPrice( int startIdx,
       int endIdx,
       double inHigh[],
@@ -24006,6 +24029,24 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza Typical Price jest to średnia z cen maksymalnych, minimalnych i zamknięcia. Srednia ta używana jest do obliczania kilku innych wskaźników.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Startowy indeks.
+    * @param endIdx Końcowy indeks
+    * @param inHigh Tablica cen maksymalnych
+    * @param inLow Tablica cen minimalnych.
+    * @param inClose Tablica cen zamknięcia 
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Ilośc elementów wyjściowych
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode typPrice( int startIdx,
       int endIdx,
       float inHigh[],
@@ -24032,6 +24073,15 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca zakres z maksymalnego przedziału wejściowego.
+    * 
+    * @param optInTimePeriod1 Pierwszy przedział czasowy (siedmiodniowy)
+    * @param optInTimePeriod2 Drugi przedział czasowy (czternastodniowy)
+    * @param optInTimePeriod3 Trzeci przedział czasowy (dwudziestoośmiodniowy)
+    * @return zakres przedziału czasowego
+    * @author Artur Ratajczak
+    */
    public int ultOscLookback( int optInTimePeriod1,
       int optInTimePeriod2,
       int optInTimePeriod3 )
@@ -24052,6 +24102,31 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       maxPeriod = ((( (((optInTimePeriod1) > (optInTimePeriod2)) ? (optInTimePeriod1) : (optInTimePeriod2)) ) > (optInTimePeriod3)) ? ( (((optInTimePeriod1) > (optInTimePeriod2)) ? (optInTimePeriod1) : (optInTimePeriod2)) ) : (optInTimePeriod3)) ;
       return smaLookback ( maxPeriod ) + 1;
    }
+   /**
+    * Wskaźnik Ultimate Oscillator jest oscylatorem, którego wynikiem jest ważona suma 3 oscylatorów o róznych przedziałaczh czasowych
+    * nakładających się na siebie (7,14,28 dniowych). Wynik przedstawiony jest w postaci wykresu osculującego w skali od 0 do 100 punktów.
+    * Dodatkowo wskaźnik można interpretowa w oparciu o jego przebieg w stosunku do poziomów wykupienia (powyżej 70) i wyprzedania (poniżej 30).
+    * Przebicie w dół poziomy wykupienia powoduje wygenerowanie sygnału sprzedaży, przebicie w górę poziomy wyprzedania powoduje wygenerowanie sygnału kupna.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Startowy indeks
+    * @param endIdx Końcowy indeks
+    * @param inHigh Tablica cen maksymalnych.
+    * @param inLow Tablica cen minimalnych.
+    * @param inClose Tablica cen zamknięcia.
+    * @param optInTimePeriod1 Pierwszy przedział czasowy
+    * @param optInTimePeriod2 Drugi przediał czasowy
+    * @param optInTimePeriod3 Trzeci przedział czasowy
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Ilośc elementów wyjściowych
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode ultOsc( int startIdx,
       int endIdx,
       double inHigh[],
@@ -24161,6 +24236,31 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Wskaźnik Ultimate Oscillator jest oscylatorem, którego wynikiem jest ważona suma 3 oscylatorów o róznych przedziałaczh czasowych
+    * nakładających się na siebie (7,14,28 dniowych). Wynik przedstawiony jest w postaci wykresu osculującego w skali od 0 do 100 punktów.
+    * Dodatkowo wskaźnik można interpretowa w oparciu o jego przebieg w stosunku do poziomów wykupienia (powyżej 70) i wyprzedania (poniżej 30).
+    * Przebicie w dół poziomy wykupienia powoduje wygenerowanie sygnału sprzedaży, przebicie w górę poziomy wyprzedania powoduje wygenerowanie sygnału kupna.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Startowy indeks
+    * @param endIdx Końcowy indeks
+    * @param inHigh Tablica cen maksymalnych.
+    * @param inLow Tablica cen minimalnych.
+    * @param inClose Tablica cen zamknięcia.
+    * @param optInTimePeriod1 Pierwszy przedział czasowy
+    * @param optInTimePeriod2 Drugi przediał czasowy
+    * @param optInTimePeriod3 Trzeci przedział czasowy
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Ilośc elementów wyjściowych
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode ultOsc( int startIdx,
       int endIdx,
       float inHigh[],
@@ -24271,6 +24371,13 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda określa zakres przedziału wejściowego dla wariacji.
+    * @param optInTimePeriod Liczba elementów
+    * @param optInNbDev Wartoś oczekiwana
+    * @return Zakres przedziału
+    * @author Artur Ratajczak
+    */
    public int varianceLookback( int optInTimePeriod,
       double optInNbDev )
    {
@@ -24284,6 +24391,25 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
+    * <hr>
+    * <ul>
+    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.
+    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.
+    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.
+    * </ul>
+    * @param startIdx Startowy indeks w tablicy
+    * @param endIdx Końcowy indeks w tablicy
+    * @param inReal Tablica wartości cech.
+    * @param optInTimePeriod Zakres przedziału wartości cech.
+    * @param optInNbDev Wartośc oczekiwana.
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica wyników z obliczoną wariacją.
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode variance( int startIdx,
       int endIdx,
       double inReal[],
@@ -24360,6 +24486,25 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
+    * <hr>
+    * <ul>
+    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.
+    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.
+    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.
+    * </ul>
+    * @param startIdx Startowy indeks w tablicy
+    * @param endIdx Końcowy indeks w tablicy
+    * @param inReal Tablica wartości cech.
+    * @param optInTimePeriod Zakres przedziału wartości cech.
+    * @param optInNbDev Wartośc oczekiwana.
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica wyników z obliczoną wariacją.
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode variance( int startIdx,
       int endIdx,
       float inReal[],
@@ -24437,10 +24582,33 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca domyślną wartośc Weighted Close.
+    * @return 0
+    */
    public int wclPriceLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda oblicza Weighted Close jest średnia wyliczona na podstawie cen maksymalnych, minimalnych oraz zamknięcia. Cena zamknięcia liczona jest podwójnie.
+    * Jest stosowany do obliczeń wielu wskaźników bądź ich wygładzania. 
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+    * @param startIdx Startowy indeks w tablicy.
+    * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
+    * @param inHigh Tablica cen maksymalnych.
+    * @param inLow Tablica cen minimalnych.
+    * @param inClose Tablica cen zamknięcia.
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode.
+    * @author Artur Ratajczak
+    */
    public RetCode wclPrice( int startIdx,
       int endIdx,
       double inHigh[],
@@ -24466,6 +24634,25 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza Weighted Close jest średnia wyliczona na podstawie cen maksymalnych, minimalnych oraz zamknięcia. Cena zamknięcia liczona jest podwójnie.
+    * Jest stosowany do obliczeń wielu wskaźników bądź ich wygładzania. 
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  </ul>
+  * @param startIdx Startowy indeks w tablicy.
+    * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
+    * @param inHigh Tablica cen maksymalnych.
+    * @param inLow Tablica cen minimalnych.
+    * @param inClose Tablica cen zamknięcia.
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode.
+    * @author Artur Ratajczak
+    */
    public RetCode wclPrice( int startIdx,
       int endIdx,
       float inHigh[],
@@ -24492,6 +24679,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda określa zakres przedziału wejściowego.
+    * np. Dla 100 elementów zakres przedziału wynosi 99. Ponieważ od elementu 0 do 99 jest łącznie 100 elementów.
+    * <hr>
+    * Wyjątki:
+    * <ul>
+    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 14.
+    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;
+    * </ul>
+    * @param optInTimePeriod Liczba elementów występująca w przedziale
+    * @return Zakres przedziału wejściowego.
+    * @author Artur Ratajczak
+    */
    public int willRLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -24500,6 +24700,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * %R Williamsa - wskaźnik używany w analizie techniczej. 
+    * Jest oscylatorem, który pokazuje zależność obecnej ceny zamknięcia w relacji do maksymalnej i minimalnej ceny z poprzednich N dni.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  </ul>
+    * @param startIdx Startowy indeks w tablicy
+    * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
+    * @param inHigh Tablica z cenami meksymalnymi z n-dni
+    * @param inLow Tablica z ceniami minimalnymi z n-dni
+    * @param inClose Cena zamknięcia z dziś.
+    * @param optInTimePeriod Przedział czasowy (n-dni)
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode willR( int startIdx,
       int endIdx,
       double inHigh[],
@@ -24596,6 +24817,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * %R Williamsa - wskaźnik używany w analizie techniczej. 
+    * Jest oscylatorem, który pokazuje zależność obecnej ceny zamknięcia w relacji do maksymalnej i minimalnej ceny z poprzednich N dni.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  </ul>
+    * @param startIdx Startowy indeks w tablicy
+    * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
+    * @param inHigh Tablica z cenami meksymalnymi z n-dni
+    * @param inLow Tablica z ceniami minimalnymi z n-dni
+    * @param inClose Cena zamknięcia z dziś.
+    * @param optInTimePeriod Przedział czasowy (n-dni)
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica z wynikami
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode willR( int startIdx,
       int endIdx,
       float inHigh[],
@@ -24693,6 +24935,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda określa zakres przedziału wejściowego.
+    * np. Dla 100 elementów zakres przedziału wynosi 99. Ponieważ od elementu 0 do 99 jest łącznie 100 elementów.
+    * <hr>
+    * Wyjątki:
+    * <ul>
+    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 30.
+    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;
+    * </ul>
+    * @param optInTimePeriod Liczba elementów występująca w przedziale
+    * @return Zakres przedziału wejściowego.
+    * @author Artur Ratajczak
+    */
    public int wmaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -24701,6 +24956,25 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod - 1;
    }
+   /**
+    * Weighted Moving Average(ważona średnia krocząca).
+    * WMA liczy wagi dla każdej wartości w serii. Nowszym wartością są przypisywane większe wagi.
+    * Metoda oblicza WMA dla zestawu danych podanych w postaci tablicy double[]<hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  </ul>
+    * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
+    * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)
+    * @param inReal Tablica z wartosciami do policzenia
+    * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode wma( int startIdx,
       int endIdx,
       double inReal[],
@@ -24764,6 +25038,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Weighted Moving Average(ważona średnia krocząca).
+    * WMA liczy wagi dla każdej wartości w serii. Nowszym wartością są przypisywane większe wagi.
+    * Metoda oblicza WMA dla zestawu danych podanych w postaci tablicy float[]
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  </ul>
+    * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
+    * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)
+    * @param inReal Tablica z wartosciami do policzenia
+    * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
+    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
+    * @return Status - ReturnCode z RetCode
+    * @author Artur Ratajczak
+    */
    public RetCode wma( int startIdx,
       int endIdx,
       float inReal[],

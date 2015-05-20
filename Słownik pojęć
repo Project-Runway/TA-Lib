@@ -7,5 +7,10 @@ RetCode - ReturnCode - wartość zwracanej funkcji.
 Simple Moving Average (Prosta średnia krocząca) - to zwykła średnia arytmetyczna wartości z ostatnich n okresów.
 Triangular Moving Average (trójkątna średnia krocząca) - średnia ważona, największą wagę otrzymują środkowe dane.
 Triple Exponential Moving Average(Potrójna wykładnicza średnia krocząca) - średnia krocząca liczona na podstawie pojedyńczej, podwójnej i potrójnej średniej kroczącej.
-Weighted Moving Average (Ważona średnia krocząca) - przypisuje różne wagi danym z poszczególnych okresów. W analizie technicznej często stosuje się średnie ważone, w których wagi maleją w postępie arytmetycznym.
+Weighted Moving Average (Ważona średnia krocząca) - przypisuje różne wagi danym z poszczególnych okresów. W analizie technicznej często stosuje się średnie ważone, w których wagi maleją w postępie arytmetycznym. Np. w n-okresowej WMA ostatni okres ma wagę n, przedostatni n-1 itd.
 Świece japońskie - jedna z najstarszych metod analizowania oraz konstrukcji wykresów. 
+Williams %R - wskaźnik używany w analizie techniczej. Jest oscylatorem, który pokazuje zależność obecnej ceny zamknięcia w relacji do maksymalnej i minimalnej ceny z poprzednich N dni.
+Weighted Close - średnia wyliczona na podstawie cen maksymalnych, minimalnych oraz zamknięcia. Cena zamknięcia liczona jest podwójnie.
+Wariacja - średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
+Ultimate Oscillator - jest oscylatorem, którego wynikiem jest ważona suma 3 oscylatorów o róznych przedziałaczh czasowych nakładających się na siebie.
+Typical Price - to średnia z cen maksymalnych, minimalnych i zamknięcia.

@@ -67,11 +67,12 @@ import com.tictactec.ta.lib.meta.annotation.RealRange;
  * SimpleHelper jest prostą klasą (API level) pomocniczą bazującą na CoreMetaData
  * 
  * Klasa ta zapewnia bardzo prostą funkcjonalnoś wywoływania dynamicznego metod gdy znasz wcześniej:
+ * <ul>
  * <li> nazwę funkcji
  * <li> typy argumentów wejściowych
  * <li> typy argumentów wyjściowych
- * <li> typy opcjonalnych argumentów wejściowych i vartości.
- * 
+ * <li> typy opcjonalnych argumentów wejściowych i wartości.
+ * </ul>
  * Klasa stosowana jest głównie do celów testowych.
  *
  * @author Artur Ratajczak
