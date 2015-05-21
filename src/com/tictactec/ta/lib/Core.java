@@ -58,11 +58,13 @@ public class Core {
    
    private Compatibility compatibility;
    
-   /** Creates a new instance of Core */
-   
+   /** Creates a new instance of Core *
    
    // TODO: Start Stachura Bartlomiej
-public Core() {
+   /**
+    * 	Domyślny konstruktor klasy Core
+    */
+   public Core() {
       unstablePeriod = new int[com.tictactec.ta.lib.FuncUnstId.All
          .ordinal()];
       compatibility = Compatibility.Default;
@@ -72,9 +74,20 @@ public Core() {
          candleSettings[i] = new CandleSetting(TA_CandleDefaultSettings[i]);
       }
    }
-   
-   
-public RetCode SetCandleSettings(CandleSettingType settingType,
+
+   /**
+    * Ustawienie wykresu świecowego
+    * <hr>
+    * <ul>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param settingType typ wyliczeniowy ustawień Candlestick chart (świece japońskie)
+    * @param rangeType typ wyliczeniowy zakresu typów, wykorzystywane podczas działania funkcji oraz podczas tworzenia obiektu CandleSetting
+    * @param avgPeriod zakres świecy
+    * @param factor średni czas
+    * @return Status
+    */
+   public RetCode SetCandleSettings(CandleSettingType settingType,
       RangeType rangeType, int avgPeriod, double factor) {
       if (settingType.ordinal() >= CandleSettingType.AllCandleSettings
          .ordinal())
@@ -151,6 +164,15 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       new CandleSetting(CandleSettingType.Equal,
          RangeType.HighLow, 5, 0.05) };
    
+   /**
+    * Ustawienie wykresu świecowego według parametrów domyślnych
+    * <hr>
+    * <ul>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param settingType typ wyliczeniowy ustawien Candlestick chart (świece japońskie)
+    * @return Status
+    */
    public RetCode RestoreCandleDefaultSettings(
       CandleSettingType settingType) {
       int i;
@@ -168,6 +190,16 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success;
    }
    
+   /**
+    * Pozwala zdejmować początkowy okres niestabilny. metoda pozwala do powrotu danych w miejsce gdzie produkcja będzie dostateczna, bez względu na ilość danych historycznych
+    * <hr>
+    * <ul>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param id typ wyliczeniowy zawierający numery ID funkcji
+    * @param period określenie liczby wyjść -> może być równe 0
+    * @return Status
+    */
    public RetCode SetUnstablePeriod(FuncUnstId id, int period)
    {
       if (id.ordinal() >= FuncUnstId.All
@@ -177,26 +209,60 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success;
    }
    
+   /**
+    * Zwraca parametr wyjść dla okresu niestabilnego
+    * @param id typ wyliczeniowy zawierający numery ID funkcji
+    * @return określenie liczb dla UnstablePeriod
+    */
    public int GetUnstablePeriod(FuncUnstId id)
    {
       return unstablePeriod[id.ordinal()];
    }
    
+   /**
+    * Ustawienie typu wyliczeniowego dla kopmatybilności TA-LIB. Domyślna kompatybilność dla klasy Core to Default.
+    * możliwe ustawienia (Default,Metastock)
+    * @param compatibility typ wyliczeniowy dla kopmatybilności TA-LIB
+    */
    public void SetCompatibility(Compatibility compatibility)
    {
       this.compatibility = compatibility;
    }
    
+   /**
+    * @return typ wyliczeniowy dla kopmatybilności TA-LIB
+    */
    public Compatibility getCompatibility()
    {
       return compatibility;
    }
    
    /**** START GENCODE SECTION 1 - DO NOT DELETE THIS LINE ****/
+
+   /**
+    * Zwraca domyślną wartość dla ACOS
+    * @return 0
+    */
    public int acosLookback( )
    {
       return 0;
    }
+
+   /**
+    * Funckja trygonometryczna cosinus
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode acos( int startIdx,
       int endIdx,
       double inReal[],
@@ -218,6 +284,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Funckja trygonometryczna cosinus
+    * <hr>
+    * <ul>
+    * <li> RetCode.BadParam kiedy parametr jest niewlaściwy </li>
+    * </ul>
+    * @param startIdx startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
+    * @param endIdx końcowy indeks w tablicy (do którego elementu chcemy liczyc)
+    * @param inReal tablica z wartosciami do policzenia
+    * @param outBegIdx indeks początkowego elementu wyjściowego (poczatek wyniku)
+    * @param outNBElement ilośc elementów wyjściowych (ilosc wyników)
+    * @param outReal tablica z elementami wyjsciowymi (wynikami) double[]
+    * @return status - ReturnCode z RetCode
+    */
    public RetCode acos( int startIdx,
       int endIdx,
       float inReal[],
@@ -240,10 +320,34 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Zwraca domyślną wartość dla AD
+    * @return 0
+    */
    public int adLookback( )
    {
       return 0;
    }
+
+   /**
+    * Chaikin Accumulation Distribution Line
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">http://google.com</a>
+    *
+    * <hr>
+    * <ul>
+    * <li> RetCode.BadParam kiedy parametr jest niewlaściwy </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param inVolume tablica z warościami do weryfikacji wymagań kosztu
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode ad( int startIdx,
       int endIdx,
       double inHigh[],
@@ -281,7 +385,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       }
       return RetCode.Success ;
    }
-   public RetCode ad( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param inVolume
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode ad( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -319,11 +435,25 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int addLookback( )
+   /**
+    * Metoda zwraca domyślną wartość add
+    * @return 0
+    */
+public int addLookback( )
    {
       return 0;
    }
-   public RetCode add( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal0
+ * @param inReal1
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode add( int startIdx,
       int endIdx,
       double inReal0[],
       double inReal1[],
@@ -345,7 +475,17 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode add( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal0
+ * @param inReal1
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode add( int startIdx,
       int endIdx,
       float inReal0[],
       float inReal1[],
@@ -368,7 +508,13 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int adOscLookback( int optInFastPeriod,
+   /**
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @return
+ */
+   // TODO: 1dzien
+public int adOscLookback( int optInFastPeriod,
       int optInSlowPeriod )
    {
       int slowestPeriod;
@@ -386,7 +532,21 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          slowestPeriod = optInFastPeriod;
       return emaLookback ( slowestPeriod );
    }
-   public RetCode adOsc( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param inVolume
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode adOsc( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -456,7 +616,21 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   public RetCode adOsc( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param inVolume
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode adOsc( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -527,7 +701,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int adxLookback( int optInTimePeriod )
+   /**
+ * @param optInTimePeriod
+ * @return
+ */
+public int adxLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -535,7 +713,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return (2 * optInTimePeriod) + (this.unstablePeriod[FuncUnstId.Adx.ordinal()]) - 1;
    }
-   public RetCode adx( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode adx( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -708,7 +898,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   public RetCode adx( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode adx( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -882,7 +1084,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int adxrLookback( int optInTimePeriod )
+   /**
+ * @param optInTimePeriod
+ * @return
+ */
+public int adxrLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -893,7 +1099,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       else
          return 3;
    }
-   public RetCode adxr( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode adxr( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -941,7 +1159,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   public RetCode adxr( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode adxr( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -990,7 +1220,13 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int apoLookback( int optInFastPeriod,
+   /**
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @param optInMAType
+ * @return
+ */
+public int apoLookback( int optInFastPeriod,
       int optInSlowPeriod,
       MAType optInMAType )
    {
@@ -1004,7 +1240,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return movingAverageLookback ( (((optInSlowPeriod) > (optInFastPeriod)) ? (optInSlowPeriod) : (optInFastPeriod)) , optInMAType );
    }
-   public RetCode apo( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @param optInMAType
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode apo( int startIdx,
       int endIdx,
       double inReal[],
       int optInFastPeriod,
@@ -1041,7 +1289,21 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          0 );
       return retCode;
    }
-   RetCode TA_INT_PO( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @param optInMethod_2
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @param tempBuffer
+ * @param doPercentageOutput
+ * @return
+ */
+RetCode TA_INT_PO( int startIdx,
       int endIdx,
       double inReal[],
       int optInFastPeriod,
@@ -1111,7 +1373,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       }
       return retCode;
    }
-   public RetCode apo( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @param optInMAType
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode apo( int startIdx,
       int endIdx,
       float inReal[],
       int optInFastPeriod,
@@ -1148,7 +1422,21 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          0 );
       return retCode;
    }
-   RetCode TA_INT_PO( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param optInFastPeriod
+ * @param optInSlowPeriod
+ * @param optInMethod_2
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @param tempBuffer
+ * @param doPercentageOutput
+ * @return
+ */
+RetCode TA_INT_PO( int startIdx,
       int endIdx,
       float inReal[],
       int optInFastPeriod,
@@ -1219,7 +1507,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return retCode;
    }
    /* Generated */
-   public int aroonLookback( int optInTimePeriod )
+   /**
+ * @param optInTimePeriod
+ * @return
+ */
+public int aroonLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -1227,7 +1519,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod;
    }
-   public RetCode aroon( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outAroonDown
+ * @param outAroonUp
+ * @return
+ */
+public RetCode aroon( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -1318,7 +1622,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   public RetCode aroon( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outAroonDown
+ * @param outAroonUp
+ * @return
+ */
+public RetCode aroon( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -1410,7 +1726,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int aroonOscLookback( int optInTimePeriod )
+   /**
+ * @param optInTimePeriod
+ * @return
+ */
+public int aroonOscLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -1418,7 +1738,18 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod;
    }
-   public RetCode aroonOsc( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode aroonOsc( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -1508,7 +1839,18 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   public RetCode aroonOsc( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode aroonOsc( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -1599,11 +1941,23 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int asinLookback( )
+   /**
+ * @return
+ */
+public int asinLookback( )
    {
       return 0;
    }
-   public RetCode asin( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode asin( int startIdx,
       int endIdx,
       double inReal[],
       MInteger outBegIdx,
@@ -1624,7 +1978,16 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode asin( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode asin( int startIdx,
       int endIdx,
       float inReal[],
       MInteger outBegIdx,
@@ -1646,11 +2009,23 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int atanLookback( )
+   /**
+ * @return
+ */
+public int atanLookback( )
    {
       return 0;
    }
-   public RetCode atan( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode atan( int startIdx,
       int endIdx,
       double inReal[],
       MInteger outBegIdx,
@@ -1671,7 +2046,16 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode atan( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode atan( int startIdx,
       int endIdx,
       float inReal[],
       MInteger outBegIdx,
@@ -1693,7 +2077,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int atrLookback( int optInTimePeriod )
+   /**
+ * @param optInTimePeriod
+ * @return
+ */
+public int atrLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -1701,7 +2089,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Atr.ordinal()]) ;
    }
-   public RetCode atr( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode atr( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -1782,7 +2182,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       return retCode;
    }
-   public RetCode atr( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode atr( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -1864,11 +2276,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return retCode;
    }
    /* Generated */
-   public int avgPriceLookback( )
+   /**
+ * @return
+ */
+public int avgPriceLookback( )
    {
       return 0;
    }
-   public RetCode avgPrice( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode avgPrice( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -1895,7 +2322,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode avgPrice( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode avgPrice( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -1923,7 +2362,14 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int bbandsLookback( int optInTimePeriod,
+   /**
+ * @param optInTimePeriod
+ * @param optInNbDevUp
+ * @param optInNbDevDn
+ * @param optInMAType
+ * @return
+ */
+public int bbandsLookback( int optInTimePeriod,
       double optInNbDevUp,
       double optInNbDevDn,
       MAType optInMAType )
@@ -1942,7 +2388,22 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return movingAverageLookback ( optInTimePeriod, optInMAType );
    }
-   public RetCode bbands( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param optInTimePeriod
+ * @param optInNbDevUp
+ * @param optInNbDevDn
+ * @param optInMAType
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outRealUpperBand
+ * @param outRealMiddleBand
+ * @param outRealLowerBand
+ * @return
+ */
+public RetCode bbands( int startIdx,
       int endIdx,
       double inReal[],
       int optInTimePeriod,
@@ -2082,7 +2543,22 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       }
       return RetCode.Success ;
    }
-   public RetCode bbands( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal
+ * @param optInTimePeriod
+ * @param optInNbDevUp
+ * @param optInNbDevDn
+ * @param optInMAType
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outRealUpperBand
+ * @param outRealMiddleBand
+ * @param outRealLowerBand
+ * @return
+ */
+public RetCode bbands( int startIdx,
       int endIdx,
       float inReal[],
       int optInTimePeriod,
@@ -2199,7 +2675,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int betaLookback( int optInTimePeriod )
+   /**
+ * @param optInTimePeriod
+ * @return
+ */
+public int betaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 5;
@@ -2207,7 +2687,18 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return optInTimePeriod;
    }
-   public RetCode beta( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal0
+ * @param inReal1
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode beta( int startIdx,
       int endIdx,
       double inReal0[],
       double inReal1[],
@@ -2316,7 +2807,18 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode beta( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inReal0
+ * @param inReal1
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode beta( int startIdx,
       int endIdx,
       float inReal0[],
       float inReal1[],
@@ -2426,11 +2928,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int bopLookback( )
+   /**
+ * @return
+ */
+public int bopLookback( )
    {
       return 0;
    }
-   public RetCode bop( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode bop( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -2459,7 +2976,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode bop( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode bop( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -2489,7 +3018,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cciLookback( int optInTimePeriod )
+   /**
+ * @param optInTimePeriod
+ * @return
+ */
+public int cciLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -2497,7 +3030,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return (optInTimePeriod-1);
    }
-   public RetCode cci( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode cci( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -2564,7 +3109,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cci( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInTimePeriod
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outReal
+ * @return
+ */
+public RetCode cci( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -2632,11 +3189,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdl2CrowsLookback( )
+   /**
+ * @return
+ */
+public int cdl2CrowsLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 2;
    }
-   public RetCode cdl2Crows( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl2Crows( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -2691,7 +3263,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdl2Crows( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl2Crows( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -2747,11 +3331,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdl3BlackCrowsLookback( )
+   /**
+ * @return
+ */
+public int cdl3BlackCrowsLookback( )
    {
       return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 3;
    }
-   public RetCode cdl3BlackCrows( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3BlackCrows( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -2817,7 +3416,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdl3BlackCrows( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3BlackCrows( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -2884,11 +3495,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdl3InsideLookback( )
+   /**
+ * @return
+ */
+public int cdl3InsideLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
    }
-   public RetCode cdl3Inside( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3Inside( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -2953,7 +3579,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdl3Inside( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3Inside( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3019,11 +3657,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdl3LineStrikeLookback( )
+   /**
+ * @return
+ */
+public int cdl3LineStrikeLookback( )
    {
       return (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) + 3;
    }
-   public RetCode cdl3LineStrike( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3LineStrike( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3096,7 +3749,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdl3LineStrike( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3LineStrike( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3170,11 +3835,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdl3OutsideLookback( )
+   /**
+ * @return
+ */
+public int cdl3OutsideLookback( )
    {
       return 3;
    }
-   public RetCode cdl3Outside( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3Outside( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3221,7 +3901,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdl3Outside( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3Outside( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3269,12 +3961,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdl3StarsInSouthLookback( )
+   /**
+ * @return
+ */
+public int cdl3StarsInSouthLookback( )
    {
       return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) )) +
          2;
    }
-   public RetCode cdl3StarsInSouth( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3StarsInSouth( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3371,8 +4078,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outNBElement.value = outIdx;
       outBegIdx.value = startIdx;
       return RetCode.Success ;
-   }
-   public RetCode cdl3StarsInSouth( int startIdx,
+   	}
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3StarsInSouth( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3471,12 +4190,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdl3WhiteSoldiersLookback( )
+   /**
+ * @return
+ */
+public int cdl3WhiteSoldiersLookback( )
    {
       return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) +
          2;
    }
-   public RetCode cdl3WhiteSoldiers( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3WhiteSoldiers( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3584,7 +4318,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdl3WhiteSoldiers( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdl3WhiteSoldiers( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3693,7 +4439,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlAbandonedBabyLookback( double optInPenetration )
+   /**
+ * @param optInPenetration
+ * @return
+ */
+public int cdlAbandonedBabyLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
          optInPenetration = 3.000000e-1;
@@ -3702,7 +4452,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) +
          2;
    }
-   public RetCode cdlAbandonedBaby( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInPenetration
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlAbandonedBaby( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3791,7 +4554,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlAbandonedBaby( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInPenetration
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlAbandonedBaby( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3881,12 +4657,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlAdvanceBlockLookback( )
+   /**
+ * @return
+ */
+public int cdlAdvanceBlockLookback( )
    {
       return ((( ((( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( ((( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
          2;
    }
-   public RetCode cdlAdvanceBlock( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlAdvanceBlock( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4026,7 +4817,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlAdvanceBlock( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlAdvanceBlock( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4167,11 +4970,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlBeltHoldLookback( )
+   /**
+ * @return
+ */
+public int cdlBeltHoldLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
-   public RetCode cdlBeltHold( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlBeltHold( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4238,7 +5056,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlBeltHold( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlBeltHold( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4306,11 +5136,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlBreakawayLookback( )
+   /**
+ * @return
+ */
+public int cdlBreakawayLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 4;
    }
-   public RetCode cdlBreakaway( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlBreakaway( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4378,7 +5223,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlBreakaway( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlBreakaway( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4447,11 +5304,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlClosingMarubozuLookback( )
+   /**
+ * @return
+ */
+public int cdlClosingMarubozuLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
-   public RetCode cdlClosingMarubozu( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlClosingMarubozu( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4518,7 +5390,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlClosingMarubozu( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlClosingMarubozu( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4586,11 +5470,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlConcealBabysWallLookback( )
+   /**
+ * @return
+ */
+public int cdlConcealBabysWallLookback( )
    {
       return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 3;
    }
-   public RetCode cdlConcealBabysWall( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlConcealBabysWall( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4656,7 +5555,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlConcealBabysWall( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlConcealBabysWall( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4723,12 +5634,27 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlCounterAttackLookback( )
+   /**
+ * @return
+ */
+public int cdlCounterAttackLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
          1;
    }
-   public RetCode cdlCounterAttack( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlCounterAttack( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4795,7 +5721,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlCounterAttack( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlCounterAttack( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4863,7 +5801,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlDarkCloudCoverLookback( double optInPenetration )
+   /**
+ * @param optInPenetration
+ * @return
+ */
+public int cdlDarkCloudCoverLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
          optInPenetration = 5.000000e-1;
@@ -4871,7 +5813,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
          return -1;
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 1;
    }
-   public RetCode cdlDarkCloudCover( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInPenetration
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDarkCloudCover( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4930,7 +5885,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlDarkCloudCover( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInPenetration
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDarkCloudCover( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4990,11 +5958,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlDojiLookback( )
+   /**
+ * @return
+ */
+public int cdlDojiLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
    }
-   public RetCode cdlDoji( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDoji( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5041,7 +6024,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlDoji( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDoji( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5089,11 +6084,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlDojiStarLookback( )
+   /**
+ * @return
+ */
+public int cdlDojiStarLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 1;
    }
-   public RetCode cdlDojiStar( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDojiStar( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5154,7 +6164,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlDojiStar( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDojiStar( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5216,11 +6238,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlDragonflyDojiLookback( )
+   /**
+ * @return
+ */
+public int cdlDragonflyDojiLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
-   public RetCode cdlDragonflyDoji( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDragonflyDoji( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5280,7 +6317,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlDragonflyDoji( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlDragonflyDoji( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5341,11 +6390,26 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlEngulfingLookback( )
+   /**
+ * @return
+ */
+public int cdlEngulfingLookback( )
    {
       return 2;
    }
-   public RetCode cdlEngulfing( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlEngulfing( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5390,7 +6454,19 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlEngulfing( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlEngulfing( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5436,7 +6512,11 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return RetCode.Success ;
    }
    /* Generated */
-   public int cdlEveningDojiStarLookback( double optInPenetration )
+   /**
+ * @param optInPenetration
+ * @return
+ */
+public int cdlEveningDojiStarLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
          optInPenetration = 3.000000e-1;
@@ -5445,7 +6525,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) +
          2;
    }
-   public RetCode cdlEveningDojiStar( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInPenetration
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlEveningDojiStar( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5523,7 +6616,20 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlEveningDojiStar( int startIdx,
+   /**
+ * @param startIdx
+ * @param endIdx
+ * @param inOpen
+ * @param inHigh
+ * @param inLow
+ * @param inClose
+ * @param optInPenetration
+ * @param outBegIdx
+ * @param outNBElement
+ * @param outInteger
+ * @return
+ */
+public RetCode cdlEveningDojiStar( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -24401,7 +25507,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia 
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z wynikami
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24444,7 +25550,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia 
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z wynikami
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24658,7 +25764,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod3 Trzeci przedział czasowy
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z wynikami
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24807,7 +25913,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInNbDev Wartośc oczekiwana.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica wyników z obliczoną wariacją.
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -24902,7 +26008,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInNbDev Wartośc oczekiwana.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica wyników z obliczoną wariacją.
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -25006,7 +26112,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z wynikami
     * @return Status - ReturnCode z RetCode.
     * @author Artur Ratajczak
     */
@@ -25050,7 +26156,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param inClose Tablica cen zamknięcia.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z wynikami
     * @return Status - ReturnCode z RetCode.
     * @author Artur Ratajczak
     */
@@ -25118,7 +26224,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Przedział czasowy (n-dni)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z wynikami
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -25235,7 +26341,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Przedział czasowy (n-dni)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z wynikami
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -25372,7 +26478,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
@@ -25455,7 +26561,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
     * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki) double[]
+    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
     * @return Status - ReturnCode z RetCode
     * @author Artur Ratajczak
     */
