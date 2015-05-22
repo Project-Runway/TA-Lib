@@ -48,7 +48,7 @@ package com.tictactec.ta.lib;
 /**
  * Klasa MoneyFlow wykorzystywana jest metodzie MFI klasy TA-LIB.
  * MFI - Money Flow Index (indeks przepływów pieniężnych).
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
  class MoneyFlow

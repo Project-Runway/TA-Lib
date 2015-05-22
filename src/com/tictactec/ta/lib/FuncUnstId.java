@@ -47,7 +47,7 @@
 package com.tictactec.ta.lib;
 /**
  * Typ wyliczeniowy zawierający numery ID funkcji.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum FuncUnstId {

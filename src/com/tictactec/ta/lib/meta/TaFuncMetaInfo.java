@@ -58,7 +58,7 @@ import com.tictactec.ta.lib.RetCode;
  * Według autora biblioteki TA-LIB klasa ta jest przestarzała na rzecz klasy CoreMetaData.
  * Większośc funkcjie z tej klasy jest zaimplementowana w klasie CoreMetaData.
  * @deprecated
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class TaFuncMetaInfo extends TaFuncSignature

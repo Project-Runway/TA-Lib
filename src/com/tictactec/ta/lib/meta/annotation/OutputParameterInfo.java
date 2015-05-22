@@ -52,7 +52,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 /**
  * Interfej wykorzystywany w klasie CoreAnnotated.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 @Target(ElementType.PARAMETER)

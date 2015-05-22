@@ -48,7 +48,7 @@ package com.tictactec.ta.lib;
 /**
  * Typ wyliczeniowy zwracanych wartości przez funkcje.
  * Wywołanie funkcji z TA-Lib kończy się jednym z tych statusów.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum RetCode

@@ -47,7 +47,7 @@
 package com.tictactec.ta.lib.meta.annotation;
 /**
  * Typ wyliczeniowy z dostępnymi wartościami opcjonalnych typów paramatrów wejsciowych.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum OptInputParameterType {

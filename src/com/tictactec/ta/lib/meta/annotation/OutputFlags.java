@@ -47,7 +47,7 @@
 package com.tictactec.ta.lib.meta.annotation;
 /**
  * Klasa zawierająca spis flag wyjściowych.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 

@@ -53,7 +53,7 @@ import java.lang.annotation.Target;
 /**
  * Interfej wykorzystywany w klasie CoreAnnotated.
  * Za jego pomocą określane są: nazwa funkcji, grupa do jakiej należy, flaga funkcji, ilość wejść, ilość opcjonalnych wejść, ilosc wyjść
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 @Target(ElementType.METHOD)

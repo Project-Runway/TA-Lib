@@ -53,8 +53,7 @@ import java.lang.annotation.Target;
 /**
  * Interfej wykorzystywany w klasie CoreAnnotated.
  * Służy do zdefiniowania zakresu parametrów typu Real
- * @author Artur Ratajczak
- *
+ * @author Komentarz - Artur Ratajczak
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)

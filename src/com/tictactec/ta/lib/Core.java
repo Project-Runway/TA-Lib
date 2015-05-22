@@ -23782,6 +23782,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
    /**
     * Metoda zwraca podstawową wartośc różnicy
     * @return 0
+    * @author Komentarz - Artur Ratajczak
     */
    public int subLookback( )
    {
@@ -23802,6 +23803,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode sub( int startIdx,
       int endIdx,
@@ -23840,6 +23842,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode sub( int startIdx,
       int endIdx,
@@ -23868,6 +23871,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * Metoda określa przedział sumowania.
     * @param optInTimePeriod Ilosc elementów
     * @return Przedział dla sumy.
+    * @author Komentarz - Artur Ratajczak
     */
    public int sumLookback( int optInTimePeriod )
    {
@@ -23893,6 +23897,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @autor Komentarz - Artur Ratajczak
     */
    public RetCode sum( int startIdx,
       int endIdx,
@@ -23957,6 +23962,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode sum( int startIdx,
       int endIdx,
@@ -24011,6 +24017,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod Przedział czasu
     * @param optInVFactor wektor dodania vFactor z przedziału (0;1)
     * @return Przedział czasowy T3.
+    * @author Komentarz - Artur Ratajczak
     */
    public int t3Lookback( int optInTimePeriod,
       double optInVFactor )
@@ -24045,6 +24052,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode t3( int startIdx,
       int endIdx,
@@ -24184,6 +24192,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode t3( int startIdx,
       int endIdx,
@@ -24307,6 +24316,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
    /**
     * Metoda zwraca podstawową wartośc tangent 
     * @return 0 
+    * @author Komentarz - Artur Ratajczak
     */
    public int tanLookback( )
    {
@@ -24326,6 +24336,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementow wyjsciowych
     * @param outReal Tablica na elementy wyjsciowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tan( int startIdx,
       int endIdx,
@@ -24362,6 +24373,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementow wyjsciowych
     * @param outReal Tablica na elementy wyjsciowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tan( int startIdx,
       int endIdx,
@@ -24388,6 +24400,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
    /**
     * Metoda zwraca podstawową wartoś hyperbolic tangent 
     * @return 0
+    * @author Komentarz - Artur Ratajczak
     */
    public int tanhLookback( )
    {
@@ -24407,6 +24420,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tanh( int startIdx,
       int endIdx,
@@ -24443,6 +24457,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tanh( int startIdx,
       int endIdx,
@@ -24470,6 +24485,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * Metoda oblicza zakres czasowy dla TEMA 
     * @param optInTimePeriod Przedział czas
     * @return Zakres czasu dla TEMA
+    * @author Komentarz - Artur Ratajczak
     */
    public int temaLookback( int optInTimePeriod )
    {
@@ -24498,6 +24514,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tema( int startIdx,
       int endIdx,
@@ -24592,6 +24609,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tema( int startIdx,
       int endIdx,
@@ -24673,6 +24691,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
    /**
     * Metoda zwraca domyślną wartośc True Range.
     * @return 1
+    * @author Komentarz - Artur Ratajczak
     */
    public int trueRangeLookback( )
    {
@@ -24695,6 +24714,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode trueRange( int startIdx,
       int endIdx,
@@ -24758,6 +24778,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode trueRange( int startIdx,
       int endIdx,
@@ -24809,6 +24830,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * Metoda zwraca zakres przedziału wejściowego.
     * @param optInTimePeriod Iloś elementów wejściowych.
     * @return zakres przedziału.
+    * @author Komentarz - Artur Ratajczak
     */
    public int trimaLookback( int optInTimePeriod )
    {
@@ -24835,6 +24857,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal TTablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode trima( int startIdx,
       int endIdx,
@@ -24975,6 +24998,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal TTablica na elementy wyjściowe (wyniki)
     * @return Status
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode trima( int startIdx,
       int endIdx,
@@ -25103,6 +25127,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * Metoda zwraca przedział czasowy dla Trix.
     * @param optInTimePeriod Przedział czasowy
     * @return Przedział czasowy dla Trix.
+    * @author Komentarz - Artur Ratajczak
     */
    public int trixLookback( int optInTimePeriod )
    {
@@ -25131,7 +25156,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjsciowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode trix( int startIdx,
       int endIdx,
@@ -25235,7 +25260,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjsciowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode trix( int startIdx,
       int endIdx,
@@ -25327,6 +25352,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * Metoda zwraca zakres przedziału wejściowego.
     * @param optInTimePeriod Ilośc elementów wejściowych.
     * @return Zakres przedziału.
+    * @author Komentarz - Artur Ratajczak
     */
    public int tsfLookback( int optInTimePeriod )
    {
@@ -25354,7 +25380,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tsf( int startIdx,
       int endIdx,
@@ -25428,7 +25454,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode tsf( int startIdx,
       int endIdx,
@@ -25488,6 +25514,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
    /**
     * Metoda zwraca domyślną wartośc Typical Price
     * @return 0
+    * @author Komentarz - Artur Ratajczak
     */
    public int typPriceLookback( )
    {
@@ -25507,9 +25534,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param inClose Tablica cen zamknięcia 
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode typPrice( int startIdx,
       int endIdx,
@@ -25550,9 +25577,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param inClose Tablica cen zamknięcia 
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode typPrice( int startIdx,
       int endIdx,
@@ -25587,7 +25614,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod2 Drugi przedział czasowy (czternastodniowy)
     * @param optInTimePeriod3 Trzeci przedział czasowy (dwudziestoośmiodniowy)
     * @return zakres przedziału czasowego
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public int ultOscLookback( int optInTimePeriod1,
       int optInTimePeriod2,
@@ -25632,7 +25659,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param outNBElement Ilośc elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode ultOsc( int startIdx,
       int endIdx,
@@ -25764,9 +25791,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod3 Trzeci przedział czasowy
     * @param outBegIdx Początkowy indeks wyjściowy
     * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode ultOsc( int startIdx,
       int endIdx,
@@ -25883,7 +25910,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod Liczba elementów
     * @param optInNbDev Wartoś oczekiwana
     * @return Zakres przedziału
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public int varianceLookback( int optInTimePeriod,
       double optInNbDev )
@@ -25913,9 +25940,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInNbDev Wartośc oczekiwana.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica wyników z obliczoną wariacją.
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode variance( int startIdx,
       int endIdx,
@@ -26008,9 +26035,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInNbDev Wartośc oczekiwana.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica wyników z obliczoną wariacją.
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode variance( int startIdx,
       int endIdx,
@@ -26092,6 +26119,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
    /**
     * Metoda zwraca domyślną wartośc Weighted Close.
     * @return 0
+    * @author Komentarz - Artur Ratajczak
     */
    public int wclPriceLookback( )
    {
@@ -26112,9 +26140,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param inClose Tablica cen zamknięcia.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode.
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode wclPrice( int startIdx,
       int endIdx,
@@ -26156,9 +26184,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param inClose Tablica cen zamknięcia.
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode.
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode wclPrice( int startIdx,
       int endIdx,
@@ -26197,7 +26225,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * </ul>
     * @param optInTimePeriod Liczba elementów występująca w przedziale
     * @return Zakres przedziału wejściowego.
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public int willRLookback( int optInTimePeriod )
    {
@@ -26224,9 +26252,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod Przedział czasowy (n-dni)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode willR( int startIdx,
       int endIdx,
@@ -26341,9 +26369,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod Przedział czasowy (n-dni)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z wynikami
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode willR( int startIdx,
       int endIdx,
@@ -26453,7 +26481,7 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * </ul>
     * @param optInTimePeriod Liczba elementów występująca w przedziale
     * @return Zakres przedziału wejściowego.
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public int wmaLookback( int optInTimePeriod )
    {
@@ -26478,9 +26506,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode wma( int startIdx,
       int endIdx,
@@ -26561,9 +26589,9 @@ public RetCode cdlEveningDojiStar( int startIdx,
     * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
     * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
     * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica z elementami wyjsciowymi (wynikami) double[]
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status - ReturnCode z RetCode
-    * @author Artur Ratajczak
+    * @author Komentarz - Artur Ratajczak
     */
    public RetCode wma( int startIdx,
       int endIdx,

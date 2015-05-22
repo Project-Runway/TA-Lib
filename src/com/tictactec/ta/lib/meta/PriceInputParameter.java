@@ -7,7 +7,7 @@ import com.tictactec.ta.lib.meta.annotation.InputFlags;
  * Rozszerze ona funkcjonalnośc klasy PriceHolder i wzbogaca ją o możliwośc odczytania flagi.
  * 
  * @deprecated
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class PriceInputParameter extends PriceHolder {

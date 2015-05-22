@@ -47,7 +47,7 @@
 package com.tictactec.ta.lib.meta.annotation;
 /**
  * Typ wyliczeniowy wejściowych tyów parametrów.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum InputParameterType {

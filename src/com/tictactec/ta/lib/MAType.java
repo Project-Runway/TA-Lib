@@ -48,7 +48,7 @@ package com.tictactec.ta.lib;
 /**
  * Typy wyliczeniowe dla funkcji Moving Average (średnia krocząca).
  * Karzda funkcja która korzysta z Moving Avarage musi podac typ tej funkcji.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum MAType 

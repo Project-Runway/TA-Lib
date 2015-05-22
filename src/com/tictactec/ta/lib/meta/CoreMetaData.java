@@ -84,7 +84,7 @@ import com.tictactec.ta.lib.meta.annotation.RealRange;
  * <li>argumenty wyjściowa funkcji oraz RTTI
  * <li>opcjonalne argumentu wejsciowe funkcji oraz RTTI
  *</ul>
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class CoreMetaData implements Comparable<CoreMetaData> {

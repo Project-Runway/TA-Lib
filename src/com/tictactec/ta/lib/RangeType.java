@@ -48,7 +48,7 @@ package com.tictactec.ta.lib;
 /**
  * Typ wyliczeniowy zakresów typów.
  * Wykorzystywane podczas działania funkcji z biblioteki TA-LIB oraz podczas tworzenia obiektu CandleSetting.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 

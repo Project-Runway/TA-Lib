@@ -61,7 +61,7 @@ package com.tictactec.ta.lib.meta.annotation;
 */
 /**
  * Klasa zawierajaca spis flag dla opcjonalnych wejsc.
- * @author Artur Ratajczak
+ *@author Komentarz - Artur Ratajczak
  *
  */
 public final class OptInputFlags {

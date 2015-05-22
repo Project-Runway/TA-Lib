@@ -64,7 +64,7 @@ import com.tictactec.ta.lib.meta.annotation.OutputParameterInfo;
  * 
  * Klasa ta w całości nie implementuje metod z <i>ta_abstract.h</i>
  * 
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class CoreMetaDataCompatibility extends CoreMetaData {

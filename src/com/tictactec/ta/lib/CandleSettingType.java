@@ -48,7 +48,7 @@ package com.tictactec.ta.lib;
 /**
  * Typ wyliczeniowy ustawień Candlestick chart (świece japońskie)
  * 
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum CandleSettingType 

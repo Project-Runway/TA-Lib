@@ -75,7 +75,7 @@ import com.tictactec.ta.lib.meta.annotation.RealRange;
  * </ul>
  * Klasa stosowana jest głównie do celów testowych.
  *
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class SimpleHelper {

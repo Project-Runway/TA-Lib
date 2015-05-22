@@ -60,7 +60,7 @@ package com.tictactec.ta.lib.meta.annotation;
  * Klasa zawierajace zdefiniowane flagi wejść.
  * 
  * Gdy wejściem jest TA_INPUT_PRICE wtedy TA_INPUTFLAG oznacza wymagane componenty.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public final class InputFlags {

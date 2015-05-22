@@ -55,7 +55,7 @@ package com.tictactec.ta.lib.meta;
  * Mogłoby się wydawa, że ta klasa może by wykorzystana w tym celu. <i>Jednak nie jest ona przeznaczona do trzymania cen dla wskaźników.</i>
  * By to wytłumaczyc: Tablice zawarte w PriceHolder nie mogą byc inicjalizowane wartością null. Oraz wszystkie tablice muszą miec tą samą długośc.
  * 
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class PriceHolder {

@@ -48,7 +48,7 @@ package com.tictactec.ta.lib;
 /**
  * Typ wyliczeniowy dla kopmatybilności TA-LIB. W klasie Core można zmienic ustawienia kompatybilności.
  * Domyślna kompatybilność dla klasy Core to Default.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum Compatibility

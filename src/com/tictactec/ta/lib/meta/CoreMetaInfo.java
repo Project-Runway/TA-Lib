@@ -61,7 +61,7 @@ import com.tictactec.ta.lib.RetCode;
  * Wszystkie funkcje z tej klasy mają swoje odpowiedniki w CoreMetaData.
  * @see CoreMetaData.
  * 
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class CoreMetaInfo

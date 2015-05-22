@@ -47,7 +47,7 @@
 package com.tictactec.ta.lib.meta.annotation;
 /**
  * Klasa zawierająca flagi funkcji. 
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class FuncFlags {

@@ -50,7 +50,7 @@ package com.tictactec.ta.lib;
 /**
  * Klasa ustawień Candlestick (świecy japońskiej)
  * Wykorzystywana do tworzenia wykresów Candlestick chart (świece japońskie).
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public class CandleSetting {

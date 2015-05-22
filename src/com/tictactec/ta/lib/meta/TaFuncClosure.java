@@ -51,7 +51,7 @@ package com.tictactec.ta.lib.meta;
  * Według autora klasy TA-Lib klasa jest przestarzała na rzecz interfejsów TAFuncService i TaGrpService.
  * Interfejs ten nie jest użyty w żadnej z klas.
  * @deprecated
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public interface TaFuncClosure

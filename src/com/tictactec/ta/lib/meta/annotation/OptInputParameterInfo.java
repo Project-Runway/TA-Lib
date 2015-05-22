@@ -53,7 +53,7 @@ import java.lang.annotation.Target;
 /**
  * Interfej wykorzystywany w klasie CoreAnnotated.
  * Za jego pomocą określane są: nazwe parametru, wyswietla sie nazwe, ustawia sie flage, pobiera typ parametru opcjonalnego, ustawia sie klase danych
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 @Target(ElementType.PARAMETER)

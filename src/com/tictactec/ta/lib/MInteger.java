@@ -53,7 +53,7 @@ package com.tictactec.ta.lib;
 /**
  * Klasa opakowywująca typ wbudowany int.
  * Klasa używana zamiast typu wbudowanego int. Zapewnia ona zmienność typu wbudowanego.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
  public class MInteger

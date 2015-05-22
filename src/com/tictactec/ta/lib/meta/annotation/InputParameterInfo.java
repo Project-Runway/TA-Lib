@@ -53,7 +53,7 @@ import java.lang.annotation.Target;
 /**
  * Interfej wykorzystywany w klasie CoreAnnotated.
  * Za jego pomocą określane są: Typ parametru wejsciowego z klasy ImputParametetType, nazwa parametru, flaga parametru
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 @Target(ElementType.PARAMETER)

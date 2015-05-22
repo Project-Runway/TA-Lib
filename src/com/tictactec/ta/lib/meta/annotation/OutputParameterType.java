@@ -47,7 +47,7 @@
 package com.tictactec.ta.lib.meta.annotation;
 /**
  * Klasa wyliczeniowa zawierająca typu parametrów wyjściowych.
- * @author Artur Ratajczak
+ * @author Komentarz - Artur Ratajczak
  *
  */
 public enum OutputParameterType {
