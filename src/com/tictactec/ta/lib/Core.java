@@ -22683,7 +22683,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
    }
    /**
     * Metoda oblicza różnice między n-tymi elementami zbiorów.
-    *  *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
@@ -22721,7 +22721,7 @@ public RetCode SetCandleSettings(CandleSettingType settingType,
    }
    /**
     * Metoda oblicza różnice między n-tymi elementami zbiorów.
-    *  *  <hr>
+    *  <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
