@@ -21461,6 +21461,12 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres czasowy dla RSI
+    * @param optInTimePeriod 
+    * @return Okres czasowy
+    * @author Komentarz - Artur Ratajczak
+    */
    public int rsiLookback( int optInTimePeriod )
    {
       int retValue;
@@ -21473,6 +21479,26 @@ public RetCode cdlEveningDojiStar( int startIdx,
          retValue--;
       return retValue;
    }
+   /**
+    * Relative Strength Index (wskaźnik siły) określa wewnętrzną siłę akcji ( jej trendu ) i zależy od zmian następujących w cenach i określa jakościowo momentum cen. Ponieważ zawiera w sobie czynnik ważący jest ważoną średnią ruchomą. Może przyjmować wartości od 0 do 100. 
+    * <hr>
+    * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
+    *   <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami 
+    * @param optInTimePeriod Okres czasowy
+    * @param outBegIdx Początkowy indeks wyjściowy 
+    * @param outNBElement Końcowy indeks wyjściowy
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rsi( int startIdx,
       int endIdx,
       double inReal[],
@@ -21608,6 +21634,26 @@ public RetCode cdlEveningDojiStar( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Relative Strength Index (wskaźnik siły) określa wewnętrzną siłę akcji ( jej trendu ) i zależy od zmian następujących w cenach i określa jakościowo momentum cen. Ponieważ zawiera w sobie czynnik ważący jest ważoną średnią ruchomą. Może przyjmować wartości od 0 do 100. 
+    * <hr>
+    * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
+    *   <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami 
+    * @param optInTimePeriod Okres czasowy
+    * @param outBegIdx Początkowy indeks wyjściowy 
+    * @param outNBElement Końcowy indeks wyjściowy
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rsi( int startIdx,
       int endIdx,
       float inReal[],
@@ -22544,10 +22590,32 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca domyślną wartośc sine (sinusa)
+    * @return 0
+    * @author Komentarz - Artur Ratajczak
+    */
    public int sinLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda oblicza wartośc sine (sinusa)
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami (radianami)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sin( int startIdx,
       int endIdx,
       double inReal[],
@@ -22569,6 +22637,23 @@ public RetCode cdlEveningDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza wartośc sine (sinusa)
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami (radianami)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sin( int startIdx,
       int endIdx,
       float inReal[],
@@ -22591,10 +22676,32 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca domyślną wartośc funkcji Hyperbolic sine (sinus hiperboliczny).
+    * @return 0
+    * @author Komentarz - Artur Ratajczak
+    */
    public int sinhLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami (radianami)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sinh( int startIdx,
       int endIdx,
       double inReal[],
@@ -22616,6 +22723,23 @@ public RetCode cdlEveningDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami (radianami)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sinh( int startIdx,
       int endIdx,
       float inReal[],
@@ -22638,6 +22762,12 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca liczbę n na podstawie ilości elementów dla metody SMA,
+    * @param optInTimePeriod Iloś elementów
+    * @return Liczba n
+    * @author Komentarz - Artur Ratajczak
+    */
    public int smaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -22646,6 +22776,24 @@ public RetCode cdlEveningDojiStar( int startIdx,
          return -1;
       return optInTimePeriod - 1;
    }
+   /**
+    * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
+    *   <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z liczbami
+    * @param optInTimePeriod Liczba n
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wynik w postaci średniej arytmetycznej)
+    * @return Status 
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sma( int startIdx,
       int endIdx,
       double inReal[],
@@ -22705,6 +22853,24 @@ public RetCode cdlEveningDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
+    *   <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z liczbami
+    * @param optInTimePeriod Liczba n
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wynik w postaci średniej arytmetycznej)
+    * @return Status 
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sma( int startIdx,
       int endIdx,
       float inReal[],
@@ -22765,10 +22931,32 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca domyślna wartośc pierwiasta
+    * @return 0
+    * @author Komentarz - Artur Ratajczak
+    */
    public int sqrtLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda liczy pierwiastek z każdego elementu wejściowego.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami z których ma byc obliczony pierwiastek
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci obliczonych pierwiastków z liczby)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sqrt( int startIdx,
       int endIdx,
       double inReal[],
@@ -22790,6 +22978,23 @@ public RetCode cdlEveningDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda liczy pierwiastek z każdego elementu wejściowego.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami z których ma byc obliczony pierwiastek
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci obliczonych pierwiastków z liczby)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sqrt( int startIdx,
       int endIdx,
       float inReal[],
@@ -22812,6 +23017,13 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda okresla zakres przedizłu wejściowego dla stdDev.
+    * @param optInTimePeriod Okres czasowy
+    * @param optInNbDev wartośc oczekiwana
+    * @return Zakres przedziału wejściowego.
+    * @author Komentarz - Artur Ratajczak
+    */
    public int stdDevLookback( int optInTimePeriod,
       double optInNbDev )
    {
@@ -22825,6 +23037,27 @@ public RetCode cdlEveningDojiStar( int startIdx,
          return -1;
       return varianceLookback ( optInTimePeriod, optInNbDev );
    }
+   /**
+    * Moving Standard Deviation (odchylenie standardowe) jest to klasyczna miara zmienności. 
+    * Intuicyjnie rzecz ujmując, odchylenie standardowe mówi, jak szeroko wartości jakiejś wielkości (takiej jak np. wiek, inflacja, kurs akcji itp.) są rozrzucone wokół jej średniej. 
+    * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica Tablica z wariacjami
+    * @param optInTimePeriod Zakres przedziału wejściowego
+    * @param optInNbDev Wartośc oczekiwana
+    * @param outBegIdx Początkowy indek wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci odchylenia standardowego)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stdDev( int startIdx,
       int endIdx,
       double inReal[],
@@ -22915,6 +23148,27 @@ public RetCode cdlEveningDojiStar( int startIdx,
             output[outIdx] = (double)0.0;
       }
    }
+   /**
+    * Moving Standard Deviation (odchylenie standardowe) jest to klasyczna miara zmienności. 
+    * Intuicyjnie rzecz ujmując, odchylenie standardowe mówi, jak szeroko wartości jakiejś wielkości (takiej jak np. wiek, inflacja, kurs akcji itp.) są rozrzucone wokół jej średniej. 
+    * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica Tablica z wariacjami
+    * @param optInTimePeriod Zakres przedziału wejściowego
+    * @param optInNbDev Wartośc oczekiwana
+    * @param outBegIdx Początkowy indek wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci odchylenia standardowego)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stdDev( int startIdx,
       int endIdx,
       float inReal[],
@@ -23006,6 +23260,16 @@ public RetCode cdlEveningDojiStar( int startIdx,
       }
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres czasu dla Stoch.
+    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
+    * @param optInSlowK_Period Liczba okresów dla linii wolnej %K
+    * @param optInSlowK_MAType Typ średniej kroczącej dla linii wolnej %K
+    * @param optInSlowD_Period Liczba okresów dla linii wolnej %D
+    * @param optInSlowD_MAType Typ średniej kroczącej dla linii wolnej %D
+    * @return Liczba okresów
+    * @author Komentarz - Artur Ratajczak
+    */
    public int stochLookback( int optInFastK_Period,
       int optInSlowK_Period,
       MAType optInSlowK_MAType,
@@ -23030,6 +23294,36 @@ public RetCode cdlEveningDojiStar( int startIdx,
       retValue += movingAverageLookback ( optInSlowD_Period, optInSlowD_MAType );
       return retValue;
    }
+   /**
+    * Wolny oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
+    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
+	* (w trendzie spadkowym zaś minimum).
+	* <hr>
+	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
+	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
+	* <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna najwyższa cena z n sesji
+    * @param inLow Minimalna najniższa cena z n sesji
+    * @param inClose Aktualna cena zamknięcia 
+    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
+    * @param optInSlowK_Period Liczba okresów dla linii wolnej %K
+    * @param optInSlowK_MAType Typ średniej kroczącej dla linii wolnej %K
+    * @param optInSlowD_Period Liczba okresów dla linii wolnej %D
+    * @param optInSlowD_MAType Typ średniej kroczącej dla linii wolnej %D
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outSlowK Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %K)
+    * @param outSlowD Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %D)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stoch( int startIdx,
       int endIdx,
       double inHigh[],
@@ -23179,6 +23473,36 @@ public RetCode cdlEveningDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Wolny oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
+    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
+	* (w trendzie spadkowym zaś minimum).
+	* <hr>
+	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
+	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
+	* <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna najwyższa cena z n sesji
+    * @param inLow Minimalna najniższa cena z n sesji
+    * @param inClose Aktualna cena zamknięcia 
+    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
+    * @param optInSlowK_Period Liczba okresów dla linii wolnej %K
+    * @param optInSlowK_MAType Typ średniej kroczącej dla linii wolnej %K
+    * @param optInSlowD_Period Liczba okresów dla linii wolnej %D
+    * @param optInSlowD_MAType Typ średniej kroczącej dla linii wolnej %D
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outSlowK Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %K)
+    * @param outSlowD Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %D)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stoch( int startIdx,
       int endIdx,
       float inHigh[],
@@ -23314,6 +23638,14 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres czasu dla StochF.
+    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
+    * @param optInFastD_Period Liczba okresów dla linii szybkiej %D
+    * @param optInFastD_MAType Typ średniej kroczącej dla linii %D
+    * @return Okres czasu dla StochF.
+    * @author Komentarz - Artur Ratajczak
+    */
    public int stochFLookback( int optInFastK_Period,
       int optInFastD_Period,
       MAType optInFastD_MAType )
@@ -23331,6 +23663,34 @@ public RetCode cdlEveningDojiStar( int startIdx,
       retValue += movingAverageLookback ( optInFastD_Period, optInFastD_MAType );
       return retValue;
    }
+   /**
+    * Szybko oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
+    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
+	* (w trendzie spadkowym zaś minimum).
+	* <hr>
+	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
+	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
+	* <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Najwyższa cena maksymalna z n sesji
+    * @param inLow Najniższa cena minimalna z n sesji
+    * @param inClose bierząca cena zamknięcia
+    * @param optInFastK_Period Liczba okresów linii szybkiej %K
+    * @param optInFastD_Period Liczba okresów linii szybkiej %D
+    * @param optInFastD_MAType Typ średniej kroczącej dla linii szybkiej %D
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outFastK Tablica na elementy wyjściowe (wyniki w postaci linii szybkiej %K)
+    * @param outFastD Tablica na elementy wyjściowe (wyniki w postaci linii szybiej %D)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stochF( int startIdx,
       int endIdx,
       double inHigh[],
@@ -23469,6 +23829,34 @@ public RetCode cdlEveningDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Szybko oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
+    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
+	* (w trendzie spadkowym zaś minimum).
+	* <hr>
+	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
+	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
+	* <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Najwyższa cena maksymalna z n sesji
+    * @param inLow Najniższa cena minimalna z n sesji
+    * @param inClose bierząca cena zamknięcia
+    * @param optInFastK_Period Liczba okresów linii szybkiej %K
+    * @param optInFastD_Period Liczba okresów linii szybkiej %D
+    * @param optInFastD_MAType Typ średniej kroczącej dla linii szybkiej %D
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outFastK Tablica na elementy wyjściowe (wyniki w postaci linii szybkiej %K)
+    * @param outFastD Tablica na elementy wyjściowe (wyniki w postaci linii szybiej %D)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stochF( int startIdx,
       int endIdx,
       float inHigh[],
@@ -23593,6 +23981,15 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca przedział czasowy(liczbę okresów) dla StochRSI.
+    * @param optInTimePeriod Przedział czasowy
+    * @param optInFastK_Period Liczba okresów dla szbkiej linii %K
+    * @param optInFastD_Period Liczba okresów dla szybkiej linii %D
+    * @param optInFastD_MAType Typ średniej kroczącej dla linii %D
+    * @return przedział czasowy(liczba okresów)
+    * @author Komentarz - Artur Ratajczak
+    */
    public int stochRsiLookback( int optInTimePeriod,
       int optInFastK_Period,
       int optInFastD_Period,
@@ -23614,6 +24011,35 @@ public RetCode cdlEveningDojiStar( int startIdx,
       retValue = rsiLookback ( optInTimePeriod ) + stochFLookback ( optInFastK_Period, optInFastD_Period, optInFastD_MAType );
       return retValue;
    }
+   /**
+    * Stochastic RSI jest wskaźnikiem liczonym ze wskaźniów (oscylatora stochastycznego oraz wskaźnika siły względnej RSI).
+    * RSI liczone jest w stosunku do jego zakresu w celu zwiększenia czułości.
+    * Stochastic RSI przyjmuje wartości od 0 do 1.
+    * <hr>
+    * Warunki wykupienia/wyprzedaży zachodzą w momencie kiedy StochRSI przekracza powyżej 0.8/poniżej 0.2.
+    * Sygnał kupna generowany jest wtegy gdy StochRSI przechodzi z wyprzedaży powyżej punktu środkowego 0.5.
+    * Sygnał sprzedaży generowany jest wtedy gdy StochRSI przechodzi z wykupienia poniżej punktu środkowego.
+    * Indeks ten może byc interpretowany na kilka sposobów. 
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do policzenia.
+    * @param optInTimePeriod Liczba okresów
+    * @param optInFastK_Period Liczba okresów dla linii %K szybkiej.
+    * @param optInFastD_Period Liczba okresów dla linii %D szybkiej.
+    * @param optInFastD_MAType Typ średniej kroczącej dla lini %D szybkiej.
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outFastK Tablica na elementy wyjściowe (linię %K szybką)
+    * @param outFastD Tablica ne elementy wyjściowe (linię %D szybką)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stochRsi( int startIdx,
       int endIdx,
       double inReal[],
@@ -23696,6 +24122,35 @@ public RetCode cdlEveningDojiStar( int startIdx,
       }
       return RetCode.Success ;
    }
+   /**
+    * Stochastic RSI jest wskaźnikiem liczonym ze wskaźniów (oscylatora stochastycznego oraz wskaźnika siły względnej RSI).
+    * RSI liczone jest w stosunku do jego zakresu w celu zwiększenia czułości.
+    * Stochastic RSI przyjmuje wartości od 0 do 1.
+    * <hr>
+    * Warunki wykupienia/wyprzedaży zachodzą w momencie kiedy StochRSI przekracza powyżej 0.8/poniżej 0.2.
+    * Sygnał kupna generowany jest wtegy gdy StochRSI przechodzi z wyprzedaży powyżej punktu środkowego 0.5.
+    * Sygnał sprzedaży generowany jest wtedy gdy StochRSI przechodzi z wykupienia poniżej punktu środkowego.
+    * Indeks ten może byc interpretowany na kilka sposobów. 
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do policzenia.
+    * @param optInTimePeriod Liczba okresów
+    * @param optInFastK_Period Liczba okresów dla linii %K szybkiej.
+    * @param optInFastD_Period Liczba okresów dla linii %D szybkiej.
+    * @param optInFastD_MAType Typ średniej kroczącej dla lini %D szybkiej.
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outFastK Tablica na elementy wyjściowe (linię %K szybką)
+    * @param outFastD Tablica ne elementy wyjściowe (linię %D szybką)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode stochRsi( int startIdx,
       int endIdx,
       float inReal[],
