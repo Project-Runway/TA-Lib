@@ -288,7 +288,8 @@ public class Core {
     * Funckja trygonometryczna cosinus
     * <hr>
     * <ul>
-    * <li> RetCode.BadParam kiedy parametr jest niewlaściwy </li>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
     * @param endIdx końcowy indeks w tablicy (do którego elementu chcemy liczyc)
@@ -335,7 +336,8 @@ public class Core {
     *
     * <hr>
     * <ul>
-    * <li> RetCode.BadParam kiedy parametr jest niewlaściwy </li>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -386,18 +388,26 @@ public class Core {
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param inVolume
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode ad( int startIdx,
+    * Chaikin Accumulation Distribution Line
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">http://google.com</a>
+    *
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy 
+  	* @param endIdx indeks końcowy
+  	* @param inHigh tablica cen maksymalnych
+  	* @param inLow tablica cen minimalnych
+  	* @param inClose tablica cen zamknięcia
+  	* @param inVolume tablica z warościami do weryfikacji wymagań kosztu
+  	* @param outBegIdx początkowy indeks wyjściowy
+  	* @param outNBElement liczba elementów wyjściowych
+  	* @param outReal tablica na elementy wyjściowe
+  	* @return Status
+  	*/
+  public RetCode ad( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -439,21 +449,21 @@ public RetCode ad( int startIdx,
     * Metoda zwraca domyślną wartość add
     * @return 0
     */
-public int addLookback( )
+  public int addLookback( )
    {
       return 0;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inReal0
- * @param inReal1
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode add( int startIdx,
+  /**
+   * @param startIdx indeks startowy
+   * @param endIdx indeks końcowy
+   * @param inReal0 Tablica z wartościami (zbiór 1)
+   * @param inReal1 Tablica z wartościami (zbiór 2)
+   * @param outBegIdx początkowy indeks wyjściowy
+   * @param outNBElement liczba elementów wyjściowych
+   * @param outReal tablica na elementy wyjściowe
+   * @return Status
+   */
+  public RetCode add( int startIdx,
       int endIdx,
       double inReal0[],
       double inReal1[],
@@ -476,16 +486,16 @@ public RetCode add( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal0
- * @param inReal1
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode add( int startIdx,
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inReal0 Tablica z wartościami (zbiór 1)
+     * @param inReal1 Tablica z wartościami (zbiór 2)
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
+  public RetCode add( int startIdx,
       int endIdx,
       float inReal0[],
       float inReal1[],
@@ -509,12 +519,12 @@ public RetCode add( int startIdx,
    }
    /* Generated */
    /**
- * @param optInFastPeriod
- * @param optInSlowPeriod
- * @return
- */
+   * @param optInFastPeriod
+   * @param optInSlowPeriod
+   * @return
+   */
    // TODO: 1dzien
-public int adOscLookback( int optInFastPeriod,
+  public int adOscLookback( int optInFastPeriod,
       int optInSlowPeriod )
    {
       int slowestPeriod;
@@ -533,18 +543,18 @@ public int adOscLookback( int optInFastPeriod,
       return emaLookback ( slowestPeriod );
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param inVolume
+ * @param startIdx indeks startowy
+ * @param endIdx indeks końcowy
+ * @param inHigh tablica cen maksymalnych
+ * @param inLow tablica cen minimalnych
+ * @param inClose tablica cen zamknięcia
+ * @param inVolume tablica z warościami do weryfikacji wymagań kosztu
  * @param optInFastPeriod
  * @param optInSlowPeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
+ * @param outBegIdx początkowy indeks wyjściowy
+ * @param outNBElement liczba elementów wyjściowych
+ * @param outReal tablica na elementy wyjściowe
+ * @return Status
  */
 public RetCode adOsc( int startIdx,
       int endIdx,
@@ -616,19 +626,19 @@ public RetCode adOsc( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param inVolume
+ /**
+ * @param startIdx indeks startowy
+ * @param endIdx indeks końcowy
+ * @param inHigh tablica cen maksymalnych
+ * @param inLow tablica cen minimalnych
+ * @param inClose tablica cen zamknięcia
+ * @param inVolume tablica z warościami do weryfikacji wymagań kosztu
  * @param optInFastPeriod
  * @param optInSlowPeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
+ * @param outBegIdx początkowy indeks wyjściowy
+ * @param outNBElement liczba elementów wyjściowych
+ * @param outReal tablica na elementy wyjściowe
+ * @return Status
  */
 public RetCode adOsc( int startIdx,
       int endIdx,
@@ -714,18 +724,18 @@ public int adxLookback( int optInTimePeriod )
       return (2 * optInTimePeriod) + (this.unstablePeriod[FuncUnstId.Adx.ordinal()]) - 1;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode adx( int startIdx,
+   * @param startIdx indeks startowy
+   * @param endIdx indeks końcowy
+   * @param inHigh tablica cen maksymalnych
+   * @param inLow tablica cen minimalnych
+   * @param inClose tablica cen zamknięcia
+   * @param optInTimePeriod
+   * @param outBegIdx początkowy indeks wyjściowy
+   * @param outNBElement liczba elementów wyjściowych
+   * @param outReal tablica na elementy wyjściowe
+   * @return Status
+   */
+  public RetCode adx( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -898,18 +908,18 @@ public RetCode adx( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
+  /**
+   * @param startIdx indeks startowy
+   * @param endIdx indeks końcowy
+   * @param inHigh tablica cen maksymalnych
+   * @param inLow tablica cen minimalnych
+   * @param inClose tablica cen zamknięcia
+   * @param optInTimePeriod
+   * @param outBegIdx początkowy indeks wyjściowy
+   * @param outNBElement liczba elementów wyjściowych
+   * @param outReal tablica na elementy wyjściowe
+   * @return Status
+   */
 public RetCode adx( int startIdx,
       int endIdx,
       float inHigh[],
@@ -1100,18 +1110,18 @@ public int adxrLookback( int optInTimePeriod )
          return 3;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode adxr( int startIdx,
+   * @param startIdx indeks startowy
+   * @param endIdx indeks końcowy
+   * @param inHigh tablica cen maksymalnych
+   * @param inLow tablica cen minimalnych
+   * @param inClose tablica cen zamknięcia
+   * @param optInTimePeriod
+   * @param outBegIdx początkowy indeks wyjściowy
+   * @param outNBElement liczba elementów wyjściowych
+   * @param outReal tablica na elementy wyjściowe
+   * @return Status
+   */
+  public RetCode adxr( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -1160,18 +1170,18 @@ public RetCode adxr( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode adxr( int startIdx,
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inHigh tablica cen maksymalnych
+     * @param inLow tablica cen minimalnych
+     * @param inClose tablica cen zamknięcia
+     * @param optInTimePeriod
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
+  public RetCode adxr( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -1221,12 +1231,12 @@ public RetCode adxr( int startIdx,
    }
    /* Generated */
    /**
- * @param optInFastPeriod
- * @param optInSlowPeriod
- * @param optInMAType
- * @return
- */
-public int apoLookback( int optInFastPeriod,
+     * @param optInFastPeriod
+     * @param optInSlowPeriod
+     * @param optInMAType
+     * @return
+     */
+  public int apoLookback( int optInFastPeriod,
       int optInSlowPeriod,
       MAType optInMAType )
    {
@@ -1241,17 +1251,17 @@ public int apoLookback( int optInFastPeriod,
       return movingAverageLookback ( (((optInSlowPeriod) > (optInFastPeriod)) ? (optInSlowPeriod) : (optInFastPeriod)) , optInMAType );
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param optInFastPeriod
- * @param optInSlowPeriod
- * @param optInMAType
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param optInFastPeriod
+    * @param optInSlowPeriod
+    * @param optInMAType
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
 public RetCode apo( int startIdx,
       int endIdx,
       double inReal[],
@@ -1290,19 +1300,19 @@ public RetCode apo( int startIdx,
       return retCode;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param optInFastPeriod
- * @param optInSlowPeriod
- * @param optInMethod_2
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @param tempBuffer
- * @param doPercentageOutput
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param optInFastPeriod
+    * @param optInSlowPeriod
+    * @param optInMethod_2
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @param tempBuffer
+    * @param doPercentageOutput
+    * @return Status
+    */
 RetCode TA_INT_PO( int startIdx,
       int endIdx,
       double inReal[],
@@ -1374,18 +1384,18 @@ RetCode TA_INT_PO( int startIdx,
       return retCode;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param optInFastPeriod
- * @param optInSlowPeriod
- * @param optInMAType
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode apo( int startIdx,
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inReal tablica z wartosciami do policzenia
+     * @param optInFastPeriod
+     * @param optInSlowPeriod
+     * @param optInMAType
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
+  public RetCode apo( int startIdx,
       int endIdx,
       float inReal[],
       int optInFastPeriod,
@@ -1423,19 +1433,19 @@ public RetCode apo( int startIdx,
       return retCode;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param optInFastPeriod
- * @param optInSlowPeriod
- * @param optInMethod_2
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @param tempBuffer
- * @param doPercentageOutput
- * @return
- */
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inReal tablica z wartosciami do policzenia
+     * @param optInFastPeriod
+     * @param optInSlowPeriod
+     * @param optInMethod_2
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @param tempBuffer
+     * @param doPercentageOutput
+     * @return Status
+     */
 RetCode TA_INT_PO( int startIdx,
       int endIdx,
       float inReal[],
@@ -1508,10 +1518,10 @@ RetCode TA_INT_PO( int startIdx,
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @return
- */
-public int aroonLookback( int optInTimePeriod )
+   * @param optInTimePeriod
+   * @return
+   */
+  public int aroonLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -1520,16 +1530,16 @@ public int aroonLookback( int optInTimePeriod )
       return optInTimePeriod;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
+ * @param startIdx indeks startowy
+ * @param endIdx indeks końcowy
+ * @param inHigh tablica cen maksymalnych
+ * @param inLow tablica cen minimalnych
  * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
+ * @param outBegIdx początkowy indeks wyjściowy
+ * @param outNBElement liczba elementów wyjściowych
  * @param outAroonDown
  * @param outAroonUp
- * @return
+ * @return Status
  */
 public RetCode aroon( int startIdx,
       int endIdx,
@@ -1623,16 +1633,16 @@ public RetCode aroon( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
+ * @param startIdx indeks startowy
+ * @param endIdx indeks końcowy
+ * @param inHigh tablica cen maksymalnych
+ * @param inLow tablica cen minimalnych
  * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
+ * @param outBegIdx początkowy indeks wyjściowy
+ * @param outNBElement liczba elementów wyjściowych
  * @param outAroonDown
  * @param outAroonUp
- * @return
+ * @return Status
  */
 public RetCode aroon( int startIdx,
       int endIdx,
@@ -1739,16 +1749,16 @@ public int aroonOscLookback( int optInTimePeriod )
       return optInTimePeriod;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inHigh tablica cen maksymalnych
+     * @param inLow tablica cen minimalnych
+     * @param optInTimePeriod
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
 public RetCode aroonOsc( int startIdx,
       int endIdx,
       double inHigh[],
@@ -1840,17 +1850,17 @@ public RetCode aroonOsc( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode aroonOsc( int startIdx,
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inHigh tablica cen maksymalnych
+     * @param inLow tablica cen minimalnych
+     * @param optInTimePeriod
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
+  public RetCode aroonOsc( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -1949,14 +1959,14 @@ public int asinLookback( )
       return 0;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inReal tablica z wartosciami do policzenia
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
 public RetCode asin( int startIdx,
       int endIdx,
       double inReal[],
@@ -1979,15 +1989,15 @@ public RetCode asin( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode asin( int startIdx,
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inReal tablica z wartosciami do policzenia
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
+  public RetCode asin( int startIdx,
       int endIdx,
       float inReal[],
       MInteger outBegIdx,
@@ -2010,21 +2020,21 @@ public RetCode asin( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
-public int atanLookback( )
+    * @return Zwraca domyślną wartość dla ATAN
+    */
+  public int atanLookback( )
    {
       return 0;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
 public RetCode atan( int startIdx,
       int endIdx,
       double inReal[],
@@ -2047,15 +2057,15 @@ public RetCode atan( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode atan( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode atan( int startIdx,
       int endIdx,
       float inReal[],
       MInteger outBegIdx,
@@ -2090,18 +2100,18 @@ public int atrLookback( int optInTimePeriod )
       return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Atr.ordinal()]) ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode atr( int startIdx,
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inHigh tablica cen maksymalnych
+     * @param inLow tablica cen minimalnych
+     * @param inClose tablica cen zamknięcia
+     * @param optInTimePeriod
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
+  public RetCode atr( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -2183,18 +2193,18 @@ public RetCode atr( int startIdx,
       return retCode;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode atr( int startIdx,
+     * @param startIdx indeks startowy
+     * @param endIdx indeks końcowy
+     * @param inHigh tablica cen maksymalnych
+     * @param inLow tablica cen minimalnych
+     * @param inClose tablica cen zamknięcia
+     * @param optInTimePeriod
+     * @param outBegIdx początkowy indeks wyjściowy
+     * @param outNBElement liczba elementów wyjściowych
+     * @param outReal tablica na elementy wyjściowe
+     * @return Status
+     */
+  public RetCode atr( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -2277,25 +2287,26 @@ public RetCode atr( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
-public int avgPriceLookback( )
+    * Zwraca domyślną wartość dla  -----
+    * @return 0  
+    */
+  public int avgPriceLookback( )
    {
       return 0;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode avgPrice( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode avgPrice( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -2323,18 +2334,18 @@ public RetCode avgPrice( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode avgPrice( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode avgPrice( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -2363,13 +2374,13 @@ public RetCode avgPrice( int startIdx,
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @param optInNbDevUp
- * @param optInNbDevDn
- * @param optInMAType
- * @return
- */
-public int bbandsLookback( int optInTimePeriod,
+     * @param optInTimePeriod
+     * @param optInNbDevUp
+     * @param optInNbDevDn
+     * @param optInMAType
+     * @return
+     */
+  public int bbandsLookback( int optInTimePeriod,
       double optInNbDevUp,
       double optInNbDevDn,
       MAType optInMAType )
@@ -2389,21 +2400,21 @@ public int bbandsLookback( int optInTimePeriod,
       return movingAverageLookback ( optInTimePeriod, optInMAType );
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
  * @param optInTimePeriod
  * @param optInNbDevUp
  * @param optInNbDevDn
  * @param optInMAType
- * @param outBegIdx
- * @param outNBElement
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
  * @param outRealUpperBand
  * @param outRealMiddleBand
  * @param outRealLowerBand
- * @return
+ * @return Status
  */
-public RetCode bbands( int startIdx,
+  public RetCode bbands( int startIdx,
       int endIdx,
       double inReal[],
       int optInTimePeriod,
@@ -2543,20 +2554,22 @@ public RetCode bbands( int startIdx,
       }
       return RetCode.Success ;
    }
+
+
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
  * @param optInTimePeriod
  * @param optInNbDevUp
  * @param optInNbDevDn
  * @param optInMAType
- * @param outBegIdx
- * @param outNBElement
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
  * @param outRealUpperBand
  * @param outRealMiddleBand
  * @param outRealLowerBand
- * @return
+ * @return Status
  */
 public RetCode bbands( int startIdx,
       int endIdx,
@@ -2688,17 +2701,17 @@ public int betaLookback( int optInTimePeriod )
       return optInTimePeriod;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inReal0
- * @param inReal1
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal0 Tablica z wartościami (zbiór 1)
+    * @param inReal1 Tablica z wartościami (zbiór 2)
  * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode beta( int startIdx,
+   * @param outBegIdx początkowy indeks wyjściowy
+   * @param outNBElement liczba elementów wyjściowych
+   * @param outReal tablica na elementy wyjściowe
+   * @return Status
+   */
+  public RetCode beta( int startIdx,
       int endIdx,
       double inReal0[],
       double inReal1[],
@@ -2936,18 +2949,18 @@ public int bopLookback( )
       return 0;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode bop( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode bop( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -2977,18 +2990,18 @@ public RetCode bop( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode bop( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode bop( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3031,18 +3044,18 @@ public int cciLookback( int optInTimePeriod )
       return (optInTimePeriod-1);
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode cci( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInTimePeriod
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+ public RetCode cci( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -3110,18 +3123,18 @@ public RetCode cci( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode cci( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInTimePeriod
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode cci( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -3197,18 +3210,18 @@ public int cdl2CrowsLookback( )
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 2;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl2Crows( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode cdl2Crows( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3264,18 +3277,18 @@ public RetCode cdl2Crows( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl2Crows( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode cdl2Crows( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3338,19 +3351,20 @@ public int cdl3BlackCrowsLookback( )
    {
       return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 3;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3BlackCrows( int startIdx,
+
+  /**
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3BlackCrows( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3417,18 +3431,18 @@ public RetCode cdl3BlackCrows( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3BlackCrows( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3BlackCrows( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3503,18 +3517,18 @@ public int cdl3InsideLookback( )
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3Inside( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3Inside( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3579,18 +3593,18 @@ public RetCode cdl3Inside( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+ /**
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdl3Inside( int startIdx,
       int endIdx,
       float inOpen[],
@@ -3664,19 +3678,19 @@ public int cdl3LineStrikeLookback( )
    {
       return (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) + 3;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3LineStrike( int startIdx,
+ /**
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3LineStrike( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3749,19 +3763,20 @@ public RetCode cdl3LineStrike( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3LineStrike( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3LineStrike( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3843,18 +3858,18 @@ public int cdl3OutsideLookback( )
       return 3;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3Outside( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3Outside( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -3902,17 +3917,17 @@ public RetCode cdl3Outside( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdl3Outside( int startIdx,
       int endIdx,
       float inOpen[],
@@ -3970,17 +3985,17 @@ public int cdl3StarsInSouthLookback( )
          2;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdl3StarsInSouth( int startIdx,
       int endIdx,
       double inOpen[],
@@ -4080,18 +4095,18 @@ public RetCode cdl3StarsInSouth( int startIdx,
       return RetCode.Success ;
    	}
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3StarsInSouth( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3StarsInSouth( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4198,19 +4213,19 @@ public int cdl3WhiteSoldiersLookback( )
       return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) +
          2;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3WhiteSoldiers( int startIdx,
+  /**
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3WhiteSoldiers( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4318,19 +4333,19 @@ public RetCode cdl3WhiteSoldiers( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdl3WhiteSoldiers( int startIdx,
+ /**
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdl3WhiteSoldiers( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4452,20 +4467,21 @@ public int cdlAbandonedBabyLookback( double optInPenetration )
       return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) +
          2;
    }
+
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInPenetration
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlAbandonedBaby( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlAbandonedBaby( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4554,20 +4570,20 @@ public RetCode cdlAbandonedBaby( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInPenetration
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlAbandonedBaby( int startIdx,
+      /**
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlAbandonedBaby( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4666,18 +4682,18 @@ public int cdlAdvanceBlockLookback( )
          2;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlAdvanceBlock( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlAdvanceBlock( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -4817,19 +4833,19 @@ public RetCode cdlAdvanceBlock( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlAdvanceBlock( int startIdx,
+ /**
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlAdvanceBlock( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -4978,18 +4994,18 @@ public int cdlBeltHoldLookback( )
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlBeltHold( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlBeltHold( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5057,18 +5073,18 @@ public RetCode cdlBeltHold( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlBeltHold( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlBeltHold( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5144,18 +5160,18 @@ public int cdlBreakawayLookback( )
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 4;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlBreakaway( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlBreakaway( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5224,18 +5240,18 @@ public RetCode cdlBreakaway( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlBreakaway( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlBreakaway( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5312,17 +5328,17 @@ public int cdlClosingMarubozuLookback( )
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdlClosingMarubozu( int startIdx,
       int endIdx,
       double inOpen[],
@@ -5391,18 +5407,18 @@ public RetCode cdlClosingMarubozu( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlClosingMarubozu( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlClosingMarubozu( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5478,18 +5494,18 @@ public int cdlConcealBabysWallLookback( )
       return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 3;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlConcealBabysWall( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlConcealBabysWall( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5556,18 +5572,18 @@ public RetCode cdlConcealBabysWall( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlConcealBabysWall( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlConcealBabysWall( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5643,18 +5659,18 @@ public int cdlCounterAttackLookback( )
          1;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlCounterAttack( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlCounterAttack( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5722,18 +5738,18 @@ public RetCode cdlCounterAttack( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlCounterAttack( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlCounterAttack( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5813,20 +5829,22 @@ public int cdlDarkCloudCoverLookback( double optInPenetration )
          return -1;
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 1;
    }
+
+
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInPenetration
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlDarkCloudCover( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlDarkCloudCover( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -5886,19 +5904,19 @@ public RetCode cdlDarkCloudCover( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInPenetration
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlDarkCloudCover( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlDarkCloudCover( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -5965,18 +5983,19 @@ public int cdlDojiLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
    }
+
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdlDoji( int startIdx,
       int endIdx,
       double inOpen[],
@@ -6025,18 +6044,18 @@ public RetCode cdlDoji( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlDoji( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlDoji( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -6092,17 +6111,17 @@ public int cdlDojiStarLookback( )
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 1;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdlDojiStar( int startIdx,
       int endIdx,
       double inOpen[],
@@ -6164,19 +6183,20 @@ public RetCode cdlDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlDojiStar( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlDojiStar( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -6246,17 +6266,17 @@ public int cdlDragonflyDojiLookback( )
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdlDragonflyDoji( int startIdx,
       int endIdx,
       double inOpen[],
@@ -6318,17 +6338,17 @@ public RetCode cdlDragonflyDoji( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdlDragonflyDoji( int startIdx,
       int endIdx,
       float inOpen[],
@@ -6398,17 +6418,17 @@ public int cdlEngulfingLookback( )
       return 2;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdlEngulfing( int startIdx,
       int endIdx,
       double inOpen[],
@@ -6455,17 +6475,17 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
 public RetCode cdlEngulfing( int startIdx,
       int endIdx,
       float inOpen[],
@@ -6526,19 +6546,19 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          2;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInPenetration
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlEveningDojiStar( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlEveningDojiStar( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -6617,19 +6637,19 @@ public RetCode cdlEveningDojiStar( int startIdx,
       return RetCode.Success ;
    }
    /**
- * @param startIdx
- * @param endIdx
- * @param inOpen
- * @param inHigh
- * @param inLow
- * @param inClose
- * @param optInPenetration
- * @param outBegIdx
- * @param outNBElement
- * @param outInteger
- * @return
- */
-public RetCode cdlEveningDojiStar( int startIdx,
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
+  public RetCode cdlEveningDojiStar( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
