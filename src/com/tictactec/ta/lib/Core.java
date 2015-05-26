@@ -19510,6 +19510,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
    }
    //TODO: Ratajczak Artur do samego dołu ^^
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni okres czasu dla -DI
+    * @param optInTimePeriod Przedział czasu
+    * @return okres czasu
+    * @author Komentarz - Artur Ratajczak
+    */
    public int minusDILookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19521,6 +19527,28 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       else
          return 1;
    }
+   /**
+    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
+    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
+    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak 
+    */
    public RetCode minusDI( int startIdx,
       int endIdx,
       double inHigh[],
@@ -19668,6 +19696,28 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
+    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
+    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak 
+    */
    public RetCode minusDI( int startIdx,
       int endIdx,
       float inHigh[],
@@ -19816,6 +19866,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni okres czasu dla -DM
+    * @param optInTimePeriod Okres czasu
+    * @return okres czasu
+    * @author Komentarz - Artur Ratajczak
+    */
    public int minusDMLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19827,6 +19883,26 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       else
          return 1;
    }
+   /**
+    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
+    * -DM występuje kiedy spadek niższy minus aktualny spadej jest większy niż aktualny wzrost minus wzrost.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Pierwszy element wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode minusDM( int startIdx,
       int endIdx,
       double inHigh[],
@@ -19950,6 +20026,26 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
+    * -DM występuje kiedy spadek niższy minus aktualny spadej jest większy niż aktualny wzrost minus wzrost.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Pierwszy element wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode minusDM( int startIdx,
       int endIdx,
       float inHigh[],
@@ -20074,6 +20170,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda oblicza zakres dla tablicy
+    * @param optInTimePeriod Ilosc elementów w tablicy
+    * @return zakres tablicy
+    * @author Komentarz - Artur Ratajczak
+    */
    public int momLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20082,6 +20184,25 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return optInTimePeriod;
    }
+   /**
+    * Momentum jest miarą wzrostu i spadku cen. Na jego podstawie można wywnioskowac z jaką szybkością ceny rosną i spadają.
+    * Jest to różnica między ceną a ceną poprzednią.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z danymi
+    * @param optInTimePeriod Zakres tablicy
+    * @param outBegIdx Pierwszy indeks wyjściowy
+    * @param outNBElement Liczba elementów
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarze - Artur Ratajczak
+    */
    public RetCode mom( int startIdx,
       int endIdx,
       double inReal[],
@@ -20116,6 +20237,26 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   
+   /**
+    * Momentum jest miarą wzrostu i spadku cen. Na jego podstawie można wywnioskowac z jaką szybkością ceny rosną i spadają.
+    * Jest to różnica między ceną a ceną poprzednią.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z danymi
+    * @param optInTimePeriod Zakres tablicy
+    * @param outBegIdx Pierwszy indeks wyjściowy
+    * @param outNBElement Liczba elementów
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarze - Artur Ratajczak
+    */
    public RetCode mom( int startIdx,
       int endIdx,
       float inReal[],
@@ -20151,10 +20292,33 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca podstawową wartośc mnożenia
+    * @return 0
+    * @author Komentarz - Artur Ratajczak
+    */
    public int multLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda mnoży kolejne n-te elementy tablic. tab[n]*tab[n]
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+   
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Pierwsza tablica z danymi
+    * @param inReal1 Druga tablica z danymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode mult( int startIdx,
       int endIdx,
       double inReal0[],
@@ -20177,6 +20341,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda mnoży kolejne n-te elementy tablic. tab[n]*tab[n]
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Pierwsza tablica z danymi
+    * @param inReal1 Druga tablica z danymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode mult( int startIdx,
       int endIdx,
       float inReal0[],
@@ -20200,6 +20382,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni okres czasu dla NATR
+    * @param optInTimePeriod okres czasu
+    * @return odpowiedni okres czasu
+    * @author Komentarz - Artur Ratajczak
+    */
    public int natrLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20208,6 +20396,27 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Natr.ordinal()]) ;
    }
+   /**
+    * NATR jest to znormalizowany ATR wykożystywany do badań porównawczych.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @see atr
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia 
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode natr( int startIdx,
       int endIdx,
       double inHigh[],
@@ -20298,6 +20507,27 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outNBElement.value = outIdx;
       return retCode;
    }
+   /**
+    * NATR jest to znormalizowany ATR wykożystywany do badań porównawczych.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @see atr
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia 
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode natr( int startIdx,
       int endIdx,
       float inHigh[],
@@ -20389,10 +20619,34 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return retCode;
    }
    /* Generated */
+   /**
+    * Metoda zwraca domyślną wartośc OBV
+    * @return 0
+    * @author Komentarz - Artur Ratajczak
+    */
    public int obvLookback( )
    {
       return 0;
    }
+   /**
+    * On Balance Volume działa na zasadzie OBV=OBV poprzedni +/- volume. Kiedy zamknięcie jest większe od poprzedniego zamknięcia
+    * wtedy Volumee jest dodawany do całości, kiedy zamknięcie jest niższe od zamknięcia poprzedniego wtedy Volume jest odejmowany od całości.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+   
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami close
+    * @param inVolume Tablica z volume
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na lementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode obv( int startIdx,
       int endIdx,
       double inReal[],
@@ -20425,6 +20679,25 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * On Balance Volume działa na zasadzie OBV=OBV poprzedni +/- volume. Kiedy zamknięcie jest większe od poprzedniego zamknięcia
+    * wtedy Volumee jest dodawany do całości, kiedy zamknięcie jest niższe od zamknięcia poprzedniego wtedy Volume jest odejmowany od całości.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami close
+    * @param inVolume Tablica z volume
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na lementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode obv( int startIdx,
       int endIdx,
       float inReal[],
@@ -20458,6 +20731,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni okres czasu dla +DI
+    * @param optInTimePeriod  Okres czasu
+    * @return okres czasu
+    * @author Komentarze - Artur Ratajczak
+    */
    public int plusDILookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20469,6 +20748,28 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       else
          return 1;
    }
+   /**
+    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
+    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
+    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak 
+    */
    public RetCode plusDI( int startIdx,
       int endIdx,
       double inHigh[],
@@ -20616,6 +20917,28 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
+    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
+    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak 
+    */
    public RetCode plusDI( int startIdx,
       int endIdx,
       float inHigh[],
@@ -20764,6 +21087,13 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni okres czasu dla +DM
+    * @param optInTimePeriod Okres czasu
+    * @return okres czasu
+    * @author Komentarz - Artur Ratajczak
+    * 
+    */
    public int plusDMLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20775,6 +21105,26 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       else
          return 1;
    }
+   /**
+    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
+    * +DM występuje wtedy kiedy aktualny wzrost minus wzros jest większy niż spadek minus aktualny spadek.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Pierwszy element wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode plusDM( int startIdx,
       int endIdx,
       double inHigh[],
@@ -20898,6 +21248,26 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
+    * +DM występuje wtedy kiedy aktualny wzrost minus wzros jest większy niż spadek minus aktualny spadek.
+    *  <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Pierwszy element wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode plusDM( int startIdx,
       int endIdx,
       float inHigh[],
@@ -21022,6 +21392,14 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiednią ilośc elementów dla PPO
+    * @param optInFastPeriod Ilośc elementów dla 1 średniej
+    * @param optInSlowPeriod Ilośc elementów dla 2 średniej
+    * @param optInMAType Rodzaj średniej
+    * @return Ilośc elementów
+    * @author Komentarz - Artur Ratajczak
+    */
    public int ppoLookback( int optInFastPeriod,
       int optInSlowPeriod,
       MAType optInMAType )
@@ -21036,6 +21414,27 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return movingAverageLookback ( (((optInSlowPeriod) > (optInFastPeriod)) ? (optInSlowPeriod) : (optInFastPeriod)) , optInMAType );
    }
+   /**
+    * Price Oscillator, Percent - ukazuje procentową różnicę pomiędzy dwoma średnimi kroczącymi.
+    * Sygnał kupna jest generowany wtedy, kiedy wartośc oscylatora przekracza 0 a sygnał sprzedaży kiedy spada poniżej 0.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami na podstawie których zostanie policzona średnia
+    * @param optInFastPeriod Ilośc elementów dla średniej FMA
+    * @param optInSlowPeriod Ilośc elementów dla średniej SMA
+    * @param optInMAType Rodzaj średniej
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode ppo( int startIdx,
       int endIdx,
       double inReal[],
@@ -21072,6 +21471,27 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          1 );
       return retCode;
    }
+   /**
+    * Price Oscillator, Percent - ukazuje procentową różnicę pomiędzy dwoma średnimi kroczącymi.
+    * Sygnał kupna jest generowany wtedy, kiedy wartośc oscylatora przekracza 0 a sygnał sprzedaży kiedy spada poniżej 0.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami na podstawie których zostanie policzona średnia
+    * @param optInFastPeriod Ilośc elementów dla średniej FMA
+    * @param optInSlowPeriod Ilośc elementów dla średniej SMA
+    * @param optInMAType Rodzaj średniej
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode ppo( int startIdx,
       int endIdx,
       float inReal[],
@@ -21109,6 +21529,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return retCode;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla ROC
+    * @param optInTimePeriod Zakres liczenia
+    * @return Odpowiedni zakres liczenia
+    * @author  Komentarz - Artur Ratajczak
+    */
    public int rocLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -21117,6 +21543,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return optInTimePeriod;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie ((cena/poprzedniaCena)-1)*100
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode roc( int startIdx,
       int endIdx,
       double inReal[],
@@ -21159,6 +21603,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie ((cena/poprzedniaCena)-1)*100
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode roc( int startIdx,
       int endIdx,
       float inReal[],
@@ -21202,6 +21664,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla ROCP
+    * @param optInTimePeriod Zakres liczenia
+    * @return Odpowiedni zakres liczenia
+    * @author  Komentarz - Artur Ratajczak
+    */
    public int rocPLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -21210,6 +21678,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return optInTimePeriod;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie (cena-poprzedniaCena)/poprzedniaCena
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rocP( int startIdx,
       int endIdx,
       double inReal[],
@@ -21252,6 +21738,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie (cena-poprzedniaCena)/poprzedniaCena
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rocP( int startIdx,
       int endIdx,
       float inReal[],
@@ -21295,6 +21799,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla ROCR
+    * @param optInTimePeriod Zakres liczenia
+    * @return Odpowiedni zakres liczenia
+    * @author  Komentarz - Artur Ratajczak
+    */
    public int rocRLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -21303,6 +21813,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return optInTimePeriod;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rocR( int startIdx,
       int endIdx,
       double inReal[],
@@ -21345,6 +21873,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rocR( int startIdx,
       int endIdx,
       float inReal[],
@@ -21388,6 +21934,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla ROCR100
+    * @param optInTimePeriod Zakres liczenia
+    * @return Odpowiedni zakres liczenia
+    * @author  Komentarz - Artur Ratajczak
+    */
    public int rocR100Lookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -21396,6 +21948,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return optInTimePeriod;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)*100
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rocR100( int startIdx,
       int endIdx,
       double inReal[],
@@ -21438,6 +22008,24 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)*100
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    *  </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode rocR100( int startIdx,
       int endIdx,
       float inReal[],
@@ -21505,9 +22093,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
     *   <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -21660,9 +22248,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
     *   <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -22623,8 +23211,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartośc sine (sinusa)
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
     *  </ul>
     * @param startIdx Indeks początkowy
@@ -22661,8 +23249,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartośc sine (sinusa)
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
     *  </ul>
     * @param startIdx Indeks początkowy
@@ -22709,8 +23297,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
     *  </ul>
     * @param startIdx Indeks początkowy
@@ -22747,8 +23335,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
     *  </ul>
     * @param startIdx Indeks początkowy
@@ -22800,9 +23388,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
     *   <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -22877,9 +23465,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
     *   <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -22964,8 +23552,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda liczy pierwiastek z każdego elementu wejściowego.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  
     *  </ul>
     * @param startIdx Indeks początkowy
@@ -23002,8 +23590,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda liczy pierwiastek z każdego elementu wejściowego.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  
     *  </ul>
     * @param startIdx Indeks początkowy
@@ -23063,9 +23651,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -23174,9 +23762,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -23323,9 +23911,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
 	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
 	* <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -23502,9 +24090,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
 	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
 	* <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -23692,9 +24280,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
 	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
 	* <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -23858,9 +24446,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
 	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
 	* <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -24042,9 +24630,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Indeks ten może byc interpretowany na kilka sposobów. 
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -24153,9 +24741,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Indeks ten może byc interpretowany na kilka sposobów. 
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -24267,8 +24855,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza różnice między n-tymi elementami zbiorów.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -24306,8 +24894,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza różnice między n-tymi elementami zbiorów.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -24360,9 +24948,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza sumę z danego przedziału.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24425,9 +25013,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza sumę z danego przedziału.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24514,9 +25102,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24654,9 +25242,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24801,8 +25389,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartośc funkcji tangent (tangens) 
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24838,8 +25426,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartośc funkcji tangent (tangens) 
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24885,8 +25473,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24922,8 +25510,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -24977,9 +25565,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -25072,9 +25660,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -25177,8 +25765,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     *Jest to podstawowy wynik do określenia normalnego zakresu handlu zasobami.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -25241,8 +25829,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     *Jest to podstawowy wynik do określenia normalnego zakresu handlu zasobami.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -25320,9 +25908,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -25461,9 +26049,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -25619,9 +26207,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -25723,9 +26311,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -25843,9 +26431,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -25917,9 +26505,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
     *  <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -25999,8 +26587,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza Typical Price jest to średnia z cen maksymalnych, minimalnych i zamknięcia. Srednia ta używana jest do obliczania kilku innych wskaźników.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Startowy indeks.
     * @param endIdx Końcowy indeks
@@ -26042,8 +26630,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza Typical Price jest to średnia z cen maksymalnych, minimalnych i zamknięcia. Srednia ta używana jest do obliczania kilku innych wskaźników.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Startowy indeks.
     * @param endIdx Końcowy indeks
@@ -26118,9 +26706,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Przebicie w dół poziomy wykupienia powoduje wygenerowanie sygnału sprzedaży, przebicie w górę poziomy wyprzedania powoduje wygenerowanie sygnału kupna.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Startowy indeks
     * @param endIdx Końcowy indeks
@@ -26252,9 +26840,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Przebicie w dół poziomy wykupienia powoduje wygenerowanie sygnału sprzedaży, przebicie w górę poziomy wyprzedania powoduje wygenerowanie sygnału kupna.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
     *  </ul>
     * @param startIdx Startowy indeks
     * @param endIdx Końcowy indeks
@@ -26404,9 +26992,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
     * <hr>
     * <ul>
-    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.
-    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.
-    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.
+    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
+    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
+    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
     * </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy
@@ -26499,9 +27087,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
     * <hr>
     * <ul>
-    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.
-    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.
-    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.
+    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
+    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
+    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
     * </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy
@@ -26605,8 +27193,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Jest stosowany do obliczeń wielu wskaźników bądź ich wygładzania. 
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
     * @param startIdx Startowy indeks w tablicy.
     * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
@@ -26649,8 +27237,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Jest stosowany do obliczeń wielu wskaźników bądź ich wygładzania. 
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  </ul>
   * @param startIdx Startowy indeks w tablicy.
     * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
@@ -26695,8 +27283,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * <hr>
     * Wyjątki:
     * <ul>
-    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 14.
-    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;
+    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 14.</li>
+    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
     * </ul>
     * @param optInTimePeriod Liczba elementów występująca w przedziale
     * @return Zakres przedziału wejściowego.
@@ -26715,9 +27303,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Jest oscylatorem, który pokazuje zależność obecnej ceny zamknięcia w relacji do maksymalnej i minimalnej ceny z poprzednich N dni.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
     *  </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
@@ -26832,9 +27420,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Jest oscylatorem, który pokazuje zależność obecnej ceny zamknięcia w relacji do maksymalnej i minimalnej ceny z poprzednich N dni.
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
     *  </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
@@ -26951,8 +27539,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * <hr>
     * Wyjątki:
     * <ul>
-    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 30.
-    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;
+    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 30.</li>
+    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
     * </ul>
     * @param optInTimePeriod Liczba elementów występująca w przedziale
     * @return Zakres przedziału wejściowego.
@@ -26971,9 +27559,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * WMA liczy wagi dla każdej wartości w serii. Nowszym wartością są przypisywane większe wagi.
     * Metoda oblicza WMA dla zestawu danych podanych w postaci tablicy double[]<hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
     *  </ul>
     * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
     * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)
@@ -27054,9 +27642,9 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
     * Metoda oblicza WMA dla zestawu danych podanych w postaci tablicy float[]
     * <hr>
     * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
     *  </ul>
     * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
     * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)

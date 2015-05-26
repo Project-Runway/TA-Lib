@@ -33,3 +33,9 @@ Simple Moving Average (średnia arytmetyczna) - to iloraz sumy n liczb i n (gdzi
 Hyperbolic sine (sinh) - sinus hiperboliczny.
 Sine (sin) - sinus.
 Relative Strength Index (wskaźnik siły) - określa wewnętrzną siłę akcji ( jej trendu ) i zależy od zmian następujących w cenach i określa jakościowo momentum cen. Ponieważ zawiera w sobie czynnik ważący jest ważoną średnią ruchomą. Może przyjmować wartości od 0 do 100. 
+Directional Movement Index  - Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
+Momentum - jest miarą wzrostu i spadku cen. Obliczany jest na podstawie róznicy ceny aktualnej a poprzedniej.
+Multiple - mnożenie.
+On Balance Volume - to wynik następującego działania. OBV = OBV poprzednie +/- volume.
+Price Oscillator, Percent - ukazuje procentową różnicę między dwoma średnimi kroczącymi.
+Rate of Change - prędkość zmian cen. W programi liczona na kilka sposobów.
