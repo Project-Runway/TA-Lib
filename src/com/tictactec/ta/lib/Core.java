@@ -6728,7 +6728,6 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
-   // TODO: Koniec Stachura Bartlomiej
    public int cdlEveningStarLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
@@ -6809,6 +6808,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   // TODO: Koniec Stachura Bartlomiej
+   // TODO: Start Lukasz Straszewski
    public RetCode cdlEveningStar( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12603,6 +12604,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   // TODO: Koniec Lukasz Straszewski
+   // TODO: Start Pawel Majka
    public int ceilLookback( )
    {
       return 0;
@@ -19508,7 +19511,8 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   //TODO: Ratajczak Artur do samego dołu ^^
+   // TODO: Koniec Pawel Majka
+   // TODO: Start Ratajczak Artur
    /* Generated */
    /**
     * Metoda zwraca odpowiedni okres czasu dla -DI
@@ -27720,6 +27724,7 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /* Generated */
+   // TODO: Koniec Artur Ratajczak
    /**** END GENCODE SECTION 1 - DO NOT DELETE THIS LINE ****/
    
 }
