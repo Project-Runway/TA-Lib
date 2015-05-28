@@ -332,8 +332,7 @@ public class Core {
 
    /**
     * Chaikin Accumulation Distribution Line
-    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">http://google.com</a>
-    *
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">site</a>
     * <hr>
     * <ul>
     * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
@@ -389,8 +388,7 @@ public class Core {
    }
    /**
     * Chaikin Accumulation Distribution Line
-    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">http://google.com</a>
-    *
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">site</a>
     * <hr>
     * <ul>
     * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
@@ -407,7 +405,7 @@ public class Core {
   	* @param outReal tablica na elementy wyjściowe
   	* @return Status
   	*/
-  public RetCode ad( int startIdx,
+   public RetCode ad( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -449,11 +447,17 @@ public class Core {
     * Metoda zwraca domyślną wartość add
     * @return 0
     */
-  public int addLookback( )
+   public int addLookback( )
    {
       return 0;
    }
   /**
+   * Dodawanie arytmetyczne wektora
+   * <hr>
+   * <ul>
+   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
    * @param inReal0 Tablica z wartościami (zbiór 1)
@@ -486,6 +490,12 @@ public class Core {
       return RetCode.Success ;
    }
    /**
+     * Dodawanie arytmetyczne wektora
+     * <hr>
+     * <ul>
+     * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+     * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+     * </ul>
      * @param startIdx indeks startowy
      * @param endIdx indeks końcowy
      * @param inReal0 Tablica z wartościami (zbiór 1)
@@ -495,7 +505,7 @@ public class Core {
      * @param outReal tablica na elementy wyjściowe
      * @return Status
      */
-  public RetCode add( int startIdx,
+    public RetCode add( int startIdx,
       int endIdx,
       float inReal0[],
       float inReal1[],
@@ -519,11 +529,11 @@ public class Core {
    }
    /* Generated */
    /**
-   * @param optInFastPeriod
-   * @param optInSlowPeriod
-   * @return
-   */
-   // TODO: 1dzien
+    * Metoda zwraca odpowiedni zakres dla adOSC
+    * @param optInFastPeriod
+    * @param optInSlowPeriod
+    * @return odpowiedni zakres liczbowy
+    */
   public int adOscLookback( int optInFastPeriod,
       int optInSlowPeriod )
    {
@@ -542,20 +552,28 @@ public class Core {
          slowestPeriod = optInFastPeriod;
       return emaLookback ( slowestPeriod );
    }
-   /**
- * @param startIdx indeks startowy
- * @param endIdx indeks końcowy
- * @param inHigh tablica cen maksymalnych
- * @param inLow tablica cen minimalnych
- * @param inClose tablica cen zamknięcia
- * @param inVolume tablica z warościami do weryfikacji wymagań kosztu
- * @param optInFastPeriod
- * @param optInSlowPeriod
- * @param outBegIdx początkowy indeks wyjściowy
- * @param outNBElement liczba elementów wyjściowych
- * @param outReal tablica na elementy wyjściowe
- * @return Status
- */
+  /**
+   * Chaikin A/D Oscillator
+   * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator">site</a>
+   * <hr>
+   * <ul>
+   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+   * </ul>
+   * @param startIdx indeks startowy
+   * @param endIdx indeks końcowy
+   * @param inHigh tablica cen maksymalnych
+   * @param inLow tablica cen minimalnych
+   * @param inClose tablica cen zamknięcia
+   * @param inVolume tablica z warościami do weryfikacji wymagań kosztu
+   * @param optInFastPeriod
+   * @param optInSlowPeriod
+   * @param outBegIdx początkowy indeks wyjściowy
+   * @param outNBElement liczba elementów wyjściowych
+   * @param outReal tablica na elementy wyjściowe
+   * @return Status
+   */
 public RetCode adOsc( int startIdx,
       int endIdx,
       double inHigh[],
@@ -626,7 +644,15 @@ public RetCode adOsc( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
- /**
+/**
+ * Chaikin A/D Oscillator
+ * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator">site</a>
+ * <hr>
+ * <ul>
+ * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+ * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ * </ul>
  * @param startIdx indeks startowy
  * @param endIdx indeks końcowy
  * @param inHigh tablica cen maksymalnych
@@ -712,10 +738,11 @@ public RetCode adOsc( int startIdx,
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @return
- */
-public int adxLookback( int optInTimePeriod )
+    * Metoda zwraca odpowiedni zakres dla ADX
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
+  public int adxLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -723,13 +750,21 @@ public int adxLookback( int optInTimePeriod )
          return -1;
       return (2 * optInTimePeriod) + (this.unstablePeriod[FuncUnstId.Adx.ordinal()]) - 1;
    }
-   /**
+  /**
+   * Average Directional Index
+   * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
+   * <hr>
+   * <ul>
+   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+   * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
    * @param inHigh tablica cen maksymalnych
    * @param inLow tablica cen minimalnych
    * @param inClose tablica cen zamknięcia
-   * @param optInTimePeriod
+   * @param optInTimePeriod liczba okresu (2 do 100000)
    * @param outBegIdx początkowy indeks wyjściowy
    * @param outNBElement liczba elementów wyjściowych
    * @param outReal tablica na elementy wyjściowe
@@ -909,18 +944,26 @@ public int adxLookback( int optInTimePeriod )
       return RetCode.Success ;
    }
   /**
+   * Average Directional Index
+   * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
+   * <hr>
+   * <ul>
+   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+   * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
    * @param inHigh tablica cen maksymalnych
    * @param inLow tablica cen minimalnych
    * @param inClose tablica cen zamknięcia
-   * @param optInTimePeriod
+   * @param optInTimePeriod liczba okresu (2 do 100000)
    * @param outBegIdx początkowy indeks wyjściowy
    * @param outNBElement liczba elementów wyjściowych
    * @param outReal tablica na elementy wyjściowe
    * @return Status
    */
-public RetCode adx( int startIdx,
+  public RetCode adx( int startIdx,
       int endIdx,
       float inHigh[],
       float inLow[],
@@ -1095,10 +1138,11 @@ public RetCode adx( int startIdx,
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @return
- */
-public int adxrLookback( int optInTimePeriod )
+    * Metoda zwraca odpowiedni zakres dla adxr
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
+  public int adxrLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -1110,17 +1154,25 @@ public int adxrLookback( int optInTimePeriod )
          return 3;
    }
    /**
-   * @param startIdx indeks startowy
-   * @param endIdx indeks końcowy
-   * @param inHigh tablica cen maksymalnych
-   * @param inLow tablica cen minimalnych
-   * @param inClose tablica cen zamknięcia
-   * @param optInTimePeriod
-   * @param outBegIdx początkowy indeks wyjściowy
-   * @param outNBElement liczba elementów wyjściowych
-   * @param outReal tablica na elementy wyjściowe
-   * @return Status
-   */
+    * Average Directional Index 
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode adxr( int startIdx,
       int endIdx,
       double inHigh[],
@@ -1170,17 +1222,25 @@ public int adxrLookback( int optInTimePeriod )
       return RetCode.Success ;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inHigh tablica cen maksymalnych
-     * @param inLow tablica cen minimalnych
-     * @param inClose tablica cen zamknięcia
-     * @param optInTimePeriod
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
+    * Average Directional Index 
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode adxr( int startIdx,
       int endIdx,
       float inHigh[],
@@ -1231,11 +1291,12 @@ public int adxrLookback( int optInTimePeriod )
    }
    /* Generated */
    /**
-     * @param optInFastPeriod
-     * @param optInSlowPeriod
-     * @param optInMAType
-     * @return
-     */
+    * Metoda zwraca odpowiedni zakres dla apo
+    * @param optInFastPeriod
+    * @param optInSlowPeriod
+    * @param optInMAType
+    * @return odpowiedni zakres liczbowy
+    */
   public int apoLookback( int optInFastPeriod,
       int optInSlowPeriod,
       MAType optInMAType )
@@ -1251,18 +1312,27 @@ public int adxrLookback( int optInTimePeriod )
       return movingAverageLookback ( (((optInSlowPeriod) > (optInFastPeriod)) ? (optInSlowPeriod) : (optInFastPeriod)) , optInMAType );
    }
    /**
+    * Absolute Price Oscillator
+    * Wskaźnik (znany jako MACD) na podstawie róźnicy pomiędzy dwoma średnimi krączącymi 
+    * @see <a href="http://www.investopedia.com/terms/p/ppo.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inReal tablica z wartosciami do policzenia
     * @param optInFastPeriod
     * @param optInSlowPeriod
-    * @param optInMAType
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
     * @param outBegIdx początkowy indeks wyjściowy
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
     */
-public RetCode apo( int startIdx,
+  public RetCode apo( int startIdx,
       int endIdx,
       double inReal[],
       int optInFastPeriod,
@@ -1313,7 +1383,7 @@ public RetCode apo( int startIdx,
     * @param doPercentageOutput
     * @return Status
     */
-RetCode TA_INT_PO( int startIdx,
+  RetCode TA_INT_PO( int startIdx,
       int endIdx,
       double inReal[],
       int optInFastPeriod,
@@ -1384,17 +1454,26 @@ RetCode TA_INT_PO( int startIdx,
       return retCode;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inReal tablica z wartosciami do policzenia
-     * @param optInFastPeriod
-     * @param optInSlowPeriod
-     * @param optInMAType
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
+    * Absolute Price Oscillator
+    * Wskaźnik (znany jako MACD) na podstawie róźnicy pomiędzy dwoma średnimi krączącymi 
+    * @see <a href="http://www.investopedia.com/terms/p/ppo.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param optInFastPeriod
+    * @param optInSlowPeriod
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode apo( int startIdx,
       int endIdx,
       float inReal[],
@@ -1446,7 +1525,7 @@ RetCode TA_INT_PO( int startIdx,
      * @param doPercentageOutput
      * @return Status
      */
-RetCode TA_INT_PO( int startIdx,
+  RetCode TA_INT_PO( int startIdx,
       int endIdx,
       float inReal[],
       int optInFastPeriod,
@@ -1517,10 +1596,11 @@ RetCode TA_INT_PO( int startIdx,
       return retCode;
    }
    /* Generated */
-   /**
-   * @param optInTimePeriod
-   * @return
-   */
+   /** 
+    * Metoda zwraca odpowiedni zakres dla aroon
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
   public int aroonLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -1529,12 +1609,20 @@ RetCode TA_INT_PO( int startIdx,
          return -1;
       return optInTimePeriod;
    }
-   /**
+/**
+ * Aroon
+ * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon">site</a>
+ * <hr>
+ * <ul>
+ * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li> * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ * </ul>
  * @param startIdx indeks startowy
  * @param endIdx indeks końcowy
  * @param inHigh tablica cen maksymalnych
  * @param inLow tablica cen minimalnych
- * @param optInTimePeriod
+ * @param optInTimePeriod liczba okresu (2 do 100000)
  * @param outBegIdx początkowy indeks wyjściowy
  * @param outNBElement liczba elementów wyjściowych
  * @param outAroonDown
@@ -1632,12 +1720,20 @@ public RetCode aroon( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
-   /**
+/**
+ * Aroon
+ * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon">site</a>
+ * <hr>
+ * <ul>
+ * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li> * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ * </ul>
  * @param startIdx indeks startowy
  * @param endIdx indeks końcowy
  * @param inHigh tablica cen maksymalnych
  * @param inLow tablica cen minimalnych
- * @param optInTimePeriod
+ * @param optInTimePeriod liczba okresu (2 do 100000)
  * @param outBegIdx początkowy indeks wyjściowy
  * @param outNBElement liczba elementów wyjściowych
  * @param outAroonDown
@@ -1737,10 +1833,11 @@ public RetCode aroon( int startIdx,
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @return
- */
-public int aroonOscLookback( int optInTimePeriod )
+    * Metoda zwraca odpowiedni zakres dla aroonOSC
+    * @param optInTimePeriod
+    * @return odpowiedni zakres liczbowy
+    */
+  public int aroonOscLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -1749,17 +1846,25 @@ public int aroonOscLookback( int optInTimePeriod )
       return optInTimePeriod;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inHigh tablica cen maksymalnych
-     * @param inLow tablica cen minimalnych
-     * @param optInTimePeriod
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
-public RetCode aroonOsc( int startIdx,
+    * Aroon Oscillator
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon_oscillator">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode aroonOsc( int startIdx,
       int endIdx,
       double inHigh[],
       double inLow[],
@@ -1850,16 +1955,24 @@ public RetCode aroonOsc( int startIdx,
       return RetCode.Success ;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inHigh tablica cen maksymalnych
-     * @param inLow tablica cen minimalnych
-     * @param optInTimePeriod
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
+    * Aroon Oscillator
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon_oscillator">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode aroonOsc( int startIdx,
       int endIdx,
       float inHigh[],
@@ -1952,22 +2065,29 @@ public RetCode aroonOsc( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
-public int asinLookback( )
+    * Zwraca domyślną wartość dla asin
+    * @return 0
+    */
+  public int asinLookback( )
    {
       return 0;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inReal tablica z wartosciami do policzenia
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
-public RetCode asin( int startIdx,
+    * Obliczanie arytmetyczne wektora funkcją asin
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode asin( int startIdx,
       int endIdx,
       double inReal[],
       MInteger outBegIdx,
@@ -1989,14 +2109,20 @@ public RetCode asin( int startIdx,
       return RetCode.Success ;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inReal tablica z wartosciami do policzenia
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
+    * Obliczanie arytmetyczne wektora funkcją asin
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal tablica z wartosciami do policzenia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode asin( int startIdx,
       int endIdx,
       float inReal[],
@@ -2020,13 +2146,20 @@ public RetCode asin( int startIdx,
    }
    /* Generated */
    /**
-    * @return Zwraca domyślną wartość dla ATAN
+    * Zwraca domyślną wartość dla atan
+    * @return 0
     */
   public int atanLookback( )
    {
       return 0;
    }
    /**
+    * Obliczanie arytmetyczne wektora funkcją atan
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inReal tablica z wartosciami do policzenia
@@ -2057,6 +2190,12 @@ public RetCode atan( int startIdx,
       return RetCode.Success ;
    }
    /**
+    * Obliczanie arytmetyczne wektora funkcją atan
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inReal tablica z wartosciami do policzenia
@@ -2088,10 +2227,11 @@ public RetCode atan( int startIdx,
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @return
- */
-public int atrLookback( int optInTimePeriod )
+    * Metoda zwraca odpowiedni zakres dla atr
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
+  public int atrLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 14;
@@ -2100,17 +2240,25 @@ public int atrLookback( int optInTimePeriod )
       return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Atr.ordinal()]) ;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inHigh tablica cen maksymalnych
-     * @param inLow tablica cen minimalnych
-     * @param inClose tablica cen zamknięcia
-     * @param optInTimePeriod
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
+    * Average True Range
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode atr( int startIdx,
       int endIdx,
       double inHigh[],
@@ -2193,17 +2341,25 @@ public int atrLookback( int optInTimePeriod )
       return retCode;
    }
    /**
-     * @param startIdx indeks startowy
-     * @param endIdx indeks końcowy
-     * @param inHigh tablica cen maksymalnych
-     * @param inLow tablica cen minimalnych
-     * @param inClose tablica cen zamknięcia
-     * @param optInTimePeriod
-     * @param outBegIdx początkowy indeks wyjściowy
-     * @param outNBElement liczba elementów wyjściowych
-     * @param outReal tablica na elementy wyjściowe
-     * @return Status
-     */
+    * Average True Range
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode atr( int startIdx,
       int endIdx,
       float inHigh[],
@@ -2287,7 +2443,7 @@ public int atrLookback( int optInTimePeriod )
    }
    /* Generated */
    /**
-    * Zwraca domyślną wartość dla  -----
+    * Zwraca domyślną wartość dla avgPrice
     * @return 0  
     */
   public int avgPriceLookback( )
@@ -2295,6 +2451,13 @@ public int atrLookback( int optInTimePeriod )
       return 0;
    }
    /**
+    * Average Price
+    * @see <a href="http://www.investopedia.com/terms/a/averageprice.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -2334,6 +2497,13 @@ public int atrLookback( int optInTimePeriod )
       return RetCode.Success ;
    }
    /**
+    * Average Price
+    * @see <a href="http://www.investopedia.com/terms/a/averageprice.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -2374,12 +2544,13 @@ public int atrLookback( int optInTimePeriod )
    }
    /* Generated */
    /**
-     * @param optInTimePeriod
-     * @param optInNbDevUp
-     * @param optInNbDevDn
-     * @param optInMAType
-     * @return
-     */
+    * Metoda zwraca odpowiedni zakres dla bbands
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param optInNbDevUp odchylenie mnożnik dla górnego pasma (TA_REAL_MIN do TA_REAL_MAX)
+    * @param optInNbDevDn odchylenie mnożnik dla dolnego pasma (TA_REAL_MIN do TA_REAL_MAX)
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @return odpowiedni zakres liczbowy
+    */
   public int bbandsLookback( int optInTimePeriod,
       double optInNbDevUp,
       double optInNbDevDn,
@@ -2400,20 +2571,28 @@ public int atrLookback( int optInTimePeriod )
       return movingAverageLookback ( optInTimePeriod, optInMAType );
    }
    /**
+    * Bollinger Bands
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:bollinger_bands">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inReal tablica z wartosciami do policzenia
- * @param optInTimePeriod
- * @param optInNbDevUp
- * @param optInNbDevDn
- * @param optInMAType
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param optInNbDevUp odchylenie mnożnik dla górnego pasma (TA_REAL_MIN do TA_REAL_MAX)
+    * @param optInNbDevDn odchylenie mnożnik dla dolnego pasma (TA_REAL_MIN do TA_REAL_MAX)
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
     * @param outBegIdx początkowy indeks wyjściowy
     * @param outNBElement liczba elementów wyjściowych
- * @param outRealUpperBand
- * @param outRealMiddleBand
- * @param outRealLowerBand
- * @return Status
- */
+    * @param outRealUpperBand
+    * @param outRealMiddleBand
+    * @param outRealLowerBand
+    * @return Status
+    */
   public RetCode bbands( int startIdx,
       int endIdx,
       double inReal[],
@@ -2556,22 +2735,30 @@ public int atrLookback( int optInTimePeriod )
    }
 
 
-   /**
+    /**
+    * Bollinger Bands
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:bollinger_bands">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inReal tablica z wartosciami do policzenia
- * @param optInTimePeriod
- * @param optInNbDevUp
- * @param optInNbDevDn
- * @param optInMAType
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @param optInNbDevUp odchylenie mnożnik dla górnego pasma (TA_REAL_MIN do TA_REAL_MAX)
+    * @param optInNbDevDn odchylenie mnożnik dla dolnego pasma (TA_REAL_MIN do TA_REAL_MAX)
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
     * @param outBegIdx początkowy indeks wyjściowy
     * @param outNBElement liczba elementów wyjściowych
- * @param outRealUpperBand
- * @param outRealMiddleBand
- * @param outRealLowerBand
- * @return Status
- */
-public RetCode bbands( int startIdx,
+    * @param outRealUpperBand
+    * @param outRealMiddleBand
+    * @param outRealLowerBand
+    * @return Status
+    */
+  public RetCode bbands( int startIdx,
       int endIdx,
       float inReal[],
       int optInTimePeriod,
@@ -2689,10 +2876,11 @@ public RetCode bbands( int startIdx,
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @return
- */
-public int betaLookback( int optInTimePeriod )
+    * Metoda zwraca odpowiedni zakres dla beta
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
+  public int betaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
          optInTimePeriod = 5;
@@ -2701,16 +2889,24 @@ public int betaLookback( int optInTimePeriod )
       return optInTimePeriod;
    }
    /**
+    * Beta 
+    * @see <a href="http://ycharts.com/glossary/terms/beta">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inReal0 Tablica z wartościami (zbiór 1)
     * @param inReal1 Tablica z wartościami (zbiór 2)
- * @param optInTimePeriod
-   * @param outBegIdx początkowy indeks wyjściowy
-   * @param outNBElement liczba elementów wyjściowych
-   * @param outReal tablica na elementy wyjściowe
-   * @return Status
-   */
+    * @param optInTimePeriod
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
   public RetCode beta( int startIdx,
       int endIdx,
       double inReal0[],
@@ -2820,18 +3016,26 @@ public int betaLookback( int optInTimePeriod )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
- * @param startIdx
- * @param endIdx
- * @param inReal0
- * @param inReal1
- * @param optInTimePeriod
- * @param outBegIdx
- * @param outNBElement
- * @param outReal
- * @return
- */
-public RetCode beta( int startIdx,
+ /**
+    * Beta 
+    * @see <a href="http://ycharts.com/glossary/terms/beta">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inReal0 Tablica z wartościami (zbiór 1)
+    * @param inReal1 Tablica z wartościami (zbiór 2)
+    * @param optInTimePeriod
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
+  public RetCode beta( int startIdx,
       int endIdx,
       float inReal0[],
       float inReal1[],
@@ -2941,14 +3145,22 @@ public RetCode beta( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
-   /**
- * @return
- */
-public int bopLookback( )
+   /** 
+    * Zwraca domyślną wartość dla bop
+    * @return 0
+    */
+  public int bopLookback( )
    {
       return 0;
    }
    /**
+    * Balance Of Power
+    * @see <a href="http://finance.yahoo.com/news/balance-power-tilting-back-toward-100000395.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -2990,6 +3202,13 @@ public int bopLookback( )
       return RetCode.Success ;
    }
    /**
+    * Balance Of Power
+    * @see <a href="http://finance.yahoo.com/news/balance-power-tilting-back-toward-100000395.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3032,9 +3251,10 @@ public int bopLookback( )
    }
    /* Generated */
    /**
- * @param optInTimePeriod
- * @return
- */
+    * Metoda zwraca odpowiedni zakres dla cci
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
 public int cciLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -3044,6 +3264,16 @@ public int cciLookback( int optInTimePeriod )
       return (optInTimePeriod-1);
    }
    /**
+    * Commodity Channel Index
+    * Mierzy odchylenie ceny danego papieru wartościowego od jej średniej wartości ujętej statystycznie. 
+    * Gdy CCI osiąga wysokie wartości, oznacza to iż bieżące wartości cen są niestandardowo wysokie w porównaniu do cen średnich. 
+    * Niskie wartości CCI oznaczają z kolei iż bieżące ceny w porównaniu do cen średnich są niestandardowo niskie.
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inHigh tablica cen maksymalnych
@@ -3122,7 +3352,17 @@ public int cciLookback( int optInTimePeriod )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
+    /**
+    * Commodity Channel Index
+    * Mierzy odchylenie ceny danego papieru wartościowego od jej średniej wartości ujętej statystycznie. 
+    * Gdy CCI osiąga wysokie wartości, oznacza to iż bieżące wartości cen są niestandardowo wysokie w porównaniu do cen średnich. 
+    * Niskie wartości CCI oznaczają z kolei iż bieżące ceny w porównaniu do cen średnich są niestandardowo niskie.
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inHigh tablica cen maksymalnych
@@ -3203,13 +3443,22 @@ public int cciLookback( int optInTimePeriod )
    }
    /* Generated */
    /**
- * @return
- */
-public int cdl2CrowsLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdl2Crows
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdl2CrowsLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 2;
    }
    /**
+    * Two Crows
+    * @see <a href="http://thepatternsite.com/TwoCrows.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3277,6 +3526,14 @@ public int cdl2CrowsLookback( )
       return RetCode.Success ;
    }
    /**
+    * Two Crows
+    * @see <a href="http://thepatternsite.com/TwoCrows.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3345,14 +3602,23 @@ public int cdl2CrowsLookback( )
    }
    /* Generated */
    /**
- * @return
- */
-public int cdl3BlackCrowsLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdl3BlackCrows
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdl3BlackCrowsLookback( )
    {
       return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 3;
    }
 
   /**
+    * Three Black Crows 
+    * @see <a href="http://www.investopedia.com/terms/t/three_black_crows.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3430,7 +3696,16 @@ public int cdl3BlackCrowsLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+
    /**
+    * Three Black Crows 
+    * @see <a href="http://www.investopedia.com/terms/t/three_black_crows.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3510,13 +3785,21 @@ public int cdl3BlackCrowsLookback( )
    }
    /* Generated */
    /**
- * @return
- */
+    * Metoda zwraca odpowiedni zakres dla cdl3Inside
+    * @return odpowiedni zakres liczbowy
+    */
 public int cdl3InsideLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
    }
    /**
+    * Three Inside Up/Down
+    * @see <a href="http://en.tradimo.com/learn/technical-analysis/candlesticks/three-inside-up-and-down/">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3593,7 +3876,15 @@ public int cdl3InsideLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
- /**
+
+   /**
+    * Three Inside Up/Down
+    * @see <a href="http://en.tradimo.com/learn/technical-analysis/candlesticks/three-inside-up-and-down/">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3605,7 +3896,7 @@ public int cdl3InsideLookback( )
     * @param outInteger
     * @return Status
     */
-public RetCode cdl3Inside( int startIdx,
+  public RetCode cdl3Inside( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3672,13 +3963,21 @@ public RetCode cdl3Inside( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
-public int cdl3LineStrikeLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdl3LineStrike
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdl3LineStrikeLookback( )
    {
       return (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) + 3;
    }
- /**
+   /**
+    * Three-Line Strike
+    * @see <a href="http://thepatternsite.com/ThreeLineStrikeBear.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3765,6 +4064,13 @@ public int cdl3LineStrikeLookback( )
    }
 
    /**
+    * Three-Line Strike
+    * @see <a href="http://thepatternsite.com/ThreeLineStrikeBear.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3851,13 +4157,21 @@ public int cdl3LineStrikeLookback( )
    }
    /* Generated */
    /**
- * @return
- */
-public int cdl3OutsideLookback( )
+    * Zwraca domyślną wartość dla cdl3Outside
+    * @return 3
+    */
+  public int cdl3OutsideLookback( )
    {
       return 3;
    }
    /**
+    * Three Outside Up/Down
+    * @see <a href="http://thepatternsite.com/ThreeOutsideUp.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3917,6 +4231,13 @@ public int cdl3OutsideLookback( )
       return RetCode.Success ;
    }
    /**
+    * Three Outside Up/Down
+    * @see <a href="http://thepatternsite.com/ThreeOutsideUp.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -3928,7 +4249,7 @@ public int cdl3OutsideLookback( )
     * @param outInteger
     * @return Status
     */
-public RetCode cdl3Outside( int startIdx,
+  public RetCode cdl3Outside( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -3977,14 +4298,22 @@ public RetCode cdl3Outside( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
+    * Metoda zwraca odpowiedni zakres dla cdl3StarsInSouth
+    * @return odpowiedni zakres liczbowy
+    */
 public int cdl3StarsInSouthLookback( )
    {
       return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) )) +
          2;
    }
    /**
+    * Three Stars In The South
+    * @see <a href="http://thepatternsite.com/ThreeStarsSouth.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4094,7 +4423,14 @@ public RetCode cdl3StarsInSouth( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    	}
-   /**
+  /**
+    * Three Stars In The South
+    * @see <a href="http://thepatternsite.com/ThreeStarsSouth.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4206,14 +4542,22 @@ public RetCode cdl3StarsInSouth( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
-public int cdl3WhiteSoldiersLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdl3WhiteSoldiers
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdl3WhiteSoldiersLookback( )
    {
       return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) +
          2;
    }
   /**
+    * Three White Soldiers
+    * @see <a href="http://www.investopedia.com/terms/t/three_white_soldiers.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4333,7 +4677,14 @@ public int cdl3WhiteSoldiersLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
- /**
+  /**
+    * Three White Soldiers
+    * @see <a href="http://www.investopedia.com/terms/t/three_white_soldiers.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4454,11 +4805,12 @@ public int cdl3WhiteSoldiersLookback( )
       return RetCode.Success ;
    }
    /* Generated */
-   /**
- * @param optInPenetration
- * @return
- */
-public int cdlAbandonedBabyLookback( double optInPenetration )
+  /**
+   * Metoda zwraca odpowiedni zakres dla cdlAbandonedBaby
+   * @param optInPenetration liczba okresu (2 do 100000)
+   * @return odpowiedni zakres liczbowy
+   */
+  public int cdlAbandonedBabyLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
          optInPenetration = 3.000000e-1;
@@ -4469,6 +4821,14 @@ public int cdlAbandonedBabyLookback( double optInPenetration )
    }
 
    /**
+    * Abandoned Baby
+    * @see <a href="http://www.investopedia.com/terms/b/bearish-abandoned-baby.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4570,7 +4930,15 @@ public int cdlAbandonedBabyLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-      /**
+   /**
+    * Abandoned Baby
+    * @see <a href="http://www.investopedia.com/terms/b/bearish-abandoned-baby.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4674,14 +5042,22 @@ public int cdlAbandonedBabyLookback( double optInPenetration )
    }
    /* Generated */
    /**
- * @return
- */
-public int cdlAdvanceBlockLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlAdvanceBlock
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlAdvanceBlockLookback( )
    {
       return ((( ((( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( ((( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Far.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
          2;
    }
    /**
+    * Advance Block 
+    * @see <a href="http://thepatternsite.com/AdvanceBlock.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4833,7 +5209,14 @@ public int cdlAdvanceBlockLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
- /**
+   /**
+    * Advance Block 
+    * @see <a href="http://thepatternsite.com/AdvanceBlock.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -4987,13 +5370,21 @@ public int cdlAdvanceBlockLookback( )
    }
    /* Generated */
    /**
- * @return
- */
-public int cdlBeltHoldLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlBeltHold
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlBeltHoldLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
    /**
+    * Belt-hold
+    * @see <a href="http://www.investopedia.com/terms/b/bearishbelthold.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5072,7 +5463,14 @@ public int cdlBeltHoldLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
+    /**
+    * Belt-hold
+    * @see <a href="http://www.investopedia.com/terms/b/bearishbelthold.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5151,15 +5549,25 @@ public int cdlBeltHoldLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+  
    /* Generated */
    /**
- * @return
- */
-public int cdlBreakawayLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlBreakaway
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlBreakawayLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 4;
    }
+  
    /**
+    * Breakaway
+    * @see <a href="http://thepatternsite.com/BullBreakaway.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5239,7 +5647,15 @@ public int cdlBreakawayLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
+  
+  /**
+    * Breakaway
+    * @see <a href="http://thepatternsite.com/BullBreakaway.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5321,13 +5737,21 @@ public int cdlBreakawayLookback( )
    }
    /* Generated */
    /**
- * @return
- */
-public int cdlClosingMarubozuLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlClosingMarubozu
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlClosingMarubozuLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
    /**
+    * Closing Marubozu
+    * @see <a href="http://thepatternsite.com/ClosingWhiteMarubozu.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5406,7 +5830,14 @@ public RetCode cdlClosingMarubozu( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
+    /**
+    * Closing Marubozu
+    * @see <a href="http://thepatternsite.com/ClosingWhiteMarubozu.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5485,15 +5916,22 @@ public RetCode cdlClosingMarubozu( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
    /**
- * @return
- */
-public int cdlConcealBabysWallLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlConcealBabysWall
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlConcealBabysWallLookback( )
    {
       return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 3;
    }
    /**
+    * Concealing Baby Swallow
+    * @see <a href="http://thepatternsite.com/ConcealBaby.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5572,6 +6010,13 @@ public int cdlConcealBabysWallLookback( )
       return RetCode.Success ;
    }
    /**
+    * Concealing Baby Swallow
+    * @see <a href="http://thepatternsite.com/ConcealBaby.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5649,16 +6094,23 @@ public int cdlConcealBabysWallLookback( )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
    /**
- * @return
- */
-public int cdlCounterAttackLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlCounterAttack
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlCounterAttackLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
          1;
    }
    /**
+    * Counterattack
+    * @see <a href="http://www.quantshare.com/index.php?option=manual&dir=/QuantShare%20Language/Candlestick%20Pattern/CdlCounterattack%200.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5738,6 +6190,13 @@ public int cdlCounterAttackLookback( )
       return RetCode.Success ;
    }
    /**
+    * Counterattack
+    * @see <a href="http://www.quantshare.com/index.php?option=manual&dir=/QuantShare%20Language/Candlestick%20Pattern/CdlCounterattack%200.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5818,10 +6277,11 @@ public int cdlCounterAttackLookback( )
    }
    /* Generated */
    /**
- * @param optInPenetration
- * @return
- */
-public int cdlDarkCloudCoverLookback( double optInPenetration )
+    * Metoda zwraca odpowiedni zakres dla cdlDarkCloudCover
+    * @param optInPenetration liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlDarkCloudCoverLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
          optInPenetration = 5.000000e-1;
@@ -5830,15 +6290,22 @@ public int cdlDarkCloudCoverLookback( double optInPenetration )
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 1;
    }
 
-
    /**
+    * Dark Cloud Cover
+    * @see <a href="http://www.investopedia.com/terms/d/darkcloud.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
     * @param inHigh tablica cen maksymalnych
     * @param inLow tablica cen minimalnych
     * @param inClose tablica cen zamknięcia
-    * @param optInPenetration
+    * @param optInPenetration liczba okresu (2 do 100000)
     * @param outBegIdx początkowy indeks wyjściowy
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
@@ -5904,13 +6371,21 @@ public int cdlDarkCloudCoverLookback( double optInPenetration )
       return RetCode.Success ;
    }
    /**
+    * Dark Cloud Cover
+    * @see <a href="http://www.investopedia.com/terms/d/darkcloud.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
     * @param inHigh tablica cen maksymalnych
     * @param inLow tablica cen minimalnych
     * @param inClose tablica cen zamknięcia
-    * @param optInPenetration
+    * @param optInPenetration liczba okresu (2 do 100000)
     * @param outBegIdx początkowy indeks wyjściowy
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
@@ -5977,14 +6452,22 @@ public int cdlDarkCloudCoverLookback( double optInPenetration )
    }
    /* Generated */
    /**
- * @return
- */
-public int cdlDojiLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlDoji
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlDojiLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
    }
 
    /**
+    * Doji
+    * @see <a href="http://www.investopedia.com/terms/d/doji.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -5996,7 +6479,7 @@ public int cdlDojiLookback( )
     * @param outInteger
     * @return Status
     */
-public RetCode cdlDoji( int startIdx,
+  public RetCode cdlDoji( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -6043,18 +6526,25 @@ public RetCode cdlDoji( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
-    * @param startIdx indeks startowy
-    * @param endIdx indeks końcowy
-    * @param inOpen tablica cen otwarcia
-    * @param inHigh tablica cen maksymalnych
-    * @param inLow tablica cen minimalnych
-    * @param inClose tablica cen zamknięcia
-    * @param outBegIdx początkowy indeks wyjściowy
-    * @param outNBElement liczba elementów wyjściowych
-    * @param outInteger
-    * @return Status
-    */
+  /**
+   * Doji
+   * @see <a href="http://www.investopedia.com/terms/d/doji.asp">site</a>
+   * <hr>
+   * <ul>
+   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   * </ul>
+   * @param startIdx indeks startowy
+   * @param endIdx indeks końcowy
+   * @param inOpen tablica cen otwarcia
+   * @param inHigh tablica cen maksymalnych
+   * @param inLow tablica cen minimalnych
+   * @param inClose tablica cen zamknięcia
+   * @param outBegIdx początkowy indeks wyjściowy
+   * @param outNBElement liczba elementów wyjściowych
+   * @param outInteger
+   * @return Status
+   */
   public RetCode cdlDoji( int startIdx,
       int endIdx,
       float inOpen[],
@@ -6104,13 +6594,21 @@ public RetCode cdlDoji( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
-public int cdlDojiStarLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlDojiStar
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlDojiStarLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 1;
    }
    /**
+    * Doji Star
+    * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6122,7 +6620,7 @@ public int cdlDojiStarLookback( )
     * @param outInteger
     * @return Status
     */
-public RetCode cdlDojiStar( int startIdx,
+  public RetCode cdlDojiStar( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -6185,6 +6683,13 @@ public RetCode cdlDojiStar( int startIdx,
    }
 
    /**
+    * Doji Star
+    * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6257,15 +6762,22 @@ public RetCode cdlDojiStar( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
    /**
- * @return
- */
-public int cdlDragonflyDojiLookback( )
+    * Metoda zwraca odpowiedni zakres dla cdlDragonflyDoji
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlDragonflyDojiLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
    /**
+    * Dragonfly Doji
+    * @see <a href="http://www.investopedia.com/terms/d/dragonfly-doji.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6338,6 +6850,13 @@ public RetCode cdlDragonflyDoji( int startIdx,
       return RetCode.Success ;
    }
    /**
+    * Dragonfly Doji
+    * @see <a href="http://www.investopedia.com/terms/d/dragonfly-doji.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6349,7 +6868,7 @@ public RetCode cdlDragonflyDoji( int startIdx,
     * @param outInteger
     * @return Status
     */
-public RetCode cdlDragonflyDoji( int startIdx,
+  public RetCode cdlDragonflyDoji( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -6411,13 +6930,21 @@ public RetCode cdlDragonflyDoji( int startIdx,
    }
    /* Generated */
    /**
- * @return
- */
-public int cdlEngulfingLookback( )
+    * Zwraca domyślną wartość dla cdlEngulfing
+    * @return 2
+    */
+  public int cdlEngulfingLookback( )
    {
       return 2;
    }
    /**
+    * Engulfing Pattern
+    * @see <a href="http://www.investopedia.com/terms/b/bearishengulfingp.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6475,6 +7002,13 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /**
+    * Engulfing Pattern
+    * @see <a href="http://www.investopedia.com/terms/b/bearishengulfingp.asp">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6486,7 +7020,7 @@ public RetCode cdlEngulfing( int startIdx,
     * @param outInteger
     * @return Status
     */
-public RetCode cdlEngulfing( int startIdx,
+  public RetCode cdlEngulfing( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -6533,10 +7067,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /* Generated */
    /**
- * @param optInPenetration
- * @return
- */
-public int cdlEveningDojiStarLookback( double optInPenetration )
+    * Metoda zwraca odpowiedni zakres dla cdlEveningDojiStar
+    * @param optInPenetration liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
+  public int cdlEveningDojiStarLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
          optInPenetration = 3.000000e-1;
@@ -6546,6 +7081,14 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          2;
    }
    /**
+    * Evening Doji Star
+    * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6636,7 +7179,15 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /**
+    /**
+    * Evening Doji Star
+    * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
     * @param inOpen tablica cen otwarcia
@@ -6727,7 +7278,12 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlEveningStar
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlEveningStarLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
@@ -6736,6 +7292,28 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
          return -1;
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
    }
+
+    /**
+      * Evening Star
+      * @see <a href="http://thepatternsite.com/EveningStar.html">site</a>
+      * <hr>
+      * <ul>
+      * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+      * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+      * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+      * </ul>
+      * @param startIdx indeks startowy
+      * @param endIdx indeks końcowy
+      * @param inOpen tablica cen otwarcia
+      * @param inHigh tablica cen maksymalnych
+      * @param inLow tablica cen minimalnych
+      * @param inClose tablica cen zamknięcia
+      * @param optInPenetration
+      * @param outBegIdx początkowy indeks wyjściowy
+      * @param outNBElement liczba elementów wyjściowych
+      * @param outInteger
+      * @return Status
+      */
    public RetCode cdlEveningStar( int startIdx,
       int endIdx,
       double inOpen[],
@@ -6810,6 +7388,27 @@ public int cdlEveningDojiStarLookback( double optInPenetration )
    }
    // TODO: Koniec Stachura Bartlomiej
    // TODO: Start Lukasz Straszewski
+     /**
+      * Evening Star
+      * @see <a href="http://thepatternsite.com/EveningStar.html">site</a>
+      * <hr>
+      * <ul>
+      * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+      * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+      * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+      * </ul>
+      * @param startIdx indeks startowy
+      * @param endIdx indeks końcowy
+      * @param inOpen tablica cen otwarcia
+      * @param inHigh tablica cen maksymalnych
+      * @param inLow tablica cen minimalnych
+      * @param inClose tablica cen zamknięcia
+      * @param optInPenetration
+      * @param outBegIdx początkowy indeks wyjściowy
+      * @param outNBElement liczba elementów wyjściowych
+      * @param outInteger
+      * @return Status
+      */
    public RetCode cdlEveningStar( int startIdx,
       int endIdx,
       float inOpen[],
