@@ -13205,10 +13205,30 @@ public RetCode cdlEngulfing( int startIdx,
    /* Generated */
    // TODO: Koniec Lukasz Straszewski
    // TODO: Start Pawel Majka
+   /**
+    * Zwraca domyślną wartość ceil (zaokrąglania w górę).
+    * @return 0
+    */
    public int ceilLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda zaokrągla liczby z danego przedziału liczb zmiennoprzecinkowych.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode ceil( int startIdx,
       int endIdx,
       double inReal[],
@@ -13230,6 +13250,22 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda zaokrągla liczby z danego przedziału liczb stałoprzecinkowych.
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode ceil( int startIdx,
       int endIdx,
       float inReal[],
@@ -13252,6 +13288,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla CMO.
+    * @param optInTimePeriod liczba okresu (2 do 10000)
+    * @return odpowiedni zakres liczbowy
+    */
    public int cmoLookback( int optInTimePeriod )
    {
       int retValue;
@@ -13264,6 +13305,23 @@ public RetCode cdlEngulfing( int startIdx,
          retValue--;
       return retValue;
    }
+   /**
+    * Chande Momentum Oscillator
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami zmiennoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode cmo( int startIdx,
       int endIdx,
       double inReal[],
@@ -13400,6 +13458,23 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Chande Momentum Oscillator
+    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami stałoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode cmo( int startIdx,
       int endIdx,
       float inReal[],
@@ -13537,6 +13612,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla correl.
+    * @param optInTimePeriod liczba okresu (1 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
    public int correlLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
