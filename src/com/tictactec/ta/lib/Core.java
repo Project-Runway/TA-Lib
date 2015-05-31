@@ -79,7 +79,7 @@ public class Core {
     * Ustawienie wykresu świecowego
     * <hr>
     * <ul>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param settingType typ wyliczeniowy ustawień Candlestick chart (świece japońskie)
     * @param rangeType typ wyliczeniowy zakresu typów, wykorzystywane podczas działania funkcji oraz podczas tworzenia obiektu CandleSetting
@@ -168,7 +168,7 @@ public class Core {
     * Ustawienie wykresu świecowego według parametrów domyślnych
     * <hr>
     * <ul>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param settingType typ wyliczeniowy ustawien Candlestick chart (świece japońskie)
     * @return Status
@@ -194,7 +194,7 @@ public class Core {
     * Pozwala zdejmować początkowy okres niestabilny. metoda pozwala do powrotu danych w miejsce gdzie produkcja będzie dostateczna, bez względu na ilość danych historycznych
     * <hr>
     * <ul>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param id typ wyliczeniowy zawierający numery ID funkcji
     * @param period określenie liczby wyjść -> może być równe 0
@@ -252,8 +252,8 @@ public class Core {
     * Funckja trygonometryczna arcus cosinus
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -288,8 +288,8 @@ public class Core {
     * Funckja trygonometryczna arcus cosinus
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
     * @param endIdx końcowy indeks w tablicy (do którego elementu chcemy liczyc)
@@ -335,8 +335,8 @@ public class Core {
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -391,8 +391,8 @@ public class Core {
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy 
   	* @param endIdx indeks końcowy
@@ -455,8 +455,8 @@ public class Core {
    * Dodawanie arytmetyczne wektora
    * <hr>
    * <ul>
-   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
    * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
@@ -493,8 +493,8 @@ public class Core {
      * Dodawanie arytmetyczne wektora
      * <hr>
      * <ul>
-     * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-     * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+     *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+     *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
      * </ul>
      * @param startIdx indeks startowy
      * @param endIdx indeks końcowy
@@ -557,9 +557,9 @@ public class Core {
    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator">site</a>
    * <hr>
    * <ul>
-   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+   *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
    * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
@@ -649,9 +649,9 @@ public RetCode adOsc( int startIdx,
  * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator">site</a>
  * <hr>
  * <ul>
- * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
- * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
- * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+ *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
  * </ul>
  * @param startIdx indeks startowy
  * @param endIdx indeks końcowy
@@ -755,9 +755,9 @@ public RetCode adOsc( int startIdx,
    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
    * <hr>
    * <ul>
-   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+   *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
    * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
@@ -948,9 +948,9 @@ public RetCode adOsc( int startIdx,
    * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
    * <hr>
    * <ul>
-   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+   *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
    * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
@@ -1158,9 +1158,9 @@ public RetCode adOsc( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -1226,9 +1226,9 @@ public RetCode adOsc( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -1317,9 +1317,9 @@ public RetCode adOsc( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/p/ppo.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -1459,9 +1459,9 @@ public RetCode adOsc( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/p/ppo.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -1614,9 +1614,9 @@ public RetCode adOsc( int startIdx,
  * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon">site</a>
  * <hr>
  * <ul>
- * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
- * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li> * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
- * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li> *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
  * </ul>
  * @param startIdx indeks startowy
  * @param endIdx indeks końcowy
@@ -1725,9 +1725,9 @@ public RetCode aroon( int startIdx,
  * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon">site</a>
  * <hr>
  * <ul>
- * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
- * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li> * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
- * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li> *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+ *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
  * </ul>
  * @param startIdx indeks startowy
  * @param endIdx indeks końcowy
@@ -1850,9 +1850,9 @@ public RetCode aroon( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon_oscillator">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -1959,9 +1959,9 @@ public RetCode aroon( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon_oscillator">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2076,8 +2076,8 @@ public RetCode aroon( int startIdx,
     * Obliczanie arytmetyczne wektora funkcją asin
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2112,8 +2112,8 @@ public RetCode aroon( int startIdx,
     * Obliczanie arytmetyczne wektora funkcją asin
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2157,8 +2157,8 @@ public RetCode aroon( int startIdx,
     * Obliczanie arytmetyczne wektora funkcją atan
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2193,8 +2193,8 @@ public RetCode atan( int startIdx,
     * Obliczanie arytmetyczne wektora funkcją atan
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2244,9 +2244,9 @@ public RetCode atan( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2345,9 +2345,9 @@ public RetCode atan( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2455,8 +2455,8 @@ public RetCode atan( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/a/averageprice.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2501,8 +2501,8 @@ public RetCode atan( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/a/averageprice.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2575,9 +2575,9 @@ public RetCode atan( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:bollinger_bands">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2740,9 +2740,9 @@ public RetCode atan( int startIdx,
     * @see <a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:bollinger_bands">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -2893,9 +2893,9 @@ public RetCode atan( int startIdx,
     * @see <a href="http://ycharts.com/glossary/terms/beta">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3021,9 +3021,9 @@ public RetCode atan( int startIdx,
     * @see <a href="http://ycharts.com/glossary/terms/beta">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3158,8 +3158,8 @@ public RetCode atan( int startIdx,
     * @see <a href="http://finance.yahoo.com/news/balance-power-tilting-back-toward-100000395.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3206,8 +3206,8 @@ public RetCode atan( int startIdx,
     * @see <a href="http://finance.yahoo.com/news/balance-power-tilting-back-toward-100000395.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3270,9 +3270,9 @@ public int cciLookback( int optInTimePeriod )
     * Niskie wartości CCI oznaczają z kolei iż bieżące ceny w porównaniu do cen średnich są niestandardowo niskie.
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3359,9 +3359,9 @@ public int cciLookback( int optInTimePeriod )
     * Niskie wartości CCI oznaczają z kolei iż bieżące ceny w porównaniu do cen średnich są niestandardowo niskie.
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3455,9 +3455,9 @@ public int cciLookback( int optInTimePeriod )
     * @see <a href="http://thepatternsite.com/TwoCrows.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3530,9 +3530,9 @@ public int cciLookback( int optInTimePeriod )
     * @see <a href="http://thepatternsite.com/TwoCrows.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3615,9 +3615,9 @@ public int cciLookback( int optInTimePeriod )
     * @see <a href="http://www.investopedia.com/terms/t/three_black_crows.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3702,9 +3702,9 @@ public int cciLookback( int optInTimePeriod )
     * @see <a href="http://www.investopedia.com/terms/t/three_black_crows.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3797,8 +3797,8 @@ public int cdl3InsideLookback( )
     * @see <a href="http://en.tradimo.com/learn/technical-analysis/candlesticks/three-inside-up-and-down/">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3882,8 +3882,8 @@ public int cdl3InsideLookback( )
     * @see <a href="http://en.tradimo.com/learn/technical-analysis/candlesticks/three-inside-up-and-down/">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -3975,8 +3975,8 @@ public int cdl3InsideLookback( )
     * @see <a href="http://thepatternsite.com/ThreeLineStrikeBear.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4068,8 +4068,8 @@ public int cdl3InsideLookback( )
     * @see <a href="http://thepatternsite.com/ThreeLineStrikeBear.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4169,8 +4169,8 @@ public int cdl3InsideLookback( )
     * @see <a href="http://thepatternsite.com/ThreeOutsideUp.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4235,8 +4235,8 @@ public int cdl3InsideLookback( )
     * @see <a href="http://thepatternsite.com/ThreeOutsideUp.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4311,8 +4311,8 @@ public int cdl3StarsInSouthLookback( )
     * @see <a href="http://thepatternsite.com/ThreeStarsSouth.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4428,8 +4428,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://thepatternsite.com/ThreeStarsSouth.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4555,8 +4555,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/t/three_white_soldiers.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4682,8 +4682,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/t/three_white_soldiers.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4825,9 +4825,9 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/b/bearish-abandoned-baby.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -4935,9 +4935,9 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/b/bearish-abandoned-baby.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5055,8 +5055,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://thepatternsite.com/AdvanceBlock.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5214,8 +5214,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://thepatternsite.com/AdvanceBlock.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5382,8 +5382,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/b/bearishbelthold.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5468,8 +5468,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/b/bearishbelthold.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5565,8 +5565,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://thepatternsite.com/BullBreakaway.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5653,8 +5653,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://thepatternsite.com/BullBreakaway.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5749,8 +5749,8 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @see <a href="http://thepatternsite.com/ClosingWhiteMarubozu.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5835,8 +5835,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://thepatternsite.com/ClosingWhiteMarubozu.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -5929,8 +5929,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://thepatternsite.com/ConcealBaby.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6014,8 +6014,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://thepatternsite.com/ConcealBaby.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6108,8 +6108,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://www.quantshare.com/index.php?option=manual&dir=/QuantShare%20Language/Candlestick%20Pattern/CdlCounterattack%200.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6194,8 +6194,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://www.quantshare.com/index.php?option=manual&dir=/QuantShare%20Language/Candlestick%20Pattern/CdlCounterattack%200.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6295,9 +6295,9 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/d/darkcloud.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6375,9 +6375,9 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/d/darkcloud.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6465,8 +6465,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/d/doji.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6531,8 +6531,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
    * @see <a href="http://www.investopedia.com/terms/d/doji.asp">site</a>
    * <hr>
    * <ul>
-   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
    * </ul>
    * @param startIdx indeks startowy
    * @param endIdx indeks końcowy
@@ -6606,8 +6606,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6687,8 +6687,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6775,8 +6775,8 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/d/dragonfly-doji.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6854,8 +6854,8 @@ public RetCode cdlDragonflyDoji( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/d/dragonfly-doji.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -6942,8 +6942,8 @@ public RetCode cdlDragonflyDoji( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/b/bearishengulfingp.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -7006,8 +7006,8 @@ public RetCode cdlEngulfing( int startIdx,
     * @see <a href="http://www.investopedia.com/terms/b/bearishengulfingp.asp">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -7085,9 +7085,9 @@ public RetCode cdlEngulfing( int startIdx,
     * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -7184,9 +7184,9 @@ public RetCode cdlEngulfing( int startIdx,
     * @see <a href="http://thepatternsite.com/EveningDojiStar.html">site</a>
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
     * </ul>
     * @param startIdx indeks startowy
     * @param endIdx indeks końcowy
@@ -7298,9 +7298,9 @@ public RetCode cdlEngulfing( int startIdx,
       * @see <a href="http://thepatternsite.com/EveningStar.html">site</a>
       * <hr>
       * <ul>
-      * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-      * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-      * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+      *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+      *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+      *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
       * </ul>
       * @param startIdx indeks startowy
       * @param endIdx indeks końcowy
@@ -7393,9 +7393,9 @@ public RetCode cdlEngulfing( int startIdx,
       * @see <a href="http://thepatternsite.com/EveningStar.html">site</a>
       * <hr>
       * <ul>
-      * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-      * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-      * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+      *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+      *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+      *  <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
       * </ul>
       * @param startIdx indeks startowy
       * @param endIdx indeks końcowy
@@ -13206,7 +13206,7 @@ public RetCode cdlEngulfing( int startIdx,
    // TODO: Koniec Lukasz Straszewski
    // TODO: Start Pawel Majka
    /**
-    * Zwraca domyślną wartość ceil (zaokrąglania w górę).
+    * Zwraca domyślną wartość dla ceil (zaokrąglania w górę).
     * @return 0
     */
    public int ceilLookback( )
@@ -13214,7 +13214,7 @@ public RetCode cdlEngulfing( int startIdx,
       return 0;
    }
    /**
-    * Metoda zaokrągla liczby z danego przedziału liczb zmiennoprzecinkowych.
+    * Metoda zaokrągla liczby z danego przedziału liczb zmiennoprzecinkowych (w górę).
     * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
@@ -13251,7 +13251,7 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /**
-    * Metoda zaokrągla liczby z danego przedziału liczb stałoprzecinkowych.
+    * Metoda zaokrągla liczby z danego przedziału liczb stałoprzecinkowych (w górę).
     * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
@@ -13826,8 +13826,8 @@ public RetCode cdlEngulfing( int startIdx,
     * Funkcja trygonometryczna cosinus
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -13862,8 +13862,8 @@ public RetCode cdlEngulfing( int startIdx,
     * Funkcja trygonometryczna cosinus
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -13907,8 +13907,8 @@ public RetCode cdlEngulfing( int startIdx,
     * Funkcja trygonometryczna cosinus hiperboliczny
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -13943,8 +13943,8 @@ public RetCode cdlEngulfing( int startIdx,
     * Funkcja trygonometryczna cosinus hiperboliczny
     * <hr>
     * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
     * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
@@ -14242,6 +14242,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla DX.
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
    public int dxLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -14253,6 +14258,27 @@ public RetCode cdlEngulfing( int startIdx,
       else
          return 2;
    }
+   /**
+    * Directional Movement Index
+    * @see <a href="http://www.wdsoftware.com/pl/encyklopedia-at/dmi.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @see atr
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia 
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode dx( int startIdx,
       int endIdx,
       double inHigh[],
@@ -14396,6 +14422,27 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Directional Movement Index
+    * @see <a href="http://www.wdsoftware.com/pl/encyklopedia-at/dmi.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @see atr
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia 
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode dx( int startIdx,
       int endIdx,
       float inHigh[],
@@ -14540,6 +14587,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla EMA.
+    * @param optInTimePeriod okres (2 do 100000)
+    * @return odpowiedni zakres
+    */
    public int emaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -14548,6 +14600,24 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return optInTimePeriod - 1 + (this.unstablePeriod[FuncUnstId.Ema.ordinal()]) ;
    }
+   /**
+    * Exponential Moving Average (Wykładnicza średnia krocząca)
+    * @see <a href="http://pl.wikipedia.org/wiki/%C5%9Arednia_krocz%C4%85ca">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział wartości do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode ema( int startIdx,
       int endIdx,
       double inReal[],
@@ -14616,6 +14686,24 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Exponential Moving Average (Wykładnicza średnia krocząca)
+    * @see <a href="http://pl.wikipedia.org/wiki/%C5%9Arednia_krocz%C4%85ca">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział wartości do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode ema( int startIdx,
       int endIdx,
       float inReal[],
@@ -14685,10 +14773,29 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca podstawową wartość dla funkcji wykładniczej.
+    * @return 0
+    */
    public int expLookback( )
    {
       return 0;
    }
+   /**
+    * Funkcja wykładnicza exp
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami zmiennoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode exp( int startIdx,
       int endIdx,
       double inReal[],
@@ -14710,6 +14817,21 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Funkcja wykładnicza exp
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami stałoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode exp( int startIdx,
       int endIdx,
       float inReal[],
@@ -14732,10 +14854,30 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Zwraca domyślną wartość dla floor (zaokrąglania w górę).
+    * @return 0
+    */
    public int floorLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda zaokrągla liczby z danego przedziału liczb zmiennoprzecinkowych (w dół).
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode floor( int startIdx,
       int endIdx,
       double inReal[],
@@ -14757,6 +14899,22 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda zaokrągla liczby z danego przedziału liczb stałoprzecinkowych (w dół).
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode floor( int startIdx,
       int endIdx,
       float inReal[],
@@ -14779,10 +14937,30 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla HTDCPERIOD.
+    * @return okres
+    */
    public int htDcPeriodLookback( )
    {
       return 32 + (this.unstablePeriod[FuncUnstId.HtDcPeriod.ordinal()]) ;
    }
+   /**
+    * Hilbert Transform - Dominant Cycle Period
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-Dominant-Cycle-Period/RAX">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode htDcPeriod( int startIdx,
       int endIdx,
       double inReal[],
@@ -14912,6 +15090,22 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hilbert Transform - Dominant Cycle Period
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-Dominant-Cycle-Period/RAX">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return
+    */
    public RetCode htDcPeriod( int startIdx,
       int endIdx,
       float inReal[],
@@ -15042,10 +15236,30 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla HTDCPHASE. 
+    * @return okres
+    */
    public int htDcPhaseLookback( )
    {
       return 63 + (this.unstablePeriod[FuncUnstId.HtDcPhase.ordinal()]) ;
    }
+   /**
+    * Hilbert Transform - Dominant Cycle Phase
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/cycle_indicators/ht_dcphase.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return
+    */
    public RetCode htDcPhase( int startIdx,
       int endIdx,
       double inReal[],
@@ -15219,6 +15433,22 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hilbert Transform - Dominant Cycle Phase
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/cycle_indicators/ht_dcphase.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode htDcPhase( int startIdx,
       int endIdx,
       float inReal[],
@@ -15393,10 +15623,31 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla HTPHASOR.
+    * @return okres
+    */
    public int htPhasorLookback( )
    {
       return 32 + (this.unstablePeriod[FuncUnstId.HtPhasor.ordinal()]) ;
    }
+   /**
+    * Hilbert Transform - Phasor Components
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-Phasor-Components/RAX">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInPhase Tablica na fazy wyjściowe
+    * @param outQuadrature Tablica na kwadratury wyjściowe
+    * @return Status
+    */
    public RetCode htPhasor( int startIdx,
       int endIdx,
       double inReal[],
@@ -15531,6 +15782,23 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hilbert Transform - Phasor Components
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-Phasor-Components/RAX">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInPhase Tablica na fazy wyjściowe
+    * @param outQuadrature Tablica na kwadratury wyjściowe
+    * @return Status
+    */
    public RetCode htPhasor( int startIdx,
       int endIdx,
       float inReal[],
@@ -15666,10 +15934,26 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla HTSINE.
+    * @return okres
+    */
    public int htSineLookback( )
    {
       return 63 + (this.unstablePeriod[FuncUnstId.HtSine.ordinal()]) ;
    }
+   /**
+    * Hilbert Transform - SineWave
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-SineWave/RAX">site</a>
+    * @param startIdx
+    * @param endIdx
+    * @param inReal
+    * @param outBegIdx
+    * @param outNBElement
+    * @param outSine
+    * @param outLeadSine
+    * @return
+    */
    public RetCode htSine( int startIdx,
       int endIdx,
       double inReal[],
@@ -21259,7 +21543,7 @@ public RetCode cdlEngulfing( int startIdx,
       return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Natr.ordinal()]) ;
    }
    /**
-    * NATR jest to znormalizowany ATR wykożystywany do badań porównawczych.
+    * NATR jest to znormalizowany ATR wykorzystywany do badań porównawczych.
     * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
@@ -21370,7 +21654,7 @@ public RetCode cdlEngulfing( int startIdx,
       return retCode;
    }
    /**
-    * NATR jest to znormalizowany ATR wykożystywany do badań porównawczych.
+    * NATR jest to znormalizowany ATR wykorzystywany do badań porównawczych.
     * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
@@ -26778,7 +27062,7 @@ public RetCode cdlEngulfing( int startIdx,
     * @param optInTimePeriod Przedział wartości do obliczenia
     * @param outBegIdx Początkowy indeks końcowy
     * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal TTablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
     * @author Komentarz - Artur Ratajczak
     */
@@ -26919,7 +27203,7 @@ public RetCode cdlEngulfing( int startIdx,
     * @param optInTimePeriod Przedział wartości do obliczenia
     * @param outBegIdx Początkowy indeks końcowy
     * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal TTablica na elementy wyjściowe (wyniki)
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
     * @author Komentarz - Artur Ratajczak
     */
@@ -27852,9 +28136,9 @@ public RetCode cdlEngulfing( int startIdx,
     * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
     * <hr>
     * <ul>
-    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
-    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
-    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
+    *  <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
+    *  <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
     * </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy
@@ -27947,9 +28231,9 @@ public RetCode cdlEngulfing( int startIdx,
     * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
     * <hr>
     * <ul>
-    * <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
-    * <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
-    * <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
+    *  <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
+    *  <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
     * </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy
@@ -28143,8 +28427,8 @@ public RetCode cdlEngulfing( int startIdx,
     * <hr>
     * Wyjątki:
     * <ul>
-    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 14.</li>
-    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
+    *  <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 14.</li>
+    *  <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
     * </ul>
     * @param optInTimePeriod Liczba elementów występująca w przedziale
     * @return Zakres przedziału wejściowego.
@@ -28399,8 +28683,8 @@ public RetCode cdlEngulfing( int startIdx,
     * <hr>
     * Wyjątki:
     * <ul>
-    * <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 30.</li>
-    * <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
+    *  <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 30.</li>
+    *  <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
     * </ul>
     * @param optInTimePeriod Liczba elementów występująca w przedziale
     * @return Zakres przedziału wejściowego.
