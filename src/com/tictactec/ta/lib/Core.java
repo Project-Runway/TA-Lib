@@ -249,7 +249,7 @@ public class Core {
    }
 
    /**
-    * Funckja trygonometryczna cosinus
+    * Funckja trygonometryczna arcus cosinus
     * <hr>
     * <ul>
     * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
@@ -285,7 +285,7 @@ public class Core {
       return RetCode.Success ;
    }
    /**
-    * Funckja trygonometryczna cosinus
+    * Funckja trygonometryczna arcus cosinus
     * <hr>
     * <ul>
     * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
@@ -13290,7 +13290,7 @@ public RetCode cdlEngulfing( int startIdx,
    /* Generated */
    /**
     * Metoda zwraca odpowiedni zakres dla CMO.
-    * @param optInTimePeriod liczba okresu (2 do 10000)
+    * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
     */
    public int cmoLookback( int optInTimePeriod )
@@ -13625,6 +13625,25 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Pearson's Correlation Coefficient
+    * @see <a href="http://en.wikipedia.org/wiki/Correlation_coefficient">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Pierwsza tablica z wartościami zmiennoprzecinkowymi
+    * @param inReal1 Druga tablica z wartościami zmiennoprzecinkowymi
+    * @param optInTimePeriod liczba okresu (1 do 100000)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode correl( int startIdx,
       int endIdx,
       double inReal0[],
@@ -13700,6 +13719,25 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Pearson's Correlation Coefficient
+    * @see <a href="http://en.wikipedia.org/wiki/Correlation_coefficient">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Pierwsza tablica z wartościami stałoprzecinkowymi
+    * @param inReal1 Druga tablica z wartościami stałoprzecinkowymi
+    * @param optInTimePeriod liczba okresu (1 do 100000)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode correl( int startIdx,
       int endIdx,
       float inReal0[],
@@ -13776,10 +13814,29 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Zwraca domyślną wartość dla cosinus
+    * @return 0
+    */
    public int cosLookback( )
    {
       return 0;
    }
+   /**
+    * Funkcja trygonometryczna cosinus
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami zmiennoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode cos( int startIdx,
       int endIdx,
       double inReal[],
@@ -13801,6 +13858,21 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Funkcja trygonometryczna cosinus
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami stałoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode cos( int startIdx,
       int endIdx,
       float inReal[],
@@ -13823,10 +13895,29 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Zwraca domyślną wartość dla cosinusa hiperbolicznego
+    * @return 0
+    */
    public int coshLookback( )
    {
       return 0;
    }
+   /**
+    * Funkcja trygonometryczna cosinus hiperboliczny
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami zmiennoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode cosh( int startIdx,
       int endIdx,
       double inReal[],
@@ -13848,6 +13939,21 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Funkcja trygonometryczna cosinus hiperboliczny
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami stałoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode cosh( int startIdx,
       int endIdx,
       float inReal[],
@@ -13870,6 +13976,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla DEMA.
+    * @param optInTimePeriod liczba okresu (2 do 100000)
+    * @return odpowiedni zakres liczbowy
+    */
    public int demaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -13878,6 +13989,23 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return emaLookback ( optInTimePeriod ) * 2;
    }
+   /**
+    * Double Exponential Moving Average
+    * @see <a href="http://www.investopedia.com/terms/d/double-exponential-moving-average.asp">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami zmiennoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode dema( int startIdx,
       int endIdx,
       double inReal[],
@@ -13947,6 +14075,23 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Double Exponential Moving Average
+    * @see <a href="http://www.investopedia.com/terms/d/double-exponential-moving-average.asp">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami stałoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki
+    * @return Status
+    */
    public RetCode dema( int startIdx,
       int endIdx,
       float inReal[],
@@ -14012,10 +14157,30 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Zwraca domyślną wartość dla dzielenia (??)
+    * @return 0
+    */
    public int divLookback( )
    {
       return 0;
    }
+   /**
+    * Metoda dzieli kolejne n-te elementy tablic. tab[n]*tab[n]
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Pierwsza tablica z danymi zmiennoprzecinkowymi
+    * @param inReal1 Druga tablica z danymi zmiennoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode div( int startIdx,
       int endIdx,
       double inReal0[],
@@ -14038,6 +14203,22 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Metoda dzieli kolejne n-te elementy tablic. tab[n]*tab[n]
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal0 Pierwsza tablica z danymi stałoprzecinkowymi
+    * @param inReal1 Druga tablica z danymi stałoprzecinkowymi
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode div( int startIdx,
       int endIdx,
       float inReal0[],
@@ -20214,12 +20395,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
     * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
     * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -20383,12 +20564,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
     * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
     * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -20569,12 +20750,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Określa to porównanie między różniczą spadków a różnicą wzrostów.
     * -DM występuje kiedy spadek niższy minus aktualny spadej jest większy niż aktualny wzrost minus wzrost.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -20712,12 +20893,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Określa to porównanie między różniczą spadków a różnicą wzrostów.
     * -DM występuje kiedy spadek niższy minus aktualny spadej jest większy niż aktualny wzrost minus wzrost.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -20870,12 +21051,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Momentum jest miarą wzrostu i spadku cen. Na jego podstawie można wywnioskowac z jaką szybkością ceny rosną i spadają.
     * Jest to różnica między ceną a ceną poprzednią.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z danymi
@@ -20924,12 +21105,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Momentum jest miarą wzrostu i spadku cen. Na jego podstawie można wywnioskowac z jaką szybkością ceny rosną i spadają.
     * Jest to różnica między ceną a ceną poprzednią.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z danymi
@@ -20986,12 +21167,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda mnoży kolejne n-te elementy tablic. tab[n]*tab[n]
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-   
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal0 Pierwsza tablica z danymi
@@ -21026,12 +21206,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda mnoży kolejne n-te elementy tablic. tab[n]*tab[n]
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal0 Pierwsza tablica z danymi
@@ -21081,12 +21260,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * NATR jest to znormalizowany ATR wykożystywany do badań porównawczych.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @see atr
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -21192,12 +21371,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * NATR jest to znormalizowany ATR wykożystywany do badań porównawczych.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @see atr
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
@@ -21314,12 +21493,11 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * On Balance Volume działa na zasadzie OBV=OBV poprzedni +/- volume. Kiedy zamknięcie jest większe od poprzedniego zamknięcia
     * wtedy Volumee jest dodawany do całości, kiedy zamknięcie jest niższe od zamknięcia poprzedniego wtedy Volume jest odejmowany od całości.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-   
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami close
@@ -21365,12 +21543,11 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * On Balance Volume działa na zasadzie OBV=OBV poprzedni +/- volume. Kiedy zamknięcie jest większe od poprzedniego zamknięcia
     * wtedy Volumee jest dodawany do całości, kiedy zamknięcie jest niższe od zamknięcia poprzedniego wtedy Volume jest odejmowany od całości.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami close
@@ -21435,12 +21612,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
     * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
     * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -21604,12 +21781,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
     * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
     * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -21791,12 +21968,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Określa to porównanie między różniczą spadków a różnicą wzrostów.
     * +DM występuje wtedy kiedy aktualny wzrost minus wzros jest większy niż spadek minus aktualny spadek.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -21934,12 +22111,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Określa to porównanie między różniczą spadków a różnicą wzrostów.
     * +DM występuje wtedy kiedy aktualny wzrost minus wzros jest większy niż spadek minus aktualny spadek.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna cena
@@ -22105,7 +22282,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami na podstawie których zostanie policzona średnia
@@ -22162,7 +22339,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami na podstawie których zostanie policzona średnia
@@ -22233,7 +22410,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22293,7 +22470,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22368,7 +22545,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22428,7 +22605,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22503,7 +22680,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22563,7 +22740,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22638,7 +22815,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22698,7 +22875,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica cen
@@ -22774,12 +22951,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Relative Strength Index (wskaźnik siły) określa wewnętrzną siłę akcji ( jej trendu ) i zależy od zmian następujących w cenach i określa jakościowo momentum cen. Ponieważ zawiera w sobie czynnik ważący jest ważoną średnią ruchomą. Może przyjmować wartości od 0 do 100. 
     * <hr>
     * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
-    *   <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami 
@@ -22929,12 +23106,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Relative Strength Index (wskaźnik siły) określa wewnętrzną siłę akcji ( jej trendu ) i zależy od zmian następujących w cenach i określa jakościowo momentum cen. Ponieważ zawiera w sobie czynnik ważący jest ważoną średnią ruchomą. Może przyjmować wartości od 0 do 100. 
     * <hr>
     * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
-    *   <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami 
@@ -23991,12 +24168,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartośc sine (sinusa)
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami (radianami)
@@ -24029,12 +24206,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartośc sine (sinusa)
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami (radianami)
@@ -24077,12 +24254,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami (radianami)
@@ -24115,12 +24292,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami (radianami)
@@ -24168,12 +24345,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
-    *   <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z liczbami
@@ -24245,12 +24422,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
-    *   <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z liczbami
@@ -24332,12 +24509,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda liczy pierwiastek z każdego elementu wejściowego.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami z których ma byc obliczony pierwiastek
@@ -24370,12 +24547,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda liczy pierwiastek z każdego elementu wejściowego.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami z których ma byc obliczony pierwiastek
@@ -24431,12 +24608,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Moving Standard Deviation (odchylenie standardowe) jest to klasyczna miara zmienności. 
     * Intuicyjnie rzecz ujmując, odchylenie standardowe mówi, jak szeroko wartości jakiejś wielkości (takiej jak np. wiek, inflacja, kurs akcji itp.) są rozrzucone wokół jej średniej. 
     * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica Tablica z wariacjami
@@ -24542,12 +24719,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Moving Standard Deviation (odchylenie standardowe) jest to klasyczna miara zmienności. 
     * Intuicyjnie rzecz ujmując, odchylenie standardowe mówi, jak szeroko wartości jakiejś wielkości (takiej jak np. wiek, inflacja, kurs akcji itp.) są rozrzucone wokół jej średniej. 
     * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica Tablica z wariacjami
@@ -24696,7 +24873,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna najwyższa cena z n sesji
@@ -24875,7 +25052,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Maksymalna najwyższa cena z n sesji
@@ -25065,7 +25242,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Najwyższa cena maksymalna z n sesji
@@ -25231,7 +25408,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Najwyższa cena maksymalna z n sesji
@@ -25415,7 +25592,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do policzenia.
@@ -25526,7 +25703,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do policzenia.
@@ -25639,7 +25816,7 @@ public RetCode cdlEngulfing( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal0 Tablica z wartościami (zbiór 1)
@@ -25674,11 +25851,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza różnice między n-tymi elementami zbiorów.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal0 Tablica z wartościami (zbiór 1)
@@ -25728,12 +25905,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza sumę z danego przedziału.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do sumowania
@@ -25793,12 +25970,12 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza sumę z danego przedziału.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do sumowania
@@ -25882,12 +26059,12 @@ public RetCode cdlEngulfing( int startIdx,
     * <hr>
     * Gdy parametr vFactor przyjmie wartośc 1, to T3 zachowuje się dokładnie tak samo jak DEMA.
     * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do liczenia
@@ -26022,12 +26199,12 @@ public RetCode cdlEngulfing( int startIdx,
     * <hr>
     * Gdy parametr vFactor przyjmie wartośc 1, to T3 zachowuje się dokładnie tak samo jak DEMA.
     * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do liczenia
@@ -26169,11 +26346,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartośc funkcji tangent (tangens) 
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia (radiany)
@@ -26206,11 +26383,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartośc funkcji tangent (tangens) 
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia (radiany)
@@ -26253,11 +26430,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do wyliczenia (radiany)
@@ -26290,11 +26467,11 @@ public RetCode cdlEngulfing( int startIdx,
    }
    /**
     * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do wyliczenia (radiany)
@@ -26345,12 +26522,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Wskaźnika Triple Exponential Moving Avarage używa się do wygładzenia cen oraz innych danych. Jest to połączenie
     * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -26440,12 +26617,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Wskaźnika Triple Exponential Moving Avarage używa się do wygładzenia cen oraz innych danych. Jest to połączenie
     * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -26549,7 +26726,7 @@ public RetCode cdlEngulfing( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Tablica cen maksymalnych
@@ -26613,7 +26790,7 @@ public RetCode cdlEngulfing( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inHigh Tablica cen maksymalnych
@@ -26688,12 +26865,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Triangular Moving Avarage (trójkątna średnia krocząca) jest to forma średniej ważonej w której rozłożenie wag przyjmuje postac trójkątną.
     * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -26829,12 +27006,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Triangular Moving Avarage (trójkątna średnia krocząca) jest to forma średniej ważonej w której rozłożenie wag przyjmuje postac trójkątną.
     * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -26987,12 +27164,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     *Wskaźnik Trix oblicza szybkosc zmian potrójnej wykładniczej średniej kroczącej (EMA). Wartośc wskaźnika oscyluje o okolicach zera.
     *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -27091,12 +27268,12 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     *Wskaźnik Trix oblicza szybkosc zmian potrójnej wykładniczej średniej kroczącej (EMA). Wartośc wskaźnika oscyluje o okolicach zera.
     *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks startowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -27211,12 +27388,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Wskaźnik Time Series Forecast wyświetla statystyczny trend cen w określonym czasie. Trend wyznaczany jest za pomocą analizy regresji liniowej.
     *  W przeciwieństwie do wykreślonych prostych linii trendu regresji liniowej, Time Series Forecast kreśli ostatnie punkty wielu linii trendu owej regresji.
     *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -27285,12 +27462,12 @@ public RetCode cdlEngulfing( int startIdx,
     * Wskaźnik Time Series Forecast wyświetla statystyczny trend cen w określonym czasie. Trend wyznaczany jest za pomocą analizy regresji liniowej.
     *  W przeciwieństwie do wykreślonych prostych linii trendu regresji liniowej, Time Series Forecast kreśli ostatnie punkty wielu linii trendu owej regresji.
     *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
-    *  <hr>
+    * <hr>
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do obliczenia
@@ -27371,7 +27548,7 @@ public RetCode cdlEngulfing( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks.
     * @param endIdx Końcowy indeks
     * @param inHigh Tablica cen maksymalnych
@@ -27414,7 +27591,7 @@ public RetCode cdlEngulfing( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks.
     * @param endIdx Końcowy indeks
     * @param inHigh Tablica cen maksymalnych
@@ -27491,7 +27668,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks
     * @param endIdx Końcowy indeks
     * @param inHigh Tablica cen maksymalnych.
@@ -27625,7 +27802,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks
     * @param endIdx Końcowy indeks
     * @param inHigh Tablica cen maksymalnych.
@@ -27977,7 +28154,7 @@ public RetCode cdlEngulfing( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks w tablicy.
     * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
     * @param inHigh Tablica cen maksymalnych.
@@ -28021,7 +28198,7 @@ public RetCode cdlEngulfing( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  </ul>
+    * </ul>
   * @param startIdx Startowy indeks w tablicy.
     * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
     * @param inHigh Tablica cen maksymalnych.
@@ -28088,7 +28265,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
     * @param inHigh Tablica z cenami meksymalnymi z n-dni
@@ -28205,7 +28382,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks w tablicy
     * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
     * @param inHigh Tablica z cenami meksymalnymi z n-dni
@@ -28344,7 +28521,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
     * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)
     * @param inReal Tablica z wartosciami do policzenia
@@ -28427,7 +28604,7 @@ public RetCode cdlEngulfing( int startIdx,
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
     *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    *  </ul>
+    * </ul>
     * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
     * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)
     * @param inReal Tablica z wartosciami do policzenia
