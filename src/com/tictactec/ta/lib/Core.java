@@ -23542,6 +23542,13 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda sprawdza poprawnośc wprowadzonego Akceleratora oraz wartości maksymalnej
+    * @param optInAcceleration Akcelerator
+    * @param optInMaximum Wartośc maksymalna
+    * @return Status w postaci -1 lub 1;
+    * @author Komentarz - Artur Ratajczak
+    */
    public int sarLookback( double optInAcceleration,
       double optInMaximum )
    {
@@ -23555,6 +23562,27 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return 1;
    }
+   /**
+   * Parabolic SAR
+   * @see <a href="http://www.metastock.com/Customer/Resources/TAAZ/Default.aspx?p=87">site</a>
+   * <hr>
+   * <ul>
+   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+   * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInAcceleration Akcelerator
+    * @param optInMaximum  Wartośc maksymalna
+    * @param outBegIdx Pierwszy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    * @author Komentarz - Artur Ratajczak
+    */
    public RetCode sar( int startIdx,
       int endIdx,
       double inHigh[],
@@ -23708,6 +23736,27 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Parabolic SAR
+    * @see <a href="http://www.metastock.com/Customer/Resources/TAAZ/Default.aspx?p=87">site</a>
+    * <hr>
+    * <ul>
+    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
+    * </ul>
+     * @param startIdx Indeks startowy
+     * @param endIdx Indeks końcowy
+     * @param inHigh Maksymalna cena
+     * @param inLow Minimalna cena
+     * @param optInAcceleration Akcelerator
+     * @param optInMaximum  Wartośc maksymalna
+     * @param outBegIdx Pierwszy indeks wyjściowy
+     * @param outNBElement Liczba elementów wyjściowych
+     * @param outReal Tablica na elementy wyjściowe (wyniki)
+     * @return Status
+     * @author Komentarz - Artur Ratajczak
+     */
    public RetCode sar( int startIdx,
       int endIdx,
       float inHigh[],
@@ -23862,6 +23911,18 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda sprawdza poprawnosc parametrow dla SAREXT
+    * @param optInStartValue wartosc startowa
+    * @param optInOffsetOnReverse wartosc offset on reverse
+    * @param optInAccelerationInitLong wartosc initlong akceleratora
+    * @param optInAccelerationLong wartosc long akceleratora
+    * @param optInAccelerationMaxLong wartosc maksymalna long akceleratora
+    * @param optInAccelerationInitShort wartosc initshort akceleratora
+    * @param optInAccelerationShort wartosc short akceleratora
+    * @param optInAccelerationMaxShort wartosc maksymalna short akceleratora
+    * @return status w postaci -1 lub 1
+    */
    public int sarExtLookback( double optInStartValue,
       double optInOffsetOnReverse,
       double optInAccelerationInitLong,
@@ -23905,6 +23966,25 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return 1;
    }
+   /**
+    * Jest to rozszerzona metoda obliczania Parabolic SAR
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInStartValue Wartośc startowa
+    * @param optInOffsetOnReverse Wartośc offset on Reverse
+    * @param optInAccelerationInitLong wartośc initLong akceleratora
+    * @param optInAccelerationLong wartosc long akceleratora
+    * @param optInAccelerationMaxLong wartosc maksymalna logn akceleratora
+    * @param optInAccelerationInitShort wartosc initShort akceleratora
+    * @param optInAccelerationShort wartosc short akceleratora
+    * @param optInAccelerationMaxShort wartosc maksymalna short akceleratora
+    * @param outBegIdx poczatkowy indeks wyjsciowy
+    * @param outNBElement liczba elementow wysjciowych
+    * @param outReal tabica na elementy wyjsciowe (wyniki)
+    * @return Status
+    */
    public RetCode sarExt( int startIdx,
       int endIdx,
       double inHigh[],
@@ -24123,6 +24203,25 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Jest to rozszerzona metoda obliczania Parabolic SAR
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInStartValue Wartośc startowa
+    * @param optInOffsetOnReverse Wartośc offset on Reverse
+    * @param optInAccelerationInitLong wartośc initLong akceleratora
+    * @param optInAccelerationLong wartosc long akceleratora
+    * @param optInAccelerationMaxLong wartosc maksymalna logn akceleratora
+    * @param optInAccelerationInitShort wartosc initShort akceleratora
+    * @param optInAccelerationShort wartosc short akceleratora
+    * @param optInAccelerationMaxShort wartosc maksymalna short akceleratora
+    * @param outBegIdx poczatkowy indeks wyjsciowy
+    * @param outNBElement liczba elementow wysjciowych
+    * @param outReal tabica na elementy wyjsciowe (wyniki)
+    * @return Status
+    */
    public RetCode sarExt( int startIdx,
       int endIdx,
       float inHigh[],
