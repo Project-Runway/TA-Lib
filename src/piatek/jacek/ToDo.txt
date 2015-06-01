@@ -1,6 +1,11 @@
 Core:
-
-minMaxIndex
+Zrobione:
+minMaxIndex(double)
+minIndex(double)
+maxIndex(double)
+min(double)
+max(double)
+Do zrobienia:
 wma
 wma
 linearReg
@@ -19,10 +24,6 @@ sarExtLookback
 linearRegSlope
 linearRegSlope
 TA_INT_VAR
-max
-maxIndex
-min
-minIndex
 TA_INT_VAR
 stdDev
 stdDev
