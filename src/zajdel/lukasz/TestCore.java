@@ -2,12 +2,15 @@ package zajdel.lukasz;
 
 import static org.junit.Assert.*;
 
+import java.lang.ProcessBuilder.Redirect;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.tictactec.ta.lib.Compatibility;
 import com.tictactec.ta.lib.Core;
 import com.tictactec.ta.lib.FuncUnstId;
+import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
 
@@ -41,8 +44,22 @@ public class TestCore {
 		
 		
 		RetCode rc = core.sma(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
-		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rb = core.sma(-1, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rb.toString());
+		
+		RetCode rb1 = core.sma(0, -1, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rb1.toString());
+		
+		RetCode rb2 = core.sma(0, 99, inputsinReal, 1, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(),rb2.toString());
+		
+		//TODO Dodac ostatniego if'a, zeby pokryc metode w 100%
+		//int optInTimePeriod = Integer.MIN_VALUE;
+		//RetCode rb3 = core.sma(0, 99, inputsinReal, optInTimePeriod, outBegIdx, outNBElement, outReal);
+		//assertEquals(29 ,rb3);
+
 	}
 	
 	@Test
@@ -50,9 +67,17 @@ public class TestCore {
 
 	int optInTimePeriod = 10;
 	int expecteds = 9;
-	int n = core.smaLookback(optInTimePeriod);
 	
+	int n = core.smaLookback(optInTimePeriod);
 	assertEquals(expecteds, n);
+	
+	int optInTimePeriod1 = Integer.MIN_VALUE;
+	int actual1 = core.smaLookback(optInTimePeriod1);
+	assertEquals(29 ,actual1);
+	
+	int optInTimePeriod2 = 1;
+	int actual2 = core.smaLookback(optInTimePeriod2);
+	assertEquals(-1 ,actual2);
 	
 	}
 	
@@ -62,9 +87,13 @@ public class TestCore {
 		RetCode expecteds = RetCode.Success;
 		FuncUnstId id = FuncUnstId.Adxr;
 		int period = 10;
-		RetCode actual = core.SetUnstablePeriod(id, period);
 		
+		RetCode actual = core.SetUnstablePeriod(id, period);
 		assertEquals(expecteds, actual);
+		
+		FuncUnstId id1 = FuncUnstId.All;
+		RetCode actual1 = core.SetUnstablePeriod(id1, period);
+		assertEquals(RetCode.BadParam.toString(),actual1.toString());
 	}
 	
 	@Test
@@ -82,6 +111,14 @@ public class TestCore {
 		int expecteds = 99;
 		int actual = core.trimaLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.trimaLookback(optInTimePeriod1);
+		assertEquals(29 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.trimaLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
@@ -91,33 +128,65 @@ public class TestCore {
 		int expecteds = 6;
 		int actual = core.tsfLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.tsfLookback(optInTimePeriod1);
+		assertEquals(13 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.tsfLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestWillRLookBack(){
+	public void TestWillRLookBack(){	
 		
 		int optInTimePeriod = 38;
 		int expecteds = 37;
 		int actual = core.willRLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.willRLookback(optInTimePeriod1);
+		assertEquals(13 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.willRLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestWmaLookBack(){
+	public void TestWmaLookBack(){	
 		
 		int optInTimePeriod = 76;
 		int expecteds = 75;
 		int actual = core.wmaLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.wmaLookback(optInTimePeriod1);
+		assertEquals(29 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.wmaLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestAroonBackLookBack(){
+	public void TestAroonBackLookBack(){	
 		
 		int optInTimePeriod = 90;
 		int expecteds = 90;
 		int actual = core.aroonLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.aroonLookback(optInTimePeriod1);
+		assertEquals(14 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.aroonLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
@@ -127,60 +196,117 @@ public class TestCore {
 		int expecteds = 40;
 		int actual = core.aroonOscLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.aroonOscLookback(optInTimePeriod1);
+		assertEquals(14 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.aroonOscLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestBetaBackLookBack(){
+	public void TestBetaLookBack(){
 		
 		int optInTimePeriod = 37;
 		int expecteds = 37;
 		int actual = core.betaLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.betaLookback(optInTimePeriod1);
+		assertEquals(5 ,actual1);
+		
+		int optInTimePeriod2 = 0;
+		int actual2 = core.betaLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestMomBackLookBack(){
+	public void TestMomLookBack(){
 		
 		int optInTimePeriod = 0;
 		int expecteds = -1;
 		int actual = core.momLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.momLookback(optInTimePeriod1);
+		assertEquals(10 ,actual1);
+		
+		int optInTimePeriod2 = 0;
+		int actual2 = core.momLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestrocLookBack(){
+	public void TestRocLookBack(){
 		
 		int optInTimePeriod = 40;
 		int expecteds = 40;
 		int actual = core.rocLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.rocLookback(optInTimePeriod1);
+		assertEquals(10 ,actual1);
+		
+		int optInTimePeriod2 = 0;
+		int actual2 = core.rocLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestrocPLookBack(){
+	public void TestRocPLookBack(){	
 		
 		int optInTimePeriod = 40;
 		int expecteds = 40;
 		int actual = core.rocPLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.rocPLookback(optInTimePeriod1);
+		assertEquals(10 ,actual1);
+		
+		int optInTimePeriod2 = 0;
+		int actual2 = core.rocPLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
+	
 	@Test
 	
-	public void TestrocRLookBack(){
+	public void TestRocRLookBack(){
 		
 		int optInTimePeriod = 654;
 		int expecteds = 654;
 		int actual = core.rocRLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.rocRLookback(optInTimePeriod1);
+		assertEquals(10 ,actual1);
+		
+		int optInTimePeriod2 = 0;
+		int actual2 = core.rocRLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
-	public void TestrocR100LookBack(){
+	public void TestRocR100LookBack(){
 		
 		int optInTimePeriod = 400;
 		int expecteds = 400;
 		int actual = core.rocR100Lookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.rocR100Lookback(optInTimePeriod1);
+		assertEquals(10 ,actual1);
+		
+		int optInTimePeriod2 = 0;
+		int actual2 = core.rocR100Lookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
@@ -190,6 +316,14 @@ public class TestCore {
 		int expecteds = 53;
 		int actual = core.minMaxLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.minMaxLookback(optInTimePeriod1);
+		assertEquals(29 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.minMaxLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
@@ -199,6 +333,14 @@ public class TestCore {
 		int expecteds = 64;
 		int actual = core.minMaxIndexLookback(optInTimePeriod);
 		assertEquals(expecteds ,actual);
+		
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		int actual1 = core.minMaxIndexLookback(optInTimePeriod1);
+		assertEquals(29 ,actual1);
+		
+		int optInTimePeriod2 = 1;
+		int actual2 = core.minMaxIndexLookback(optInTimePeriod2);
+		assertEquals(-1 ,actual2);
 	}
 	
 	@Test
@@ -477,6 +619,5 @@ public class TestCore {
 		Compatibility actual = core.getCompatibility();
 
 		assertEquals(expecteds ,actual);
-		
 	}
 }
