@@ -1,23 +1,23 @@
 Core:
 
-minMaxLookback
-minMaxIndexLookback
-smaLookback
-sumLookback
-trimaLookback
-tsfLookback
-willRLookback
-wmaLookback
-aroonLookback
-aroonOscLookback
-betaLookback
-momLookback
-rocLookback
-rocPLookback
-rocRLookback
-rocR100Lookback
-SetUnstablePeriod
-sma
+minMaxLookback						// DONE //
+minMaxIndexLookback					// DONE //
+smaLookback							// DONE //
+sumLookback							// DONE //
+trimaLookback						// DONE //
+tsfLookback							// DONE //
+willRLookback						// DONE //
+wmaLookback							// DONE //
+aroonLookback						// DONE //
+aroonOscLookback					// DONE //
+betaLookback						// DONE //
+momLookback							// DONE //
+rocLookback							// DONE //
+rocPLookback						// DONE //
+rocRLookback						// DONE //
+rocR100Lookback						// DONE //
+SetUnstablePeriod					// DONE //
+sma 								// DONE //
 cdl2CrowsLookback
 cdl3BlackCrowsLookback
 cdl3LineStrikeLookback
@@ -40,35 +40,35 @@ cdlDojiLookback
 cdlSpinningTopLookback
 GetUnstablePeriod
 SetCompatibility
-getCompatibility
-acosLookback
-adLookback
-addLookback
-asinLookback
-atanLookback
-avgPriceLookback
-bopLookback
-cdl3OutsideLookback
-cdlEngulfingLookback
-cdlHikkakeLookback
-cdlXSideGap3MethodsLookback
-ceilLookback
-cosLookback
-coshLookback
-divLookback
-expLookback
-floorLookback
-lnLookback
-log10Lookback
-medPriceLookback
-multLookback
-obvLookback
-sinLookback
-sinhLookback
-sqrtLookback
-subLookback
-tanLookback
-tanhLookback
-trueRangeLookback
-typPriceLookback
-wclPriceLookback
+getCompatibility					// DONE //
+acosLookback						// DONE //
+adLookback							// DONE //
+addLookback							// DONE //
+asinLookback						// DONE //
+atanLookback						// DONE //
+avgPriceLookback					// DONE //
+bopLookback							// DONE //
+cdl3OutsideLookback					// DONE //
+cdlEngulfingLookback				// DONE //
+cdlHikkakeLookback					// DONE //
+cdlXSideGap3MethodsLookback			// DONE //
+ceilLookback						// DONE //
+cosLookback							// DONE //
+coshLookback						// DONE //
+divLookback							// DONE //
+expLookback							// DONE //
+floorLookback						// DONE //
+lnLookback							// DONE //
+log10Lookback						// DONE //
+medPriceLookback					// DONE //
+multLookback						// DONE //
+obvLookback							// DONE //
+sinLookback							// DONE //
+sinhLookback						// DONE //
+sqrtLookback						// DONE //
+subLookback							// DONE //
+tanLookback							// DONE //
+tanhLookback						// DONE //	
+trueRangeLookback					// DONE //	
+typPriceLookback					// DONE //
+wclPriceLookback					// DONE //
