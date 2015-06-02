@@ -1,72 +1,72 @@
 Core:
 
-floor
-ln
-log10
-sarLookback
-sin
-sinh
-sqrt
-stdDevLookback
-tan
-tanh
-sma
-varianceLookback
-movingAverageVariablePeriodLookback
-cdl3InsideLookback
-cdlCounterAttackLookback
-cdlDojiStarLookback
-cdlGapSideSideWhiteLookback
-cdlHaramiLookback
-cdlHaramiCrossLookback
-cdlHomingPigeonLookback
-cdlIdentical3CrowsLookback
-cdlInNeckLookback
-cdlKickingLookback
-cdlKickingByLengthLookback
-cdlOnNeckLookback
-cdlRiseFall3MethodsLookback
-cdlThrustingLookback
-cdlUnique3RiverLookback
-cdlUpsideGap2CrowsLookback
-cmoLookback
-minusDMLookback
-plusDMLookback
-rsiLookback
-adxrLookback
-cdlBeltHoldLookback
-cdlClosingMarubozuLookback
-cdlDragonflyDojiLookback
-cdlGravestoneDojiLookback
-cdlHignWaveLookback
-cdlLongLeggedDojiLookback
-cdlLongLineLookback
-cdlMarubozuLookback
-cdlShortLineLookback
-dxLookback
-minusDILookback
-plusDILookback
-adxLookback
-cdlDarkCloudCoverLookback
-trixLookback
-emaLookback
-atrLookback
-kamaLookback
-macdFixLookback
-mfiLookback
-natrLookback
-temaLookback
-demaLookback
-cdlHikkakeModLookback
-cciLookback
-correlLookback
-linearRegLookback
-linearRegAngleLookback
-linearRegInterceptLookback
-linearRegSlopeLookback
-maxLookback
-maxIndexLookback
-midPointLookback
-midPriceLookback
-minLookback
-minIndexLookback
+floor + +
+ln + +
+log10 + +
+sarLookback +
+sin + +
+sinh + +
+sqrt + +
+stdDevLookback +
+tan + +
+tanh + +
+sma + +
+varianceLookback +
+movingAverageVariablePeriodLookback +
+cdl3InsideLookback +
+cdlCounterAttackLookback +
+cdlDojiStarLookback +
+cdlGapSideSideWhiteLookback +
+cdlHaramiLookback +
+cdlHaramiCrossLookback +
+cdlHomingPigeonLookback +
+cdlIdentical3CrowsLookback + 
+cdlInNeckLookback +
+cdlKickingLookback +
+cdlKickingByLengthLookback +
+cdlOnNeckLookback +
+cdlRiseFall3MethodsLookback +
+cdlThrustingLookback + 
+cdlUnique3RiverLookback +
+cdlUpsideGap2CrowsLookback +
+cmoLookback +
+minusDMLookback +
+plusDMLookback +
+rsiLookback +
+adxrLookback +
+cdlBeltHoldLookback +
+cdlClosingMarubozuLookback +
+cdlDragonflyDojiLookback +
+cdlGravestoneDojiLookback +
+cdlHignWaveLookback +
+cdlLongLeggedDojiLookback +
+cdlLongLineLookback +
+cdlMarubozuLookback +
+cdlShortLineLookback +
+dxLookback +
+minusDILookback +
+plusDILookback +
+adxLookback +
+cdlDarkCloudCoverLookback +
+trixLookback +
+emaLookback +
+atrLookback +
+kamaLookback +
+macdFixLookback +
+mfiLookback +
+natrLookback +
+temaLookback +
+demaLookback +
+cdlHikkakeModLookback +
+cciLookback +
+correlLookback +
+linearRegLookback +
+linearRegAngleLookback+
+linearRegInterceptLookback +
+linearRegSlopeLookback +
+maxLookback +
+maxIndexLookback +
+midPointLookback +
+midPriceLookback +
+minLookback +
+minIndexLookback +
