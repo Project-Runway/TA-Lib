@@ -67,6 +67,6 @@ aroonOsc
 cdlEngulfing
 cdlEngulfing
 minMax
-minMaxIndex
+
 dema
 minMax

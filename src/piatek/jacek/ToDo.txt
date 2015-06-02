@@ -1,13 +1,22 @@
 Core:
 Zrobione:
+minMaxIndex(float)
 minMaxIndex(double)
 minIndex(double)
 maxIndex(double)
 min(double)
 max(double)
+minIndex(float)
+maxIndex(float)
+max(float)
+min(float)
+wma(float)
+wma(double)
+stdDev(float)
+stdDev(double)
+sum(float)
+sum(double)
 Do zrobienia:
-wma
-wma
 linearReg
 linearReg
 tsf
@@ -25,12 +34,6 @@ linearRegSlope
 linearRegSlope
 TA_INT_VAR
 TA_INT_VAR
-stdDev
-stdDev
-max
-maxIndex
-min
-minIndex
 midPrice
 adxr
 adxr
@@ -42,8 +45,6 @@ TA_INT_EMA
 midPoint
 midPoint
 TA_INT_EMA
-sum
-sum
 TA_INT_stddev_using_precalc_ma
 TA_INT_stddev_using_precalc_ma
 roc
