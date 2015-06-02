@@ -1,74 +1,74 @@
 Core:
 
-minMaxLookback
-minMaxIndexLookback
-smaLookback
-sumLookback
-trimaLookback
-tsfLookback
-willRLookback
-wmaLookback
-aroonLookback
-aroonOscLookback
-betaLookback
-momLookback
-rocLookback
-rocPLookback
-rocRLookback
-rocR100Lookback
-SetUnstablePeriod
-sma
-cdl2CrowsLookback
-cdl3BlackCrowsLookback
-cdl3LineStrikeLookback
-cdlBreakawayLookback
-cdlConcealBabysWallLookback
-cdlLadderBottomLookback
-cdlMatchingLowLookback
-cdlPiercingLookback
-cdlStickSandwhichLookback
-cdlTasukiGapLookback
-cdlTristarLookback
-TA_INT_SMA
-htDcPeriodLookback
-htDcPhaseLookback
-htPhasorLookback
-htSineLookback
-htTrendlineLookback
-htTrendModeLookback
-cdlDojiLookback
-cdlSpinningTopLookback
-GetUnstablePeriod
-SetCompatibility
-getCompatibility
-acosLookback
-adLookback
-addLookback
-asinLookback
-atanLookback
-avgPriceLookback
-bopLookback
-cdl3OutsideLookback
-cdlEngulfingLookback
-cdlHikkakeLookback
-cdlXSideGap3MethodsLookback
-ceilLookback
-cosLookback
-coshLookback
-divLookback
-expLookback
-floorLookback
-lnLookback
-log10Lookback
-medPriceLookback
-multLookback
-obvLookback
-sinLookback
-sinhLookback
-sqrtLookback
-subLookback
-tanLookback
-tanhLookback
-trueRangeLookback
-typPriceLookback
-wclPriceLookback
+minMaxLookback						// DONE //
+minMaxIndexLookback					// DONE //
+smaLookback							// DONE //
+sumLookback							// DONE //
+trimaLookback						// DONE //
+tsfLookback							// DONE //
+willRLookback						// DONE //
+wmaLookback							// DONE //
+aroonLookback						// DONE //
+aroonOscLookback					// DONE //
+betaLookback						// DONE //
+momLookback							// DONE //
+rocLookback							// DONE //
+rocPLookback						// DONE //
+rocRLookback						// DONE //
+rocR100Lookback						// DONE //
+SetUnstablePeriod					// DONE //
+sma 								// DONE //
+cdl2CrowsLookback					// DONE //
+cdl3BlackCrowsLookback				// DONE //
+cdl3LineStrikeLookback				// DONE //
+cdlBreakawayLookback				// DONE //
+cdlConcealBabysWallLookback			// DONE //
+cdlLadderBottomLookback				// DONE //
+cdlMatchingLowLookback				// DONE //
+cdlPiercingLookback					// DONE //
+cdlStickSandwhichLookback			// DONE //
+cdlTasukiGapLookback				// DONE //
+cdlTristarLookback					// DONE //
+TA_INT_SMA							// DONE //
+htDcPeriodLookback					// DONE //
+htDcPhaseLookback					// DONE //
+htPhasorLookback					// DONE //
+htSineLookback						// DONE //
+htTrendlineLookback					// DONE //
+htTrendModeLookback					// DONE //
+cdlDojiLookback						// DONE //
+cdlSpinningTopLookback				// DONE //
+GetUnstablePeriod					// DONE //
+SetCompatibility					// DONE //
+getCompatibility					// DONE //
+acosLookback						// DONE //
+adLookback							// DONE //
+addLookback							// DONE //
+asinLookback						// DONE //
+atanLookback						// DONE //
+avgPriceLookback					// DONE //
+bopLookback							// DONE //
+cdl3OutsideLookback					// DONE //
+cdlEngulfingLookback				// DONE //
+cdlHikkakeLookback					// DONE //
+cdlXSideGap3MethodsLookback			// DONE //
+ceilLookback						// DONE //
+cosLookback							// DONE //
+coshLookback						// DONE //
+divLookback							// DONE //
+expLookback							// DONE //
+floorLookback						// DONE //
+lnLookback							// DONE //
+log10Lookback						// DONE //
+medPriceLookback					// DONE //
+multLookback						// DONE //
+obvLookback							// DONE //
+sinLookback							// DONE //
+sinhLookback						// DONE //
+sqrtLookback						// DONE //
+subLookback							// DONE //
+tanLookback							// DONE //
+tanhLookback						// DONE //	
+trueRangeLookback					// DONE //	
+typPriceLookback					// DONE //
+wclPriceLookback					// DONE //

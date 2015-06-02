@@ -34,39 +34,39 @@ ema
 ema
 medPrice
 stochFLookback
-add
+add									// done //
 adOscLookback
-div
-mult
-sub
-add
-div
+div									// done //
+mult								// done //
+sub									// done //
+add									// done //
+div									// done //
 macdFix
 macdFix
-mult
-sub
+mult								// done //
+sub									// done	//
 apoLookback
 ppoLookback
 SetCandleSettings
-acos
-asin
-atan
-ceil
-cos
-cosh
-exp
-floor
-ln
-log10
-sin
-sinh
-sqrt
-tan
-tanh
-acos
-asin
-atan
-ceil
-cos
-cosh
-exp
+acos								// done //
+asin								// done //
+atan								// done //
+ceil								// done //
+cos									// done //
+cosh								// done //
+exp									// done //
+floor								// done //
+ln									// done //
+log10								// done //
+sin									// done //
+sinh								// done //
+sqrt								// done //
+tan									// done //
+tanh								// done //
+acos								// done //
+asin								// done //
+atan								// done //
+ceil								// done //
+cos									// done //
+cosh								// done //
+exp									// done //
