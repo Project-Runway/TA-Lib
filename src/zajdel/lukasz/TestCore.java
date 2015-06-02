@@ -2,15 +2,12 @@ package zajdel.lukasz;
 
 import static org.junit.Assert.*;
 
-import java.lang.ProcessBuilder.Redirect;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.tictactec.ta.lib.Compatibility;
 import com.tictactec.ta.lib.Core;
 import com.tictactec.ta.lib.FuncUnstId;
-import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
 
@@ -43,7 +40,7 @@ public class TestCore {
 		double[] outReal = new double[1	];
 		
 		
-		RetCode rc = core.sma(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		core.sma(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
 		assertArrayEquals(expecteds, outReal, 0);
 		
 		RetCode rb = core.sma(-1, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
@@ -55,10 +52,15 @@ public class TestCore {
 		RetCode rb2 = core.sma(0, 99, inputsinReal, 1, outBegIdx, outNBElement, outReal);
 		assertEquals(RetCode.BadParam.toString(),rb2.toString());
 		
-		//TODO Dodac ostatniego if'a, je¿eli metoda nie bêdzie pokryta w 100%
-		//int optInTimePeriod1 = Integer.MIN_VALUE;
-		//RetCode rb3 = core.sma(0, 99, inputsinReal, optInTimePeriod1, outBegIdx, outNBElement, outReal);
-		//assertEquals(30 ,outReal);
+		double[] inputsinReal1 = new double[] { -1.50, -9.04, 9.50, -0.84, 1.72, -1.20, -7.89, 5.64, -0.83, -2.60, -5.48,
+				5.74, -9.40, 7.68, 5.51, -9.39, -4.50, -8.28, 8.83, -8.61, -2.66, 1.74,
+				2.46, 9.12, -1.03, -2.73, 2.08, 5.32, 9.37, -9.75};
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		double[] expecteds1 = new double[] { -0.36733333333333357 };
+		double[] outReal1 = new double[1];
+		
+		core.sma(0, 29, inputsinReal1, optInTimePeriod1, outBegIdx, outNBElement, outReal1);
+		assertArrayEquals(expecteds1, outReal1, 0);
 
 	}
 	
@@ -75,7 +77,6 @@ public class TestCore {
 				8.07, -2.68, -3.73, -5.52, -4.23, -6.94, -5.47, 0.94, -4.39, 8.55, -1.37,
 				1.29, 6.69, 8.21, 0.28, 1.22, 0.82, -7.62, 3.55, -4.35, 4.33, -7.36,
 				-4.01 };
-		double[] expecteds = new double[] { 0.13949999999999993 };
 		
 		MInteger outBegIdx = new MInteger();
 		MInteger outNBElement = new MInteger();
@@ -372,8 +373,6 @@ public class TestCore {
 	
 	@Test
 	public void testCdl2CrowsLookback(){
-		//TODO Wpisany na sztywno. W tej funkcji jest brany .THIS z funkcji cdl2Crows.
-		// Czy musze najpierw wywolac ta funkcje i dopiero sprawdzic czy lookback dziala, czy moge tak zostawic na sztywno?
 		int expecteds = 12;
 		int actual = core.cdl2CrowsLookback();
 		
@@ -472,7 +471,7 @@ public class TestCore {
 	
 	@Test
 	public void testHtDcPeriodLookback(){
-		//TODO Sprawdzic czy to jest dobrze, wpisany na sztywno i niby dziala.
+		
 		int expecteds = 32;
 		int actual = core.htDcPeriodLookback();
 		
