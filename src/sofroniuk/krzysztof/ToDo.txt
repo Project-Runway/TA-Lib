@@ -5,34 +5,34 @@ macd
 macd
 ultOscLookback
 macdExtLookback
-apo
-apo
-ppo
-ppo
+apo									// done //
+apo									// done //
+ppo									// done //
+ppo									// done //
 stochLookback
-bop
-bop
+bop									// done //
+bop									// done //
 macdLookback
 stochRsiLookback
 bbandsLookback
-variance
-variance
-avgPrice
-avgPrice
-wclPrice
-wclPrice
+variance							// done	//
+variance							// done //
+avgPrice							// done //
+avgPrice							// done	//
+wclPrice							// done //
+wclPrice							// done //
 cdlEveningStarLookback
 cdlMatHoldLookback
 cdlMorningStarLookback
-typPrice
-typPrice
+typPrice							// done //
+typPrice							// done //
 t3Lookback
 mamaLookback
-medPrice
+medPrice							// done //
 RestoreCandleDefaultSettings
-ema
-ema
-medPrice
+ema									// done //
+ema									// done //
+medPrice							// done //
 stochFLookback
 add									// done //
 adOscLookback
