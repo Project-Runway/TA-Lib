@@ -18,28 +18,28 @@ rocRLookback						// DONE //
 rocR100Lookback						// DONE //
 SetUnstablePeriod					// DONE //
 sma 								// DONE //
-cdl2CrowsLookback
-cdl3BlackCrowsLookback
-cdl3LineStrikeLookback
-cdlBreakawayLookback
-cdlConcealBabysWallLookback
-cdlLadderBottomLookback
-cdlMatchingLowLookback
-cdlPiercingLookback
-cdlStickSandwhichLookback
-cdlTasukiGapLookback
-cdlTristarLookback
-TA_INT_SMA
-htDcPeriodLookback
-htDcPhaseLookback
-htPhasorLookback
-htSineLookback
-htTrendlineLookback
-htTrendModeLookback
-cdlDojiLookback
-cdlSpinningTopLookback
-GetUnstablePeriod
-SetCompatibility
+cdl2CrowsLookback					// DONE //
+cdl3BlackCrowsLookback				// DONE //
+cdl3LineStrikeLookback				// DONE //
+cdlBreakawayLookback				// DONE //
+cdlConcealBabysWallLookback			// DONE //
+cdlLadderBottomLookback				// DONE //
+cdlMatchingLowLookback				// DONE //
+cdlPiercingLookback					// DONE //
+cdlStickSandwhichLookback			// DONE //
+cdlTasukiGapLookback				// DONE //
+cdlTristarLookback					// DONE //
+TA_INT_SMA							// DONE //
+htDcPeriodLookback					// DONE //
+htDcPhaseLookback					// DONE //
+htPhasorLookback					// DONE //
+htSineLookback						// DONE //
+htTrendlineLookback					// DONE //
+htTrendModeLookback					// DONE //
+cdlDojiLookback						// DONE //
+cdlSpinningTopLookback				// DONE //
+GetUnstablePeriod					// DONE //
+SetCompatibility					// DONE //
 getCompatibility					// DONE //
 acosLookback						// DONE //
 adLookback							// DONE //
