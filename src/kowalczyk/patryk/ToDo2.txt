@@ -1,0 +1,16 @@
+CoreMetaData:
+
+getInputParameterInfo
+getOutputParameterInfo
+getOptInputParameterInfo
+getFuncInfo
+getInstance
+
+
+TaFuncSignature:
+
+compareTo
+TaFuncSignature
+TaFuncSignature
+getInVarTypes
+getName
