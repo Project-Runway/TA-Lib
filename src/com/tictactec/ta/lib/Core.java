@@ -18210,7 +18210,7 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Metoda zwraca okres dla MA.
     * @param optInTimePeriod Okres czasu
-    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @param optInMAType Typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
     * @return okres
     */
    public int movingAverageLookback( int optInTimePeriod,
@@ -18270,10 +18270,10 @@ public RetCode cdlEngulfing( int startIdx,
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do zaokrąglenia
     * @param outBegIdx Początkowy indeks wyjściowy
-    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
-    * @param outBegIdx początkowy indeks wyjściowy
-    * @param outNBElement liczba elementów wyjściowych
-    * @param outReal tablica na elementy wyjściowe
+    * @param optInMAType Typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe
     * @return Status
     */
    public RetCode movingAverage( int startIdx,
@@ -18366,10 +18366,10 @@ public RetCode cdlEngulfing( int startIdx,
     * @param endIdx Indeks końcowy
     * @param inReal Tablica z wartościami do zaokrąglenia
     * @param outBegIdx Początkowy indeks wyjściowy
-    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
-    * @param outBegIdx początkowy indeks wyjściowy
-    * @param outNBElement liczba elementów wyjściowych
-    * @param outReal tablica na elementy wyjściowe
+    * @param optInMAType Typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe
     * @return Status
     */
    public RetCode movingAverage( int startIdx,
@@ -18453,10 +18453,10 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * MACD - Moving Average Convergence/Divergence
     * @see <a href="http://www.investopedia.com/terms/m/macd.asp">site</a>
-    * @param optInFastPeriod zakres (od 2 do 100000)
-    * @param optInSlowPeriod zakres (od 2 do 100000)
-    * @param optInSignalPeriod (od 1 do 100000)
-    * @return Status
+    * @param optInFastPeriod Zakres (od 2 do 100000)
+    * @param optInSlowPeriod Zakres (od 2 do 100000)
+    * @param optInSignalPeriod Zakres (od 1 do 100000)
+    * @return -1 lub emaLookback od parametrów
     */
    public int macdLookback( int optInFastPeriod,
       int optInSlowPeriod,
@@ -18487,10 +18487,16 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * MACD - Moving Average Convergence/Divergence
     * @see <a href="http://www.investopedia.com/terms/m/macd.asp">site</a>
-    * @param optInFastPeriod zakres (od 2 do 100000)
-    * @param optInSlowPeriod zakres (od 2 do 100000)
-    * @param optInSignalPeriod (od 1 do 100000)
-    * @return Status
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param optInFastPeriod Zakres (od 2 do 100000)
+    * @param optInSlowPeriod Zakres (od 2 do 100000)
+    * @param optInSignalPeriod Zakres (od 1 do 100000)
+    * @return -1 lub emaLookback od parametrów
     */
    public RetCode macd( int startIdx,
       int endIdx,
@@ -18530,6 +18536,21 @@ public RetCode cdlEngulfing( int startIdx,
          outMACDSignal,
          outMACDHist );
    }
+   /**
+    * Wewnętrzna implementacja, która może zostać wywołana przez inną TA funkcję.
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks wyjściowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInFastPeriod Zakres (od 2 do 100000)
+    * @param optInSlowPeriod Zakres (od 2 do 100000)
+    * @param optInSignalPeriod_2 Zakres (od 1 do 100000)
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMACD Tablica wyjściowa z MACD
+    * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
+    * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
+    * @return Status
+    */
    RetCode TA_INT_MACD( int startIdx,
       int endIdx,
       double inReal[],
@@ -18633,6 +18654,20 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outNbElement2.value ;
       return RetCode.Success ;
    }
+   /**
+    * MACD - Moving Average Convergence/Divergence
+    * @see <a href="http://www.investopedia.com/terms/m/macd.asp">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param optInFastPeriod Zakres (od 2 do 100000)
+    * @param optInSlowPeriod Zakres (od 2 do 100000)
+    * @param optInSignalPeriod Zakres (od 1 do 100000)
+    * @return -1 lub emaLookback od parametrów
+    */
    public RetCode macd( int startIdx,
       int endIdx,
       float inReal[],
@@ -18671,6 +18706,21 @@ public RetCode cdlEngulfing( int startIdx,
          outMACDSignal,
          outMACDHist );
    }
+   /**
+    * Wewnętrzna implementacja, która może zostać wywołana przez inną TA funkcję.
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks wyjściowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInFastPeriod Zakres (od 2 do 100000)
+    * @param optInSlowPeriod Zakres (od 2 do 100000)
+    * @param optInSignalPeriod_2 Zakres (od 1 do 100000)
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMACD Tablica wyjściowa z MACD
+    * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
+    * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
+    * @return Status
+    */
    RetCode TA_INT_MACD( int startIdx,
       int endIdx,
       float inReal[],
@@ -18775,6 +18825,16 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca wynik dla MACDEXT.
+    * @param optInFastPeriod Liczba okresu (od 2 do 100000)
+    * @param optInFastMAType Typ od Moving Average dla fast Moving Average
+    * @param optInSlowPeriod Liczba okresu (od 2 do 100000)
+    * @param optInSlowMAType Typ od Moving Average dla slow Moving Average
+    * @param optInSignalPeriod Płynność dla linii sygnału (od 1 o 100000)
+    * @param optInSignalMAType Typ od Moving Average dla linii sygnalu
+    * @return wynik
+    */
    public int macdExtLookback( int optInFastPeriod,
       MAType optInFastMAType,
       int optInSlowPeriod,
@@ -18801,6 +18861,31 @@ public RetCode cdlEngulfing( int startIdx,
          lookbackLargest = tempInteger;
       return lookbackLargest + movingAverageLookback ( optInSignalPeriod, optInSignalMAType );
    }
+   /**
+    * MACD with controllable MA type
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/momentum_indicators/macdext.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInFastPeriod Liczba okresu (od 2 do 100000)
+    * @param optInFastMAType Typ od Moving Average dla fast Moving Average
+    * @param optInSlowPeriod Liczba okresu (od 2 do 100000)
+    * @param optInSlowMAType Typ od Moving Average dla slow Moving Average
+    * @param optInSignalPeriod Płynność dla linii sygnału (od 1 o 100000)
+    * @param optInSignalMAType Typ od Moving Average dla linii sygnału
+    * @param outBegIdx Indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMACD Tablica wyjściowa z MACD
+    * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
+    * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
+    * @return Status
+    */
    public RetCode macdExt( int startIdx,
       int endIdx,
       double inReal[],
@@ -18917,6 +19002,31 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outNbElement2.value ;
       return RetCode.Success ;
    }
+   /**
+    * MACD with controllable MA type
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/momentum_indicators/macdext.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInFastPeriod Liczba okresu (od 2 do 100000)
+    * @param optInFastMAType Typ od Moving Average dla fast Moving Average
+    * @param optInSlowPeriod Liczba okresu (od 2 do 100000)
+    * @param optInSlowMAType Typ od Moving Average dla slow Moving Average
+    * @param optInSignalPeriod Płynność dla linii sygnału (od 1 o 100000)
+    * @param optInSignalMAType Typ od Moving Average dla linii sygnalu
+    * @param outBegIdx Indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMACD Tablica wyjściowa z MACD
+    * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
+    * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
+    * @return Status
+    */
    public RetCode macdExt( int startIdx,
       int endIdx,
       float inReal[],
@@ -19034,6 +19144,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca dla MACDFIX
+    * @param optInSignalPeriod płynność dla linii sygnalu (od 1 o 100000)
+    * @return wynik
+    */
    public int macdFixLookback( int optInSignalPeriod )
    {
       if( (int)optInSignalPeriod == ( Integer.MIN_VALUE ) )
@@ -19043,6 +19158,26 @@ public RetCode cdlEngulfing( int startIdx,
       return emaLookback ( 26 )
          + emaLookback ( optInSignalPeriod );
    }
+   /**
+    * MACDFIX - Moving Average Convergence/Divergence Fix 12/26
+    * @see <a href="http://www.macroaxis.com/invest/Momentum-Indicators/Moving-Average-Convergence-Divergence-Fix/TWTR">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInSignalPeriod Płynność dla linii sygnalu (od 1 o 100000)
+    * @param outBegIdx Indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMACD Tablica wyjściowa z MACD
+    * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
+    * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
+    * @return Status
+    */
    public RetCode macdFix( int startIdx,
       int endIdx,
       double inReal[],
@@ -19071,6 +19206,26 @@ public RetCode cdlEngulfing( int startIdx,
          outMACDSignal,
          outMACDHist );
    }
+   /**
+    * MACDFIX - Moving Average Convergence/Divergence Fix 12/26
+    * @see <a href="http://www.macroaxis.com/invest/Momentum-Indicators/Moving-Average-Convergence-Divergence-Fix/TWTR">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInSignalPeriod Płynność dla linii sygnalu (od 1 o 100000)
+    * @param outBegIdx Indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMACD Tablica wyjściowa z MACD
+    * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
+    * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
+    * @return Status
+    */
    public RetCode macdFix( int startIdx,
       int endIdx,
       float inReal[],
@@ -19100,6 +19255,12 @@ public RetCode cdlEngulfing( int startIdx,
          outMACDHist );
    }
    /* Generated */
+   /**
+    * Metoda zwraca dla MAMA.
+    * @param optInFastLimit Górna granica użyć
+    * @param optInSlowLimit Dolna granica użyć
+    * @return wynik
+    */
    public int mamaLookback( double optInFastLimit,
       double optInSlowLimit )
    {
@@ -19113,6 +19274,26 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return 32 + (this.unstablePeriod[FuncUnstId.Mama.ordinal()]) ;
    }
+   /**
+    * MAMA - MESA Adaptive Moving Average
+    * @see <a href="https://www.linnsoft.com/techind/mesa-adaptive-moving-average-mama">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInFastLimit Górna granica użyć
+    * @param optInSlowLimit Dolna granica użyć
+    * @param outBegIdx Indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMAMA Tablica wyjściowa z MAMA
+    * @param outFAMA Tablica wyjściowa z FAMA
+    * @return Status
+    */
    public RetCode mama( int startIdx,
       int endIdx,
       double inReal[],
@@ -19279,6 +19460,26 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MAMA - MESA Adaptive Moving Average
+    * @see <a href="https://www.linnsoft.com/techind/mesa-adaptive-moving-average-mama">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInFastLimit Górna granica użyć
+    * @param optInSlowLimit Dolna granica użyć
+    * @param outBegIdx Indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMAMA Tablica wyjściowa z MAMA
+    * @param outFAMA Tablica wyjściowa z FAMA
+    * @return Status
+    */
    public RetCode mama( int startIdx,
       int endIdx,
       float inReal[],
@@ -19446,6 +19647,13 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca dla OVP.
+    * @param optInMinPeriod Minimalny okres
+    * @param optInMaxPeriod Maksymalny okres
+    * @param optInMAType Typ od Moving Average
+    * @return wynik
+    */
    public int movingAverageVariablePeriodLookback( int optInMinPeriod,
       int optInMaxPeriod,
       MAType optInMAType )
@@ -19460,6 +19668,27 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return movingAverageLookback (optInMaxPeriod, optInMAType);
    }
+   /**
+    * MAVP - Moving average with variable period
+    * @see <a href="http://etfhq.com/blog/2011/02/22/variable-moving-average-vma-volatility-index-dynamic-average-vidya/">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param inPeriods Tablica z okresami
+    * @param optInMinPeriod Minimalny okres
+    * @param optInMaxPeriod Maksymalny okres
+    * @param optInMAType Typ od Moving Average
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode movingAverageVariablePeriod( int startIdx,
       int endIdx,
       double inReal[],
@@ -19549,6 +19778,27 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outputSize;
       return RetCode.Success ;
    }
+   /**
+    * MAVP - Moving average with variable period
+    * @see <a href="http://etfhq.com/blog/2011/02/22/variable-moving-average-vma-volatility-index-dynamic-average-vidya/">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param inPeriods Tablica z okresami
+    * @param optInMinPeriod Minimalny okres
+    * @param optInMaxPeriod Maksymalny okres
+    * @param optInMAType Typ od Moving Average
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode movingAverageVariablePeriod( int startIdx,
       int endIdx,
       float inReal[],
@@ -19639,6 +19889,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla MAX.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int maxLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19647,6 +19902,23 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MAX - Najwyższa wartość w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode max( int startIdx,
       int endIdx,
       double inReal[],
@@ -19711,6 +19983,23 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MAX - Najwyższa wartość w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode max( int startIdx,
       int endIdx,
       float inReal[],
@@ -19776,6 +20065,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla MAXINDEX.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int maxIndexLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19784,6 +20078,23 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MAXINDEX - Indeks najwyższej wartości w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
    public RetCode maxIndex( int startIdx,
       int endIdx,
       double inReal[],
@@ -19848,6 +20159,23 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MAXINDEX - Indeks najwyższej wartości w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
    public RetCode maxIndex( int startIdx,
       int endIdx,
       float inReal[],
@@ -19913,10 +20241,31 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca dla MEDPRICE.
+    * @return 0
+    */
    public int medPriceLookback( )
    {
       return 0;
    }
+   /**
+    * MEDPRICE - Median Price - Średnia cen
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode medPrice( int startIdx,
       int endIdx,
       double inHigh[],
@@ -19939,6 +20288,23 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * MEDPRICE - Median Price - Średnia cen
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode medPrice( int startIdx,
       int endIdx,
       float inHigh[],
@@ -19962,6 +20328,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca dla MFI.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int mfiLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19970,6 +20341,27 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Mfi.ordinal()]) ;
    }
+   /**
+    * MFI - Money Flow Index - Indeks przypływów pieniężnych
+    * @see <a href="http://bossa.pl/edukacja/AT/wskazniki/MFI/">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia
+    * @param inVolume Tablica z volume
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na lementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode mfi( int startIdx,
       int endIdx,
       double inHigh[],
@@ -20108,6 +20500,27 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MFI - Money Flow Index - Indeks przypływów pieniężnych
+    * @see <a href="http://bossa.pl/edukacja/AT/wskazniki/MFI/">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param inClose Cena zamknięcia
+    * @param inVolume Tablica z volume
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na lementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode mfi( int startIdx,
       int endIdx,
       float inHigh[],
@@ -20247,6 +20660,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca dla MIDPOINT.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int midPointLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20255,6 +20673,24 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MIDPOINT - MidPoint over period
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/overlap_studies/midpoint.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode midPoint( int startIdx,
       int endIdx,
       double inReal[],
@@ -20303,6 +20739,24 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MIDPOINT - MidPoint over period
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/overlap_studies/midpoint.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica cen
+    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode midPoint( int startIdx,
       int endIdx,
       float inReal[],
@@ -20352,6 +20806,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca dla MIDPRICE.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int midPriceLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20360,6 +20819,25 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MIDPRICE - Midpoint price over period
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/overlap_studies/midprice.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na lementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode midPrice( int startIdx,
       int endIdx,
       double inHigh[],
@@ -20411,6 +20889,25 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MIDPRICE - Midpoint price over period
+    * @see <a href="http://www.stockalyze.com/hlp/indicators/topics/overlap_studies/midprice.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inHigh Maksymalna cena
+    * @param inLow Minimalna cena
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na lementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode midPrice( int startIdx,
       int endIdx,
       float inHigh[],
@@ -20463,6 +20960,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla MIN.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int minLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20471,6 +20973,23 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MIN - Najniższa wartość w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode min( int startIdx,
       int endIdx,
       double inReal[],
@@ -20535,6 +21054,23 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MIN - Najniższa wartość w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode min( int startIdx,
       int endIdx,
       float inReal[],
@@ -20600,6 +21136,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla MININDEX.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int minIndexLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20608,6 +21149,23 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MININDEX - Indeks najniższej wartości w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
    public RetCode minIndex( int startIdx,
       int endIdx,
       double inReal[],
@@ -20672,6 +21230,23 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MININDEX - Indeks najniższej wartości w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInteger
+    * @return Status
+    */
    public RetCode minIndex( int startIdx,
       int endIdx,
       float inReal[],
@@ -20737,6 +21312,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla MINMAX.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int minMaxLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20745,6 +21325,24 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MINMAX - Najniższa i najwyższa wartość w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMin Tablica wyjściowa z okresami minimalnymi
+    * @param outMax Tablica wyjściowa z okresami maksymalnymi
+    * @return Status
+    */
    public RetCode minMax( int startIdx,
       int endIdx,
       double inReal[],
@@ -20834,6 +21432,24 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MINMAX - Najniższa i najwyższa wartość w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMin Tablica wyjściowa z okresami minimalnymi
+    * @param outMax Tablica wyjściowa z okresami maksymalnymi
+    * @return Status
+    */
    public RetCode minMax( int startIdx,
       int endIdx,
       float inReal[],
@@ -20924,6 +21540,11 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla MINMAXINDEX.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int minMaxIndexLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -20932,6 +21553,24 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return (optInTimePeriod-1);
    }
+   /**
+    * MINMAXINDEX - Indeksy najniższej i najwyższej wartości w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMinIdx Tablica wyjściowa z indeksami najniższych wartości
+    * @param outMaxIdx Tablica wyjściowa z indeksami najwyższych wartości
+    * @return Status
+    */
    public RetCode minMaxIndex( int startIdx,
       int endIdx,
       double inReal[],
@@ -21021,6 +21660,24 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * MINMAXINDEX - Indeksy najniższej i najwyższej wartości w określonym czasie
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outMinIdx Tablica wyjściowa z indeksami najniższych wartości
+    * @param outMaxIdx Tablica wyjściowa z indeksami najwyższych wartości
+    * @return Status
+    */
    public RetCode minMaxIndex( int startIdx,
       int endIdx,
       float inReal[],

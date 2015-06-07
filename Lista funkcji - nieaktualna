@@ -20,8 +20,14 @@ LINEARREGSLOPE - Linear Regression Slope https://www.linnsoft.com/techind/linear
 LN - Vector Log Natural http://pl.wikipedia.org/wiki/Logarytm_naturalny
 MA - Moving Average
 MACD - Moving Average Convergence/Divergence http://www.investopedia.com/terms/m/macd.asp
+MACDEXT - MACD with controllable MA type http://www.stockalyze.com/hlp/indicators/topics/momentum_indicators/macdext.html
+MACDFIX - Moving Average Convergence/Divergence Fix 12/26 http://www.macroaxis.com/invest/Momentum-Indicators/Moving-Average-Convergence-Divergence-Fix/TWTR
 MAMA - MESA Adaptive Moving Average https://www.linnsoft.com/techind/mesa-adaptive-moving-average-mama http://bossa.pl/edukacja/AT/wskazniki/ruchome/
+MAVP - Moving average with variable period http://etfhq.com/blog/2011/02/22/variable-moving-average-vma-volatility-index-dynamic-average-vidya/
+MEDPRICE - Median Price
 MFI - Money Flow Index (indeks przepływów pieniężnych). http://www.fmlabs.com/reference/default.htm?url=MoneyFlowIndex.htm  http://bossa.pl/edukacja/AT/wskazniki/MFI/  http://pl.wikipedia.org/wiki/Money_flow
+MIDPOINT - MidPoint over period http://www.stockalyze.com/hlp/indicators/topics/overlap_studies/midpoint.html
+MIDPRICE - Midpoint Price over period http://www.stockalyze.com/hlp/indicators/topics/overlap_studies/midprice.html
 MINUSDI - Minus Directional Indicator  http://www.fmlabs.com/reference/default.htm?url=DI.htm http://www.tradingsolutions.com/functions/MinusDirectionalIndicator.html https://www.tradingview.com/stock-charts-support/index.php/Directional_Movement_(DMI)
 MINUSDM - Minus Directional Movement 
 NATR - Normalized Average True Range https://www.tradingtechnologies.com/help/xstudy/normalized-average-true-range-natr/ http://www.iqbroker.com/scripts/indicator/normalized-average-true-range?id=Indicator_1603
