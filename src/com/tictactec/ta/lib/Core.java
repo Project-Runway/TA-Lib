@@ -7403,10 +7403,10 @@ public RetCode cdlEngulfing( int startIdx,
       * @param inHigh tablica cen maksymalnych
       * @param inLow tablica cen minimalnych
       * @param inClose tablica cen zamknięcia
-      * @param optInPenetration
+      * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
       * @param outBegIdx początkowy indeks wyjściowy
       * @param outNBElement liczba elementów wyjściowych
-      * @param outInteger
+      * @param outInteger Tablica na elementy wyjściowe
       * @return Status
       */
    public RetCode cdlEveningStar( int startIdx,
@@ -7480,13 +7480,35 @@ public RetCode cdlEngulfing( int startIdx,
       outNBElement.value = outIdx;
       outBegIdx.value = startIdx;
       return RetCode.Success ;
-   }
-   /* Generated */
-   public int cdlGapSideSideWhiteLookback( )
+   } 
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlGapSideSideWhite
+    * @return odpowiedni zakres liczbowy
+    */
+public int cdlGapSideSideWhiteLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) + 2;
    }
-   public RetCode cdlGapSideSideWhite( int startIdx,
+ /**
+ * Up/Down-gap side-by-side white lines
+ * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=761026261314764BA0DA7D66C603AFD7.server1?tutorial=Up_Down%20Gap%20Side%20by%20Side%20White%20Lines">site</a>
+ * <hr>
+ * <ul>
+ *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+ * </ul>
+ * @param startIdx indeks startowy
+ * @param endIdx indeks końcowy
+ * @param inOpen tablica cen otwarcia	
+ * @param inHigh tablica cen maksymalnych
+ * @param inLow tablica cen minimalnych
+ * @param inClose tablica cen zamknięcia
+ * @param outBegIdx początkowy indeks wyjściowy
+ * @param outNBElement liczba elementów wyjściowych    
+ * @param outInteger Tablica na elementy wyjściowe
+ * @return Status
+ */
+public RetCode cdlGapSideSideWhite( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -7555,7 +7577,26 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   public RetCode cdlGapSideSideWhite( int startIdx,
+ /**
+ * Up/Down-gap side-by-side white lines
+ * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=761026261314764BA0DA7D66C603AFD7.server1?tutorial=Up_Down%20Gap%20Side%20by%20Side%20White%20Lines">site</a>
+ * <hr>
+ * <ul>
+ *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+ * </ul>
+ * @param startIdx indeks startowy
+ * @param endIdx indeks końcowy
+ * @param inOpen tablica cen otwarcia	
+ * @param inHigh tablica cen maksymalnych
+ * @param inLow tablica cen minimalnych
+ * @param inClose tablica cen zamknięcia
+ * @param outBegIdx początkowy indeks wyjściowy
+ * @param outNBElement liczba elementów wyjściowych    
+ * @param outInteger Tablica na elementy wyjściowe
+ * @return Status
+ */
+public RetCode cdlGapSideSideWhite( int startIdx,
       int endIdx,
       float inOpen[],
       float inHigh[],
@@ -7624,12 +7665,34 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+/**
+ * Metoda zwraca odpowiedni zakres dla cdlGravestoneDoji
+ * @return odpowiedni zakres liczbowy
+ */
    public int cdlGravestoneDojiLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
-   public RetCode cdlGravestoneDoji( int startIdx,
+   /**
+    * Gravestone Doji
+    * @see <a href="http://thepatternsite.com/Gravestone.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
+public RetCode cdlGravestoneDoji( int startIdx,
       int endIdx,
       double inOpen[],
       double inHigh[],
@@ -7689,6 +7752,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+/**
+ * Gravestone Doji
+ * @see <a href="http://thepatternsite.com/Gravestone.html">site</a>
+ * <hr>
+ * <ul>
+ *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+ *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+ * </ul>
+ * @param startIdx indeks startowy
+ * @param endIdx indeks końcowy
+ * @param inOpen tablica cen otwarcia	
+ * @param inHigh tablica cen maksymalnych
+ * @param inLow tablica cen minimalnych
+ * @param inClose tablica cen zamknięcia
+ * @param outBegIdx początkowy indeks wyjściowy
+ * @param outNBElement liczba elementów wyjściowych    
+ * @param outInteger Tablica na elementy wyjściowe
+ * @return Status
+ */
    public RetCode cdlGravestoneDoji( int startIdx,
       int endIdx,
       float inOpen[],
@@ -7749,12 +7831,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */ 
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlHammer
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlHammerLookback( )
    {
-      return ((( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) +
-         1;
+      return ((( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * Up/Down-gap side-by-side white lines
+    * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=761026261314764BA0DA7D66C603AFD7.server1?tutorial=Up_Down%20Gap%20Side%20by%20Side%20White%20Lines">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHammer( int startIdx,
       int endIdx,
       double inOpen[],
@@ -7838,6 +7941,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Up/Down-gap side-by-side white lines
+    * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=761026261314764BA0DA7D66C603AFD7.server1?tutorial=Up_Down%20Gap%20Side%20by%20Side%20White%20Lines">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHammer( int startIdx,
       int endIdx,
       float inOpen[],
@@ -7921,12 +8043,34 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlHangingMan
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlHangingManLookback( )
    {
       return ((( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) +
          1;
    }
+   /**
+    * Hanging Man
+    * @see <a href="http://www.onlinetradingconcepts.com/TechnicalAnalysis/Candlesticks/HangingMan.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHangingMan( int startIdx,
       int endIdx,
       double inOpen[],
@@ -8010,6 +8154,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hanging Man
+    * @see <a href="http://www.onlinetradingconcepts.com/TechnicalAnalysis/Candlesticks/HangingMan.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHangingMan( int startIdx,
       int endIdx,
       float inOpen[],
@@ -8093,11 +8256,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlHaramiLook
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlHaramiLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 1;
    }
+   /**
+    * Harami Pattern
+    * @see <a href="http://www.onlinetradingconcepts.com/TechnicalAnalysis/Candlesticks/Harami.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHarami( int startIdx,
       int endIdx,
       double inOpen[],
@@ -8159,6 +8344,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Harami Pattern
+    * @see <a href="http://www.onlinetradingconcepts.com/TechnicalAnalysis/Candlesticks/Harami.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHarami( int startIdx,
       int endIdx,
       float inOpen[],
@@ -8220,11 +8424,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlHaramiCross
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlHaramiCrossLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 1;
    }
+   /**
+    * Harami Cross Pattern
+    * @see <a href="http://www.candlesticker.com/Pattern.aspx?lang=en&Pattern=2103">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHaramiCross( int startIdx,
       int endIdx,
       double inOpen[],
@@ -8286,6 +8512,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Harami Cross Pattern
+    * @see <a href="http://www.candlesticker.com/Pattern.aspx?lang=en&Pattern=2103">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHaramiCross( int startIdx,
       int endIdx,
       float inOpen[],
@@ -8347,11 +8592,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlHignWave
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlHignWaveLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryLong.ordinal()].avgPeriod) )) ;
    }
+   /**
+    * High-Wave Candle
+    * @see <a href="http://thepatternsite.com/HighWave.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHignWave( int startIdx,
       int endIdx,
       double inOpen[],
@@ -8410,6 +8677,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * High-Wave Candle
+    * @see <a href="http://thepatternsite.com/HighWave.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHignWave( int startIdx,
       int endIdx,
       float inOpen[],
@@ -8468,11 +8754,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Zwraca domyślną wartość dla cdlHikkake
+    * @return 5
+    */
    public int cdlHikkakeLookback( )
    {
       return 5;
    }
+   /**
+    * Hikkake Pattern
+    * @see <a href="http://thepatternsite.com/HikkakeBear.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHikkake( int startIdx,
       int endIdx,
       double inOpen[],
@@ -8549,6 +8857,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hikkake Pattern
+    * @see <a href="http://thepatternsite.com/HikkakeBear.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHikkake( int startIdx,
       int endIdx,
       float inOpen[],
@@ -8626,10 +8953,33 @@ public RetCode cdlEngulfing( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlHikkakeMod
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlHikkakeModLookback( )
    {
       return (((1) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? (1) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) + 5;
    }
+   /**
+    * Modified Hikkake Pattern
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=214CFDFE4DA52D00D986DB17BD4F975B.server2?tutorial=Modified%20Hikkake%20Pattern">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHikkakeMod( int startIdx,
       int endIdx,
       double inOpen[],
@@ -8728,6 +9078,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Modified Hikkake Pattern
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=214CFDFE4DA52D00D986DB17BD4F975B.server2?tutorial=Modified%20Hikkake%20Pattern">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHikkakeMod( int startIdx,
       int endIdx,
       float inOpen[],
@@ -8826,11 +9195,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlHomingPigeon
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlHomingPigeonLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 1;
    }
+   /**
+    * Homing Pigeon
+    * @see <a href="https://www.municode.com/library/ca/tehachapi/codes/code_of_ordinances?nodeId=TIT6AN_CH6.12PI_6.12.020HOPIDE">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHomingPigeon( int startIdx,
       int endIdx,
       double inOpen[],
@@ -8894,6 +9285,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Homing Pigeon
+    * @see <a href="https://www.municode.com/library/ca/tehachapi/codes/code_of_ordinances?nodeId=TIT6AN_CH6.12PI_6.12.020HOPIDE">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlHomingPigeon( int startIdx,
       int endIdx,
       float inOpen[],
@@ -8957,12 +9367,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlIdentical3Crows
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlIdentical3CrowsLookback( )
    {
-      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) +
-         2;
+      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) +2;
    }
+   /**
+    * Identical Three Crows
+    * @see <a href="http://thepatternsite.com/Identical3Crows.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlIdentical3Crows( int startIdx,
       int endIdx,
       double inOpen[],
@@ -9044,6 +9475,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Identical Three Crows
+    * @see <a href="http://thepatternsite.com/Identical3Crows.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlIdentical3Crows( int startIdx,
       int endIdx,
       float inOpen[],
@@ -9125,12 +9575,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlInNeck
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlInNeckLookback( )
    {
-      return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
-         1;
+      return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * In-Neck Pattern
+    * @see <a href="http://thepatternsite.com/InNeck.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlInNeck( int startIdx,
       int endIdx,
       double inOpen[],
@@ -9195,6 +9666,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * In-Neck Pattern
+    * @see <a href="http://thepatternsite.com/InNeck.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlInNeck( int startIdx,
       int endIdx,
       float inOpen[],
@@ -9259,12 +9749,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlInvertedHammer
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlInvertedHammerLookback( )
    {
-      return ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) +
-         1;
+      return ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * Inverted Hammer
+    * @see <a href="http://www.onlinetradingconcepts.com/TechnicalAnalysis/Candlesticks/InvertedHammer.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlInvertedHammer( int startIdx,
       int endIdx,
       double inOpen[],
@@ -9336,6 +9847,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Inverted Hammer
+    * @see <a href="http://www.onlinetradingconcepts.com/TechnicalAnalysis/Candlesticks/InvertedHammer.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlInvertedHammer( int startIdx,
       int endIdx,
       float inOpen[],
@@ -9407,12 +9937,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlKicking
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlKickingLookback( )
    {
-      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
-         1;
+      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * Kicking
+    * @see <a href="http://thepatternsite.com/KickingBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlKicking( int startIdx,
       int endIdx,
       double inOpen[],
@@ -9491,6 +10042,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Kicking
+    * @see <a href="http://thepatternsite.com/KickingBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlKicking( int startIdx,
       int endIdx,
       float inOpen[],
@@ -9569,12 +10139,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlKickingByLength
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlKickingByLengthLookback( )
    {
-      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
-         1;
+      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * Kicking - bull/bear determined by the longer marubozu
+    * @see <a href="http://thepatternsite.com/KickingBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlKickingByLength( int startIdx,
       int endIdx,
       double inOpen[],
@@ -9653,6 +10244,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Kicking - bull/bear determined by the longer marubozu
+    * @see <a href="http://thepatternsite.com/KickingBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlKickingByLength( int startIdx,
       int endIdx,
       float inOpen[],
@@ -9731,11 +10341,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlLadderBottom
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlLadderBottomLookback( )
    {
       return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 4;
    }
+   /**
+    * Ladder Bottom
+    * @see <a href="http://thepatternsite.com/LadderBottom.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlLadderBottom( int startIdx,
       int endIdx,
       double inOpen[],
@@ -9794,6 +10426,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Ladder Bottom
+    * @see <a href="http://thepatternsite.com/LadderBottom.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlLadderBottom( int startIdx,
       int endIdx,
       float inOpen[],
@@ -9852,11 +10503,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlLongLeggedDoji
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlLongLeggedDojiLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ;
    }
+   /**
+    * Long Legged Doji
+    * @see <a href="http://thepatternsite.com/LongLegDoji.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlLongLeggedDoji( int startIdx,
       int endIdx,
       double inOpen[],
@@ -9918,6 +10591,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Long Legged Doji
+    * @see <a href="http://thepatternsite.com/LongLegDoji.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlLongLeggedDoji( int startIdx,
       int endIdx,
       float inOpen[],
@@ -9979,11 +10671,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlLongLine
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlLongLineLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ;
    }
+   /**
+    * Long Line Candle
+    * @see <a href="http://thepatternsite.com/Shadows.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlLongLine( int startIdx,
       int endIdx,
       double inOpen[],
@@ -10042,6 +10756,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Long Line Candle
+    * @see <a href="http://thepatternsite.com/Shadows.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlLongLine( int startIdx,
       int endIdx,
       float inOpen[],
@@ -10100,11 +10833,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMarubozu
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlMarubozuLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
    }
+   /**
+    * Marubozu
+    * @see <a href="http://thepatternsite.com/WhiteMarubozu.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMarubozu( int startIdx,
       int endIdx,
       double inOpen[],
@@ -10164,6 +10919,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Marubozu
+    * @see <a href="http://thepatternsite.com/WhiteMarubozu.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMarubozu( int startIdx,
       int endIdx,
       float inOpen[],
@@ -10223,11 +10997,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMatchingLow
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlMatchingLowLookback( )
    {
       return (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) + 1;
    }
+   /**
+    * Matching Low
+    * @see <a href="http://thepatternsite.com/MatchingLow.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMatchingLow( int startIdx,
       int endIdx,
       double inOpen[],
@@ -10280,6 +11076,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Matching Low
+    * @see <a href="http://thepatternsite.com/MatchingLow.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMatchingLow( int startIdx,
       int endIdx,
       float inOpen[],
@@ -10332,7 +11147,11 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMatHold
+    * @param optInPenetration liczba typu Double
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlMatHoldLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
@@ -10341,6 +11160,27 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 4;
    }
+   /**
+    * Mat Hold - Liczy odestek penetracji świecy wewnątrz innej świecy 
+    * @see <a href="http://thepatternsite.com/MatHold.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMatHold( int startIdx,
       int endIdx,
       double inOpen[],
@@ -10427,6 +11267,27 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Mat Hold - Liczy odestek penetracji świecy wewnątrz innej świecy 
+    * @see <a href="http://thepatternsite.com/MatHold.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMatHold( int startIdx,
       int endIdx,
       float inOpen[],
@@ -10513,7 +11374,11 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMorningDojiStar
+    * @param optInPenetration liczba typu Double
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlMorningDojiStarLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
@@ -10523,6 +11388,27 @@ public RetCode cdlEngulfing( int startIdx,
       return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) +
          2;
    }
+   /**
+    * Morning Doji Star 
+    * @see <a href="http://thepatternsite.com/MorningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMorningDojiStar( int startIdx,
       int endIdx,
       double inOpen[],
@@ -10601,6 +11487,27 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Morning Doji Star 
+    * @see <a href="http://thepatternsite.com/MorningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMorningDojiStar( int startIdx,
       int endIdx,
       float inOpen[],
@@ -10679,7 +11586,11 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMorningStar
+    * @param optInPenetration liczba typu Double
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlMorningStarLookback( double optInPenetration )
    {
       if( optInPenetration == (-4e+37) )
@@ -10688,6 +11599,27 @@ public RetCode cdlEngulfing( int startIdx,
          return -1;
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
    }
+   /**
+    * Morning Star 
+    * @see <a href="http://www.thepatternsite.com/MorningStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMorningStar( int startIdx,
       int endIdx,
       double inOpen[],
@@ -10760,6 +11692,27 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Morning Star 
+    * @see <a href="http://www.thepatternsite.com/MorningStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlMorningStar( int startIdx,
       int endIdx,
       float inOpen[],
@@ -10832,12 +11785,34 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlOnNeck
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlOnNeckLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
          1;
    }
+   /**
+    * On-Neck Pattern
+    * @see <a href="http://thepatternsite.com/OnNeck.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlOnNeck( int startIdx,
       int endIdx,
       double inOpen[],
@@ -10902,6 +11877,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * On-Neck Pattern
+    * @see <a href="http://thepatternsite.com/OnNeck.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlOnNeck( int startIdx,
       int endIdx,
       float inOpen[],
@@ -10966,11 +11960,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlPiercing
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlPiercingLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 1;
    }
+   /**
+    * Piercing Pattern
+    * @see <a href="http://thepatternsite.com/Piercing.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlPiercing( int startIdx,
       int endIdx,
       double inOpen[],
@@ -11030,6 +12046,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Piercing Pattern
+    * @see <a href="http://thepatternsite.com/Piercing.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlPiercing( int startIdx,
       int endIdx,
       float inOpen[],
@@ -11089,11 +12124,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlRickshawMan
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlRickshawManLookback( )
    {
       return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ;
    }
+   /**
+    * Rickshaw Man
+    * @see <a href="http://thepatternsite.com/RickshawMan.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlRickshawMan( int startIdx,
       int endIdx,
       double inOpen[],
@@ -11169,6 +12226,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Rickshaw Man
+    * @see <a href="http://thepatternsite.com/RickshawMan.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlRickshawMan( int startIdx,
       int endIdx,
       float inOpen[],
@@ -11244,11 +12320,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlRiseFall3Methods
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlRiseFall3MethodsLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 4;
    }
+   /**
+    * Rising/Falling Three Methods
+    * @see <a href="http://thepatternsite.com/Falling3Methods.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlRiseFall3Methods( int startIdx,
       int endIdx,
       double inOpen[],
@@ -11332,6 +12430,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Rising/Falling Three Methods
+    * @see <a href="http://thepatternsite.com/Falling3Methods.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlRiseFall3Methods( int startIdx,
       int endIdx,
       float inOpen[],
@@ -11415,12 +12532,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlSeperatingLines
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlSeperatingLinesLookback( )
    {
-      return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) +
-         1;
+      return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * Separating Lines
+    * @see <a href="http://thepatternsite.com/SeparateLinesBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlSeperatingLines( int startIdx,
       int endIdx,
       double inOpen[],
@@ -11501,6 +12639,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Separating Lines
+    * @see <a href="http://thepatternsite.com/SeparateLinesBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlSeperatingLines( int startIdx,
       int endIdx,
       float inOpen[],
@@ -11581,12 +12738,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlShootingStar
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlShootingStarLookback( )
    {
-      return ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) +
-         1;
+      return ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * Shooting Star
+    * @see <a href="http://thepatternsite.com/ShootingStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlShootingStar( int startIdx,
       int endIdx,
       double inOpen[],
@@ -11658,6 +12836,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Shooting Star
+    * @see <a href="http://thepatternsite.com/ShootingStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlShootingStar( int startIdx,
       int endIdx,
       float inOpen[],
@@ -11729,11 +12926,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlShortLine
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlShortLineLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ;
    }
+   /**
+    * Short Line Candle
+    * @see <a href="http://thepatternsite.com/BlkCandleShort.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlShortLine( int startIdx,
       int endIdx,
       double inOpen[],
@@ -11792,6 +13011,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Short Line Candle
+    * @see <a href="http://thepatternsite.com/BlkCandleShort.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlShortLine( int startIdx,
       int endIdx,
       float inOpen[],
@@ -11850,11 +13088,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlSpinningTop
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlSpinningTopLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
    }
+   /**
+    * Spinning Top
+    * @see <a href="http://thepatternsite.com/SpinTopWhite.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlSpinningTop( int startIdx,
       int endIdx,
       double inOpen[],
@@ -11905,6 +13165,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Spinning Top
+    * @see <a href="http://thepatternsite.com/SpinTopWhite.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlSpinningTop( int startIdx,
       int endIdx,
       float inOpen[],
@@ -11955,12 +13234,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlStalledPattern
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlStalledPatternLookback( )
    {
-      return ((( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) +
-         2;
+      return ((( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) > ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ) : ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) )) +2;
    }
+   /**
+    * Stalled Pattern
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=6CA5ECD8445F747D6889A544ECC79818.server2?tutorial=Stalled%20Pattern">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlStalledPattern( int startIdx,
       int endIdx,
       double inOpen[],
@@ -12061,6 +13361,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Stalled Pattern
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=6CA5ECD8445F747D6889A544ECC79818.server2?tutorial=Stalled%20Pattern">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlStalledPattern( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12161,11 +13480,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlStickSandwhich
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlStickSandwhichLookback( )
    {
       return (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) + 2;
    }
+   /**
+    * Stick Sandwich
+    * @see <a href="http://thepatternsite.com/StickSandwich.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlStickSandwhich( int startIdx,
       int endIdx,
       double inOpen[],
@@ -12220,6 +13561,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Stick Sandwich
+    * @see <a href="http://thepatternsite.com/StickSandwich.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlStickSandwhich( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12274,11 +13634,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlTakuri
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlTakuriLookback( )
    {
       return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryLong.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryLong.ordinal()].avgPeriod) )) ;
    }
+   /**
+    * Takuri (Dragonfly Doji with very long lower shadow)
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp?tutorial=Takuri">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlTakuri( int startIdx,
       int endIdx,
       double inOpen[],
@@ -12349,6 +13731,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Takuri (Dragonfly Doji with very long lower shadow)
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp?tutorial=Takuri">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlTakuri( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12419,11 +13820,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlTasukiGap
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlTasukiGapLookback( )
    {
       return (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) + 2;
    }
+   /**
+    * Tasuki Gap
+    * @see <a href="http://thepatternsite.com/UpsideTasukiGap.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlTasukiGap( int startIdx,
       int endIdx,
       double inOpen[],
@@ -12491,6 +13914,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Tasuki Gap
+    * @see <a href="http://thepatternsite.com/UpsideTasukiGap.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlTasukiGap( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12558,12 +14000,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlThrusting
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlThrustingLookback( )
    {
-      return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
-         1;
+      return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +1;
    }
+   /**
+    * Thrusting Pattern
+    * @see <a href="http://thepatternsite.com/Thrusting.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlThrusting( int startIdx,
       int endIdx,
       double inOpen[],
@@ -12628,6 +14091,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Thrusting Pattern
+    * @see <a href="http://thepatternsite.com/Thrusting.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlThrusting( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12692,11 +14174,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlTristar
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlTristarLookback( )
    {
       return (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) + 2;
    }
+   /**
+    * Tristar Pattern
+    * @see <a href="http://thepatternsite.com/TriStarBear.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlTristar( int startIdx,
       int endIdx,
       double inOpen[],
@@ -12759,6 +14263,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Tristar Pattern
+    * @see <a href="http://thepatternsite.com/TriStarBear.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlTristar( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12821,11 +14344,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlUnique3River
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlUnique3RiverLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
    }
+   /**
+    * Unique 3 River
+    * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=F709F407FED8543E02E13BE07FCE4C4C.server1?tutorial=Unique%203%20River">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlUnique3River( int startIdx,
       int endIdx,
       double inOpen[],
@@ -12891,6 +14436,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Unique 3 River
+    * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=F709F407FED8543E02E13BE07FCE4C4C.server1?tutorial=Unique%203%20River">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlUnique3River( int startIdx,
       int endIdx,
       float inOpen[],
@@ -12956,11 +14520,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlUpsideGap2Crows
+    * @return odpowiedni zakres liczbowy
+    */
    public int cdlUpsideGap2CrowsLookback( )
    {
       return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
    }
+   /**
+    * Upside Gap Two Crows
+    * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=0F8BA4DAFD69DF9CD69F5E099BF354B9.server1?tutorial=Upside%20Gap%20Two%20Crows">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlUpsideGap2Crows( int startIdx,
       int endIdx,
       double inOpen[],
@@ -13026,6 +14612,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Upside Gap Two Crows
+    * @see <a href="http://usa.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=0F8BA4DAFD69DF9CD69F5E099BF354B9.server1?tutorial=Upside%20Gap%20Two%20Crows">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlUpsideGap2Crows( int startIdx,
       int endIdx,
       float inOpen[],
@@ -13091,11 +14696,33 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
+   /**
+    * Zwraca domyślną wartość dla cdlXSideGap3Methods
+    * @return 2
+    */
    public int cdlXSideGap3MethodsLookback( )
    {
       return 2;
    }
+   /**
+    * Upside/Downside Gap Three Methods
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=16CBB89DADB4CC0802C90125C1E153EF.server2?tutorial=Upside_Downside%20Gap%20Three%20Methods">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlXSideGap3Methods( int startIdx,
       int endIdx,
       double inOpen[],
@@ -13149,6 +14776,25 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Upside/Downside Gap Three Methods
+    * @see <a href="http://www.avasaram.com/tutorials/candlesticks/tutorialLauncherCandleSticks.jsp;jsessionid=16CBB89DADB4CC0802C90125C1E153EF.server2?tutorial=Upside_Downside%20Gap%20Three%20Methods">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode cdlXSideGap3Methods( int startIdx,
       int endIdx,
       float inOpen[],
@@ -13287,7 +14933,6 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   /* Generated */
    /**
     * Metoda zwraca odpowiedni zakres dla CMO.
     * @param optInTimePeriod liczba okresu (2 do 100000)
