@@ -16284,6 +16284,19 @@ public RetCode cdlGravestoneDoji( int startIdx,
          ((double)2.0 / ((double)(optInTimePeriod + 1))) ,
          outBegIdx, outNBElement, outReal );
    }
+   /**
+    * Wewnętrzna implementacja, która może zostać wywołana przez inną TA funkcję.
+    * 
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks wyjściowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział wartości do obliczenia
+    * @param optInK_1 Stosunek obliczania EMA
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode TA_INT_EMA( int startIdx,
       int endIdx,
       double []inReal,
@@ -16370,6 +16383,19 @@ public RetCode cdlGravestoneDoji( int startIdx,
          ((double)2.0 / ((double)(optInTimePeriod + 1))) ,
          outBegIdx, outNBElement, outReal );
    }
+   /**
+    * Wewnętrzna implementacja, która może zostać wywołana przez inną TA funkcję.
+    * 
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks wyjściowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Przedział wartości do obliczenia
+    * @param optInK_1 Stosunek obliczania EMA
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode TA_INT_EMA( int startIdx,
       int endIdx,
       float []inReal,
@@ -16749,7 +16775,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outBegIdx Początkowy indeks końcowy
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return
+    * @return Status
     */
    public RetCode htDcPeriod( int startIdx,
       int endIdx,
@@ -16903,7 +16929,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outBegIdx Początkowy indeks końcowy
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return
+    * @return Status
     */
    public RetCode htDcPhase( int startIdx,
       int endIdx,
@@ -17590,14 +17616,19 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Hilbert Transform - SineWave
     * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-SineWave/RAX">site</a>
-    * @param startIdx
-    * @param endIdx
-    * @param inReal
-    * @param outBegIdx
-    * @param outNBElement
-    * @param outSine
-    * @param outLeadSine
-    * @return
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outSine Tablica wyjściowa z sinusoidami
+    * @param outLeadSine Tablica wyjściowa z sinusoidami prowadzącymi
+    * @return Status
     */
    public RetCode htSine( int startIdx,
       int endIdx,
@@ -17775,6 +17806,23 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hilbert Transform - SineWave
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-SineWave/RAX">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outSine Tablica wyjściowa z sinusoidami
+    * @param outLeadSine Tablica wyjściowa z sinusoidami prowadzącymi
+    * @return Status
+    */
    public RetCode htSine( int startIdx,
       int endIdx,
       float inReal[],
@@ -17952,10 +18000,30 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla HTTRENDLINE.
+    * @return okres
+    */
    public int htTrendlineLookback( )
    {
       return 63 + (this.unstablePeriod[FuncUnstId.HtTrendline.ordinal()]) ;
    }
+   /**
+    * Hilbert Transform - Instantaneous Trendline
+    * @see <a href="http://www.macroaxis.com/invest/Overlap-Studies/Hilbert-Transform-Instantaneous-Trendline/TWTR">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode htTrendline( int startIdx,
       int endIdx,
       double inReal[],
@@ -18109,6 +18177,22 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hilbert Transform - Instantaneous Trendline
+    * @see <a href="http://www.macroaxis.com/invest/Overlap-Studies/Hilbert-Transform-Instantaneous-Trendline/TWTR">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode htTrendline( int startIdx,
       int endIdx,
       float inReal[],
@@ -18263,10 +18347,30 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla HTTRENDLINE.
+    * @return okres
+    */
    public int htTrendModeLookback( )
    {
       return 63 + (this.unstablePeriod[FuncUnstId.HtTrendMode.ordinal()]) ;
    }
+   /**
+    * Hilbert Transform - Trend vs Cycle Mode
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-Trend-vs-Cycle-Mode/RAX">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInteger Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode htTrendMode( int startIdx,
       int endIdx,
       double inReal[],
@@ -18486,6 +18590,22 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Hilbert Transform - Trend vs Cycle Mode
+    * @see <a href="http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-Trend-vs-Cycle-Mode/RAX">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param outBegIdx Początkowy indeks końcowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outInteger Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode htTrendMode( int startIdx,
       int endIdx,
       float inReal[],
@@ -18706,6 +18826,11 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla KAMA.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int kamaLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -18714,6 +18839,23 @@ public RetCode cdlGravestoneDoji( int startIdx,
          return -1;
       return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Kama.ordinal()]) ;
    }
+   /**
+    * Kaufman Adaptive Moving Average
+    * @see <a href="http://www.binarytribune.com/forex-trading-indicators/kaufmans-adaptive-moving-average http://www.motivewave.com/studies/kaufman_adaptive_moving_average.htm">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode kama( int startIdx,
       int endIdx,
       double inReal[],
@@ -18809,6 +18951,23 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Kaufman Adaptive Moving Average
+    * @see <a href="http://www.binarytribune.com/forex-trading-indicators/kaufmans-adaptive-moving-average http://www.motivewave.com/studies/kaufman_adaptive_moving_average.htm">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
+    * </ul>
+    * @param startIdx Indeks startowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do obliczenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na elementy wyjściowe (wyniki)
+    * @return Status
+    */
    public RetCode kama( int startIdx,
       int endIdx,
       float inReal[],
@@ -18905,6 +19064,11 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla LINEARREG.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int linearRegLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -18913,6 +19077,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Linear Regression
+    * @see <a href="http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearReg( int startIdx,
       int endIdx,
       double inReal[],
@@ -18967,6 +19149,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Linear Regression
+    * @see <a href="http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearReg( int startIdx,
       int endIdx,
       float inReal[],
@@ -19022,6 +19222,11 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla LINEARREGANGLE.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int linearRegAngleLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19030,6 +19235,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Linear Regression Angle
+    * @see <a href="http://tuckerreport.com/indicators/angle-measure/">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearRegAngle( int startIdx,
       int endIdx,
       double inReal[],
@@ -19083,6 +19306,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Linear Regression Angle
+    * @see <a href="http://tuckerreport.com/indicators/angle-measure/">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearRegAngle( int startIdx,
       int endIdx,
       float inReal[],
@@ -19137,6 +19378,11 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla LINEARREGINTERCEPT.
+    * @param optInTimePeriod Okres czasu
+    * @return okres
+    */
    public int linearRegInterceptLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19145,6 +19391,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Linear Regression Intercept
+    * @see <a href="http://www.tradingsolutions.com/functions/LinearRegressionIntercept.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearRegIntercept( int startIdx,
       int endIdx,
       double inReal[],
@@ -19198,6 +19462,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Linear Regression Intercept
+    * @see <a href="http://www.tradingsolutions.com/functions/LinearRegressionIntercept.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearRegIntercept( int startIdx,
       int endIdx,
       float inReal[],
@@ -19252,6 +19534,11 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla LINEARREGSLOPE.
+    * @param optInTimePeriod
+    * @return okres
+    */
    public int linearRegSlopeLookback( int optInTimePeriod )
    {
       if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
@@ -19260,6 +19547,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
          return -1;
       return optInTimePeriod-1;
    }
+   /**
+    * Linear Regression Slope
+    * @see <a href="https://www.linnsoft.com/techind/linear-regression-slope">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearRegSlope( int startIdx,
       int endIdx,
       double inReal[],
@@ -19311,6 +19616,24 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outNBElement.value = outIdx;
       return RetCode.Success ;
    }
+   /**
+    * Linear Regression Slope
+    * @see <a href="https://www.linnsoft.com/techind/linear-regression-slope">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param optInTimePeriod Okres czasu
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode linearRegSlope( int startIdx,
       int endIdx,
       float inReal[],
@@ -19363,10 +19686,30 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla LN.
+    * @return okres
+    */
    public int lnLookback( )
    {
       return 0;
    }
+   /**
+    * Vector Log Natural - Logarytm naturalny
+    * @see <a href="http://pl.wikipedia.org/wiki/Logarytm_naturalny">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode ln( int startIdx,
       int endIdx,
       double inReal[],
@@ -19388,6 +19731,22 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Vector Log Natural - Logarytm naturalny
+    * @see <a href="http://pl.wikipedia.org/wiki/Logarytm_naturalny">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode ln( int startIdx,
       int endIdx,
       float inReal[],
@@ -19410,10 +19769,30 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla log10.
+    * @return 0
+    */
    public int log10Lookback( )
    {
       return 0;
    }
+   /**
+    * Log10 - Logarytm o podstawi 10
+    * @see <a href="http://pl.wikipedia.org/wiki/Logarytm">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode log10( int startIdx,
       int endIdx,
       double inReal[],
@@ -19435,6 +19814,22 @@ public RetCode cdlGravestoneDoji( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
+   /**
+    * Log10 - Logarytm o podstawi 10
+    * @see <a href="http://pl.wikipedia.org/wiki/Logarytm">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param outNBElement Liczba elementów wyjściowych
+    * @param outReal Tablica na wyniki zaokrąglenia
+    * @return Status
+    */
    public RetCode log10( int startIdx,
       int endIdx,
       float inReal[],
@@ -19457,6 +19852,12 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /* Generated */
+   /**
+    * Metoda zwraca okres dla MA.
+    * @param optInTimePeriod Okres czasu
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @return okres
+    */
    public int movingAverageLookback( int optInTimePeriod,
       MAType optInMAType )
    {
@@ -19501,6 +19902,25 @@ public RetCode cdlGravestoneDoji( int startIdx,
       }
       return retValue;
    }
+   /**
+    * MA - Moving Average - Średnia krocząca
+    * @see <a href="http://pl.wikipedia.org/wiki/%C5%9Arednia_krocz%C4%85ca">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode movingAverage( int startIdx,
       int endIdx,
       double inReal[],
@@ -19578,6 +19998,25 @@ public RetCode cdlGravestoneDoji( int startIdx,
       }
       return retCode;
    }
+   /**
+    * MA - Moving Average - Średnia krocząca
+    * @see <a href="http://pl.wikipedia.org/wiki/%C5%9Arednia_krocz%C4%85ca">site</a>
+    * <hr>
+    * <ul>
+    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
+    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny.</li>
+    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
+    * </ul>
+    * @param startIdx Indeks początkowy
+    * @param endIdx Indeks końcowy
+    * @param inReal Tablica z wartościami do zaokrąglenia
+    * @param outBegIdx Początkowy indeks wyjściowy
+    * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych
+    * @param outReal tablica na elementy wyjściowe
+    * @return Status
+    */
    public RetCode movingAverage( int startIdx,
       int endIdx,
       float inReal[],
@@ -19656,6 +20095,14 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return retCode;
    }
    /* Generated */
+   /**
+    * MACD - Moving Average Convergence/Divergence
+    * @see <a href="http://www.investopedia.com/terms/m/macd.asp">site</a>
+    * @param optInFastPeriod zakres (od 2 do 100000)
+    * @param optInSlowPeriod zakres (od 2 do 100000)
+    * @param optInSignalPeriod (od 1 do 100000)
+    * @return Status
+    */
    public int macdLookback( int optInFastPeriod,
       int optInSlowPeriod,
       int optInSignalPeriod )
@@ -19682,6 +20129,14 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return emaLookback ( optInSlowPeriod )
          + emaLookback ( optInSignalPeriod );
    }
+   /**
+    * MACD - Moving Average Convergence/Divergence
+    * @see <a href="http://www.investopedia.com/terms/m/macd.asp">site</a>
+    * @param optInFastPeriod zakres (od 2 do 100000)
+    * @param optInSlowPeriod zakres (od 2 do 100000)
+    * @param optInSignalPeriod (od 1 do 100000)
+    * @return Status
+    */
    public RetCode macd( int startIdx,
       int endIdx,
       double inReal[],
@@ -26101,7 +26556,6 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * <ul>
     *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
     *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *
     * </ul>
     * @param startIdx Indeks początkowy
     * @param endIdx Indeks końcowy

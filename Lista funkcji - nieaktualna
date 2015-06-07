@@ -13,6 +13,13 @@ HTSINE - Hilbert Transform - SineWave http://www.macroaxis.com/invest/Cycle-Indi
 HTTRENDLINE - Hilbert Transform - Instantaneous Trendline http://www2.wealth-lab.com/WL5Wiki/HTTrendLine.ashx http://www.macroaxis.com/invest/Overlap-Studies/Hilbert-Transform-Instantaneous-Trendline/TWTR
 HTTRENDMODE - Hilbert Transform - Trend vs Cycle Mode http://www.macroaxis.com/invest/Cycle-Indicators/Hilbert-Transform-Trend-vs-Cycle-Mode/RAX
 KAMA - Kaufman Adaptive Moving Average http://www.binarytribune.com/forex-trading-indicators/kaufmans-adaptive-moving-average http://www.motivewave.com/studies/kaufman_adaptive_moving_average.htm
+LINEARREG - Linear Regression http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm
+LINEARREGANGLE - Linear Regression Angle http://tuckerreport.com/indicators/angle-measure/
+LINEARREGINTERCEPT - Linear Regression Intercept http://www.tradingsolutions.com/functions/LinearRegressionIntercept.html
+LINEARREGSLOPE - Linear Regression Slope https://www.linnsoft.com/techind/linear-regression-slope
+LN - Vector Log Natural http://pl.wikipedia.org/wiki/Logarytm_naturalny
+MA - Moving Average
+MACD - Moving Average Convergence/Divergence http://www.investopedia.com/terms/m/macd.asp
 MAMA - MESA Adaptive Moving Average https://www.linnsoft.com/techind/mesa-adaptive-moving-average-mama http://bossa.pl/edukacja/AT/wskazniki/ruchome/
 MFI - Money Flow Index (indeks przepływów pieniężnych). http://www.fmlabs.com/reference/default.htm?url=MoneyFlowIndex.htm  http://bossa.pl/edukacja/AT/wskazniki/MFI/  http://pl.wikipedia.org/wiki/Money_flow
 MINUSDI - Minus Directional Indicator  http://www.fmlabs.com/reference/default.htm?url=DI.htm http://www.tradingsolutions.com/functions/MinusDirectionalIndicator.html https://www.tradingview.com/stock-charts-support/index.php/Directional_Movement_(DMI)
