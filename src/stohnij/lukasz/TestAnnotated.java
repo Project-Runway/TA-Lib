@@ -6,17 +6,17 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.tictactec.ta.lib.Core;
+import com.tictactec.ta.lib.CoreAnnotated;
 import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
 @SuppressWarnings("unused")
-public class TestCore {
-	static Core core;
+public class TestAnnotated {
+	static CoreAnnotated core;
 	
 	@BeforeClass
 	public static void beforeClass(){
-		core = new Core();
+		core = new CoreAnnotated();
 	}
 
 
@@ -44,6 +44,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.sma(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
@@ -73,6 +74,7 @@ public class TestCore {
 		
 		RetCode rc = core.sma(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
 		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -93,6 +95,8 @@ public class TestCore {
 		
 		
 		RetCode rc = core.tan(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);;
 	} 
@@ -134,6 +138,8 @@ public class TestCore {
 		
 		RetCode rc = core.tanh(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
 		
+		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -152,6 +158,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.tanh(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
@@ -173,6 +180,8 @@ public class TestCore {
 		
 		RetCode rc = core.floor(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
 		
+		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -191,6 +200,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.floor(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
@@ -212,6 +222,7 @@ public class TestCore {
 		
 		RetCode rc = core.ln(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
 		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -230,6 +241,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.ln(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	}
@@ -251,6 +263,7 @@ public class TestCore {
 		
 		RetCode rc = core.log10(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
 		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -270,6 +283,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.log10(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
@@ -307,6 +321,7 @@ public class TestCore {
 		
 		RetCode rc = core.sin(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
 		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -326,6 +341,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.sin(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
@@ -347,6 +363,7 @@ public class TestCore {
 		
 		RetCode rc = core.sinh(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
 		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -366,6 +383,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.sinh(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
@@ -387,6 +405,7 @@ public class TestCore {
 		
 		RetCode rc = core.sqrt(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
 		
+		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
 	
@@ -406,6 +425,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.sqrt(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		
 		
 		assertArrayEquals(expecteds, outReal, 0);
 	} 
