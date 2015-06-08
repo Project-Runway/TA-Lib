@@ -1,6 +1,6 @@
 Core:
 
-cdlTakuriLookback
+cdlTakuriLookback					// done //
 macd
 macd
 ultOscLookback
@@ -21,9 +21,9 @@ avgPrice							// done //
 avgPrice							// done	//
 wclPrice							// done //
 wclPrice							// done //
-cdlEveningStarLookback
-cdlMatHoldLookback
-cdlMorningStarLookback
+cdlEveningStarLookback				// done //
+cdlMatHoldLookback					// done //
+cdlMorningStarLookback				// done //
 typPrice							// done //
 typPrice							// done //
 t3Lookback
