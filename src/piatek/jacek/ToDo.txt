@@ -16,6 +16,21 @@ stdDev(float)
 stdDev(double)
 sum(float)
 sum(double)
+movingAverageLookback (done)
+mom (float)
+mom (double)
+midPrice(float)
+midPrice  (double)
+midPoint (float)
+midPoint (double)
+roc (float)
+roc (double)
+rocP (double)
+rocP (float)
+rocR100 (double)
+rocR100 (float)
+rocR (double)
+rocR (float)
 
 Do zrobienia:
 linearReg
@@ -35,38 +50,23 @@ linearRegSlope
 linearRegSlope
 TA_INT_VAR
 TA_INT_VAR
-midPrice(double)
 adxr
 adxr
-midPrice  (double)
 cdl3StarsInSouthLookback
 cdl3WhiteSoldiersLookback
 cdlStalledPatternLookback
 TA_INT_EMA
-midPoint (double)
-midPoint (double)
 TA_INT_EMA
 TA_INT_stddev_using_precalc_ma
 TA_INT_stddev_using_precalc_ma
-roc (double)
 trueRange
-roc (double)
-rocP (double)
-rocR100 (double)
 trueRange
-rocP (double)
-rocR (double)
-rocR100 (double)
 cdlAbandonedBabyLookback
 cdlEveningDojiStarLookback
 cdlMorningDojiStarLookback
-rocR (double)
 TA_INT_SMA
 ad
 ad
-movingAverageLookback (done)
-mom (double)
-mom (double)
 obv
 cdlInvertedHammerLookback
 cdlSeperatingLinesLookback

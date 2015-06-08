@@ -6,10 +6,12 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.tictactec.ta.lib.CandleSettingType;
 import com.tictactec.ta.lib.Core;
 import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
+
 @SuppressWarnings("unused")
 public class TestCore {
 
@@ -769,64 +771,91 @@ public class TestCore {
 	}
 
 	@Test
-	public void testmidPrice() {
+	public void rocFloat() {
 		/*
-		 * Szuka maksa i minumum w tablicach maks i min (ja u¿y³em tej samej) po
-		 * czym (maks+min)/2 œrednia z odchyleñ maksymalnych
+		 * Pojebana metoda ale rozgzys³em. A mianowicie formu³a jest prost
+		 * bierze ((cene/cena poprzednia)-1)*100 tylko, ¿e trzeba odpowiednio
+		 * inTimePeriod ustawic i w tym przypadku nie jest to 100 (liczba
+		 * elementów) tylko 1. Liczba od którego ma siê zacz¹c liczenie z
+		 * tablicy 0 nie mo¿e byc bo nie ma poprzedniej ceny, musi byc 1.
 		 */
-		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
-				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
-				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
-				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
-				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
-				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
-				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
-				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
-				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
-				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
-				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
-				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
-				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
-				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
-				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
-				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
-				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
-				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
-				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
-				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
-				3.64449126, 4.01208808, 6.83494132 };
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expectedRoc = new double[] { -59.454193424852605,
+				-230.28846815140315, -342.0664151453333, -19.35975597567462,
+				-37.618147899563844, 91.81818227794216, -139.81042671879084,
+				-159.52380997433596, 221.99999491373697, -149.06832138706503,
+				20.675106885971537, -53.49650029022879, -517.2932339587996,
+				22.702697454823763, -140.3817918224177, 30.9090874411843,
+				-115.83333355409128, 1491.2280366031082, -44.76295041398088,
+				-84.83034020473731, 881.5789647049523, -114.74530855518725,
+				91.81816812389184, -73.9336474281696, -1081.818177877379,
+				-181.851851819147, -272.3981844803101, -51.049867780938754,
+				93.83377968103557, -61.410789011165704, 65.94982715934599,
+				-23.758101854474244, -59.77337199451597, -397.18309279780266,
+				-334.5971590221493, -1.4141353034639925, -13.21721241394702,
+				-87.24911441715695, 733.3333002196431, -91.22222198380364,
+				-679.7468100387197, -57.860262452009145, -543.0052032694476,
+				-11.5789500101781, -42.19576827202475, -166.81922546367232,
+				-64.38356388082728, 66.34616178168378, -100.57803466278794,
+				84600.00456348072, -141.4403763849529, -377.4928717259814,
+				-2.977412409320157, -72.59259294767416, 149.42085915932867,
+				-18.421053408566323, 13.092980260298791, -161.57718209402879,
+				-184.7411397940999, -214.14791228495852, -380.2816885327848,
+				-65.72864169650134, 92.66862188541268, 30.44139225124396,
+				-77.94632376899226, -19.04761994867189, 371.895419947844,
+				-9.972296552830484, -95.6923076739678, 2917.857061889099,
+				-87.92899403609313, 39.215684670386295, 209.15492951834494,
+				-135.76310023236852, -28.66242246176286, -527.6785662017611,
+				-175.57411094756407, -204.1436491742945, -36.074267956934904,
+				42.73858650236298, 27.325582604204502, -82.19178194041365,
+				1029.4872747135387, -33.5981881271342, -126.83760817173378,
+				142.67514748352616, -220.472446759128, -111.54683995143118,
+				-450.9434178699683, 102.15053556695648, -30.851066190767963,
+				-77.30769248403742, -647.4576546864356, -309.9071259991251,
+				-41.44542911861577, -106.29722917376192, -1660.0000381469727,
+				-71.02564185642237, -176.1061962773576, };
+		double[] expectedRoc2 = new double[] { -59.454193424852605,
+				-230.28846815140315, -342.0664151453333, -19.35975597567462,
+				-37.618147899563844, 91.81818227794216, -139.81042671879084,
+				-159.52380997433596, 221.99999491373697 };
 
 		MInteger outBegIdx = new MInteger();
 		MInteger outNBElement = new MInteger();
-		double[] outReal = new double[1];
-		double[] expect = new double[] { 2.580184045 };
-		double[] expect2 = new double[] { 3.005912585 };
-		int minvalue = Integer.MIN_VALUE;
+		double[] outReal = new double[99];
 
-		RetCode rc = core.midPrice(0, 99, inputsinReal, inputsinReal, 100,
-				outBegIdx, outNBElement, outReal);
-		assertArrayEquals(expect, outReal, 0);
+		RetCode rc = core.roc(0, 99, inputsinReal, 1, outBegIdx, outNBElement,
+				outReal);
 
-		RetCode rmin = core.midPrice(0, 13, inputsinReal, inputsinReal,
-				minvalue, outBegIdx, outNBElement, outReal);
-		assertArrayEquals(expect2, outReal, 0);
+		assertArrayEquals(expectedRoc, outReal, 0);
 
-		RetCode rb = core.midPrice(-1, 99, inputsinReal, inputsinReal, 100,
-				outBegIdx, outNBElement, outReal);
+		RetCode rb = core.roc(-10, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
 		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
 
-		RetCode rb1 = core.midPrice(5, 4, inputsinReal, inputsinReal, 100,
-				outBegIdx, outNBElement, outReal);
+		RetCode rb1 = core.roc(0, -2, inputsinReal, 1, outBegIdx, outNBElement,
+				outReal);
 		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
 
-		RetCode rb2 = core.midPrice(0, 99, inputsinReal, inputsinReal, 1,
-				outBegIdx, outNBElement, outReal);
+		RetCode rb2 = core.roc(0, 99, inputsinReal, 0, outBegIdx, outNBElement,
+				outReal);
 		assertEquals(RetCode.BadParam.toString(), rb2.toString());
 
 	}
 
 	@Test
-	public void testrocP() {
+	public void testrocPDouble() {
 		/**
 		 * taki sam pojebys jak wy¿ej tylko wzór to (cena-cena poprzednia)/cena
 		 * poprzednia
@@ -910,7 +939,83 @@ public class TestCore {
 	}
 
 	@Test
-	public void testRocR() {
+	public void testrocPFloat() {
+		/**
+		 * taki sam pojebys jak wy¿ej tylko wzór to (cena-cena poprzednia)/cena
+		 * poprzednia
+		 */
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { -0.5945419342485261,
+				-2.3028846815140316, -3.420664151453333, -0.19359755975674617,
+				-0.37618147899563853, 0.9181818227794217, -1.3981042671879083,
+				-1.5952380997433595, 2.2199999491373696, -1.49068321387065,
+				0.2067510688597153, -0.5349650029022878, -5.172932339587996,
+				0.22702697454823761, -1.4038179182241772, 0.309090874411843,
+				-1.158333335540913, 14.912280366031082, -0.44762950413980884,
+				-0.8483034020473731, 8.815789647049524, -1.1474530855518725,
+				0.9181816812389183, -0.7393364742816962, -10.81818177877379,
+				-1.8185185181914698, -2.7239818448031006, -0.5104986778093875,
+				0.9383377968103557, -0.614107890111657, 0.6594982715934599,
+				-0.23758101854474245, -0.5977337199451597, -3.9718309279780266,
+				-3.345971590221493, -0.014141353034639956, -0.1321721241394702,
+				-0.8724911441715695, 7.333333002196431, -0.9122222198380364,
+				-6.797468100387197, -0.5786026245200915, -5.430052032694476,
+				-0.11578950010178103, -0.42195768272024753,
+				-1.6681922546367232, -0.6438356388082729, 0.6634616178168377,
+				-1.0057803466278794, 846.0000456348072, -1.4144037638495293,
+				-3.774928717259814, -0.029774124093201595, -0.7259259294767416,
+				1.494208591593287, -0.1842105340856633, 0.130929802602988,
+				-1.6157718209402876, -1.847411397940999, -2.141479122849585,
+				-3.802816885327848, -0.6572864169650133, 0.9266862188541268,
+				0.3044139225124397, -0.7794632376899225, -0.19047619948671884,
+				3.71895419947844, -0.09972296552830488, -0.956923076739678,
+				29.17857061889099, -0.8792899403609313, 0.3921568467038631,
+				2.0915492951834493, -1.357631002323685, -0.2866242246176286,
+				-5.276785662017611, -1.7557411094756403, -2.041436491742945,
+				-0.360742679569349, 0.42738586502362963, 0.2732558260420451,
+				-0.8219178194041364, 10.294872747135386, -0.335981881271342,
+				-1.2683760817173375, 1.4267514748352614, -2.20472446759128,
+				-1.1154683995143118, -4.509434178699683, 1.021505355669565,
+				-0.3085106619076796, -0.7730769248403742, -6.474576546864356,
+				-3.0990712599912515, -0.41445429118615773, -1.0629722917376192,
+				-16.600000381469727, -0.7102564185642238, -1.7610619627735762 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[99];
+
+		RetCode rc = core.rocP(0, 99, inputsinReal, 1, outBegIdx, outNBElement,
+				outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.rocP(-10, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.rocP(1000, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.rocP(0, 99, inputsinReal, 0, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+	}
+
+	@Test
+	public void testRocRDouble() {
 		/**
 		 * znów to samo tylko cena/poprzednia cena
 		 */
@@ -993,7 +1098,82 @@ public class TestCore {
 	}
 
 	@Test
-	public void testrocR100() {
+	public void testRocRFloat() {
+		/**
+		 * znów to samo tylko cena/poprzednia cena
+		 */
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { 0.405458065751474,
+				-1.3028846815140314, -2.420664151453333, 0.8064024402432538,
+				0.6238185210043615, 1.9181818227794216, -0.3981042671879082,
+				-0.5952380997433594, 3.2199999491373696, -0.49068321387065017,
+				1.2067510688597154, 0.4650349970977122, -4.172932339587996,
+				1.2270269745482376, -0.4038179182241772, 1.309090874411843,
+				-0.15833333554091283, 15.912280366031082, 0.5523704958601912,
+				0.15169659795262694, 9.815789647049524, -0.14745308555187253,
+				1.9181816812389183, 0.2606635257183038, -9.81818177877379,
+				-0.8185185181914697, -1.7239818448031008, 0.4895013221906125,
+				1.9383377968103557, 0.38589210988834294, 1.6594982715934599,
+				0.7624189814552575, 0.40226628005484033, -2.9718309279780266,
+				-2.345971590221493, 0.9858586469653601, 0.8678278758605298,
+				0.1275088558284305, 8.333333002196431, 0.08777778016196357,
+				-5.797468100387197, 0.4213973754799085, -4.430052032694476,
+				0.884210499898219, 0.5780423172797525, -0.6681922546367232,
+				0.35616436119172706, 1.6634616178168378,
+				-0.0057803466278793176, 847.0000456348072, -0.4144037638495293,
+				-2.774928717259814, 0.9702258759067984, 0.2740740705232584,
+				2.494208591593287, 0.8157894659143368, 1.130929802602988,
+				-0.6157718209402877, -0.847411397940999, -1.141479122849585,
+				-2.802816885327848, 0.3427135830349866, 1.9266862188541267,
+				1.3044139225124396, 0.2205367623100775, 0.8095238005132811,
+				4.71895419947844, 0.9002770344716952, 0.04307692326032198,
+				30.17857061889099, 0.12071005963906868, 1.392156846703863,
+				3.0915492951834493, -0.3576310023236851, 0.7133757753823714,
+				-4.276785662017611, -0.7557411094756404, -1.0414364917429453,
+				0.639257320430651, 1.4273858650236297, 1.273255826042045,
+				0.17808218059586353, 11.294872747135386, 0.664018118728658,
+				-0.2683760817173376, 2.4267514748352617, -1.2047244675912803,
+				-0.11546839951431176, -3.5094341786996828, 2.021505355669565,
+				0.6914893380923204, 0.22692307515962584, -5.474576546864356,
+				-2.0990712599912515, 0.5855457088138423, -0.06297229173761922,
+				-15.600000381469727, 0.2897435814357762, -0.7610619627735761, };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[99];
+
+		RetCode rc = core.rocR(0, 99, inputsinReal, 1, outBegIdx, outNBElement,
+				outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.rocR(-10, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.rocR(150, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.rocR(0, 99, inputsinReal, 0, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+	}
+
+	@Test
+	public void testrocR100Double() {
 		/**
 		 * znów to samo tylko (cena/poprzednia cena)*100
 		 */
@@ -1075,7 +1255,188 @@ public class TestCore {
 	}
 
 	@Test
-	public void testmidPoint() {
+	public void testrocR100Float() {
+		/**
+		 * znów to samo tylko (cena/poprzednia cena)*100
+		 */
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { 40.545806575147395,
+				-130.28846815140312, -242.06641514533328, 80.64024402432538,
+				62.381852100436156, 191.81818227794216, -39.81042671879082,
+				-59.52380997433594, 321.99999491373694, -49.06832138706502,
+				120.67510688597154, 46.50349970977122, -417.29323395879965,
+				122.70269745482376, -40.38179182241772, 130.9090874411843,
+				-15.833333554091283, 1591.2280366031082, 55.23704958601912,
+				15.169659795262694, 981.5789647049523, -14.745308555187254,
+				191.81816812389184, 26.066352571830382, -981.818177877379,
+				-81.85185181914697, -172.39818448031008, 48.950132219061246,
+				193.83377968103557, 38.589210988834296, 165.949827159346,
+				76.24189814552575, 40.22662800548403, -297.18309279780266,
+				-234.5971590221493, 98.585864696536, 86.78278758605298,
+				12.750885582843049, 833.3333002196431, 8.777778016196356,
+				-579.7468100387197, 42.139737547990855, -443.00520326944763,
+				88.4210499898219, 57.80423172797525, -66.81922546367231,
+				35.616436119172704, 166.34616178168378, -0.5780346627879318,
+				84700.00456348072, -41.440376384952934, -277.4928717259814,
+				97.02258759067985, 27.407407052325837, 249.42085915932867,
+				81.57894659143368, 113.09298026029879, -61.57718209402877,
+				-84.7411397940999, -114.14791228495851, -280.2816885327848,
+				34.27135830349866, 192.66862188541268, 130.44139225124397,
+				22.05367623100775, 80.9523800513281, 471.895419947844,
+				90.02770344716951, 4.307692326032198, 3017.857061889099,
+				12.071005963906869, 139.2156846703863, 309.15492951834494,
+				-35.76310023236851, 71.33757753823714, -427.6785662017611,
+				-75.57411094756404, -104.14364917429452, 63.925732043065096,
+				142.73858650236298, 127.3255826042045, 17.808218059586352,
+				1129.4872747135387, 66.4018118728658, -26.837608171733763,
+				242.67514748352616, -120.47244675912803, -11.546839951431176,
+				-350.9434178699683, 202.15053556695648, 69.14893380923203,
+				22.692307515962582, -547.4576546864356, -209.90712599912516,
+				58.55457088138423, -6.297229173761922, -1560.0000381469727,
+				28.97435814357762, -76.10619627735761, };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[99];
+
+		RetCode rc = core.rocR100(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.rocR100(-90, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.rocR100(1230, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.rocR100(0, 99, inputsinReal, 0, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+	}
+
+	@Test
+	public void testmidPriceDouble() {
+		/*
+		 * Szuka maksa i minumum w tablicach maks i min (ja u¿y³em tej samej) po
+		 * czym (maks+min)/2 œrednia z odchyleñ maksymalnych
+		 */
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+		double[] expect = new double[] { 2.580184045 };
+		double[] expect2 = new double[] { 3.005912585 };
+		int minvalue = Integer.MIN_VALUE;
+
+		RetCode rc = core.midPrice(0, 99, inputsinReal, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rmin = core.midPrice(0, 13, inputsinReal, inputsinReal,
+				minvalue, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect2, outReal, 0);
+
+		RetCode rb = core.midPrice(-1, 99, inputsinReal, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.midPrice(5, 4, inputsinReal, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.midPrice(0, 99, inputsinReal, inputsinReal, 1,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testmidPriceFloat() {
+		/*
+		 * Szuka maksa i minumum w tablicach maks i min (ja u¿y³em tej samej) po
+		 * czym (maks+min)/2 œrednia z odchyleñ maksymalnych
+		 */
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+		double[] expect = new double[] { 2.684999942779541 };
+		double[] expect2 = new double[] { 1.850000023841858 };
+		int minvalue = Integer.MIN_VALUE;
+
+		RetCode rc = core.midPrice(0, 99, inputsinReal, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rmin = core.midPrice(0, 13, inputsinReal, inputsinReal,
+				minvalue, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect2, outReal, 0);
+
+		RetCode rb = core.midPrice(-1, 99, inputsinReal, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.midPrice(5, 4, inputsinReal, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.midPrice(0, 99, inputsinReal, inputsinReal, 1,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testmidPointDouble() {
 		/*
 		 * Szuka maksa i minumum w tablicach maks i min (ja u¿y³em tej samej) po
 		 * czym (maks+min)/2 œrednia z odchyleñ maksymalnych
@@ -1132,9 +1493,58 @@ public class TestCore {
 	}
 
 	@Test
-	public void testmom() {
+	public void testmidPointFloat() {
+		/*
+		 * Szuka maksa i minumum w tablicach maks i min (ja u¿y³em tej samej) po
+		 * czym (maks+min)/2 œrednia z odchyleñ maksymalnych
+		 */
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+		double[] expect = new double[] { 2.684999942779541 };
+		double[] expect2 = new double[] { 1.850000023841858 };
+		int minvalue = Integer.MIN_VALUE;
+
+		RetCode rc = core.midPoint(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		RetCode rmin = core.midPoint(0, 13, inputsinReal, minvalue, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect2, outReal, 0);
+
+		RetCode rb = core.midPoint(-1, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.midPoint(5, 4, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.midPoint(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testmomDouble() {
 		/**
-		 * momentum czyli cena-poprzednia cena taki sam pojebus jak roc i ca³a reszta roc
+		 * momentum czyli cena-poprzednia cena taki sam pojebus jak roc i ca³a
+		 * reszta roc
 		 */
 		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
 				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
@@ -1208,58 +1618,137 @@ public class TestCore {
 				outReal);
 		assertEquals(RetCode.BadParam.toString(), rb2.toString());
 	}
-	
+
 	@Test
-	public void movingAveLookback(){
-		
-		int sma =29;
-		int ema =29;
-		int wma=29;
-		int dema=ema*2;
-		int tema=ema*3;
-		int trima=29;
-		int kama=30;
-		int mama=30;
-		int t3=30;
-		int def =0;
+	public void testmomFloat() {
+		/**
+		 * momentum czyli cena-poprzednia cena taki sam pojebus jak roc i ca³a
+		 * reszta roc
+		 */
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { -3.0500001907348633,
+				-4.789999961853027, 9.270000457763672, -1.2699999809265137,
+				-1.9900000095367432, 3.0299999713897705, -8.850000381469727,
+				4.019999980926514, 3.3299999237060547, -7.199999809265137,
+				-0.49000000953674316, 1.529999852180481, 6.880000114440918,
+				1.2599997520446777, -9.559999465942383, -0.8499999046325684,
+				4.170000076293945, 8.5, -4.059999465942383, -4.25,
+				6.699999809265137, -8.5600004196167, -1.0099998712539673,
+				1.559999942779541, 5.950000286102295, -9.819999694824219,
+				12.039999961853027, -3.8899998664855957, 3.5,
+				-4.440000057220459, 1.8400001525878906, -1.1000001430511475,
+				-2.1100001335144043, -5.639999866485596, 14.119998931884766,
+				-0.1399993896484375, -1.2899999618530273, -7.390000343322754,
+				7.920000076293945, -8.210000038146973, -5.369999885559082,
+				2.6500000953674316, 10.480000495910645, -0.9900002479553223,
+				-3.190000057220459, -7.289999961853027, 1.880000114440918,
+				-0.690000057220459, 1.7400000095367432, 8.460000038146973,
+				-11.980000495910645, 13.25, -0.28999996185302734,
+				-6.859999656677246, 3.870000123977661, -1.190000057220459,
+				0.690000057220459, -9.630000114440918, 6.779999732971191,
+				-6.659999847412109, 13.5, -6.539999961853027,
+				3.1600000858306885, 1.9999995231628418, -6.679999828338623,
+				-0.36000001430511475, 5.689999580383301, -0.7199997901916504,
+				-6.21999979019165, 8.170000076293945, -7.429999828338623,
+				0.3999999761581421, 2.9699997901916504, -5.960000038146973,
+				0.4500000476837158, 5.909999847412109, -8.40999984741211,
+				7.389999866485596, -1.3599998950958252, 1.0299999713897705,
+				0.940000057220459, -3.6000001430511475, 8.030000686645508,
+				-2.960000514984131, -7.420000076293945, -2.239999771118164,
+				8.399999618530273, -5.119999885559082, 2.3899998664855957,
+				1.899999976158142, -1.1600000858306885, -2.009999990463257,
+				-3.819999933242798, 10.010000228881836, -2.81000018119812,
+				-4.220000267028809, 4.150000095367432, -2.7699999809265137,
+				-1.9900000095367432 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[99];
+
+		RetCode rc = core.mom(0, 99, inputsinReal, 1, outBegIdx, outNBElement,
+				outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.mom(-90, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.mom(1230, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.mom(0, 99, inputsinReal, 0, outBegIdx, outNBElement,
+				outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+	}
+
+	@Test
+	public void movingAveLookback() {
+
+		int sma = 29;
+		int ema = 29;
+		int wma = 29;
+		int dema = ema * 2;
+		int tema = ema * 3;
+		int trima = 29;
+		int kama = 30;
+		int mama = 30;
+		int t3 = 30;
+		int def = 0;
 		int minvaluesma = 29;
 		int err = -1;
-		
+
 		int i = core.movingAverageLookback(Integer.MIN_VALUE, MAType.Sma);
 		assertEquals(minvaluesma, i);
-		
+
 		i = core.movingAverageLookback(Integer.MAX_VALUE, MAType.Sma);
 		assertEquals(err, i);
-		
+
 		i = core.movingAverageLookback(1, MAType.Sma);
 		assertEquals(def, i);
-	
+
 		i = core.movingAverageLookback(30, MAType.Sma);
 		assertEquals(sma, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Ema);
 		assertEquals(ema, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Wma);
 		assertEquals(wma, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Dema);
 		assertEquals(dema, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Tema);
 		assertEquals(tema, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Trima);
 		assertEquals(trima, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Kama);
 		assertEquals(kama, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Kama);
 		assertEquals(mama, i);
-		
+
 		i = core.movingAverageLookback(30, MAType.Kama);
 		assertEquals(t3, i);
-		
+
 	}
+
+	
+	
 }

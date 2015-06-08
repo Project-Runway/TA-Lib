@@ -9,9 +9,9 @@ getFuncInfo
 
 PriceInputParameter:
 
-PriceInputParameter
-getFlags
-getCount
+PriceInputParameter(zrobione)
+getFlags(zrobione)
+getCount(zrobione)
 
 
 OptInputParameterType:
