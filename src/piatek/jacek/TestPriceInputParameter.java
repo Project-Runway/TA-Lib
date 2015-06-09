@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.tictactec.ta.lib.meta.PriceInputParameter;
 
 @SuppressWarnings("deprecation")
-public class priceInputParameter {
+public class TestPriceInputParameter {
 	static PriceInputParameter priceInputParameter;
 	@Test
 	public void TestPriceInputParameters(){

@@ -1889,7 +1889,7 @@ public class TestCore {
 		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
 
 	}
-	
+
 	@Test
 	public void testTsfDouble() {
 
@@ -1914,32 +1914,36 @@ public class TestCore {
 				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
 				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
 				3.64449126, 4.01208808, 6.83494132 };
-		double[] expect = new double[] {3.2471773756181803};
+		double[] expect = new double[] { 3.2471773756181803 };
 
 		MInteger outBegIdx = new MInteger();
 		MInteger outNBElement = new MInteger();
 		double[] outReal = new double[1];
 
-		RetCode rc = core.tsf(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		RetCode rc = core.tsf(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
 		assertArrayEquals(expect, outReal, 0);
 
-
-		RetCode rb = core.tsf(-90, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		RetCode rb = core.tsf(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
 		assertArrayEquals(expect, outReal, 0);
 		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
 
-		RetCode rb1 = core.tsf(1230, 99,inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		RetCode rb1 = core.tsf(1230, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
 		assertArrayEquals(expect, outReal, 0);
 		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
 
-		RetCode rb2 = core.tsf(0, 99,inputsinReal, 1, outBegIdx, outNBElement, outReal);
+		RetCode rb2 = core.tsf(0, 99, inputsinReal, 1, outBegIdx, outNBElement,
+				outReal);
 		assertEquals(RetCode.BadParam.toString(), rb2.toString());
 
 	}
+
 	@Test
 	public void testTsfFloat() {
 
-		double[] inputsinReal = new double[] {  5.13f, 2.08f, -2.71f, 6.56f,
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
 				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
 				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
 				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
@@ -1951,29 +1955,900 @@ public class TestCore {
 				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
 				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
 				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
-				-0.25f, 3.9f, 1.13f, -0.86f};
-		double[] expect = new double[] {2.6288666741595126};
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { 2.6288666741595126 };
 
 		MInteger outBegIdx = new MInteger();
 		MInteger outNBElement = new MInteger();
 		double[] outReal = new double[1];
 
-		RetCode rc = core.tsf(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		RetCode rc = core.tsf(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
 		assertArrayEquals(expect, outReal, 0);
 
-
-		RetCode rb = core.tsf(-90, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		RetCode rb = core.tsf(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
 		assertArrayEquals(expect, outReal, 0);
 		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
 
-		RetCode rb1 = core.tsf(1230, 99,inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		RetCode rb1 = core.tsf(1230, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
 		assertArrayEquals(expect, outReal, 0);
 		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
 
-		RetCode rb2 = core.tsf(0, 99,inputsinReal, 1, outBegIdx, outNBElement, outReal);
+		RetCode rb2 = core.tsf(0, 99, inputsinReal, 1, outBegIdx, outNBElement,
+				outReal);
 		assertEquals(RetCode.BadParam.toString(), rb2.toString());
 
 	}
 
+	@Test
+	public void testLinearRegFloat() {
 
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { 2.630615848989254 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearReg(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearReg(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearReg(1230, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearReg(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testLinearRegDouble() {
+
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		double[] expect = new double[] { 3.2409710605504936 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearReg(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearReg(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearReg(1230, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearReg(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testLinearRegSlopeDouble() {
+
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		double[] expect = new double[] { 0.006206315067686736 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearRegSlope(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearRegSlope(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearRegSlope(1230, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearRegSlope(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testLinearRegSlopeFloat() {
+
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { -0.0017491748297412118 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearRegSlope(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearRegSlope(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearRegSlope(1230, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearRegSlope(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testLinearRegInterceptFloat() {
+
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { 2.803784157133634 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearRegIntercept(0, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearRegIntercept(-90, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearRegIntercept(1230, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearRegIntercept(0, 99, inputsinReal, 1,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testLinearRegInterceptDouble() {
+
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		double[] expect = new double[] { 2.6265458688495067 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearRegIntercept(0, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearRegIntercept(-90, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearRegIntercept(1230, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearRegIntercept(0, 99, inputsinReal, 1,
+				outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testLinearRegAngleFloat() {
+
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { -0.10022023316307363 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearRegAngle(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearRegAngle(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearRegAngle(1230, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearRegAngle(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testLinearRegAngleDouble() {
+
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		double[] expect = new double[] { 0.3555910941601096 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.linearRegAngle(0, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.linearRegAngle(-90, 99, inputsinReal, 100, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.linearRegAngle(1230, 99, inputsinReal, 100,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.linearRegAngle(0, 99, inputsinReal, 1, outBegIdx,
+				outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+	}
+
+	@Test
+	public void testAdDouble() {
+
+		double[] inHigh = new double[] { -3.74899758, 8.79802864, -0.14931231,
+				-1.56997335, 8.905047, 2.43794917, -2.57177967, 1.50790575,
+				6.28525889, -1.23445402, 9.88264006, -1.54691191, -1.51678414,
+				-3.87081489, 4.07341677, -0.83149575, 6.45639026, -1.40668908,
+				8.34046177, 9.20368065, 1.97305676, 5.5028895, 0.3892627,
+				6.70370615 };
+		double[] inLow = new double[] { -2.57179387, 7.53523663, 2.19858521,
+				5.48588226, 9.68097963, 7.19059048, 8.10866271, -4.529799,
+				6.25455656, -4.83669727, -1.99595817, 3.38484571, -1.7680024,
+				7.80204145, 6.92049361, 4.10760653, 5.48334737, 2.01051649,
+				-0.5360123, 6.4349846, -2.66170544, 1.19188141, 7.91933993,
+				-3.36841844 };
+		double[] inClose = new double[] { 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476 };
+		double[] inVolume = new double[] { 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808 };
+		double[] expect = new double[] { -79.07070142669991,
+				-79.07070142669991, -79.07070142669991, -79.07070142669991,
+				-79.07070142669991, -79.07070142669991, -79.92125767651315,
+				668.9863983828114, 682.8159573031976, 670.3568113932618,
+				670.3568113932618, 1385.5625281468142, 1385.5625281468142,
+				1385.5625281468142, 1385.5625281468142, 1262.938438428078,
+				1262.938438428078, 1251.5111140989734, 1252.7203307252137,
+				1246.1115691014875, 1248.0833987685498, 1248.0833987685498,
+				1252.8326734713237, 0.0 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[24];
+
+		RetCode rc = core.ad(1, 23, inHigh, inLow, inClose, inVolume,
+				outBegIdx, outNBElement, outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.ad(-90, 99, inHigh, inLow, inClose, inVolume,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.ad(1230, -90, inHigh, inLow, inClose, inVolume,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+	}
+
+	@Test
+	public void testAdFloat() {
+		float[] inHigh = new float[] { 5.13f, 2.08f, -2.71f, 6.56f, 5.29f,
+				3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f, -1.33f,
+				5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f, 0.76f, 7.46f,
+				-1.1f, -2.11f };
+		float[] inLow = new float[] { -0.55f, 5.4f, -4.42f, 7.62f, 3.73f,
+				7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f, 8.47f,
+				1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f, -2.92f,
+				-1.04f, -1.73f, 0.01f, };
+		float[] inClose = new float[] { 8.47f, -3.51f, 9.74f, 9.45f, 2.59f,
+				6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f, 3.41f,
+				6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f, 1.02f,
+				1.42f, 4.39f, -1.57f, };
+		float[] inVolume = new float[] { -1.12f, 4.79f, -3.62f, 3.77f, 2.41f,
+				3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f, 4.59f,
+				-0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { 0.0, -56.33227693742281,
+				-56.33227693742281, -62.26458529433056, -62.26458529433056,
+				-60.50763598255206, -60.50763598255206, -60.50763598255206,
+				-60.55910241330319, -60.12629137148095, -60.12629137148095,
+				-60.12629137148095, -60.12629137148095, -57.123673688349115,
+				-57.123673688349115, -57.123673688349115, -55.009984483661306,
+				-56.73069371488328, -56.73069371488328, -56.73069371488328,
+				-55.93862255967202, -41.23862259320782, -41.23862259320782, 0.0 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[24];
+
+		RetCode rc = core.ad(1, 23, inHigh, inLow, inClose, inVolume,
+				outBegIdx, outNBElement, outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.ad(-90, 99, inHigh, inLow, inClose, inVolume,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.ad(1230, -90, inHigh, inLow, inClose, inVolume,
+				outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+	}
+
+	@Test
+	public void testObvFloat() {
+		float[] inReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f, 5.29f,
+				3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f, -1.33f,
+				5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f, 0.76f, 7.46f,
+				-1.1f, -2.11f };
+		float[] inVolume = new float[] { -1.12f, 4.79f, -3.62f, 3.77f, 2.41f,
+				3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f, 4.59f,
+				-0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double[] expect = new double[] { -1.1200000047683716,
+				-5.909999966621399, -2.290000081062317, 1.4799998998641968,
+				-0.9300001859664917, -4.370000243186951, 0.009999871253967285,
+				-0.7700001001358032, 8.040000319480896, 13.890000224113464,
+				15.460000276565552, 19.270000219345093, 23.860000371932983,
+				23.330000400543213, 25.190000414848328, 21.43000042438507,
+				18.830000519752502, 19.42000049352646, 16.190000474452972,
+				9.410000264644623, 5.440000236034393, 5.190000236034393,
+				1.2900001406669617, 0.16000014543533325 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[24];
+
+		RetCode rc = core.obv(0, 23, inReal, inVolume, outBegIdx, outNBElement,
+				outReal);
+
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.obv(-90, 99, inReal, inVolume, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.obv(1230, -90, inReal, inVolume, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+	}
+
+	@Test
+	public void testObvDouble() {
+		double[] inReal = new double[] { -3.74899758, 8.79802864, -0.14931231,
+				-1.56997335, 8.905047, 2.43794917, -2.57177967, 1.50790575,
+				6.28525889, -1.23445402, 9.88264006, -1.54691191, -1.51678414,
+				-3.87081489, 4.07341677, -0.83149575, 6.45639026, -1.40668908,
+				8.34046177, 9.20368065, 1.97305676, 5.5028895, 0.3892627,
+				6.70370615 };
+		double[] inVolume = new double[] { 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808 };
+		double[] expect = new double[] { 2.20199541, 10.52063847, 12.47743038,
+				6.513901489999999, 6.770369259999999, 1.4143395299999986,
+				0.5733240499999985, 0.08667927999999853, 4.0324659999999986,
+				-0.5383535500000018, 8.358757869999998, 8.083374839999998,
+				16.238591119999995, 16.242825389999997, 18.290268429999998,
+				14.899388679999998, 21.70164595, 22.11190254, 29.77677139,
+				26.67373812, 29.625058499999998, 35.91411178, 40.09878352,
+				43.74327478 };
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[24];
+
+		RetCode rc = core.obv(0, 23, inReal, inVolume, outBegIdx, outNBElement,
+				outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+		RetCode rb = core.obv(-90, 99, inReal, inVolume, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.obv(1230, -90, inReal, inVolume, outBegIdx,
+				outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+	}
+	@Test
+	public void TA_INT_EMA_Float() {
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		double optInK_1 = 2.20199541;
+	
+		double[] expect = new double[] {2.7172000030614436};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.TA_INT_EMA(0, 99, inputsinReal, 100, optInK_1, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+
+	}
+	@Test
+	public void TA_INT_EMA_Double() {
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		double optInK_1 = 2.20199541;
+	
+		double[] expect = new double[] {2.9337584647};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		double[] outReal = new double[1];
+
+		RetCode rc = core.TA_INT_EMA(0, 99, inputsinReal, 100, optInK_1, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+
+
+	}
+	@Test
+	public void TA_INT_PO_Double() {
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		
+		int optInFastPeriod = 100;
+		int optInSlowPeriod = 17;
+		
+	
+		double[] expect = new double[] {-0.047235529263291554};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		
+		
+		double[] outReal = new double[1];
+
+		RetCode rc = core.apo(0, 99, inputsinReal, optInFastPeriod, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		
+		RetCode rb = core.apo(-90, 99,inputsinReal, optInFastPeriod, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.apo(1230, -15, inputsinReal, optInFastPeriod, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.apo(0, 99,inputsinReal, 1, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+		RetCode rb3 = core.apo(0, 99,inputsinReal, 100001, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+		RetCode rb4 = core.apo(0, 99,inputsinReal, optInFastPeriod, 1, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+		RetCode rb5 = core.apo(0, 99,inputsinReal, optInFastPeriod, 100001, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+
+	}
+
+	@Test
+	public void TA_INT_PO_Float() {
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		
+		int optInFastPeriod = 100;
+		int optInSlowPeriod = 17;
+		
+	
+		double[] expect = new double[] {-0.9305008183641788};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		
+		
+		double[] outReal = new double[1];
+
+		RetCode rc = core.apo(0, 99, inputsinReal, optInFastPeriod, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		
+		RetCode rb = core.apo(-90, 99,inputsinReal, optInFastPeriod, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(), rb.toString());
+
+		RetCode rb1 = core.apo(1230, -15, inputsinReal, optInFastPeriod, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(), rb1.toString());
+
+		RetCode rb2 = core.apo(0, 99,inputsinReal, 1, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+		RetCode rb3 = core.apo(0, 99,inputsinReal, 100001, optInSlowPeriod, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+		RetCode rb4 = core.apo(0, 99,inputsinReal, optInFastPeriod, 1, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+		RetCode rb5 = core.apo(0, 99,inputsinReal, optInFastPeriod, 100001, MAType.Ema, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(), rb2.toString());
+
+
+	}
+	@Test
+	public void TA_INT_VAR_Float() {
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		
+	
+		double[] expect = new double[] {16.98424204042898};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		
+		
+		double[] outReal = new double[1];
+
+		RetCode rc = core.TA_INT_VAR(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		
+		assertArrayEquals(expect, outReal, 0);
+		
+	
+
+	}
+	@Test
+	public void TA_INT_VAR_Double() {
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		
+	
+		double[] expect = new double[] {18.60908124901927};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		
+		
+		double[] outReal = new double[1];
+
+		RetCode rc = core.TA_INT_VAR(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		
+		assertArrayEquals(expect, outReal, 0);
+		
+	}
+	
+	@Test
+	public void TA_INT_SMA_Double() {
+		double[] inputsinReal = new double[] { -3.74899758, 8.79802864,
+				-0.14931231, -1.56997335, 8.905047, 2.43794917, -2.57177967,
+				1.50790575, 6.28525889, -1.23445402, 9.88264006, -1.54691191,
+				-1.51678414, -3.87081489, 4.07341677, -0.83149575, 6.45639026,
+				-1.40668908, 8.34046177, 9.20368065, 1.97305676, 5.5028895,
+				0.3892627, 6.70370615, 3.56699067, -2.57179387, 7.53523663,
+				2.19858521, 5.48588226, 9.68097963, 7.19059048, 8.10866271,
+				-4.529799, 6.25455656, -4.83669727, -1.99595817, 3.38484571,
+				-1.7680024, 7.80204145, 6.92049361, 4.10760653, 5.48334737,
+				2.01051649, -0.5360123, 6.4349846, -2.66170544, 1.19188141,
+				7.91933993, -3.36841844, 2.38718663, 2.16506187, -0.2284759,
+				9.99706536, -0.61847578, 9.21486081, -4.47503721, 3.76539438,
+				9.18354848, 2.41393234, -4.37380726, 3.33243095, 9.37342345,
+				2.10308501, 7.85515609, 1.46622299, -2.80063882, -2.75484542,
+				-2.71461047, 7.27986801, 4.844885, 4.02320845, 3.95716224,
+				8.23032752, 8.35721476, 2.20199541, 8.31864306, -1.95679191,
+				5.96352889, 0.25646777, 5.35602973, 0.84101548, -0.48664477,
+				3.94578672, 4.57081955, 8.89711142, 0.27538303, 8.15521628,
+				-0.00423427, 2.04744304, 3.39087975, 6.80225727, -0.41025659,
+				7.66486885, -3.10303327, -2.95132038, 6.28905328, -4.18467174,
+				3.64449126, 4.01208808, 6.83494132 };
+		
+	
+		double[] expect = new double[] {2.9337584647};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		
+		
+		double[] outReal = new double[1];
+
+		RetCode rc = core.sma(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		
+	}
+	@Test
+	public void TA_INT_SMA_Float() {
+		float[] inputsinReal = new float[] { 5.13f, 2.08f, -2.71f, 6.56f,
+				5.29f, 3.3f, 6.33f, -2.52f, 1.5f, 4.83f, -2.37f, -2.86f,
+				-1.33f, 5.55f, 6.81f, -2.75f, -3.6f, 0.57f, 9.07f, 5.01f,
+				0.76f, 7.46f, -1.1f, -2.11f, -0.55f, 5.4f, -4.42f, 7.62f,
+				3.73f, 7.23f, 2.79f, 4.63f, 3.53f, 1.42f, -4.22f, 9.9f, 9.76f,
+				8.47f, 1.08f, 9f, 0.79f, -4.58f, -1.93f, 8.55f, 7.56f, 4.37f,
+				-2.92f, -1.04f, -1.73f, 0.01f, 8.47f, -3.51f, 9.74f, 9.45f,
+				2.59f, 6.46f, 5.27f, 5.96f, -3.67f, 3.11f, -3.55f, 9.95f,
+				3.41f, 6.57f, 8.57f, 1.89f, 1.53f, 7.22f, 6.5f, 0.28f, 8.45f,
+				1.02f, 1.42f, 4.39f, -1.57f, -1.12f, 4.79f, -3.62f, 3.77f,
+				2.41f, 3.44f, 4.38f, 0.78f, 8.81f, 5.85f, -1.57f, -3.81f,
+				4.59f, -0.53f, 1.86f, 3.76f, 2.6f, 0.59f, -3.23f, 6.78f, 3.97f,
+				-0.25f, 3.9f, 1.13f, -0.86f };
+		
+	
+		double[] expect = new double[] {2.7172000030614436};
+
+		MInteger outBegIdx = new MInteger();
+		MInteger outNBElement = new MInteger();
+		
+		
+		double[] outReal = new double[1];
+
+		RetCode rc = core.sma(0, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertArrayEquals(expect, outReal, 0);
+		
+	}
+	
 }
