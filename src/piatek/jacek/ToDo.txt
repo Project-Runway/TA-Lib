@@ -1,4 +1,3 @@
-Core:
 Zrobione:
 minMaxIndex(float)
 minMaxIndex(double)
@@ -16,60 +15,60 @@ stdDev(float)
 stdDev(double)
 sum(float)
 sum(double)
-
+movingAverageLookback (done)
+mom (float)
+mom (double)
+midPrice(float)
+midPrice  (double)
+midPoint (float)
+midPoint (double)
+roc (float)
+roc (double)
+rocP (double)
+rocP (float)
+rocR100 (double)
+rocR100 (float)
+rocR (double)
+rocR (float)
+trueRange(double)
+trueRange(float)
+tsf(float)
+tsf(double)
+linearReg(float)
+linearReg(double)
+linearRegSlope(float)
+linearRegSlope(double)
+linearRegIntercept(float)
+linearRegIntercept(double)
+linearRegAngle(float)
+linearRegAngle(double)
+ad(float)
+ad(double)
+obv(float)
+obv(double)
+TA_INT_EMA(float)
+TA_INT_EMA(double)
+TA_INT_PO(float)			- jako funckja apo
+TA_INT_PO(double)			- jako funkcja apo
+TA_INT_VAR(float)
+TA_INT_VAR(double)
+TA_INT_SMA(float)
+TA_INT_SMA(double)
+TA_INT_stddev_using_precalc_ma(float)     -poprzez funkcje stddev
+TA_INT_stddev_using_precalc_ma(double)	  -poprzez funkcje stddev
 Do zrobienia:
-linearReg
-linearReg
-tsf
-tsf
 cdlHammerLookback
 cdlHangingManLookback
-linearRegIntercept
-linearRegIntercept
-TA_INT_PO
-TA_INT_PO
-linearRegAngle
-linearRegAngle
 sarExtLookback
-linearRegSlope
-linearRegSlope
-TA_INT_VAR
-TA_INT_VAR
-midPrice(double)
-adxr
-adxr
-midPrice  (double)
 cdl3StarsInSouthLookback
 cdl3WhiteSoldiersLookback
 cdlStalledPatternLookback
-TA_INT_EMA
-midPoint (double)
-midPoint (double)
-TA_INT_EMA
-TA_INT_stddev_using_precalc_ma
-TA_INT_stddev_using_precalc_ma
-roc (double)
-trueRange
-roc (double)
-rocP (double)
-rocR100 (double)
-trueRange
-rocP (double)
-rocR (double)
-rocR100 (double)
 cdlAbandonedBabyLookback
 cdlEveningDojiStarLookback
 cdlMorningDojiStarLookback
-rocR (double)
-TA_INT_SMA
-ad
-ad
-movingAverageLookback (done)
-mom (double)
-mom (double)
-obv
 cdlInvertedHammerLookback
 cdlSeperatingLinesLookback
 cdlShootingStarLookback
-obv
 cdlRickshawManLookback
+adxr
+adxr

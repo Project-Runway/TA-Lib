@@ -6,96 +6,17 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.tictactec.ta.lib.CandleSettingType;
-import com.tictactec.ta.lib.Core;
+import com.tictactec.ta.lib.CoreAnnotated;
 import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
-import com.tictactec.ta.lib.RangeType;
 import com.tictactec.ta.lib.RetCode;
-
 @SuppressWarnings("unused")
-public class TestCore {
-	static Core core;
+public class TestAnnotated {
+	static CoreAnnotated core;
 
 	@BeforeClass
 	public static void beforeClass() {
-		core = new Core();
-	}
-	
-	@Test
-	public void TestCdlEveningStarLookback() {
-
-		Core c1 = new Core();
-
-		RetCode r0 = c1.SetCandleSettings(CandleSettingType.BodyShort,
-				RangeType.HighLow, 8, 10.0);
-		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong,
-				RangeType.HighLow, 2, 10.0);
-		assertEquals(8 + 2, c1.cdlEveningStarLookback(0));
-
-		r0 = c1.SetCandleSettings(CandleSettingType.BodyShort,
-				RangeType.HighLow, 2, 10.0);
-		r1 = c1.SetCandleSettings(CandleSettingType.BodyLong,
-				RangeType.HighLow, 8, 10.0);
-		assertEquals(8 + 2, c1.cdlEveningStarLookback(0));
-	}
-
-	@Test
-	public void TestCdlMatHoldLookback() {
-
-		Core c1 = new Core();
-
-		RetCode r0 = c1.SetCandleSettings(CandleSettingType.BodyShort,
-				RangeType.HighLow, 8, 10.0);
-		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong,
-				RangeType.HighLow, 2, 10.0);
-		assertEquals(8 + 4, c1.cdlMatHoldLookback(0));
-
-		r0 = c1.SetCandleSettings(CandleSettingType.BodyShort,
-				RangeType.HighLow, 2, 10.0);
-		r1 = c1.SetCandleSettings(CandleSettingType.BodyLong,
-				RangeType.HighLow, 8, 10.0);
-		assertEquals(8 + 4, c1.cdlMatHoldLookback(0));
-	}
-	
-	@Test
-	public void TestCdlMorningStarLookback() {
-
-		Core c1 = new Core();
-
-		RetCode r0 = c1.SetCandleSettings(CandleSettingType.BodyShort,
-				RangeType.HighLow, 8, 10.0);
-		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong,
-				RangeType.HighLow, 2, 10.0);
-		assertEquals(8 + 2, c1.cdlMorningStarLookback(0));
-
-		r0 = c1.SetCandleSettings(CandleSettingType.BodyShort,
-				RangeType.HighLow, 2, 10.0);
-		r1 = c1.SetCandleSettings(CandleSettingType.BodyLong,
-				RangeType.HighLow, 8, 10.0);
-		assertEquals(8 + 2, c1.cdlMorningStarLookback(0));
-	}
-
-	@Test
-	public void TestCdlTakuriLookback() {
-
-		Core c1 = new Core();
-
-		RetCode r0 = c1.SetCandleSettings(CandleSettingType.BodyDoji,
-				RangeType.HighLow, 6, 10.0);
-		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort,
-				RangeType.HighLow, 2, 10.0);
-		RetCode r2 = c1.SetCandleSettings(CandleSettingType.ShadowVeryLong,
-				RangeType.HighLow, 1, 10.0);
-		assertEquals(6, c1.cdlTakuriLookback());
-
-		r0 = c1.SetCandleSettings(CandleSettingType.BodyDoji,
-				RangeType.HighLow, 7, 10.0);
-		r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort,
-				RangeType.HighLow, 3, 10.0);
-		r2 = c1.SetCandleSettings(CandleSettingType.ShadowVeryLong,
-				RangeType.HighLow, 8, 10.0);
-		assertEquals(8, c1.cdlTakuriLookback());
+		core = new CoreAnnotated();
 	}
 
 	@Test

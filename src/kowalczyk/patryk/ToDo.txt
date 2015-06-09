@@ -10,63 +10,62 @@ rsi
 rsi
 cdlXSideGap3Methods
 cdlXSideGap3Methods
-sar
-sar
-trima
-trima
-beta
-kama
-beta
+sar						- Zrobione
+sar						- Zrobione
+trima					- Zrobione
+trima					- Zrobione
+beta					- Zrobione
+beta					- Zrobione 
 stoch
-bbands
-kama
 stoch
-minusDM
-plusDM
-cdlHikkake
-cdlHikkake
-minusDM
-plusDM
 stochF
+stochF
+bbands
+bbands
+kama					- Zrobione	
+kama					- Zrobione
+dema					- Zrobione
+dema					- Zrobione
+minusDM					- Zrobione
+minusDM					- Zrobione	
+plusDM					- Zrobione
+plusDM					- Zrobione
+minMax
+minMax
 macdExt
 macdExt
-bbands
-correl
-stochF
+adOsc
 adOsc
 correl
-adOsc
+correl
 TA_INT_MACD
 TA_INT_MACD
 natr
 natr
 cdlAdvanceBlockLookback
-willR
+cdlHikkake
+cdlHikkake
 cdl3Outside
 cdl3Outside
-tema
-tema
+tema					- Zrobione
+tema					- Zrobione
 willR
+willR
+cci
 cci
 atr
 atr
 movingAverageVariablePeriod
 movingAverageVariablePeriod
-cci
 trix
 trix
 aroon
 aroon
 movingAverage
-aroonOsc
 movingAverage
-dema
 stochRsi
 stochRsi
 aroonOsc
+aroonOsc
 cdlEngulfing
 cdlEngulfing
-minMax
-
-dema
-minMax
