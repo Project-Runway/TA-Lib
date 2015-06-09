@@ -2,7 +2,6 @@ package zajdel.lukasz;
 
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.tictactec.ta.lib.meta.PriceHolder;
@@ -34,12 +33,12 @@ public class TestPriceHolder {
 		double[] actualI = priceHolder.getI();
 		int actualLength = priceHolder.length;
 
-		assertEquals(excendentsO, actualO);
-		assertEquals(excendentsH, actualH);
-		assertEquals(excendentsL, actualL);
-		assertEquals(excendentsC, actualC);
-		assertEquals(excendentsV, actualV);
-		assertEquals(excendentsI, actualI);
+		assertArrayEquals(excendentsO, actualO,0);
+		assertArrayEquals(excendentsH, actualH,0);
+		assertArrayEquals(excendentsL, actualL,0);
+		assertArrayEquals(excendentsC, actualC,0);
+		assertArrayEquals(excendentsV, actualV,0);
+		assertArrayEquals(excendentsI, actualI,0);
 		assertEquals(excendentsLength, actualLength);
 
 	}
