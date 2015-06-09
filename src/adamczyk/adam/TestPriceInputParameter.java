@@ -1,13 +1,11 @@
 package adamczyk.adam;
 
-import static org.junit.Assert.*;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.tictactec.ta.lib.meta.PriceHolder;
 import com.tictactec.ta.lib.meta.PriceInputParameter;
-
+@SuppressWarnings("deprecation")
 public class TestPriceInputParameter {
 	static PriceInputParameter priceInputParameter;
 	static PriceHolder priceHolder;

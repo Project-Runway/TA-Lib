@@ -29,7 +29,19 @@ public class AllTestRunner {
 				
 				zajdel.lukasz.TestCore.class,
 				zajdel.lukasz.TestCoreAnnotated.class,
-				zajdel.lukasz.TestPriceHolder.class
+				zajdel.lukasz.TestPriceHolder.class,
+				
+				adamczyk.adam.TestCore.class,
+				adamczyk.adam.TestCoreAnnotated.class,
+				adamczyk.adam.TestCoreMetaData.class,
+				adamczyk.adam.TestCoreMetaDataCompatibilty.class,
+				adamczyk.adam.TestPriceInputParameter.class,
+				adamczyk.adam.TestSimpleHelper.class,
+				
+				kowalczyk.patryk.TestCore.class,
+				kowalczyk.patryk.TestCoreAnnotated.class,
+				kowalczyk.patryk.TestCoreMetaData.class,
+				kowalczyk.patryk.TestTaFuncSignature.class
 			
 				
 				);
@@ -37,7 +49,7 @@ public class AllTestRunner {
 			System.out.println(f.toString());
 		}
 
-		System.out.println(result.wasSuccessful());
+		System.out.println("Status testów: "+ result.wasSuccessful());
 	}
 	
 

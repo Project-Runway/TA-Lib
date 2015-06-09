@@ -7,15 +7,16 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.tictactec.ta.lib.Core;
+import com.tictactec.ta.lib.CoreAnnotated;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
 @SuppressWarnings("unused")
-public class TestCore {
-	static Core core;
+public class TestCoreAnnotated {
+	static CoreAnnotated core;
 	
 	@BeforeClass
 	public static void beforeClass() {
-		core = new Core();
+		core = new CoreAnnotated();
 	}
 
 	@Test
