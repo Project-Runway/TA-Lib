@@ -6,24 +6,20 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.tictactec.ta.lib.CandleSetting;
 import com.tictactec.ta.lib.CandleSettingType;
-import com.tictactec.ta.lib.Compatibility;
 import com.tictactec.ta.lib.Core;
-import com.tictactec.ta.lib.FuncUnstId;
+import com.tictactec.ta.lib.CoreAnnotated;
 import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RangeType;
 import com.tictactec.ta.lib.RetCode;
 @SuppressWarnings("unused")
-public class TestCore {
-	static Core core;
-	
+public class TestAnnotated {
+	static CoreAnnotated core;
 	
 	@BeforeClass
 	public static void beforeClass(){
-		core = new Core();
-	
+		core = new CoreAnnotated();
 	}
 
 

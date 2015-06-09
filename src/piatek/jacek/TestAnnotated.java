@@ -6,20 +6,18 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.tictactec.ta.lib.CandleSettingType;
-import com.tictactec.ta.lib.Core;
+import com.tictactec.ta.lib.CoreAnnotated;
 import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
-
 @SuppressWarnings("unused")
-public class TestCore {
+public class TestAnnotated {
 
-	static Core core;
+	static CoreAnnotated core;
 
 	@BeforeClass
 	public static void BeforeClass() {
-		core = new Core();
+		core = new CoreAnnotated();
 
 	}
 
@@ -2850,5 +2848,4 @@ public class TestCore {
 		assertArrayEquals(expect, outReal, 0);
 		
 	}
-	
 }

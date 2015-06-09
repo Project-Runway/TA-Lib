@@ -1,10 +1,9 @@
 package ratajczak.artur;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.tictactec.ta.lib.CandleSetting;
 import com.tictactec.ta.lib.CandleSettingType;
 import com.tictactec.ta.lib.Compatibility;
 import com.tictactec.ta.lib.FuncUnstId;

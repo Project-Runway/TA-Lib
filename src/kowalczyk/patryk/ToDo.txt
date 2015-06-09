@@ -1,72 +1,72 @@
 Core:
 
-cdlDoji
-cdlDoji
-mfi
-mfi
-cmo
-cmo
-rsi
-rsi
-cdlXSideGap3Methods
-cdlXSideGap3Methods
-sar
-sar
-trima
-trima
-beta
-kama
-beta
+mfi						- Zrobione
+mfi						- Zrobione
+cmo						- Zrobione
+cmo						- Zrobione
+rsi						- Zrobione
+rsi						- Zrobione
+sar						- Zrobione
+sar						- Zrobione
+trima					- Zrobione
+trima					- Zrobione
+beta					- Zrobione
+beta					- Zrobione 
 stoch
-bbands
-kama
 stoch
-minusDM
-plusDM
-cdlHikkake
-cdlHikkake
-minusDM
-plusDM
 stochF
-macdExt
-macdExt
-bbands
-correl
 stochF
-adOsc
-correl
-adOsc
-TA_INT_MACD
-TA_INT_MACD
-natr
-natr
-cdlAdvanceBlockLookback
-willR
-cdl3Outside
-cdl3Outside
-tema
-tema
-willR
-cci
-atr
-atr
-movingAverageVariablePeriod
-movingAverageVariablePeriod
-cci
-trix
-trix
-aroon
-aroon
-movingAverage
-aroonOsc
-movingAverage
-dema
 stochRsi
 stochRsi
-aroonOsc
-cdlEngulfing
-cdlEngulfing
-minMax
+bbands
+bbands
+kama					- Zrobione	
+kama					- Zrobione
+dema					- Zrobione
+dema					- Zrobione
+minusDM					- Zrobione
+minusDM					- Zrobione	
+plusDM					- Zrobione
+plusDM					- Zrobione
+minMax					- Zrobione
+minMax					- Zrobione
+adOsc					- Zrobione
+adOsc					- Zrobione
+correl
+correl
+macdExt
+macdExt
+TA_INT_MACD
+TA_INT_MACD
+natr					- Zrobione
+natr					- Zrobione
+tema					- Zrobione
+tema					- Zrobione
+willR					- Zrobione
+willR					- Zrobione
+cci						- Zrobione
+cci						- Zrobione
+atr						- Zrobione
+atr						- Zrobione
+movingAverage
+movingAverage
+movingAverageVariablePeriod
+movingAverageVariablePeriod
+trix					- Zrobione
+trix					- Zrobione
+aroon					- Zrobione
+aroon					- Zrobione
+aroonOsc				- Zrobione
+aroonOsc				- Zrobione 
 
-dema
-minMax
+cdlDoji
+cdlDoji
+cdlHikkake
+cdlHikkake
+cdl3Outside
+cdl3Outside
+cdlEngulfing
+cdlEngulfing
+cdlXSideGap3Methods
+cdlXSideGap3Methods
+cdlAdvanceBlockLookback	- Zrobione
