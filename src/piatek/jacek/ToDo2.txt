@@ -1,8 +1,8 @@
-CoreMetaData:
+CoreMetaData(Nie da siê?):
 
 setInputParamPrice
 getFuncHandle
-CoreMetaData
+CoreMetaData(niedarady)
 getLookbackMethodMap
 getFuncInfo
 
@@ -16,6 +16,6 @@ getCount(zrobione)
 
 OptInputParameterType:
 
-values
-OptInputParameterType
-valueOf
+values(sprawdzone u artura)
+OptInputParameterType(sprawdzone u artura)
+valueOf(sprawdzone u artura)

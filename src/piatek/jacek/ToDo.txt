@@ -31,12 +31,13 @@ rocR100 (double)
 rocR100 (float)
 rocR (double)
 rocR (float)
-
+trueRange(double)
+trueRange(float)
+tsf(float)
+tsf(double)
 Do zrobienia:
 linearReg
 linearReg
-tsf
-tsf
 cdlHammerLookback
 cdlHangingManLookback
 linearRegIntercept
@@ -59,8 +60,6 @@ TA_INT_EMA
 TA_INT_EMA
 TA_INT_stddev_using_precalc_ma
 TA_INT_stddev_using_precalc_ma
-trueRange
-trueRange
 cdlAbandonedBabyLookback
 cdlEveningDojiStarLookback
 cdlMorningDojiStarLookback
