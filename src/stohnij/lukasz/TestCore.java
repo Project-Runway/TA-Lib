@@ -143,10 +143,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.tan(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
-<<<<<<< HEAD
-		System.out.println(rc);
-		System.out.println(outBegIdx.value);
-		System.out.println(outNBElement.value);
+
 		
 		assertArrayEquals(expecteds, outReal, 0);
 		
@@ -156,9 +153,6 @@ public class TestCore {
 		RetCode rc3 = core.tan(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
 		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 
-
-=======
->>>>>>> b1973f937cf4f14ca1205da20d736091f60be388
 		
 	} 
 	
@@ -204,13 +198,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.tanh(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
-<<<<<<< HEAD
-		System.out.println(rc);
-		System.out.println(outBegIdx.value);
-		System.out.println(outNBElement.value);
-=======
->>>>>>> b1973f937cf4f14ca1205da20d736091f60be388
-		
+
 		assertArrayEquals(expecteds, outReal, 0);
 		
 		RetCode rc2 = core.tanh(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
@@ -235,11 +223,7 @@ public class TestCore {
 		
 		
 		RetCode rc = core.tanh(0, 0, inputsinReal, outBegIdx, outNBElement, outReal);
-<<<<<<< HEAD
-		System.out.println(outBegIdx.value);
-		System.out.println(outNBElement.value);
-=======
->>>>>>> b1973f937cf4f14ca1205da20d736091f60be388
+
 		
 		assertArrayEquals(expecteds, outReal, 0);
 		
