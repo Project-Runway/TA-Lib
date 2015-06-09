@@ -1,4 +1,3 @@
-Core:
 Zrobione:
 minMaxIndex(float)
 minMaxIndex(double)
@@ -35,40 +34,41 @@ trueRange(double)
 trueRange(float)
 tsf(float)
 tsf(double)
+linearReg(float)
+linearReg(double)
+linearRegSlope(float)
+linearRegSlope(double)
+linearRegIntercept(float)
+linearRegIntercept(double)
+linearRegAngle(float)
+linearRegAngle(double)
+ad(float)
+ad(double)
+obv(float)
+obv(double)
+TA_INT_EMA(float)
+TA_INT_EMA(double)
+TA_INT_PO(float)			- jako funckja apo
+TA_INT_PO(double)			- jako funkcja apo
+TA_INT_VAR(float)
+TA_INT_VAR(double)
+TA_INT_SMA(float)
+TA_INT_SMA(double)
+TA_INT_stddev_using_precalc_ma(float)     -poprzez funkcje stddev
+TA_INT_stddev_using_precalc_ma(double)	  -poprzez funkcje stddev
 Do zrobienia:
-linearReg
-linearReg
 cdlHammerLookback
 cdlHangingManLookback
-linearRegIntercept
-linearRegIntercept
-TA_INT_PO
-TA_INT_PO
-linearRegAngle
-linearRegAngle
 sarExtLookback
-linearRegSlope
-linearRegSlope
-TA_INT_VAR
-TA_INT_VAR
-adxr
-adxr
 cdl3StarsInSouthLookback
 cdl3WhiteSoldiersLookback
 cdlStalledPatternLookback
-TA_INT_EMA
-TA_INT_EMA
-TA_INT_stddev_using_precalc_ma
-TA_INT_stddev_using_precalc_ma
 cdlAbandonedBabyLookback
 cdlEveningDojiStarLookback
 cdlMorningDojiStarLookback
-TA_INT_SMA
-ad
-ad
-obv
 cdlInvertedHammerLookback
 cdlSeperatingLinesLookback
 cdlShootingStarLookback
-obv
 cdlRickshawManLookback
+adxr
+adxr
