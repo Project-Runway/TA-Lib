@@ -5,17 +5,24 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.tictactec.ta.lib.CandleSetting;
+import com.tictactec.ta.lib.CandleSettingType;
+import com.tictactec.ta.lib.Compatibility;
 import com.tictactec.ta.lib.Core;
+import com.tictactec.ta.lib.FuncUnstId;
 import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
+import com.tictactec.ta.lib.RangeType;
 import com.tictactec.ta.lib.RetCode;
 
 public class TestCore {
 	static Core core;
 	
+	
 	@BeforeClass
 	public static void beforeClass(){
 		core = new Core();
+	
 	}
 
 
@@ -48,6 +55,28 @@ public class TestCore {
 		System.out.println(outNBElement.value);
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.sma(-1, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sma(0, -1, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
+		
+		RetCode rc4 = core.sma(0, 99, inputsinReal, 1, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(),rc4.toString());
+		
+		double[] inputsinReal1 = new double[] { -1.50, -9.04, 9.50, -0.84,
+				1.72, -1.20, -7.89, 5.64, -0.83, -2.60, -5.48, 5.74, -9.40,
+				7.68, 5.51, -9.39, -4.50, -8.28, 8.83, -8.61, -2.66, 1.74,
+				2.46, 9.12, -1.03, -2.73, 2.08, 5.32, 9.37, -9.75 };
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		double[] expecteds1 = new double[] { -0.36733333333333357 };
+		double[] outReal1 = new double[1];
+
+		core.sma(0, 29, inputsinReal1, optInTimePeriod1, outBegIdx,
+				outNBElement, outReal1);
+		assertArrayEquals(expecteds1, outReal1, 0);
+			
 	} 
 	
 	@Test
@@ -79,6 +108,27 @@ public class TestCore {
 		System.out.println(outNBElement.value);
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.sma(-1, 99, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sma(0, -1, inputsinReal, 100, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
+		
+		RetCode rc4 = core.sma(0, 99, inputsinReal, 1, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.BadParam.toString(),rc4.toString());
+		
+		float[] inputsinReal1 = new float[] { -1, -9, 9, -0, 1, -1, -7, 5, -0,
+				-2, -5, 5, -9, 7, 5, -9, -4, -8, 8, -8, -2, 1, 2, 9, -1, -2, 2,
+				5, 9, -9 };
+		int optInTimePeriod1 = Integer.MIN_VALUE;
+		double[] expecteds1 = new double[] { -0.3 };
+		double[] outReal1 = new double[1];
+
+		core.sma(0, 29, inputsinReal1, optInTimePeriod1, outBegIdx,
+				outNBElement, outReal1);
+		assertArrayEquals(expecteds1, outReal1, 0);
+		
 	} 
 	
 	
@@ -102,8 +152,16 @@ public class TestCore {
 		System.out.println(outBegIdx.value);
 		System.out.println(outNBElement.value);
 		
+		assertArrayEquals(expecteds, outReal, 0);
 		
-		assertArrayEquals(expecteds, outReal, 0);;
+		RetCode rc2 = core.tan(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.tan(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
+
+
+		
 	} 
 	
 
@@ -125,6 +183,12 @@ public class TestCore {
 		System.out.println(outReal);
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.tan(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.tan(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -146,8 +210,13 @@ public class TestCore {
 		System.out.println(outBegIdx.value);
 		System.out.println(outNBElement.value);
 		
-		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.tanh(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.tanh(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -168,8 +237,13 @@ public class TestCore {
 		System.out.println(outBegIdx.value);
 		System.out.println(outNBElement.value);
 		
-		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.tanh(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.tanh(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	
@@ -194,6 +268,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.floor(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.floor(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -217,6 +297,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.floor(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.floor(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 
 
@@ -241,6 +327,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.ln(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.ln(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -264,6 +356,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.ln(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.ln(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	}
 	
 	@Test
@@ -288,6 +386,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.log10(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.log10(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -312,6 +416,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.log10(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.log10(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 
 
@@ -323,11 +433,37 @@ public class TestCore {
 		double optInAcceleration = 100;
 		double optInMaximum = 100;
 
-		
-				
 	int actual = core.sarLookback(optInAcceleration, optInMaximum);
-		
 		assertEquals(expecteds, actual);
+		
+	
+		double optInAcceleration2 = (-4e+37);
+		double optInMaximum2 = 100;
+
+	int actual2 = core.sarLookback(optInAcceleration2, optInMaximum2);
+		assertEquals(1, actual2, 0);
+		
+		
+		double optInAcceleration3 = (0.000000e+0)-1;
+		double optInMaximum3 = 100;
+
+	int actual3 = core.sarLookback(optInAcceleration3, optInMaximum3);
+			assertEquals(-1, actual3, 0);
+		
+		
+		double optInAcceleration4 = 100;
+		double optInMaximum4= (-4e+37);
+
+	int actual4 = core.sarLookback(optInAcceleration4, optInMaximum4);
+			assertEquals(1, actual4, 0);
+			
+			
+			double optInAcceleration5 = 100;
+			double optInMaximum5 = (0.000000e+0)-1;
+
+		int actual5 = core.sarLookback(optInAcceleration5, optInMaximum5);
+				assertEquals(-1, actual5, 0);
+		
 	} 
 	
 	@Test
@@ -352,6 +488,13 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+
+		RetCode rc2 = core.sin(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sin(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -376,6 +519,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.sin(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sin(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -400,6 +549,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.sinh(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sinh(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -424,6 +579,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.sinh(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sinh(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 
 	@Test
@@ -448,6 +609,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.sqrt(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sqrt(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 	
 	@Test
@@ -472,6 +639,12 @@ public class TestCore {
 		
 		
 		assertArrayEquals(expecteds, outReal, 0);
+		
+		RetCode rc2 = core.sqrt(-1, 0, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeStartIndex.toString(),rc2.toString());
+		
+		RetCode rc3 = core.sqrt(0, -3, inputsinReal, outBegIdx, outNBElement, outReal);
+		assertEquals(RetCode.OutOfRangeEndIndex.toString(),rc3.toString());
 	} 
 
 	@Test
@@ -481,12 +654,30 @@ public class TestCore {
 		
 		int optInTimePeriod = 100;
 		double optInNbDev = 100;
-
 		
-				
 	int actual = core.stdDevLookback(optInTimePeriod, optInNbDev);
-		
 		assertEquals(expecteds, actual);
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		double optInNbDev2 = 100;
+
+	int actual2 = core.stdDevLookback(optInTimePeriod2, optInNbDev2);
+		assertEquals(4, actual2);
+		
+		
+		int optInTimePeriod3 = 1;
+		double optInNbDev3 = 100;
+
+	int actual3 = core.stdDevLookback(optInTimePeriod3, optInNbDev3);
+			assertEquals(-1, actual3);
+		
+		
+		int optInTimePeriod4 = 100;
+		double optInNbDev4= (-4e+37);
+
+	int actual4 = core.stdDevLookback(optInTimePeriod4, optInNbDev4);
+			assertEquals(core.varianceLookback(optInTimePeriod, optInNbDev4), actual4);
+					
 	} 
 	
 	@Test
@@ -502,7 +693,42 @@ public class TestCore {
 	int actual = core.varianceLookback(optInTimePeriod, optInNbDev);
 		
 		assertEquals(expecteds, actual);
-	} 
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		double optInNbDev2 = 100;
+
+	int actual2 = core.varianceLookback(optInTimePeriod2, optInNbDev2);
+		assertEquals(4, actual2);
+		
+		
+		int optInTimePeriod3 = 1;
+		double optInNbDev3 = 100;
+
+	int actual3 = core.varianceLookback(optInTimePeriod3, optInNbDev3);
+			assertEquals(0, actual3);
+		
+		
+		int optInTimePeriod4 = 100;
+		double optInNbDev4 = (-3.000000e+37)-1;
+
+	int actual4 = core.varianceLookback(optInTimePeriod4, optInNbDev4);
+			assertEquals(optInTimePeriod-1, actual4);
+			
+			
+		int optInTimePeriod5 = Integer.MIN_VALUE;
+		double optInNbDev5 = (-4e+37);
+
+	int actual5 = core.varianceLookback(optInTimePeriod5, optInNbDev5);
+			assertEquals(4, actual5);
+			
+			
+			int optInTimePeriod6 = 0;
+			double optInNbDev6 = (-3.000000e+37)-1;
+
+		int actual6 = core.varianceLookback(optInTimePeriod6, optInNbDev6);
+				assertEquals(-1, actual6);
+							
+} 
 	
 	@Test
 	public void testmovingAverageVariablePeriodLookback() {
@@ -515,153 +741,319 @@ public class TestCore {
 		
 				
 	int actual = core.movingAverageVariablePeriodLookback(optInMinPeriod, optInMaxPeriod, optInMAType);
-		
 		assertEquals(expecteds, actual);
+		
+		
+		int optInMinPeriod2 = Integer.MIN_VALUE;
+		int optInMaxPeriod2 = 100;
+		MAType optInMAType2 = MAType.Dema;
+		
+				
+	int actual2 = core.movingAverageVariablePeriodLookback(optInMinPeriod2, optInMaxPeriod2, optInMAType2);
+		assertEquals(198, actual2);
+		
+		
+		int optInMinPeriod3 = 1;
+		int optInMaxPeriod3 = 100;
+		MAType optInMAType3 = MAType.Dema;
+		
+				
+	int actual3 = core.movingAverageVariablePeriodLookback(optInMinPeriod3, optInMaxPeriod3, optInMAType3);
+		assertEquals(-1, actual3);
+		
+		
+		int optInMinPeriod4 = 100;
+		int optInMaxPeriod4 = 1;
+		MAType optInMAType4 = MAType.Dema;
+		
+				
+	int actual4 = core.movingAverageVariablePeriodLookback(optInMinPeriod4, optInMaxPeriod4, optInMAType4);
+		assertEquals(-1, actual4);
+		
+		
+		int optInMinPeriod5 = Integer.MIN_VALUE;
+		int optInMaxPeriod5 = Integer.MIN_VALUE;
+		MAType optInMAType5 = MAType.Dema;
+		
+				
+	int actual5 = core.movingAverageVariablePeriodLookback(optInMinPeriod5, optInMaxPeriod5, optInMAType5);
+		assertEquals(58, actual5);
+		
+		
 	} 
 	
 	@Test
-	public void testcdl3InsideLookback() {
-		int expecteds = 12;
+	public void testcdl3InsideLookback(){
 			
-	int actual = core.cdl3InsideLookback();
-		
-		assertEquals(expecteds, actual);
-	} 
+
+			Core c1 = new Core();
+			
+			RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+			RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+			
+			assertEquals(6+2, c1.cdl3InsideLookback());
+			
+			
+			 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+			 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+			 assertEquals(8+2, c1.cdl3InsideLookback());
+		}
 	
 	
 	@Test
 	public void testcdlCounterAttackLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlCounterAttackLookback();
+	
+		Core c1 = new Core();
 		
-		assertEquals(expecteds, actual);
+		RetCode r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlCounterAttackLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlCounterAttackLookback());
 	} 
 	
 	@Test
 	public void testcdlDojiStarLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlDojiStarLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+		
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlDojiStarLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlDojiStarLookback());
 	} 
 	
 	@Test
 	public void testcdlGapSideSideWhiteLookback() {
-		int expecteds = 7;
-			
-	int actual = core.cdlGapSideSideWhiteLookback();
+
+		Core c1 = new Core();
 		
-		assertEquals(expecteds, actual);
+		RetCode r = c1.SetCandleSettings(CandleSettingType.Near, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+2, c1.cdlGapSideSideWhiteLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.Near, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+2, c1.cdlGapSideSideWhiteLookback());
 	} 
 	
 	@Test
 	public void testcdlHaramiLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlHaramiLookback();
+
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
 		
-		assertEquals(expecteds, actual);
+		assertEquals(6+1, c1.cdlHaramiLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlHaramiLookback());
 	} 
 	
 	@Test
 	public void testcdlHaramiCrossLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlHaramiCrossLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlHaramiCrossLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlHaramiCrossLookback());
 	} 
 	
 	@Test
 	public void testcdlHomingPigeonLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlHomingPigeonLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlHomingPigeonLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlHomingPigeonLookback());
 	} 
 	
 	@Test
 	public void testcdlIdentical3CrowsLookback() {
-		int expecteds = 12;
-			
-	int actual = core.cdlIdentical3CrowsLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+2, c1.cdlIdentical3CrowsLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+2, c1.cdlIdentical3CrowsLookback());
 	} 
 	
 	@Test
 	public void testcdlInNeckLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlInNeckLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlInNeckLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlInNeckLookback());
 	} 
 	
 	@Test
 	public void testcdlKickingLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlKickingLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlKickingLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlKickingLookback());
 	} 
 	
 	@Test
 	public void testcdlKickingByLengthLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlKickingByLengthLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlKickingByLengthLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlKickingByLengthLookback());
 	} 
 	
 	@Test
 	public void testcdlOnNeckLookback() {
-		int expecteds = 11;
-			
-	int actual = core.cdlOnNeckLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlOnNeckLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlOnNeckLookback());
 	} 
 	
 	@Test
 	public void TestcdlRiseFall3MethodsLookback () {
-		int expecteds = 14;
-			
-	int actual = core.cdlRiseFall3MethodsLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+4, c1.cdlRiseFall3MethodsLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+4, c1.cdlRiseFall3MethodsLookback());
 	} 
 	
 	@Test
 	public void TestcdlThrustingLookback () {
-		int expecteds = 11;
-			
-	int actual = core.cdlThrustingLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+1, c1.cdlThrustingLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.Equal, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+1, c1.cdlThrustingLookback());
 	} 
 	
 	@Test
 	public void TestcdlUnique3RiverLookback () {
-		int expecteds = 12;
-			
-	int actual = core.cdlUnique3RiverLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+2, c1.cdlUnique3RiverLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+2, c1.cdlUnique3RiverLookback());
 	} 
 	
 	@Test
 	public void TestcdlUpsideGap2CrowsLookback () {
-		int expecteds = 12;
-			
-	int actual = core.cdlUpsideGap2CrowsLookback();
 		
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6+2, c1.cdlUpsideGap2CrowsLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8+2, c1.cdlUpsideGap2CrowsLookback());
 	} 
 	
 	@Test
@@ -671,8 +1063,20 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.cmoLookback(optInTimePeriod);
-		
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+		int actual2 = core.cmoLookback(optInTimePeriod2);
+			assertEquals(14, actual2);
+			
+			
+		int optInTimePeriod3 = 1;
+			
+		int actual3 = core.cmoLookback(optInTimePeriod3);
+			assertEquals(-1, actual3);
+			
 	} 
 	
 	@Test
@@ -682,8 +1086,25 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.minusDMLookback(optInTimePeriod);
-		
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+		int actual2 = core.minusDMLookback(optInTimePeriod2);
+			assertEquals(13, actual2);
+			
+		
+		int optInTimePeriod3 = 0;
+			
+		int actual3 = core.minusDMLookback(optInTimePeriod3);
+			assertEquals(-1, actual3);
+			
+			
+		int optInTimePeriod4 = 1;
+			
+		int actual4 = core.minusDMLookback(optInTimePeriod4);
+			assertEquals(1, actual4);
 	}
 	
 	@Test
@@ -693,8 +1114,25 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.plusDMLookback(optInTimePeriod);
-		
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+		int actual2 = core.plusDMLookback(optInTimePeriod2);
+			assertEquals(13, actual2);
+			
+		
+		int optInTimePeriod3 = 0;
+			
+		int actual3 = core.plusDMLookback(optInTimePeriod3);
+			assertEquals(-1, actual3);
+			
+			
+		int optInTimePeriod4= 1;
+			
+		int actual4 = core.plusDMLookback(optInTimePeriod4);
+			assertEquals(1, actual4);
 	}
 	
 	@Test
@@ -704,109 +1142,197 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.rsiLookback(optInTimePeriod);
-		
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+		int actual2 = core.rsiLookback(optInTimePeriod2);
+			assertEquals(14, actual2);
+			
+		
+		int optInTimePeriod3 = 0;
+			
+		int actual3 = core.rsiLookback(optInTimePeriod3);
+			assertEquals(-1, actual3);
 	}
 	
 	@Test
 	public void TestadxrLookback() {
 		int expecteds = 298;
 		
-		int optInTimePeriod = 100;
+		int optInTimePeriod = 2;
 			
 	int actual = core.adxrLookback(optInTimePeriod);
+		assertEquals(4, actual);
 		
-		assertEquals(expecteds, actual);
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.adxrLookback(optInTimePeriod2);
+			assertEquals(40, actual2);
+			
+		
+		int optInTimePeriod3 = 0;
+			
+	int actual3 = core.adxrLookback(optInTimePeriod3);
+			assertEquals(-1, actual3);
+			
+				
 	}
 	
 	@Test
 	public void TestcdlBeltHoldLookback() {
-		int expecteds = 10;
 		
-			
-	int actual = core.cdlBeltHoldLookback();
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
 		
-		assertEquals(expecteds, actual);
+		assertEquals(6, c1.cdlBeltHoldLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlBeltHoldLookback());
 	}
 	
 	@Test
 	public void TestcdlClosingMarubozuLookback() {
-		int expecteds = 10;
 		
-			
-	int actual = core.cdlClosingMarubozuLookback();
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
 		
-		assertEquals(expecteds, actual);
+		assertEquals(6, c1.cdlClosingMarubozuLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlClosingMarubozuLookback());
 	}
 	
 	@Test
 	public void TestcdlDragonflyDojiLookback() {
-		int expecteds = 10;
 		
-			
-	int actual = core.cdlDragonflyDojiLookback();
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
 		
-		assertEquals(expecteds, actual);
+		assertEquals(6, c1.cdlDragonflyDojiLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlDragonflyDojiLookback());
 	}
 	
 	@Test
 	public void TestcdlGravestoneDojiLookback() {
-		int expecteds = 10;
 		
-			
-	int actual = core.cdlGravestoneDojiLookback();
-	
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6, c1.cdlGravestoneDojiLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlGravestoneDojiLookback());
 	}
 	
 	@Test
 	public void TestcdlHignWaveLookback() {
-		int expecteds = 10;
-	
-			
-	int actual = core.cdlHignWaveLookback();
-			
-		assertEquals(expecteds, actual);
+		
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6, c1.cdlHignWaveLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlHignWaveLookback());
 	}
+
 	
 	@Test
 	public void TestcdlLongLeggedDojiLookback() {
-		int expecteds = 10;
 		
-			
-	int actual = core.cdlLongLeggedDojiLookback();
-			
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowLong, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6, c1.cdlLongLeggedDojiLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyDoji, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowLong, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlLongLeggedDojiLookback());
 	}
 	
 	@Test
 	public void TestcdlLongLineLookback() {
-		int expecteds = 10;
 		
-			
-	int actual = core.cdlLongLineLookback();
-			
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowShort, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6, c1.cdlLongLineLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowShort, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlLongLineLookback());
 	}
 	
 	@Test
 	public void TestcdlMarubozuLookback() {
-		int expecteds = 10;
 		
-			
-	int actual = core.cdlMarubozuLookback();
-			
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(6, c1.cdlMarubozuLookback());
+		
+		
+		 r = c1.SetCandleSettings(CandleSettingType.BodyLong, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowVeryShort, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlMarubozuLookback());
 	}
 	
 	@Test
 	public void TestcdlShortLineLookback() {
-		int expecteds = 10;
+	
+		Core c1 = new Core();
+
+		RetCode r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 6, 10.0);
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.ShadowShort, RangeType.HighLow, 2, 10.0);
 		
+		assertEquals(6, c1.cdlShortLineLookback());
 			
-	int actual = core.cdlShortLineLookback();
 			
-		assertEquals(expecteds, actual);
+		 r = c1.SetCandleSettings(CandleSettingType.BodyShort, RangeType.HighLow, 2, 10.0);
+		 r1 = c1.SetCandleSettings(CandleSettingType.ShadowShort, RangeType.HighLow, 8, 10.0);
+
+		 assertEquals(8, c1.cdlShortLineLookback());
 	}
 	
 	@Test
@@ -816,8 +1342,21 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.dxLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.dxLookback(optInTimePeriod2);
+				assertEquals(14, actual2);
+				
+			
+			int optInTimePeriod3 = 0;
+				
+	int actual3 = core.dxLookback(optInTimePeriod3);
+				assertEquals(-1, actual3);
+				
+							
 	}
 	
 	@Test
@@ -827,8 +1366,25 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.minusDILookback(optInTimePeriod);
+			assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.minusDILookback(optInTimePeriod2);
+			assertEquals(14, actual2);
+					
+				
+			int optInTimePeriod3 = 0;
+					
+	int actual3 = core.minusDILookback(optInTimePeriod3);
+			assertEquals(-1, actual3);
 			
-		assertEquals(expecteds, actual);
+			
+		int optInTimePeriod4 = 1;
+			
+		int actual4 = core.minusDILookback(optInTimePeriod4);
+				assertEquals(1, actual4);
 	}
 	
 	@Test
@@ -838,8 +1394,24 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.plusDILookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.plusDILookback(optInTimePeriod2);
+		assertEquals(14, actual2);
+						
+					
+		int optInTimePeriod3 = 0;
+						
+	int actual3 = core.plusDILookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
+		
+		
+	int optInTimePeriod4 = 1;
+		
+	int actual4 = core.plusDILookback(optInTimePeriod4);
+			assertEquals(1, actual4);
 	}
 	
 	@Test
@@ -849,8 +1421,25 @@ public class TestCore {
 		int optInTimePeriod = 100;
 			
 	int actual = core.adxLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.adxLookback(optInTimePeriod2);
+		assertEquals(27, actual2);
+		
+		
+		int optInTimePeriod3 = 0;
+		
+	int actual3 = core.adxLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
+		
+		
+	int optInTimePeriod4 = 1;
+		
+	int actual4 = core.adxLookback(optInTimePeriod4);
+				assertEquals(-1, actual4);
 	}
 	
 	@Test
@@ -861,8 +1450,19 @@ public class TestCore {
 			
 	
 	int actual = core.cdlDarkCloudCoverLookback(optInPenetration);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		double optInPenetration2 = (-4e+37);
+		
+	int actual2 = core.cdlDarkCloudCoverLookback(optInPenetration2);
+			assertEquals(11, actual2,0);
+			
+			
+		double optInPenetration3 = (0.000000e+0)-1;
+			
+	int actual3 = core.cdlDarkCloudCoverLookback(optInPenetration3);
+			assertEquals(-1, actual3,0);		
 	}
 	
 	@Test
@@ -873,8 +1473,19 @@ public class TestCore {
 			
 	
 	int actual = core.trixLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.trixLookback(optInTimePeriod2);
+		assertEquals(88, actual2);
+			
+			
+			int optInTimePeriod3 = 0;
+			
+	int actual3 = core.trixLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -885,8 +1496,19 @@ public class TestCore {
 			
 	
 	int actual = core.emaLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.emaLookback(optInTimePeriod2);
+		assertEquals(29, actual2);
+				
+				
+		int optInTimePeriod3 = 0;
+				
+	int actual3 = core.emaLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -897,8 +1519,19 @@ public class TestCore {
 			
 	
 	int actual = core.atrLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.atrLookback(optInTimePeriod2);
+		assertEquals(14, actual2);
+					
+					
+			int optInTimePeriod3 = 0;
+					
+	int actual3 = core.atrLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -909,8 +1542,19 @@ public class TestCore {
 			
 	
 	int actual = core.kamaLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.kamaLookback(optInTimePeriod2);
+		assertEquals(30, actual2);
+						
+						
+		int optInTimePeriod3 = 0;
+						
+	int actual3 = core.kamaLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -921,8 +1565,19 @@ public class TestCore {
 			
 	
 	int actual = core.macdFixLookback(optInSignalPeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInSignalPeriod2 = Integer.MIN_VALUE;
+		
+	int actual2 = core.macdFixLookback(optInSignalPeriod2);
+		assertEquals(33, actual2);
+						
+						
+		int optInSignalPeriod3 = 0;
+						
+	int actual3 = core.macdFixLookback(optInSignalPeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -933,8 +1588,19 @@ public class TestCore {
 			
 	
 	int actual = core.mfiLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.mfiLookback(optInTimePeriod2);
+		assertEquals(14, actual2);
+						
+						
+		int optInTimePeriod3= 0;
+						
+	int actual3 = core.mfiLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -945,8 +1611,19 @@ public class TestCore {
 			
 	
 	int actual = core.natrLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.natrLookback(optInTimePeriod2);
+		assertEquals(14, actual2);
+							
+							
+			int optInTimePeriod3= 0;
+							
+	int actual3 = core.natrLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -957,8 +1634,21 @@ public class TestCore {
 			
 	
 	int actual = core.temaLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.temaLookback(optInTimePeriod2);
+		assertEquals(87, actual2);
+								
+								
+		int optInTimePeriod3= 0;
+								
+	int actual3 = core.temaLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
+		
+		
 	}
 	
 	@Test
@@ -969,19 +1659,37 @@ public class TestCore {
 			
 	
 	int actual = core.demaLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.demaLookback(optInTimePeriod2);
+		assertEquals(58, actual2);
+									
+									
+			int optInTimePeriod3= 0;
+									
+	int actual3 = core.demaLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
 	public void TestcdlHikkakeModLookback() {
-		int expecteds = 10;
 		
-			
-	
-	int actual = core.cdlHikkakeModLookback();
-			
-		assertEquals(expecteds, actual);
+		Core c1 = new Core();
+
+		int r = 1;
+		RetCode r1 = c1.SetCandleSettings(CandleSettingType.Near, RangeType.HighLow, 2, 10.0);
+		
+		assertEquals(2+5, c1.cdlHikkakeModLookback());
+		
+		
+		
+		 r1 = c1.SetCandleSettings(CandleSettingType.Near, RangeType.HighLow, 0, 10.0);
+
+		 assertEquals(1+5, c1.cdlHikkakeModLookback());
+											
 	}
 	
 	@Test
@@ -992,8 +1700,19 @@ public class TestCore {
 		
 	
 	int actual = core.cciLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.cciLookback(optInTimePeriod2);
+		assertEquals(13, actual2);
+										
+										
+		int optInTimePeriod3= 0;
+										
+	int actual3 = core.cciLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1004,8 +1723,19 @@ public class TestCore {
 		
 	
 	int actual = core.correlLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.correlLookback(optInTimePeriod2);
+		assertEquals(29, actual2);
+											
+											
+		int optInTimePeriod3= 0;
+											
+	int actual3 = core.correlLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1016,8 +1746,19 @@ public class TestCore {
 		
 	
 	int actual = core.linearRegLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.linearRegLookback(optInTimePeriod2);
+		assertEquals(13, actual2);
+												
+												
+		int optInTimePeriod3= 0;
+												
+	int actual3 = core.linearRegLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 
 	@Test
@@ -1028,8 +1769,19 @@ public class TestCore {
 		
 	
 	int actual = core.linearRegAngleLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.linearRegAngleLookback(optInTimePeriod2);
+		assertEquals(13, actual2);
+													
+													
+		int optInTimePeriod3= 0;
+													
+	int actual3 = core.linearRegAngleLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1040,8 +1792,19 @@ public class TestCore {
 		
 	
 	int actual = core.linearRegInterceptLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.linearRegInterceptLookback(optInTimePeriod2);
+		assertEquals(13, actual2);
+														
+														
+		int optInTimePeriod3= 0;
+														
+	int actual3 = core.linearRegInterceptLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1052,8 +1815,19 @@ public class TestCore {
 		
 	
 	int actual = core.linearRegSlopeLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.linearRegSlopeLookback(optInTimePeriod2);
+		assertEquals(13, actual2);
+															
+															
+		int optInTimePeriod3= 0;
+															
+	int actual3 = core.linearRegSlopeLookback(optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1064,8 +1838,19 @@ public class TestCore {
 		
 	
 	int actual = core.maxLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.maxLookback(optInTimePeriod2);
+		assertEquals(29, actual2);
+																
+																
+		int optInTimePeriod3= 0;
+																
+	int actual3 = core.maxLookback (optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1076,8 +1861,19 @@ public class TestCore {
 		
 	
 	int actual = core.maxIndexLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.maxIndexLookback(optInTimePeriod2);
+		assertEquals(29, actual2);
+																	
+																	
+		int optInTimePeriod3= 0;
+																	
+	int actual3 = core.maxIndexLookback (optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1088,8 +1884,19 @@ public class TestCore {
 		
 	
 	int actual = core.midPointLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.midPointLookback(optInTimePeriod2);
+		assertEquals(13, actual2);
+																		
+																		
+			int optInTimePeriod3= 0;
+																		
+	int actual3 = core.midPointLookback (optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1100,8 +1907,19 @@ public class TestCore {
 		
 	
 	int actual = core.midPriceLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.midPriceLookback(optInTimePeriod2);
+		assertEquals(13, actual2);
+																			
+																			
+			int optInTimePeriod3= 0;
+																			
+	int actual3 = core.midPriceLookback (optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1112,8 +1930,19 @@ public class TestCore {
 		
 	
 	int actual = core.minLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.minLookback(optInTimePeriod2);
+		assertEquals(29, actual2);
+																				
+																				
+		int optInTimePeriod3= 0;
+																				
+	int actual3 = core.minLookback (optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	@Test
@@ -1124,8 +1953,19 @@ public class TestCore {
 		
 	
 	int actual = core.minIndexLookback(optInTimePeriod);
-			
 		assertEquals(expecteds, actual);
+		
+		
+		int optInTimePeriod2 = Integer.MIN_VALUE ;
+		
+	int actual2 = core.minIndexLookback(optInTimePeriod2);
+		assertEquals(29, actual2);
+																					
+																					
+		int optInTimePeriod3= 0;
+																					
+	int actual3 = core.minIndexLookback (optInTimePeriod3);
+		assertEquals(-1, actual3);
 	}
 	
 	
