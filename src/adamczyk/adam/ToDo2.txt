@@ -17,7 +17,7 @@ SimpleHelper:
 
 calculate
 getMetaData
-SimpleHelper
+SimpleHelper  +
 getLookback
 
 
