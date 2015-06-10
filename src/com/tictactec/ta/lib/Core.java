@@ -59,8 +59,7 @@ public class Core {
    private Compatibility compatibility;
    
    /** Creates a new instance of Core *
-   
-   // TODO: Start Stachura Bartlomiej
+
    /**
     * 	Domyślny konstruktor klasy Core
     */
@@ -86,6 +85,7 @@ public class Core {
     * @param avgPeriod zakres świecy
     * @param factor średni czas
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
    public RetCode SetCandleSettings(CandleSettingType settingType,
       RangeType rangeType, int avgPeriod, double factor) {
@@ -172,6 +172,7 @@ public class Core {
     * </ul>
     * @param settingType typ wyliczeniowy ustawien Candlestick chart (świece japońskie)
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
    public RetCode RestoreCandleDefaultSettings(
       CandleSettingType settingType) {
@@ -199,6 +200,7 @@ public class Core {
     * @param id typ wyliczeniowy zawierający numery ID funkcji
     * @param period określenie liczby wyjść -> może być równe 0
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
    public RetCode SetUnstablePeriod(FuncUnstId id, int period)
    {
@@ -213,6 +215,7 @@ public class Core {
     * Zwraca parametr wyjść dla okresu niestabilnego
     * @param id typ wyliczeniowy zawierający numery ID funkcji
     * @return określenie liczb dla UnstablePeriod
+	* @author Komentarz - Bartlomiej Stachura
     */
    public int GetUnstablePeriod(FuncUnstId id)
    {
@@ -231,6 +234,7 @@ public class Core {
    
    /**
     * @return typ wyliczeniowy dla kopmatybilności TA-LIB
+	* @author Komentarz - Bartlomiej Stachura
     */
    public Compatibility getCompatibility()
    {
@@ -242,6 +246,7 @@ public class Core {
    /**
     * Zwraca domyślną wartość dla ACOS
     * @return 0
+	* @author Komentarz - Bartlomiej Stachura
     */
    public int acosLookback( )
    {
@@ -262,6 +267,7 @@ public class Core {
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
    public RetCode acos( int startIdx,
       int endIdx,
@@ -298,6 +304,7 @@ public class Core {
     * @param outNBElement ilośc elementów wyjściowych (ilosc wyników)
     * @param outReal tablica z elementami wyjsciowymi (wynikami) double[]
     * @return status - ReturnCode z RetCode
+	* @author Komentarz - Bartlomiej Stachura
     */
    public RetCode acos( int startIdx,
       int endIdx,
@@ -324,6 +331,7 @@ public class Core {
    /**
     * Zwraca domyślną wartość dla AD
     * @return 0
+	* @author Komentarz - Bartlomiej Stachura
     */
    public int adLookback( )
    {
@@ -348,6 +356,7 @@ public class Core {
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
    public RetCode ad( int startIdx,
       int endIdx,
@@ -404,6 +413,7 @@ public class Core {
   	* @param outNBElement liczba elementów wyjściowych
   	* @param outReal tablica na elementy wyjściowe
   	* @return Status
+	* @author Komentarz - Bartlomiej Stachura
   	*/
    public RetCode ad( int startIdx,
       int endIdx,
@@ -446,6 +456,7 @@ public class Core {
    /**
     * Metoda zwraca domyślną wartość add
     * @return 0
+	* @author Komentarz - Bartlomiej Stachura
     */
    public int addLookback( )
    {
@@ -466,6 +477,7 @@ public class Core {
    * @param outNBElement liczba elementów wyjściowych
    * @param outReal tablica na elementy wyjściowe
    * @return Status
+   * @author Komentarz - Bartlomiej Stachura
    */
   public RetCode add( int startIdx,
       int endIdx,
@@ -504,6 +516,7 @@ public class Core {
      * @param outNBElement liczba elementów wyjściowych
      * @param outReal tablica na elementy wyjściowe
      * @return Status
+	 * @author Komentarz - Bartlomiej Stachura
      */
     public RetCode add( int startIdx,
       int endIdx,
@@ -533,6 +546,7 @@ public class Core {
     * @param optInFastPeriod
     * @param optInSlowPeriod
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int adOscLookback( int optInFastPeriod,
       int optInSlowPeriod )
@@ -573,6 +587,7 @@ public class Core {
    * @param outNBElement liczba elementów wyjściowych
    * @param outReal tablica na elementy wyjściowe
    * @return Status
+   * @author Komentarz - Bartlomiej Stachura
    */
 public RetCode adOsc( int startIdx,
       int endIdx,
@@ -665,6 +680,7 @@ public RetCode adOsc( int startIdx,
  * @param outNBElement liczba elementów wyjściowych
  * @param outReal tablica na elementy wyjściowe
  * @return Status
+ * @author Komentarz - Bartlomiej Stachura
  */
 public RetCode adOsc( int startIdx,
       int endIdx,
@@ -741,6 +757,7 @@ public RetCode adOsc( int startIdx,
     * Metoda zwraca odpowiedni zakres dla ADX
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int adxLookback( int optInTimePeriod )
    {
@@ -769,6 +786,7 @@ public RetCode adOsc( int startIdx,
    * @param outNBElement liczba elementów wyjściowych
    * @param outReal tablica na elementy wyjściowe
    * @return Status
+   * @author Komentarz - Bartlomiej Stachura
    */
   public RetCode adx( int startIdx,
       int endIdx,
@@ -962,6 +980,7 @@ public RetCode adOsc( int startIdx,
    * @param outNBElement liczba elementów wyjściowych
    * @param outReal tablica na elementy wyjściowe
    * @return Status
+   * @author Komentarz - Bartlomiej Stachura
    */
   public RetCode adx( int startIdx,
       int endIdx,
@@ -1141,6 +1160,7 @@ public RetCode adOsc( int startIdx,
     * Metoda zwraca odpowiedni zakres dla adxr
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int adxrLookback( int optInTimePeriod )
    {
@@ -1172,6 +1192,7 @@ public RetCode adOsc( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode adxr( int startIdx,
       int endIdx,
@@ -1240,6 +1261,7 @@ public RetCode adOsc( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode adxr( int startIdx,
       int endIdx,
@@ -1296,6 +1318,7 @@ public RetCode adOsc( int startIdx,
     * @param optInSlowPeriod
     * @param optInMAType
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int apoLookback( int optInFastPeriod,
       int optInSlowPeriod,
@@ -1331,6 +1354,7 @@ public RetCode adOsc( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode apo( int startIdx,
       int endIdx,
@@ -1382,6 +1406,7 @@ public RetCode adOsc( int startIdx,
     * @param tempBuffer
     * @param doPercentageOutput
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   RetCode TA_INT_PO( int startIdx,
       int endIdx,
@@ -1473,6 +1498,7 @@ public RetCode adOsc( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode apo( int startIdx,
       int endIdx,
@@ -1524,6 +1550,7 @@ public RetCode adOsc( int startIdx,
      * @param tempBuffer
      * @param doPercentageOutput
      * @return Status
+	 * @author Komentarz - Bartlomiej Stachura
      */
   RetCode TA_INT_PO( int startIdx,
       int endIdx,
@@ -1600,6 +1627,7 @@ public RetCode adOsc( int startIdx,
     * Metoda zwraca odpowiedni zakres dla aroon
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int aroonLookback( int optInTimePeriod )
    {
@@ -1628,6 +1656,7 @@ public RetCode adOsc( int startIdx,
  * @param outAroonDown
  * @param outAroonUp
  * @return Status
+ * @author Komentarz - Bartlomiej Stachura
  */
 public RetCode aroon( int startIdx,
       int endIdx,
@@ -1739,6 +1768,7 @@ public RetCode aroon( int startIdx,
  * @param outAroonDown
  * @param outAroonUp
  * @return Status
+ * @author Komentarz - Bartlomiej Stachura
  */
 public RetCode aroon( int startIdx,
       int endIdx,
@@ -1836,6 +1866,7 @@ public RetCode aroon( int startIdx,
     * Metoda zwraca odpowiedni zakres dla aroonOSC
     * @param optInTimePeriod
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int aroonOscLookback( int optInTimePeriod )
    {
@@ -1863,6 +1894,7 @@ public RetCode aroon( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode aroonOsc( int startIdx,
       int endIdx,
@@ -1972,6 +2004,7 @@ public RetCode aroon( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode aroonOsc( int startIdx,
       int endIdx,
@@ -2067,6 +2100,7 @@ public RetCode aroon( int startIdx,
    /**
     * Zwraca domyślną wartość dla asin
     * @return 0
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int asinLookback( )
    {
@@ -2086,6 +2120,7 @@ public RetCode aroon( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode asin( int startIdx,
       int endIdx,
@@ -2122,6 +2157,7 @@ public RetCode aroon( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode asin( int startIdx,
       int endIdx,
@@ -2148,6 +2184,7 @@ public RetCode aroon( int startIdx,
    /**
     * Zwraca domyślną wartość dla atan
     * @return 0
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int atanLookback( )
    {
@@ -2167,6 +2204,7 @@ public RetCode aroon( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
 public RetCode atan( int startIdx,
       int endIdx,
@@ -2203,6 +2241,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode atan( int startIdx,
       int endIdx,
@@ -2230,6 +2269,7 @@ public RetCode atan( int startIdx,
     * Metoda zwraca odpowiedni zakres dla atr
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int atrLookback( int optInTimePeriod )
    {
@@ -2258,6 +2298,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode atr( int startIdx,
       int endIdx,
@@ -2359,6 +2400,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode atr( int startIdx,
       int endIdx,
@@ -2445,6 +2487,7 @@ public RetCode atan( int startIdx,
    /**
     * Zwraca domyślną wartość dla avgPrice
     * @return 0  
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int avgPriceLookback( )
    {
@@ -2468,6 +2511,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode avgPrice( int startIdx,
       int endIdx,
@@ -2514,6 +2558,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode avgPrice( int startIdx,
       int endIdx,
@@ -2550,6 +2595,7 @@ public RetCode atan( int startIdx,
     * @param optInNbDevDn odchylenie mnożnik dla dolnego pasma (TA_REAL_MIN do TA_REAL_MAX)
     * @param optInMAType typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int bbandsLookback( int optInTimePeriod,
       double optInNbDevUp,
@@ -2592,6 +2638,7 @@ public RetCode atan( int startIdx,
     * @param outRealMiddleBand
     * @param outRealLowerBand
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode bbands( int startIdx,
       int endIdx,
@@ -2757,6 +2804,7 @@ public RetCode atan( int startIdx,
     * @param outRealMiddleBand
     * @param outRealLowerBand
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode bbands( int startIdx,
       int endIdx,
@@ -2879,6 +2927,7 @@ public RetCode atan( int startIdx,
     * Metoda zwraca odpowiedni zakres dla beta
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int betaLookback( int optInTimePeriod )
    {
@@ -2906,6 +2955,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode beta( int startIdx,
       int endIdx,
@@ -3034,6 +3084,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode beta( int startIdx,
       int endIdx,
@@ -3148,6 +3199,7 @@ public RetCode atan( int startIdx,
    /** 
     * Zwraca domyślną wartość dla bop
     * @return 0
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int bopLookback( )
    {
@@ -3171,6 +3223,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode bop( int startIdx,
       int endIdx,
@@ -3219,6 +3272,7 @@ public RetCode atan( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode bop( int startIdx,
       int endIdx,
@@ -3254,6 +3308,7 @@ public RetCode atan( int startIdx,
     * Metoda zwraca odpowiedni zakres dla cci
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
 public int cciLookback( int optInTimePeriod )
    {
@@ -3284,6 +3339,7 @@ public int cciLookback( int optInTimePeriod )
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
  public RetCode cci( int startIdx,
       int endIdx,
@@ -3373,6 +3429,7 @@ public int cciLookback( int optInTimePeriod )
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cci( int startIdx,
       int endIdx,
@@ -3445,6 +3502,7 @@ public int cciLookback( int optInTimePeriod )
    /**
     * Metoda zwraca odpowiedni zakres dla cdl2Crows
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdl2CrowsLookback( )
    {
@@ -3469,6 +3527,7 @@ public int cciLookback( int optInTimePeriod )
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl2Crows( int startIdx,
       int endIdx,
@@ -3544,6 +3603,7 @@ public int cciLookback( int optInTimePeriod )
     * @param outNBElement liczba elementów wyjściowych
     * @param outReal tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl2Crows( int startIdx,
       int endIdx,
@@ -3604,6 +3664,7 @@ public int cciLookback( int optInTimePeriod )
    /**
     * Metoda zwraca odpowiedni zakres dla cdl3BlackCrows
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdl3BlackCrowsLookback( )
    {
@@ -3629,6 +3690,7 @@ public int cciLookback( int optInTimePeriod )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3BlackCrows( int startIdx,
       int endIdx,
@@ -3716,6 +3778,7 @@ public int cciLookback( int optInTimePeriod )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3BlackCrows( int startIdx,
       int endIdx,
@@ -3787,6 +3850,7 @@ public int cciLookback( int optInTimePeriod )
    /**
     * Metoda zwraca odpowiedni zakres dla cdl3Inside
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
 public int cdl3InsideLookback( )
    {
@@ -3810,6 +3874,7 @@ public int cdl3InsideLookback( )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3Inside( int startIdx,
       int endIdx,
@@ -3895,6 +3960,7 @@ public int cdl3InsideLookback( )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3Inside( int startIdx,
       int endIdx,
@@ -3965,6 +4031,7 @@ public int cdl3InsideLookback( )
    /**
     * Metoda zwraca odpowiedni zakres dla cdl3LineStrike
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdl3LineStrikeLookback( )
    {
@@ -3988,6 +4055,7 @@ public int cdl3InsideLookback( )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3LineStrike( int startIdx,
       int endIdx,
@@ -4081,6 +4149,7 @@ public int cdl3InsideLookback( )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3LineStrike( int startIdx,
       int endIdx,
@@ -4159,6 +4228,7 @@ public int cdl3InsideLookback( )
    /**
     * Zwraca domyślną wartość dla cdl3Outside
     * @return 3
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdl3OutsideLookback( )
    {
@@ -4182,6 +4252,7 @@ public int cdl3InsideLookback( )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3Outside( int startIdx,
       int endIdx,
@@ -4248,6 +4319,7 @@ public int cdl3InsideLookback( )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3Outside( int startIdx,
       int endIdx,
@@ -4300,6 +4372,7 @@ public int cdl3InsideLookback( )
    /**
     * Metoda zwraca odpowiedni zakres dla cdl3StarsInSouth
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
 public int cdl3StarsInSouthLookback( )
    {
@@ -4324,6 +4397,7 @@ public int cdl3StarsInSouthLookback( )
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
 public RetCode cdl3StarsInSouth( int startIdx,
       int endIdx,
@@ -4441,6 +4515,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3StarsInSouth( int startIdx,
       int endIdx,
@@ -4544,6 +4619,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdl3WhiteSoldiers
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdl3WhiteSoldiersLookback( )
    {
@@ -4568,6 +4644,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3WhiteSoldiers( int startIdx,
       int endIdx,
@@ -4695,6 +4772,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdl3WhiteSoldiers( int startIdx,
       int endIdx,
@@ -4809,6 +4887,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
    * Metoda zwraca odpowiedni zakres dla cdlAbandonedBaby
    * @param optInPenetration liczba okresu (2 do 100000)
    * @return odpowiedni zakres liczbowy
+   * @author Komentarz - Bartlomiej Stachura
    */
   public int cdlAbandonedBabyLookback( double optInPenetration )
    {
@@ -4840,6 +4919,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlAbandonedBaby( int startIdx,
       int endIdx,
@@ -4950,6 +5030,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlAbandonedBaby( int startIdx,
       int endIdx,
@@ -5044,6 +5125,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlAdvanceBlock
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlAdvanceBlockLookback( )
    {
@@ -5068,6 +5150,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlAdvanceBlock( int startIdx,
       int endIdx,
@@ -5227,6 +5310,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlAdvanceBlock( int startIdx,
       int endIdx,
@@ -5372,6 +5456,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlBeltHold
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlBeltHoldLookback( )
    {
@@ -5395,6 +5480,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlBeltHold( int startIdx,
       int endIdx,
@@ -5481,6 +5567,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlBeltHold( int startIdx,
       int endIdx,
@@ -5554,6 +5641,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlBreakaway
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlBreakawayLookback( )
    {
@@ -5578,6 +5666,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlBreakaway( int startIdx,
       int endIdx,
@@ -5666,6 +5755,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlBreakaway( int startIdx,
       int endIdx,
@@ -5739,6 +5829,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlClosingMarubozu
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlClosingMarubozuLookback( )
    {
@@ -5762,6 +5853,7 @@ public RetCode cdl3StarsInSouth( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
 public RetCode cdlClosingMarubozu( int startIdx,
       int endIdx,
@@ -5848,6 +5940,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlClosingMarubozu( int startIdx,
       int endIdx,
@@ -5919,6 +6012,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlConcealBabysWall
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlConcealBabysWallLookback( )
    {
@@ -5942,6 +6036,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlConcealBabysWall( int startIdx,
       int endIdx,
@@ -6027,6 +6122,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlConcealBabysWall( int startIdx,
       int endIdx,
@@ -6097,6 +6193,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlCounterAttack
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlCounterAttackLookback( )
    {
@@ -6121,6 +6218,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlCounterAttack( int startIdx,
       int endIdx,
@@ -6207,6 +6305,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlCounterAttack( int startIdx,
       int endIdx,
@@ -6280,6 +6379,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * Metoda zwraca odpowiedni zakres dla cdlDarkCloudCover
     * @param optInPenetration liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlDarkCloudCoverLookback( double optInPenetration )
    {
@@ -6310,6 +6410,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlDarkCloudCover( int startIdx,
       int endIdx,
@@ -6390,6 +6491,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlDarkCloudCover( int startIdx,
       int endIdx,
@@ -6454,6 +6556,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlDoji
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlDojiLookback( )
    {
@@ -6478,6 +6581,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlDoji( int startIdx,
       int endIdx,
@@ -6544,6 +6648,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
    * @param outNBElement liczba elementów wyjściowych
    * @param outInteger
    * @return Status
+   * @author Komentarz - Bartlomiej Stachura
    */
   public RetCode cdlDoji( int startIdx,
       int endIdx,
@@ -6596,6 +6701,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlDojiStar
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlDojiStarLookback( )
    {
@@ -6619,6 +6725,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlDojiStar( int startIdx,
       int endIdx,
@@ -6700,6 +6807,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlDojiStar( int startIdx,
       int endIdx,
@@ -6765,6 +6873,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlDragonflyDoji
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlDragonflyDojiLookback( )
    {
@@ -6788,6 +6897,7 @@ public RetCode cdlClosingMarubozu( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
 public RetCode cdlDragonflyDoji( int startIdx,
       int endIdx,
@@ -6867,6 +6977,7 @@ public RetCode cdlDragonflyDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlDragonflyDoji( int startIdx,
       int endIdx,
@@ -6932,6 +7043,7 @@ public RetCode cdlDragonflyDoji( int startIdx,
    /**
     * Zwraca domyślną wartość dla cdlEngulfing
     * @return 2
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlEngulfingLookback( )
    {
@@ -6955,6 +7067,7 @@ public RetCode cdlDragonflyDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
 public RetCode cdlEngulfing( int startIdx,
       int endIdx,
@@ -7019,6 +7132,7 @@ public RetCode cdlEngulfing( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlEngulfing( int startIdx,
       int endIdx,
@@ -7070,6 +7184,7 @@ public RetCode cdlEngulfing( int startIdx,
     * Metoda zwraca odpowiedni zakres dla cdlEveningDojiStar
     * @param optInPenetration liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
   public int cdlEveningDojiStarLookback( double optInPenetration )
    {
@@ -7100,6 +7215,7 @@ public RetCode cdlEngulfing( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlEveningDojiStar( int startIdx,
       int endIdx,
@@ -7199,6 +7315,7 @@ public RetCode cdlEngulfing( int startIdx,
     * @param outNBElement liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Bartlomiej Stachura
     */
   public RetCode cdlEveningDojiStar( int startIdx,
       int endIdx,
@@ -7283,6 +7400,7 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlEveningStar
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Bartlomiej Stachura
     */
    public int cdlEveningStarLookback( double optInPenetration )
    {
@@ -7313,6 +7431,7 @@ public RetCode cdlEngulfing( int startIdx,
       * @param outNBElement liczba elementów wyjściowych
       * @param outInteger
       * @return Status
+	  * @author Komentarz - Bartlomiej Stachura
       */
    public RetCode cdlEveningStar( int startIdx,
       int endIdx,
@@ -7386,8 +7505,6 @@ public RetCode cdlEngulfing( int startIdx,
       outBegIdx.value = startIdx;
       return RetCode.Success ;
    }
-   // TODO: Koniec Stachura Bartlomiej
-   // TODO: Start Lukasz Straszewski
      /**
       * Evening Star
       * @see <a href="http://thepatternsite.com/EveningStar.html">site</a>
@@ -7408,6 +7525,7 @@ public RetCode cdlEngulfing( int startIdx,
       * @param outNBElement liczba elementów wyjściowych
       * @param outInteger Tablica na elementy wyjściowe
       * @return Status
+	  * @author Komentarz - Lukasz Straszewski
       */
    public RetCode cdlEveningStar( int startIdx,
       int endIdx,
@@ -7484,6 +7602,7 @@ public RetCode cdlEngulfing( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlGapSideSideWhite
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
 public int cdlGapSideSideWhiteLookback( )
    {
@@ -7507,6 +7626,7 @@ public int cdlGapSideSideWhiteLookback( )
  * @param outNBElement liczba elementów wyjściowych    
  * @param outInteger Tablica na elementy wyjściowe
  * @return Status
+ * @author Komentarz - Lukasz Straszewski
  */
 public RetCode cdlGapSideSideWhite( int startIdx,
       int endIdx,
@@ -7595,6 +7715,7 @@ public RetCode cdlGapSideSideWhite( int startIdx,
  * @param outNBElement liczba elementów wyjściowych    
  * @param outInteger Tablica na elementy wyjściowe
  * @return Status
+ * @author Komentarz - Lukasz Straszewski
  */
 public RetCode cdlGapSideSideWhite( int startIdx,
       int endIdx,
@@ -7668,6 +7789,7 @@ public RetCode cdlGapSideSideWhite( int startIdx,
 /**
  * Metoda zwraca odpowiedni zakres dla cdlGravestoneDoji
  * @return odpowiedni zakres liczbowy
+ * @author Komentarz - Lukasz Straszewski
  */
    public int cdlGravestoneDojiLookback( )
    {
@@ -7691,6 +7813,7 @@ public RetCode cdlGapSideSideWhite( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
 public RetCode cdlGravestoneDoji( int startIdx,
       int endIdx,
@@ -7770,6 +7893,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
  * @param outNBElement liczba elementów wyjściowych    
  * @param outInteger Tablica na elementy wyjściowe
  * @return Status
+ * @author Komentarz - Lukasz Straszewski
  */
    public RetCode cdlGravestoneDoji( int startIdx,
       int endIdx,
@@ -7834,6 +7958,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlHammer
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHammerLookback( )
    {
@@ -7857,6 +7982,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHammer( int startIdx,
       int endIdx,
@@ -7959,6 +8085,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHammer( int startIdx,
       int endIdx,
@@ -8046,6 +8173,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlHangingMan
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHangingManLookback( )
    {
@@ -8070,6 +8198,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHangingMan( int startIdx,
       int endIdx,
@@ -8172,6 +8301,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHangingMan( int startIdx,
       int endIdx,
@@ -8259,6 +8389,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlHaramiLook
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHaramiLookback( )
    {
@@ -8282,6 +8413,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHarami( int startIdx,
       int endIdx,
@@ -8362,6 +8494,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHarami( int startIdx,
       int endIdx,
@@ -8427,6 +8560,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlHaramiCross
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHaramiCrossLookback( )
    {
@@ -8450,6 +8584,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHaramiCross( int startIdx,
       int endIdx,
@@ -8530,6 +8665,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHaramiCross( int startIdx,
       int endIdx,
@@ -8595,6 +8731,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlHignWave
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHignWaveLookback( )
    {
@@ -8618,6 +8755,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHignWave( int startIdx,
       int endIdx,
@@ -8695,6 +8833,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHignWave( int startIdx,
       int endIdx,
@@ -8757,6 +8896,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Zwraca domyślną wartość dla cdlHikkake
     * @return 5
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHikkakeLookback( )
    {
@@ -8780,6 +8920,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHikkake( int startIdx,
       int endIdx,
@@ -8875,6 +9016,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHikkake( int startIdx,
       int endIdx,
@@ -8956,6 +9098,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlHikkakeMod
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHikkakeModLookback( )
    {
@@ -8979,6 +9122,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHikkakeMod( int startIdx,
       int endIdx,
@@ -9096,6 +9240,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHikkakeMod( int startIdx,
       int endIdx,
@@ -9198,6 +9343,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlHomingPigeon
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlHomingPigeonLookback( )
    {
@@ -9221,6 +9367,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHomingPigeon( int startIdx,
       int endIdx,
@@ -9303,6 +9450,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlHomingPigeon( int startIdx,
       int endIdx,
@@ -9370,6 +9518,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlIdentical3Crows
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlIdentical3CrowsLookback( )
    {
@@ -9393,6 +9542,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlIdentical3Crows( int startIdx,
       int endIdx,
@@ -9493,6 +9643,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlIdentical3Crows( int startIdx,
       int endIdx,
@@ -9578,6 +9729,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlInNeck
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlInNeckLookback( )
    {
@@ -9601,6 +9753,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlInNeck( int startIdx,
       int endIdx,
@@ -9684,6 +9837,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlInNeck( int startIdx,
       int endIdx,
@@ -9752,6 +9906,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlInvertedHammer
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlInvertedHammerLookback( )
    {
@@ -9775,6 +9930,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlInvertedHammer( int startIdx,
       int endIdx,
@@ -9865,6 +10021,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlInvertedHammer( int startIdx,
       int endIdx,
@@ -9940,6 +10097,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlKicking
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlKickingLookback( )
    {
@@ -9963,6 +10121,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlKicking( int startIdx,
       int endIdx,
@@ -10060,6 +10219,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlKicking( int startIdx,
       int endIdx,
@@ -10140,12 +10300,13 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /**
-    * Metoda zwraca odpowiedni zakres dla cdlKickingByLength
+    * Metoda zwraca odpowiedni zakres dla cdlIdentical3Crows
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
-   public int cdlKickingByLengthLookback( )
+   public int cdlIdentical3CrowsLookback( )
    {
-      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +1;
+      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) +2;
    }
    /**
     * Kicking - bull/bear determined by the longer marubozu
@@ -10165,6 +10326,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlKickingByLength( int startIdx,
       int endIdx,
@@ -10262,6 +10424,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlKickingByLength( int startIdx,
       int endIdx,
@@ -10344,6 +10507,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlLadderBottom
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlLadderBottomLookback( )
    {
@@ -10367,6 +10531,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlLadderBottom( int startIdx,
       int endIdx,
@@ -10444,6 +10609,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlLadderBottom( int startIdx,
       int endIdx,
@@ -10506,6 +10672,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlLongLeggedDoji
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlLongLeggedDojiLookback( )
    {
@@ -10529,6 +10696,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlLongLeggedDoji( int startIdx,
       int endIdx,
@@ -10609,6 +10777,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlLongLeggedDoji( int startIdx,
       int endIdx,
@@ -10674,6 +10843,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlLongLine
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlLongLineLookback( )
    {
@@ -10697,6 +10867,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlLongLine( int startIdx,
       int endIdx,
@@ -10774,6 +10945,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlLongLine( int startIdx,
       int endIdx,
@@ -10836,6 +11008,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlMarubozu
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlMarubozuLookback( )
    {
@@ -10859,6 +11032,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMarubozu( int startIdx,
       int endIdx,
@@ -10937,6 +11111,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMarubozu( int startIdx,
       int endIdx,
@@ -11000,6 +11175,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlMatchingLow
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlMatchingLowLookback( )
    {
@@ -11023,6 +11199,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMatchingLow( int startIdx,
       int endIdx,
@@ -11094,6 +11271,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMatchingLow( int startIdx,
       int endIdx,
@@ -11151,6 +11329,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla cdlMatHold
     * @param optInPenetration liczba typu Double
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlMatHoldLookback( double optInPenetration )
    {
@@ -11180,6 +11359,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMatHold( int startIdx,
       int endIdx,
@@ -11287,6 +11467,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMatHold( int startIdx,
       int endIdx,
@@ -11378,6 +11559,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla cdlMorningDojiStar
     * @param optInPenetration liczba typu Double
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlMorningDojiStarLookback( double optInPenetration )
    {
@@ -11408,6 +11590,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMorningDojiStar( int startIdx,
       int endIdx,
@@ -11507,6 +11690,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMorningDojiStar( int startIdx,
       int endIdx,
@@ -11590,6 +11774,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla cdlMorningStar
     * @param optInPenetration liczba typu Double
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlMorningStarLookback( double optInPenetration )
    {
@@ -11619,6 +11804,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMorningStar( int startIdx,
       int endIdx,
@@ -11712,6 +11898,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlMorningStar( int startIdx,
       int endIdx,
@@ -11788,6 +11975,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlOnNeck
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlOnNeckLookback( )
    {
@@ -11812,6 +12000,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlOnNeck( int startIdx,
       int endIdx,
@@ -11895,6 +12084,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlOnNeck( int startIdx,
       int endIdx,
@@ -11963,6 +12153,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlPiercing
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlPiercingLookback( )
    {
@@ -11986,6 +12177,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlPiercing( int startIdx,
       int endIdx,
@@ -12064,6 +12256,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlPiercing( int startIdx,
       int endIdx,
@@ -12127,6 +12320,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlRickshawMan
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlRickshawManLookback( )
    {
@@ -12150,6 +12344,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlRickshawMan( int startIdx,
       int endIdx,
@@ -12244,6 +12439,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlRickshawMan( int startIdx,
       int endIdx,
@@ -12323,6 +12519,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlRiseFall3Methods
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlRiseFall3MethodsLookback( )
    {
@@ -12346,6 +12543,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlRiseFall3Methods( int startIdx,
       int endIdx,
@@ -12448,6 +12646,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlRiseFall3Methods( int startIdx,
       int endIdx,
@@ -12535,6 +12734,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlSeperatingLines
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlSeperatingLinesLookback( )
    {
@@ -12558,6 +12758,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlSeperatingLines( int startIdx,
       int endIdx,
@@ -12657,6 +12858,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlSeperatingLines( int startIdx,
       int endIdx,
@@ -12741,6 +12943,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlShootingStar
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlShootingStarLookback( )
    {
@@ -12764,6 +12967,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlShootingStar( int startIdx,
       int endIdx,
@@ -12854,6 +13058,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlShootingStar( int startIdx,
       int endIdx,
@@ -12929,6 +13134,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlShortLine
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlShortLineLookback( )
    {
@@ -12952,6 +13158,2896 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlShortLine( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyPeriodTotal, ShadowPeriodTotal;
+      int i, outIdx, BodyTrailingIdx, ShadowTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlShortLineLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal = 0;
+      BodyTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      ShadowPeriodTotal = 0;
+      ShadowTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) ;
+      i = BodyTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= in
+    */
+   public int cdlKickingByLengthLookback( )
+   {
+      return ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +1;
+   }
+   /**
+    * Kicking - bull/bear determined by the longer marubozu
+    * @see <a href="http://thepatternsite.com/KickingBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlKickingByLength( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []ShadowVeryShortPeriodTotal = new double[2] ;
+      double []BodyLongPeriodTotal = new double[2] ;
+      int i, outIdx, totIdx, ShadowVeryShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlKickingByLengthLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      ShadowVeryShortPeriodTotal[1] = 0;
+      ShadowVeryShortPeriodTotal[0] = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      BodyLongPeriodTotal[1] = 0;
+      BodyLongPeriodTotal[0] = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         ShadowVeryShortPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == - ( inClose[i] >= inOpen[i] ? 1 : -1 ) &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[1] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[1] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[0] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[0] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[0] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            (
+            ( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 && ( inLow[i] > inHigh[i-1] ) )
+            ||
+            ( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == 1 && ( inHigh[i] < inLow[i-1] ) )
+            )
+            )
+            outInteger[outIdx++] = ( inClose[( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) ? i : i-1 )] >= inOpen[( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) ? i : i-1 )] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         for (totIdx = 1; totIdx >= 0; --totIdx) {
+            BodyLongPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+               - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-totIdx] - inOpen[BodyLongTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-totIdx] - inLow[BodyLongTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-totIdx] - ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inClose[BodyLongTrailingIdx-totIdx] : inOpen[BodyLongTrailingIdx-totIdx] ) ) + ( ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inOpen[BodyLongTrailingIdx-totIdx] : inClose[BodyLongTrailingIdx-totIdx] ) - inLow[BodyLongTrailingIdx-totIdx] ) : 0 ) ) ) ;
+            ShadowVeryShortPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+               - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx-totIdx] - inOpen[ShadowVeryShortTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx-totIdx] - inLow[ShadowVeryShortTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx-totIdx] - ( inClose[ShadowVeryShortTrailingIdx-totIdx] >= inOpen[ShadowVeryShortTrailingIdx-totIdx] ? inClose[ShadowVeryShortTrailingIdx-totIdx] : inOpen[ShadowVeryShortTrailingIdx-totIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx-totIdx] >= inOpen[ShadowVeryShortTrailingIdx-totIdx] ? inOpen[ShadowVeryShortTrailingIdx-totIdx] : inClose[ShadowVeryShortTrailingIdx-totIdx] ) - inLow[ShadowVeryShortTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         }
+         i++;
+         ShadowVeryShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Kicking - bull/bear determined by the longer marubozu
+    * @see <a href="http://thepatternsite.com/KickingBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlKickingByLength( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []ShadowVeryShortPeriodTotal = new double[2] ;
+      double []BodyLongPeriodTotal = new double[2] ;
+      int i, outIdx, totIdx, ShadowVeryShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlKickingByLengthLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      ShadowVeryShortPeriodTotal[1] = 0;
+      ShadowVeryShortPeriodTotal[0] = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      BodyLongPeriodTotal[1] = 0;
+      BodyLongPeriodTotal[0] = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         ShadowVeryShortPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == - ( inClose[i] >= inOpen[i] ? 1 : -1 ) &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[1] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[1] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[0] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[0] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal[0] / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            (
+            ( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 && ( inLow[i] > inHigh[i-1] ) )
+            ||
+            ( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == 1 && ( inHigh[i] < inLow[i-1] ) )
+            )
+            )
+            outInteger[outIdx++] = ( inClose[( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) ? i : i-1 )] >= inOpen[( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) ? i : i-1 )] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         for (totIdx = 1; totIdx >= 0; --totIdx) {
+            BodyLongPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+               - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-totIdx] - inOpen[BodyLongTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-totIdx] - inLow[BodyLongTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-totIdx] - ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inClose[BodyLongTrailingIdx-totIdx] : inOpen[BodyLongTrailingIdx-totIdx] ) ) + ( ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inOpen[BodyLongTrailingIdx-totIdx] : inClose[BodyLongTrailingIdx-totIdx] ) - inLow[BodyLongTrailingIdx-totIdx] ) : 0 ) ) ) ;
+            ShadowVeryShortPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+               - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx-totIdx] - inOpen[ShadowVeryShortTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx-totIdx] - inLow[ShadowVeryShortTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx-totIdx] - ( inClose[ShadowVeryShortTrailingIdx-totIdx] >= inOpen[ShadowVeryShortTrailingIdx-totIdx] ? inClose[ShadowVeryShortTrailingIdx-totIdx] : inOpen[ShadowVeryShortTrailingIdx-totIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx-totIdx] >= inOpen[ShadowVeryShortTrailingIdx-totIdx] ? inOpen[ShadowVeryShortTrailingIdx-totIdx] : inClose[ShadowVeryShortTrailingIdx-totIdx] ) - inLow[ShadowVeryShortTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         }
+         i++;
+         ShadowVeryShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlLadderBottom
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlLadderBottomLookback( )
+   {
+      return (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) + 4;
+   }
+   /**
+    * Ladder Bottom
+    * @see <a href="http://thepatternsite.com/LadderBottom.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlLadderBottom( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double ShadowVeryShortPeriodTotal;
+      int i, outIdx, ShadowVeryShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlLadderBottomLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if(
+            ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) == -1 && ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) == -1 && ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == -1 &&
+            inOpen[i-4] > inOpen[i-3] && inOpen[i-3] > inOpen[i-2] &&
+            inClose[i-4] > inClose[i-3] && inClose[i-3] > inClose[i-2] &&
+            ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inOpen[i] > inOpen[i-1] &&
+            inClose[i] > inHigh[i-1]
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx-1] - inOpen[ShadowVeryShortTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx-1] - inLow[ShadowVeryShortTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx-1] - ( inClose[ShadowVeryShortTrailingIdx-1] >= inOpen[ShadowVeryShortTrailingIdx-1] ? inClose[ShadowVeryShortTrailingIdx-1] : inOpen[ShadowVeryShortTrailingIdx-1] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx-1] >= inOpen[ShadowVeryShortTrailingIdx-1] ? inOpen[ShadowVeryShortTrailingIdx-1] : inClose[ShadowVeryShortTrailingIdx-1] ) - inLow[ShadowVeryShortTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         ShadowVeryShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Ladder Bottom
+    * @see <a href="http://thepatternsite.com/LadderBottom.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlLadderBottom( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double ShadowVeryShortPeriodTotal;
+      int i, outIdx, ShadowVeryShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlLadderBottomLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if(
+            ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) == -1 && ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) == -1 && ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == -1 &&
+            inOpen[i-4] > inOpen[i-3] && inOpen[i-3] > inOpen[i-2] &&
+            inClose[i-4] > inClose[i-3] && inClose[i-3] > inClose[i-2] &&
+            ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inOpen[i] > inOpen[i-1] &&
+            inClose[i] > inHigh[i-1]
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx-1] - inOpen[ShadowVeryShortTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx-1] - inLow[ShadowVeryShortTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx-1] - ( inClose[ShadowVeryShortTrailingIdx-1] >= inOpen[ShadowVeryShortTrailingIdx-1] ? inClose[ShadowVeryShortTrailingIdx-1] : inOpen[ShadowVeryShortTrailingIdx-1] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx-1] >= inOpen[ShadowVeryShortTrailingIdx-1] ? inOpen[ShadowVeryShortTrailingIdx-1] : inClose[ShadowVeryShortTrailingIdx-1] ) - inLow[ShadowVeryShortTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         ShadowVeryShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlLongLeggedDoji
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlLongLeggedDojiLookback( )
+   {
+      return ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ;
+   }
+   /**
+    * Long Legged Doji
+    * @see <a href="http://thepatternsite.com/LongLegDoji.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlLongLeggedDoji( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyDojiPeriodTotal, ShadowLongPeriodTotal;
+      int i, outIdx, BodyDojiTrailingIdx, ShadowLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlLongLeggedDojiLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyDojiPeriodTotal = 0;
+      BodyDojiTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
+      ShadowLongPeriodTotal = 0;
+      ShadowLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ;
+      i = BodyDojiTrailingIdx;
+      while( i < startIdx ) {
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowLongTrailingIdx;
+      while( i < startIdx ) {
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) <= ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) != 0.0? BodyDojiPeriodTotal / (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            ||
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyDojiTrailingIdx] - inOpen[BodyDojiTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyDojiTrailingIdx] - inLow[BodyDojiTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyDojiTrailingIdx] - ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inClose[BodyDojiTrailingIdx] : inOpen[BodyDojiTrailingIdx] ) ) + ( ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inOpen[BodyDojiTrailingIdx] : inClose[BodyDojiTrailingIdx] ) - inLow[BodyDojiTrailingIdx] ) : 0 ) ) ) ;
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowLongTrailingIdx] - inOpen[ShadowLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowLongTrailingIdx] - inLow[ShadowLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowLongTrailingIdx] - ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inClose[ShadowLongTrailingIdx] : inOpen[ShadowLongTrailingIdx] ) ) + ( ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inOpen[ShadowLongTrailingIdx] : inClose[ShadowLongTrailingIdx] ) - inLow[ShadowLongTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyDojiTrailingIdx++;
+         ShadowLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Long Legged Doji
+    * @see <a href="http://thepatternsite.com/LongLegDoji.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlLongLeggedDoji( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyDojiPeriodTotal, ShadowLongPeriodTotal;
+      int i, outIdx, BodyDojiTrailingIdx, ShadowLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlLongLeggedDojiLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyDojiPeriodTotal = 0;
+      BodyDojiTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
+      ShadowLongPeriodTotal = 0;
+      ShadowLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ;
+      i = BodyDojiTrailingIdx;
+      while( i < startIdx ) {
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowLongTrailingIdx;
+      while( i < startIdx ) {
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) <= ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) != 0.0? BodyDojiPeriodTotal / (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            ||
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyDojiTrailingIdx] - inOpen[BodyDojiTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyDojiTrailingIdx] - inLow[BodyDojiTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyDojiTrailingIdx] - ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inClose[BodyDojiTrailingIdx] : inOpen[BodyDojiTrailingIdx] ) ) + ( ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inOpen[BodyDojiTrailingIdx] : inClose[BodyDojiTrailingIdx] ) - inLow[BodyDojiTrailingIdx] ) : 0 ) ) ) ;
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowLongTrailingIdx] - inOpen[ShadowLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowLongTrailingIdx] - inLow[ShadowLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowLongTrailingIdx] - ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inClose[ShadowLongTrailingIdx] : inOpen[ShadowLongTrailingIdx] ) ) + ( ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inOpen[ShadowLongTrailingIdx] : inClose[ShadowLongTrailingIdx] ) - inLow[ShadowLongTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyDojiTrailingIdx++;
+         ShadowLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlLongLine
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlLongLineLookback( )
+   {
+      return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ;
+   }
+   /**
+    * Long Line Candle
+    * @see <a href="http://thepatternsite.com/Shadows.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlLongLine( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyPeriodTotal, ShadowPeriodTotal;
+      int i, outIdx, BodyTrailingIdx, ShadowTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlLongLineLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal = 0;
+      BodyTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      ShadowPeriodTotal = 0;
+      ShadowTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) ;
+      i = BodyTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowTrailingIdx;
+      while( i < startIdx ) {
+         ShadowPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) != 0.0? ShadowPeriodTotal / (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) != 0.0? ShadowPeriodTotal / (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) )
+            outInteger[outIdx++] = ( inClose[i] >= inOpen[i] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyTrailingIdx] - inOpen[BodyTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyTrailingIdx] - inLow[BodyTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyTrailingIdx] - ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inClose[BodyTrailingIdx] : inOpen[BodyTrailingIdx] ) ) + ( ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inOpen[BodyTrailingIdx] : inClose[BodyTrailingIdx] ) - inLow[BodyTrailingIdx] ) : 0 ) ) ) ;
+         ShadowPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowTrailingIdx] - inOpen[ShadowTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowTrailingIdx] - inLow[ShadowTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowTrailingIdx] - ( inClose[ShadowTrailingIdx] >= inOpen[ShadowTrailingIdx] ? inClose[ShadowTrailingIdx] : inOpen[ShadowTrailingIdx] ) ) + ( ( inClose[ShadowTrailingIdx] >= inOpen[ShadowTrailingIdx] ? inOpen[ShadowTrailingIdx] : inClose[ShadowTrailingIdx] ) - inLow[ShadowTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyTrailingIdx++;
+         ShadowTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Long Line Candle
+    * @see <a href="http://thepatternsite.com/Shadows.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlLongLine( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyPeriodTotal, ShadowPeriodTotal;
+      int i, outIdx, BodyTrailingIdx, ShadowTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlLongLineLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal = 0;
+      BodyTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      ShadowPeriodTotal = 0;
+      ShadowTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) ;
+      i = BodyTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowTrailingIdx;
+      while( i < startIdx ) {
+         ShadowPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) != 0.0? ShadowPeriodTotal / (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) != 0.0? ShadowPeriodTotal / (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) )
+            outInteger[outIdx++] = ( inClose[i] >= inOpen[i] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyTrailingIdx] - inOpen[BodyTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyTrailingIdx] - inLow[BodyTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyTrailingIdx] - ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inClose[BodyTrailingIdx] : inOpen[BodyTrailingIdx] ) ) + ( ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inOpen[BodyTrailingIdx] : inClose[BodyTrailingIdx] ) - inLow[BodyTrailingIdx] ) : 0 ) ) ) ;
+         ShadowPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowTrailingIdx] - inOpen[ShadowTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowTrailingIdx] - inLow[ShadowTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowTrailingIdx] - ( inClose[ShadowTrailingIdx] >= inOpen[ShadowTrailingIdx] ? inClose[ShadowTrailingIdx] : inOpen[ShadowTrailingIdx] ) ) + ( ( inClose[ShadowTrailingIdx] >= inOpen[ShadowTrailingIdx] ? inOpen[ShadowTrailingIdx] : inClose[ShadowTrailingIdx] ) - inLow[ShadowTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyTrailingIdx++;
+         ShadowTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMarubozu
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlMarubozuLookback( )
+   {
+      return ((( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ;
+   }
+   /**
+    * Marubozu
+    * @see <a href="http://thepatternsite.com/WhiteMarubozu.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMarubozu( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyLongPeriodTotal, ShadowVeryShortPeriodTotal;
+      int i, outIdx, BodyLongTrailingIdx, ShadowVeryShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlMarubozuLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) )
+            outInteger[outIdx++] = ( inClose[i] >= inOpen[i] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx] - inOpen[ShadowVeryShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx] - inLow[ShadowVeryShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx] - ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inClose[ShadowVeryShortTrailingIdx] : inOpen[ShadowVeryShortTrailingIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inOpen[ShadowVeryShortTrailingIdx] : inClose[ShadowVeryShortTrailingIdx] ) - inLow[ShadowVeryShortTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+         ShadowVeryShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Marubozu
+    * @see <a href="http://thepatternsite.com/WhiteMarubozu.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMarubozu( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyLongPeriodTotal, ShadowVeryShortPeriodTotal;
+      int i, outIdx, BodyLongTrailingIdx, ShadowVeryShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlMarubozuLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) )
+            outInteger[outIdx++] = ( inClose[i] >= inOpen[i] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx] - inOpen[ShadowVeryShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx] - inLow[ShadowVeryShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx] - ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inClose[ShadowVeryShortTrailingIdx] : inOpen[ShadowVeryShortTrailingIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inOpen[ShadowVeryShortTrailingIdx] : inClose[ShadowVeryShortTrailingIdx] ) - inLow[ShadowVeryShortTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+         ShadowVeryShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMatchingLow
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlMatchingLowLookback( )
+   {
+      return (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) + 1;
+   }
+   /**
+    * Matching Low
+    * @see <a href="http://thepatternsite.com/MatchingLow.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMatchingLow( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double EqualPeriodTotal;
+      int i, outIdx, EqualTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlMatchingLowLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      EqualPeriodTotal = 0;
+      EqualTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ;
+      i = EqualTrailingIdx;
+      while( i < startIdx ) {
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == -1 &&
+            inClose[i] <= inClose[i-1] + ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inClose[i] >= inClose[i-1] - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[EqualTrailingIdx-1] - inOpen[EqualTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[EqualTrailingIdx-1] - inLow[EqualTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[EqualTrailingIdx-1] - ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inClose[EqualTrailingIdx-1] : inOpen[EqualTrailingIdx-1] ) ) + ( ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inOpen[EqualTrailingIdx-1] : inClose[EqualTrailingIdx-1] ) - inLow[EqualTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         EqualTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Matching Low
+    * @see <a href="http://thepatternsite.com/MatchingLow.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMatchingLow( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double EqualPeriodTotal;
+      int i, outIdx, EqualTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlMatchingLowLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      EqualPeriodTotal = 0;
+      EqualTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ;
+      i = EqualTrailingIdx;
+      while( i < startIdx ) {
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == -1 &&
+            inClose[i] <= inClose[i-1] + ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inClose[i] >= inClose[i-1] - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[EqualTrailingIdx-1] - inOpen[EqualTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[EqualTrailingIdx-1] - inLow[EqualTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[EqualTrailingIdx-1] - ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inClose[EqualTrailingIdx-1] : inOpen[EqualTrailingIdx-1] ) ) + ( ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inOpen[EqualTrailingIdx-1] : inClose[EqualTrailingIdx-1] ) - inLow[EqualTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         EqualTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMatHold
+    * @param optInPenetration liczba typu Double
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlMatHoldLookback( double optInPenetration )
+   {
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 5.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return -1;
+      return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 4;
+   }
+   /**
+    * Mat Hold - Liczy odestek penetracji świecy wewnątrz innej świecy 
+    * @see <a href="http://thepatternsite.com/MatHold.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMatHold( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      double optInPenetration,
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []BodyPeriodTotal = new double[5] ;
+      int i, outIdx, totIdx, BodyShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 5.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return RetCode.BadParam ;
+      lookbackTotal = cdlMatHoldLookback (optInPenetration);
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal[4] = 0;
+      BodyPeriodTotal[3] = 0;
+      BodyPeriodTotal[2] = 0;
+      BodyPeriodTotal[1] = 0;
+      BodyPeriodTotal[0] = 0;
+      BodyShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = BodyShortTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[3] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ;
+         BodyPeriodTotal[2] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ;
+         BodyPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if(
+            ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[4] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[3] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[2] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) == 1 &&
+            ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) == -1 &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            ( (((inOpen[i-3]) < (inClose[i-3])) ? (inOpen[i-3]) : (inClose[i-3])) > (((inOpen[i-4]) > (inClose[i-4])) ? (inOpen[i-4]) : (inClose[i-4])) ) &&
+            (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) < inClose[i-4] &&
+            (((inOpen[i-1]) < (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < inClose[i-4] &&
+            (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) > inClose[i-4] - ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) * optInPenetration &&
+            (((inOpen[i-1]) < (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) > inClose[i-4] - ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) * optInPenetration &&
+            (((inClose[i-2]) > (inOpen[i-2])) ? (inClose[i-2]) : (inOpen[i-2])) < inOpen[i-3] &&
+            (((inClose[i-1]) > (inOpen[i-1])) ? (inClose[i-1]) : (inOpen[i-1])) < (((inClose[i-2]) > (inOpen[i-2])) ? (inClose[i-2]) : (inOpen[i-2])) &&
+            inOpen[i] > inClose[i-1] &&
+            inClose[i] > ((( (((inHigh[i-3]) > (inHigh[i-2])) ? (inHigh[i-3]) : (inHigh[i-2])) ) > (inHigh[i-1])) ? ( (((inHigh[i-3]) > (inHigh[i-2])) ? (inHigh[i-3]) : (inHigh[i-2])) ) : (inHigh[i-1]))
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-4] - inOpen[BodyLongTrailingIdx-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-4] - inLow[BodyLongTrailingIdx-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-4] - ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inClose[BodyLongTrailingIdx-4] : inOpen[BodyLongTrailingIdx-4] ) ) + ( ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inOpen[BodyLongTrailingIdx-4] : inClose[BodyLongTrailingIdx-4] ) - inLow[BodyLongTrailingIdx-4] ) : 0 ) ) ) ;
+         for (totIdx = 3; totIdx >= 1; --totIdx)
+            BodyPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx-totIdx] - inOpen[BodyShortTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx-totIdx] - inLow[BodyShortTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx-totIdx] - ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inClose[BodyShortTrailingIdx-totIdx] : inOpen[BodyShortTrailingIdx-totIdx] ) ) + ( ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inOpen[BodyShortTrailingIdx-totIdx] : inClose[BodyShortTrailingIdx-totIdx] ) - inLow[BodyShortTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Mat Hold - Liczy odestek penetracji świecy wewnątrz innej świecy 
+    * @see <a href="http://thepatternsite.com/MatHold.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMatHold( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      double optInPenetration,
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []BodyPeriodTotal = new double[5] ;
+      int i, outIdx, totIdx, BodyShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 5.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return RetCode.BadParam ;
+      lookbackTotal = cdlMatHoldLookback (optInPenetration);
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal[4] = 0;
+      BodyPeriodTotal[3] = 0;
+      BodyPeriodTotal[2] = 0;
+      BodyPeriodTotal[1] = 0;
+      BodyPeriodTotal[0] = 0;
+      BodyShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = BodyShortTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[3] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ;
+         BodyPeriodTotal[2] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ;
+         BodyPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if(
+            ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[4] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[3] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[2] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) == 1 &&
+            ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) == -1 &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            ( (((inOpen[i-3]) < (inClose[i-3])) ? (inOpen[i-3]) : (inClose[i-3])) > (((inOpen[i-4]) > (inClose[i-4])) ? (inOpen[i-4]) : (inClose[i-4])) ) &&
+            (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) < inClose[i-4] &&
+            (((inOpen[i-1]) < (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < inClose[i-4] &&
+            (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) > inClose[i-4] - ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) * optInPenetration &&
+            (((inOpen[i-1]) < (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) > inClose[i-4] - ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) * optInPenetration &&
+            (((inClose[i-2]) > (inOpen[i-2])) ? (inClose[i-2]) : (inOpen[i-2])) < inOpen[i-3] &&
+            (((inClose[i-1]) > (inOpen[i-1])) ? (inClose[i-1]) : (inOpen[i-1])) < (((inClose[i-2]) > (inOpen[i-2])) ? (inClose[i-2]) : (inOpen[i-2])) &&
+            inOpen[i] > inClose[i-1] &&
+            inClose[i] > ((( (((inHigh[i-3]) > (inHigh[i-2])) ? (inHigh[i-3]) : (inHigh[i-2])) ) > (inHigh[i-1])) ? ( (((inHigh[i-3]) > (inHigh[i-2])) ? (inHigh[i-3]) : (inHigh[i-2])) ) : (inHigh[i-1]))
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-4] - inOpen[BodyLongTrailingIdx-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-4] - inLow[BodyLongTrailingIdx-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-4] - ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inClose[BodyLongTrailingIdx-4] : inOpen[BodyLongTrailingIdx-4] ) ) + ( ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inOpen[BodyLongTrailingIdx-4] : inClose[BodyLongTrailingIdx-4] ) - inLow[BodyLongTrailingIdx-4] ) : 0 ) ) ) ;
+         for (totIdx = 3; totIdx >= 1; --totIdx)
+            BodyPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx-totIdx] - inOpen[BodyShortTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx-totIdx] - inLow[BodyShortTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx-totIdx] - ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inClose[BodyShortTrailingIdx-totIdx] : inOpen[BodyShortTrailingIdx-totIdx] ) ) + ( ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inOpen[BodyShortTrailingIdx-totIdx] : inClose[BodyShortTrailingIdx-totIdx] ) - inLow[BodyShortTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMorningDojiStar
+    * @param optInPenetration liczba typu Double
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlMorningDojiStarLookback( double optInPenetration )
+   {
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 3.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return -1;
+      return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) )) +
+         2;
+   }
+   /**
+    * Morning Doji Star 
+    * @see <a href="http://thepatternsite.com/MorningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMorningDojiStar( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      double optInPenetration,
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyDojiPeriodTotal, BodyLongPeriodTotal, BodyShortPeriodTotal;
+      int i, outIdx, BodyDojiTrailingIdx, BodyLongTrailingIdx, BodyShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 3.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return RetCode.BadParam ;
+      lookbackTotal = cdlMorningDojiStarLookback (optInPenetration);
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal = 0;
+      BodyDojiPeriodTotal = 0;
+      BodyShortPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx -2 - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      BodyDojiTrailingIdx = startIdx -1 - (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
+      BodyShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx-2 ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyDojiTrailingIdx;
+      while( i < startIdx-1 ) {
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyShortTrailingIdx;
+      while( i < startIdx ) {
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) <= ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) != 0.0? BodyDojiPeriodTotal / (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyShortPeriodTotal / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inClose[i] > inClose[i-2] + ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) * optInPenetration
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyDojiTrailingIdx] - inOpen[BodyDojiTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyDojiTrailingIdx] - inLow[BodyDojiTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyDojiTrailingIdx] - ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inClose[BodyDojiTrailingIdx] : inOpen[BodyDojiTrailingIdx] ) ) + ( ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inOpen[BodyDojiTrailingIdx] : inClose[BodyDojiTrailingIdx] ) - inLow[BodyDojiTrailingIdx] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx] - inOpen[BodyShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx] - inLow[BodyShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx] - ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inClose[BodyShortTrailingIdx] : inOpen[BodyShortTrailingIdx] ) ) + ( ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inOpen[BodyShortTrailingIdx] : inClose[BodyShortTrailingIdx] ) - inLow[BodyShortTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+         BodyDojiTrailingIdx++;
+         BodyShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Morning Doji Star 
+    * @see <a href="http://thepatternsite.com/MorningDojiStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMorningDojiStar( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      double optInPenetration,
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyDojiPeriodTotal, BodyLongPeriodTotal, BodyShortPeriodTotal;
+      int i, outIdx, BodyDojiTrailingIdx, BodyLongTrailingIdx, BodyShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 3.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return RetCode.BadParam ;
+      lookbackTotal = cdlMorningDojiStarLookback (optInPenetration);
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal = 0;
+      BodyDojiPeriodTotal = 0;
+      BodyShortPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx -2 - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      BodyDojiTrailingIdx = startIdx -1 - (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
+      BodyShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx-2 ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyDojiTrailingIdx;
+      while( i < startIdx-1 ) {
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyShortTrailingIdx;
+      while( i < startIdx ) {
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) <= ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) != 0.0? BodyDojiPeriodTotal / (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyShortPeriodTotal / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inClose[i] > inClose[i-2] + ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) * optInPenetration
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyDojiTrailingIdx] - inOpen[BodyDojiTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyDojiTrailingIdx] - inLow[BodyDojiTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyDojiTrailingIdx] - ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inClose[BodyDojiTrailingIdx] : inOpen[BodyDojiTrailingIdx] ) ) + ( ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inOpen[BodyDojiTrailingIdx] : inClose[BodyDojiTrailingIdx] ) - inLow[BodyDojiTrailingIdx] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx] - inOpen[BodyShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx] - inLow[BodyShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx] - ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inClose[BodyShortTrailingIdx] : inOpen[BodyShortTrailingIdx] ) ) + ( ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inOpen[BodyShortTrailingIdx] : inClose[BodyShortTrailingIdx] ) - inLow[BodyShortTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+         BodyDojiTrailingIdx++;
+         BodyShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlMorningStar
+    * @param optInPenetration liczba typu Double
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlMorningStarLookback( double optInPenetration )
+   {
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 3.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return -1;
+      return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 2;
+   }
+   /**
+    * Morning Star 
+    * @see <a href="http://www.thepatternsite.com/MorningStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMorningStar( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      double optInPenetration,
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyShortPeriodTotal, BodyLongPeriodTotal, BodyShortPeriodTotal2;
+      int i, outIdx, BodyShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 3.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return RetCode.BadParam ;
+      lookbackTotal = cdlMorningStarLookback (optInPenetration);
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal = 0;
+      BodyShortPeriodTotal = 0;
+      BodyShortPeriodTotal2 = 0;
+      BodyLongTrailingIdx = startIdx -2 - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      BodyShortTrailingIdx = startIdx -1 - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx-2 ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyShortTrailingIdx;
+      while( i < startIdx-1 ) {
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal2 += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i+1] - inOpen[i+1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i+1] - inLow[i+1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i+1] - ( inClose[i+1] >= inOpen[i+1] ? inClose[i+1] : inOpen[i+1] ) ) + ( ( inClose[i+1] >= inOpen[i+1] ? inOpen[i+1] : inClose[i+1] ) - inLow[i+1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) <= ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyShortPeriodTotal / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyShortPeriodTotal2 / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inClose[i] > inClose[i-2] + ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) * optInPenetration
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx] - inOpen[BodyShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx] - inLow[BodyShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx] - ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inClose[BodyShortTrailingIdx] : inOpen[BodyShortTrailingIdx] ) ) + ( ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inOpen[BodyShortTrailingIdx] : inClose[BodyShortTrailingIdx] ) - inLow[BodyShortTrailingIdx] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal2 += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx+1] - inOpen[BodyShortTrailingIdx+1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx+1] - inLow[BodyShortTrailingIdx+1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx+1] - ( inClose[BodyShortTrailingIdx+1] >= inOpen[BodyShortTrailingIdx+1] ? inClose[BodyShortTrailingIdx+1] : inOpen[BodyShortTrailingIdx+1] ) ) + ( ( inClose[BodyShortTrailingIdx+1] >= inOpen[BodyShortTrailingIdx+1] ? inOpen[BodyShortTrailingIdx+1] : inClose[BodyShortTrailingIdx+1] ) - inLow[BodyShortTrailingIdx+1] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+         BodyShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Morning Star 
+    * @see <a href="http://www.thepatternsite.com/MorningStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    *  <li> RetCode.BadParam kiedy wprowadzono zły parametr (poprawnie od 0.000000e+0 do 3.000000e+37)</li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param optInPenetration liczba z poza zakresu od 0.000000e+0 do 3.000000e+37
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlMorningStar( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      double optInPenetration,
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyShortPeriodTotal, BodyLongPeriodTotal, BodyShortPeriodTotal2;
+      int i, outIdx, BodyShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      if( optInPenetration == (-4e+37) )
+         optInPenetration = 3.000000e-1;
+      else if( (optInPenetration < 0.000000e+0) || (optInPenetration > 3.000000e+37) )
+         return RetCode.BadParam ;
+      lookbackTotal = cdlMorningStarLookback (optInPenetration);
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal = 0;
+      BodyShortPeriodTotal = 0;
+      BodyShortPeriodTotal2 = 0;
+      BodyLongTrailingIdx = startIdx -2 - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      BodyShortTrailingIdx = startIdx -1 - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx-2 ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyShortTrailingIdx;
+      while( i < startIdx-1 ) {
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal2 += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i+1] - inOpen[i+1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i+1] - inLow[i+1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i+1] - ( inClose[i+1] >= inOpen[i+1] ? inClose[i+1] : inOpen[i+1] ) ) + ( ( inClose[i+1] >= inOpen[i+1] ? inOpen[i+1] : inClose[i+1] ) - inLow[i+1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) <= ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyShortPeriodTotal / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyShortPeriodTotal2 / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inClose[i] > inClose[i-2] + ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) * optInPenetration
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx] - inOpen[BodyShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx] - inLow[BodyShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx] - ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inClose[BodyShortTrailingIdx] : inOpen[BodyShortTrailingIdx] ) ) + ( ( inClose[BodyShortTrailingIdx] >= inOpen[BodyShortTrailingIdx] ? inOpen[BodyShortTrailingIdx] : inClose[BodyShortTrailingIdx] ) - inLow[BodyShortTrailingIdx] ) : 0 ) ) ) ;
+         BodyShortPeriodTotal2 += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx+1] - inOpen[BodyShortTrailingIdx+1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx+1] - inLow[BodyShortTrailingIdx+1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx+1] - ( inClose[BodyShortTrailingIdx+1] >= inOpen[BodyShortTrailingIdx+1] ? inClose[BodyShortTrailingIdx+1] : inOpen[BodyShortTrailingIdx+1] ) ) + ( ( inClose[BodyShortTrailingIdx+1] >= inOpen[BodyShortTrailingIdx+1] ? inOpen[BodyShortTrailingIdx+1] : inClose[BodyShortTrailingIdx+1] ) - inLow[BodyShortTrailingIdx+1] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+         BodyShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlOnNeck
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlOnNeckLookback( )
+   {
+      return ((( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) +
+         1;
+   }
+   /**
+    * On-Neck Pattern
+    * @see <a href="http://thepatternsite.com/OnNeck.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlOnNeck( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double EqualPeriodTotal, BodyLongPeriodTotal;
+      int i, outIdx, EqualTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlOnNeckLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      EqualPeriodTotal = 0;
+      EqualTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ;
+      BodyLongPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = EqualTrailingIdx;
+      while( i < startIdx ) {
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inOpen[i] < inLow[i-1] &&
+            inClose[i] <= inLow[i-1] + ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inClose[i] >= inLow[i-1] - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            outInteger[outIdx++] = -100;
+         else
+            outInteger[outIdx++] = 0;
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[EqualTrailingIdx-1] - inOpen[EqualTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[EqualTrailingIdx-1] - inLow[EqualTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[EqualTrailingIdx-1] - ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inClose[EqualTrailingIdx-1] : inOpen[EqualTrailingIdx-1] ) ) + ( ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inOpen[EqualTrailingIdx-1] : inClose[EqualTrailingIdx-1] ) - inLow[EqualTrailingIdx-1] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-1] - inOpen[BodyLongTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-1] - inLow[BodyLongTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-1] - ( inClose[BodyLongTrailingIdx-1] >= inOpen[BodyLongTrailingIdx-1] ? inClose[BodyLongTrailingIdx-1] : inOpen[BodyLongTrailingIdx-1] ) ) + ( ( inClose[BodyLongTrailingIdx-1] >= inOpen[BodyLongTrailingIdx-1] ? inOpen[BodyLongTrailingIdx-1] : inClose[BodyLongTrailingIdx-1] ) - inLow[BodyLongTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         EqualTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * On-Neck Pattern
+    * @see <a href="http://thepatternsite.com/OnNeck.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlOnNeck( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double EqualPeriodTotal, BodyLongPeriodTotal;
+      int i, outIdx, EqualTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlOnNeckLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      EqualPeriodTotal = 0;
+      EqualTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ;
+      BodyLongPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = EqualTrailingIdx;
+      while( i < startIdx ) {
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            inOpen[i] < inLow[i-1] &&
+            inClose[i] <= inLow[i-1] + ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inClose[i] >= inLow[i-1] - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            outInteger[outIdx++] = -100;
+         else
+            outInteger[outIdx++] = 0;
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[EqualTrailingIdx-1] - inOpen[EqualTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[EqualTrailingIdx-1] - inLow[EqualTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[EqualTrailingIdx-1] - ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inClose[EqualTrailingIdx-1] : inOpen[EqualTrailingIdx-1] ) ) + ( ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inOpen[EqualTrailingIdx-1] : inClose[EqualTrailingIdx-1] ) - inLow[EqualTrailingIdx-1] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-1] - inOpen[BodyLongTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-1] - inLow[BodyLongTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-1] - ( inClose[BodyLongTrailingIdx-1] >= inOpen[BodyLongTrailingIdx-1] ? inClose[BodyLongTrailingIdx-1] : inOpen[BodyLongTrailingIdx-1] ) ) + ( ( inClose[BodyLongTrailingIdx-1] >= inOpen[BodyLongTrailingIdx-1] ? inOpen[BodyLongTrailingIdx-1] : inClose[BodyLongTrailingIdx-1] ) - inLow[BodyLongTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         EqualTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlPiercing
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlPiercingLookback( )
+   {
+      return (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) + 1;
+   }
+   /**
+    * Piercing Pattern
+    * @see <a href="http://thepatternsite.com/Piercing.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlPiercing( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []BodyLongPeriodTotal = new double[2] ;
+      int i, outIdx, totIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlPiercingLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal[1] = 0;
+      BodyLongPeriodTotal[0] = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[0] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inOpen[i] < inLow[i-1] &&
+            inClose[i] < inOpen[i-1] &&
+            inClose[i] > inClose[i-1] + ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) * 0.5
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         for (totIdx = 1; totIdx >= 0; --totIdx)
+            BodyLongPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-totIdx] - inOpen[BodyLongTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-totIdx] - inLow[BodyLongTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-totIdx] - ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inClose[BodyLongTrailingIdx-totIdx] : inOpen[BodyLongTrailingIdx-totIdx] ) ) + ( ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inOpen[BodyLongTrailingIdx-totIdx] : inClose[BodyLongTrailingIdx-totIdx] ) - inLow[BodyLongTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Piercing Pattern
+    * @see <a href="http://thepatternsite.com/Piercing.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlPiercing( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []BodyLongPeriodTotal = new double[2] ;
+      int i, outIdx, totIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlPiercingLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyLongPeriodTotal[1] = 0;
+      BodyLongPeriodTotal[0] = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == -1 &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal[0] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inOpen[i] < inLow[i-1] &&
+            inClose[i] < inOpen[i-1] &&
+            inClose[i] > inClose[i-1] + ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) * 0.5
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         for (totIdx = 1; totIdx >= 0; --totIdx)
+            BodyLongPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-totIdx] - inOpen[BodyLongTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-totIdx] - inLow[BodyLongTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-totIdx] - ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inClose[BodyLongTrailingIdx-totIdx] : inOpen[BodyLongTrailingIdx-totIdx] ) ) + ( ( inClose[BodyLongTrailingIdx-totIdx] >= inOpen[BodyLongTrailingIdx-totIdx] ? inOpen[BodyLongTrailingIdx-totIdx] : inClose[BodyLongTrailingIdx-totIdx] ) - inLow[BodyLongTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlRickshawMan
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlRickshawManLookback( )
+   {
+      return ((( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) )) ;
+   }
+   /**
+    * Rickshaw Man
+    * @see <a href="http://thepatternsite.com/RickshawMan.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlRickshawMan( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyDojiPeriodTotal, ShadowLongPeriodTotal, NearPeriodTotal;
+      int i, outIdx, BodyDojiTrailingIdx, ShadowLongTrailingIdx, NearTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlRickshawManLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyDojiPeriodTotal = 0;
+      BodyDojiTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
+      ShadowLongPeriodTotal = 0;
+      ShadowLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ;
+      NearPeriodTotal = 0;
+      NearTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) ;
+      i = BodyDojiTrailingIdx;
+      while( i < startIdx ) {
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowLongTrailingIdx;
+      while( i < startIdx ) {
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = NearTrailingIdx;
+      while( i < startIdx ) {
+         NearPeriodTotal += ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) <= ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) != 0.0? BodyDojiPeriodTotal / (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            (
+            (((inOpen[i]) < (inClose[i])) ? (inOpen[i]) : (inClose[i]))
+            <= inLow[i] + ( inHigh[i] - inLow[i] ) / 2 + ( (this.candleSettings[CandleSettingType.Near.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) != 0.0? NearPeriodTotal / (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            &&
+            (((inOpen[i]) > (inClose[i])) ? (inOpen[i]) : (inClose[i]))
+            >= inLow[i] + ( inHigh[i] - inLow[i] ) / 2 - ( (this.candleSettings[CandleSettingType.Near.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) != 0.0? NearPeriodTotal / (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyDojiTrailingIdx] - inOpen[BodyDojiTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyDojiTrailingIdx] - inLow[BodyDojiTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyDojiTrailingIdx] - ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inClose[BodyDojiTrailingIdx] : inOpen[BodyDojiTrailingIdx] ) ) + ( ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inOpen[BodyDojiTrailingIdx] : inClose[BodyDojiTrailingIdx] ) - inLow[BodyDojiTrailingIdx] ) : 0 ) ) ) ;
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowLongTrailingIdx] - inOpen[ShadowLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowLongTrailingIdx] - inLow[ShadowLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowLongTrailingIdx] - ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inClose[ShadowLongTrailingIdx] : inOpen[ShadowLongTrailingIdx] ) ) + ( ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inOpen[ShadowLongTrailingIdx] : inClose[ShadowLongTrailingIdx] ) - inLow[ShadowLongTrailingIdx] ) : 0 ) ) ) ;
+         NearPeriodTotal += ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[NearTrailingIdx] - inOpen[NearTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[NearTrailingIdx] - inLow[NearTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[NearTrailingIdx] - ( inClose[NearTrailingIdx] >= inOpen[NearTrailingIdx] ? inClose[NearTrailingIdx] : inOpen[NearTrailingIdx] ) ) + ( ( inClose[NearTrailingIdx] >= inOpen[NearTrailingIdx] ? inOpen[NearTrailingIdx] : inClose[NearTrailingIdx] ) - inLow[NearTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyDojiTrailingIdx++;
+         ShadowLongTrailingIdx++;
+         NearTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Rickshaw Man
+    * @see <a href="http://thepatternsite.com/RickshawMan.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlRickshawMan( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyDojiPeriodTotal, ShadowLongPeriodTotal, NearPeriodTotal;
+      int i, outIdx, BodyDojiTrailingIdx, ShadowLongTrailingIdx, NearTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlRickshawManLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyDojiPeriodTotal = 0;
+      BodyDojiTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) ;
+      ShadowLongPeriodTotal = 0;
+      ShadowLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ;
+      NearPeriodTotal = 0;
+      NearTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) ;
+      i = BodyDojiTrailingIdx;
+      while( i < startIdx ) {
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowLongTrailingIdx;
+      while( i < startIdx ) {
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = NearTrailingIdx;
+      while( i < startIdx ) {
+         NearPeriodTotal += ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) <= ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) != 0.0? BodyDojiPeriodTotal / (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            (
+            (((inOpen[i]) < (inClose[i])) ? (inOpen[i]) : (inClose[i]))
+            <= inLow[i] + ( inHigh[i] - inLow[i] ) / 2 + ( (this.candleSettings[CandleSettingType.Near.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) != 0.0? NearPeriodTotal / (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            &&
+            (((inOpen[i]) > (inClose[i])) ? (inOpen[i]) : (inClose[i]))
+            >= inLow[i] + ( inHigh[i] - inLow[i] ) / 2 - ( (this.candleSettings[CandleSettingType.Near.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) != 0.0? NearPeriodTotal / (this.candleSettings[CandleSettingType.Near.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            )
+            outInteger[outIdx++] = 100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyDojiPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyDojiTrailingIdx] - inOpen[BodyDojiTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyDojiTrailingIdx] - inLow[BodyDojiTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyDoji.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyDojiTrailingIdx] - ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inClose[BodyDojiTrailingIdx] : inOpen[BodyDojiTrailingIdx] ) ) + ( ( inClose[BodyDojiTrailingIdx] >= inOpen[BodyDojiTrailingIdx] ? inOpen[BodyDojiTrailingIdx] : inClose[BodyDojiTrailingIdx] ) - inLow[BodyDojiTrailingIdx] ) : 0 ) ) ) ;
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowLongTrailingIdx] - inOpen[ShadowLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowLongTrailingIdx] - inLow[ShadowLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowLongTrailingIdx] - ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inClose[ShadowLongTrailingIdx] : inOpen[ShadowLongTrailingIdx] ) ) + ( ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inOpen[ShadowLongTrailingIdx] : inClose[ShadowLongTrailingIdx] ) - inLow[ShadowLongTrailingIdx] ) : 0 ) ) ) ;
+         NearPeriodTotal += ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[NearTrailingIdx] - inOpen[NearTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[NearTrailingIdx] - inLow[NearTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.Near.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[NearTrailingIdx] - ( inClose[NearTrailingIdx] >= inOpen[NearTrailingIdx] ? inClose[NearTrailingIdx] : inOpen[NearTrailingIdx] ) ) + ( ( inClose[NearTrailingIdx] >= inOpen[NearTrailingIdx] ? inOpen[NearTrailingIdx] : inClose[NearTrailingIdx] ) - inLow[NearTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyDojiTrailingIdx++;
+         ShadowLongTrailingIdx++;
+         NearTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlRiseFall3Methods
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlRiseFall3MethodsLookback( )
+   {
+      return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) + 4;
+   }
+   /**
+    * Rising/Falling Three Methods
+    * @see <a href="http://thepatternsite.com/Falling3Methods.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlRiseFall3Methods( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []BodyPeriodTotal = new double[5] ;
+      int i, outIdx, totIdx, BodyShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlRiseFall3MethodsLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal[4] = 0;
+      BodyPeriodTotal[3] = 0;
+      BodyPeriodTotal[2] = 0;
+      BodyPeriodTotal[1] = 0;
+      BodyPeriodTotal[0] = 0;
+      BodyShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = BodyShortTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[3] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ;
+         BodyPeriodTotal[2] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ;
+         BodyPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ;
+         BodyPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if(
+            ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[4] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[3] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[2] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[0] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) == - ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) &&
+            ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) == ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) &&
+            ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) &&
+            ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == - ( inClose[i] >= inOpen[i] ? 1 : -1 ) &&
+            (((inOpen[i-3]) < (inClose[i-3])) ? (inOpen[i-3]) : (inClose[i-3])) < inHigh[i-4] && (((inOpen[i-3]) > (inClose[i-3])) ? (inOpen[i-3]) : (inClose[i-3])) > inLow[i-4] &&
+            (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) < inHigh[i-4] && (((inOpen[i-2]) > (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) > inLow[i-4] &&
+            (((inOpen[i-1]) < (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < inHigh[i-4] && (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) > inLow[i-4] &&
+            inClose[i-2] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) < inClose[i-3] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) &&
+            inClose[i-1] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) < inClose[i-2] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) &&
+            inOpen[i] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) > inClose[i-1] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) &&
+            inClose[i] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) > inClose[i-4] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 )
+            )
+            outInteger[outIdx++] = 100 * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) ;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-4] - inOpen[BodyLongTrailingIdx-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-4] - inLow[BodyLongTrailingIdx-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-4] - ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inClose[BodyLongTrailingIdx-4] : inOpen[BodyLongTrailingIdx-4] ) ) + ( ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inOpen[BodyLongTrailingIdx-4] : inClose[BodyLongTrailingIdx-4] ) - inLow[BodyLongTrailingIdx-4] ) : 0 ) ) ) ;
+         for (totIdx = 3; totIdx >= 1; --totIdx)
+            BodyPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx-totIdx] - inOpen[BodyShortTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx-totIdx] - inLow[BodyShortTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx-totIdx] - ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inClose[BodyShortTrailingIdx-totIdx] : inOpen[BodyShortTrailingIdx-totIdx] ) ) + ( ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inOpen[BodyShortTrailingIdx-totIdx] : inClose[BodyShortTrailingIdx-totIdx] ) - inLow[BodyShortTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         BodyPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Rising/Falling Three Methods
+    * @see <a href="http://thepatternsite.com/Falling3Methods.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlRiseFall3Methods( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double []BodyPeriodTotal = new double[5] ;
+      int i, outIdx, totIdx, BodyShortTrailingIdx, BodyLongTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlRiseFall3MethodsLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal[4] = 0;
+      BodyPeriodTotal[3] = 0;
+      BodyPeriodTotal[2] = 0;
+      BodyPeriodTotal[1] = 0;
+      BodyPeriodTotal[0] = 0;
+      BodyShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      i = BodyShortTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[3] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ;
+         BodyPeriodTotal[2] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ;
+         BodyPeriodTotal[1] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ;
+         BodyPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if(
+            ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[4] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[3] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-3] - inOpen[i-3] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-3] - inLow[i-3] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-3] - ( inClose[i-3] >= inOpen[i-3] ? inClose[i-3] : inOpen[i-3] ) ) + ( ( inClose[i-3] >= inOpen[i-3] ? inOpen[i-3] : inClose[i-3] ) - inLow[i-3] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[2] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-2] - inOpen[i-2] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-2] - inLow[i-2] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-2] - ( inClose[i-2] >= inOpen[i-2] ? inClose[i-2] : inOpen[i-2] ) ) + ( ( inClose[i-2] >= inOpen[i-2] ? inOpen[i-2] : inClose[i-2] ) - inLow[i-2] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[1] / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal[0] / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) == - ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) &&
+            ( inClose[i-3] >= inOpen[i-3] ? 1 : -1 ) == ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) &&
+            ( inClose[i-2] >= inOpen[i-2] ? 1 : -1 ) == ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) &&
+            ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == - ( inClose[i] >= inOpen[i] ? 1 : -1 ) &&
+            (((inOpen[i-3]) < (inClose[i-3])) ? (inOpen[i-3]) : (inClose[i-3])) < inHigh[i-4] && (((inOpen[i-3]) > (inClose[i-3])) ? (inOpen[i-3]) : (inClose[i-3])) > inLow[i-4] &&
+            (((inOpen[i-2]) < (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) < inHigh[i-4] && (((inOpen[i-2]) > (inClose[i-2])) ? (inOpen[i-2]) : (inClose[i-2])) > inLow[i-4] &&
+            (((inOpen[i-1]) < (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) < inHigh[i-4] && (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) > inLow[i-4] &&
+            inClose[i-2] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) < inClose[i-3] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) &&
+            inClose[i-1] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) < inClose[i-2] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) &&
+            inOpen[i] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) > inClose[i-1] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) &&
+            inClose[i] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) > inClose[i-4] * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 )
+            )
+            outInteger[outIdx++] = 100 * ( inClose[i-4] >= inOpen[i-4] ? 1 : -1 ) ;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal[4] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-4] - inOpen[i-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-4] - inLow[i-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-4] - ( inClose[i-4] >= inOpen[i-4] ? inClose[i-4] : inOpen[i-4] ) ) + ( ( inClose[i-4] >= inOpen[i-4] ? inOpen[i-4] : inClose[i-4] ) - inLow[i-4] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx-4] - inOpen[BodyLongTrailingIdx-4] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx-4] - inLow[BodyLongTrailingIdx-4] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx-4] - ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inClose[BodyLongTrailingIdx-4] : inOpen[BodyLongTrailingIdx-4] ) ) + ( ( inClose[BodyLongTrailingIdx-4] >= inOpen[BodyLongTrailingIdx-4] ? inOpen[BodyLongTrailingIdx-4] : inClose[BodyLongTrailingIdx-4] ) - inLow[BodyLongTrailingIdx-4] ) : 0 ) ) ) ;
+         for (totIdx = 3; totIdx >= 1; --totIdx)
+            BodyPeriodTotal[totIdx] += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-totIdx] - inOpen[i-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-totIdx] - inLow[i-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-totIdx] - ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inClose[i-totIdx] : inOpen[i-totIdx] ) ) + ( ( inClose[i-totIdx] >= inOpen[i-totIdx] ? inOpen[i-totIdx] : inClose[i-totIdx] ) - inLow[i-totIdx] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyShortTrailingIdx-totIdx] - inOpen[BodyShortTrailingIdx-totIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyShortTrailingIdx-totIdx] - inLow[BodyShortTrailingIdx-totIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyShortTrailingIdx-totIdx] - ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inClose[BodyShortTrailingIdx-totIdx] : inOpen[BodyShortTrailingIdx-totIdx] ) ) + ( ( inClose[BodyShortTrailingIdx-totIdx] >= inOpen[BodyShortTrailingIdx-totIdx] ? inOpen[BodyShortTrailingIdx-totIdx] : inClose[BodyShortTrailingIdx-totIdx] ) - inLow[BodyShortTrailingIdx-totIdx] ) : 0 ) ) ) ;
+         BodyPeriodTotal[0] += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlSeperatingLines
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlSeperatingLinesLookback( )
+   {
+      return ((( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) )) +1;
+   }
+   /**
+    * Separating Lines
+    * @see <a href="http://thepatternsite.com/SeparateLinesBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlSeperatingLines( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double ShadowVeryShortPeriodTotal, BodyLongPeriodTotal, EqualPeriodTotal;
+      int i, outIdx, ShadowVeryShortTrailingIdx, BodyLongTrailingIdx, EqualTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlSeperatingLinesLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      BodyLongPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      EqualPeriodTotal = 0;
+      EqualTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ;
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = EqualTrailingIdx;
+      while( i < startIdx ) {
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == - ( inClose[i] >= inOpen[i] ? 1 : -1 ) &&
+            inOpen[i] <= inOpen[i-1] + ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inOpen[i] >= inOpen[i-1] - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            (
+            ( ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            ||
+            ( ( inClose[i] >= inOpen[i] ? 1 : -1 ) == -1 &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            )
+            )
+            outInteger[outIdx++] = ( inClose[i] >= inOpen[i] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx] - inOpen[ShadowVeryShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx] - inLow[ShadowVeryShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx] - ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inClose[ShadowVeryShortTrailingIdx] : inOpen[ShadowVeryShortTrailingIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inOpen[ShadowVeryShortTrailingIdx] : inClose[ShadowVeryShortTrailingIdx] ) - inLow[ShadowVeryShortTrailingIdx] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[EqualTrailingIdx-1] - inOpen[EqualTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[EqualTrailingIdx-1] - inLow[EqualTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[EqualTrailingIdx-1] - ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inClose[EqualTrailingIdx-1] : inOpen[EqualTrailingIdx-1] ) ) + ( ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inOpen[EqualTrailingIdx-1] : inClose[EqualTrailingIdx-1] ) - inLow[EqualTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         ShadowVeryShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+         EqualTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Separating Lines
+    * @see <a href="http://thepatternsite.com/SeparateLinesBull.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlSeperatingLines( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double ShadowVeryShortPeriodTotal, BodyLongPeriodTotal, EqualPeriodTotal;
+      int i, outIdx, ShadowVeryShortTrailingIdx, BodyLongTrailingIdx, EqualTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlSeperatingLinesLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      BodyLongPeriodTotal = 0;
+      BodyLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) ;
+      EqualPeriodTotal = 0;
+      EqualTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) ;
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = BodyLongTrailingIdx;
+      while( i < startIdx ) {
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = EqualTrailingIdx;
+      while( i < startIdx ) {
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = startIdx;
+      outIdx = 0;
+      do
+      {
+         if( ( inClose[i-1] >= inOpen[i-1] ? 1 : -1 ) == - ( inClose[i] >= inOpen[i] ? 1 : -1 ) &&
+            inOpen[i] <= inOpen[i-1] + ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            inOpen[i] >= inOpen[i-1] - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) != 0.0? EqualPeriodTotal / (this.candleSettings[CandleSettingType.Equal.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( Math.abs ( inClose[i] - inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) != 0.0? BodyLongPeriodTotal / (this.candleSettings[CandleSettingType.BodyLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            (
+            ( ( inClose[i] >= inOpen[i] ? 1 : -1 ) == 1 &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            ||
+            ( ( inClose[i] >= inOpen[i] ? 1 : -1 ) == -1 &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) )
+            )
+            )
+            )
+            outInteger[outIdx++] = ( inClose[i] >= inOpen[i] ? 1 : -1 ) * 100;
+         else
+            outInteger[outIdx++] = 0;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx] - inOpen[ShadowVeryShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx] - inLow[ShadowVeryShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx] - ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inClose[ShadowVeryShortTrailingIdx] : inOpen[ShadowVeryShortTrailingIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inOpen[ShadowVeryShortTrailingIdx] : inClose[ShadowVeryShortTrailingIdx] ) - inLow[ShadowVeryShortTrailingIdx] ) : 0 ) ) ) ;
+         BodyLongPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyLongTrailingIdx] - inOpen[BodyLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyLongTrailingIdx] - inLow[BodyLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyLongTrailingIdx] - ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inClose[BodyLongTrailingIdx] : inOpen[BodyLongTrailingIdx] ) ) + ( ( inClose[BodyLongTrailingIdx] >= inOpen[BodyLongTrailingIdx] ? inOpen[BodyLongTrailingIdx] : inClose[BodyLongTrailingIdx] ) - inLow[BodyLongTrailingIdx] ) : 0 ) ) ) ;
+         EqualPeriodTotal += ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i-1] - inOpen[i-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i-1] - inLow[i-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i-1] - ( inClose[i-1] >= inOpen[i-1] ? inClose[i-1] : inOpen[i-1] ) ) + ( ( inClose[i-1] >= inOpen[i-1] ? inOpen[i-1] : inClose[i-1] ) - inLow[i-1] ) : 0 ) ) ) - ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[EqualTrailingIdx-1] - inOpen[EqualTrailingIdx-1] ) ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[EqualTrailingIdx-1] - inLow[EqualTrailingIdx-1] ) : ( (this.candleSettings[CandleSettingType.Equal.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[EqualTrailingIdx-1] - ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inClose[EqualTrailingIdx-1] : inOpen[EqualTrailingIdx-1] ) ) + ( ( inClose[EqualTrailingIdx-1] >= inOpen[EqualTrailingIdx-1] ? inOpen[EqualTrailingIdx-1] : inClose[EqualTrailingIdx-1] ) - inLow[EqualTrailingIdx-1] ) : 0 ) ) ) ;
+         i++;
+         ShadowVeryShortTrailingIdx++;
+         BodyLongTrailingIdx++;
+         EqualTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlShootingStar
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlShootingStarLookback( )
+   {
+      return ((( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) > ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) ? ( ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) )) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) )) +1;
+   }
+   /**
+    * Shooting Star
+    * @see <a href="http://thepatternsite.com/ShootingStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlShootingStar( int startIdx,
+      int endIdx,
+      double inOpen[],
+      double inHigh[],
+      double inLow[],
+      double inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyPeriodTotal, ShadowLongPeriodTotal, ShadowVeryShortPeriodTotal;
+      int i, outIdx, BodyTrailingIdx, ShadowLongTrailingIdx, ShadowVeryShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlShootingStarLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal = 0;
+      BodyTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      ShadowLongPeriodTotal = 0;
+      ShadowLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ;
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      i = BodyTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowLongTrailingIdx;
+      while( i < startIdx ) {
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( (((inOpen[i]) < (inClose[i])) ? (inOpen[i]) : (inClose[i])) > (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) ) )
+            outInteger[outIdx++] = -100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyTrailingIdx] - inOpen[BodyTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyTrailingIdx] - inLow[BodyTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyTrailingIdx] - ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inClose[BodyTrailingIdx] : inOpen[BodyTrailingIdx] ) ) + ( ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inOpen[BodyTrailingIdx] : inClose[BodyTrailingIdx] ) - inLow[BodyTrailingIdx] ) : 0 ) ) ) ;
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowLongTrailingIdx] - inOpen[ShadowLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowLongTrailingIdx] - inLow[ShadowLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowLongTrailingIdx] - ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inClose[ShadowLongTrailingIdx] : inOpen[ShadowLongTrailingIdx] ) ) + ( ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inOpen[ShadowLongTrailingIdx] : inClose[ShadowLongTrailingIdx] ) - inLow[ShadowLongTrailingIdx] ) : 0 ) ) ) ;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx] - inOpen[ShadowVeryShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx] - inLow[ShadowVeryShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx] - ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inClose[ShadowVeryShortTrailingIdx] : inOpen[ShadowVeryShortTrailingIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inOpen[ShadowVeryShortTrailingIdx] : inClose[ShadowVeryShortTrailingIdx] ) - inLow[ShadowVeryShortTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyTrailingIdx++;
+         ShadowLongTrailingIdx++;
+         ShadowVeryShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Shooting Star
+    * @see <a href="http://thepatternsite.com/ShootingStar.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public RetCode cdlShootingStar( int startIdx,
+      int endIdx,
+      float inOpen[],
+      float inHigh[],
+      float inLow[],
+      float inClose[],
+      MInteger outBegIdx,
+      MInteger outNBElement,
+      int outInteger[] )
+   {
+      double BodyPeriodTotal, ShadowLongPeriodTotal, ShadowVeryShortPeriodTotal;
+      int i, outIdx, BodyTrailingIdx, ShadowLongTrailingIdx, ShadowVeryShortTrailingIdx, lookbackTotal;
+      if( startIdx < 0 )
+         return RetCode.OutOfRangeStartIndex ;
+      if( (endIdx < 0) || (endIdx < startIdx))
+         return RetCode.OutOfRangeEndIndex ;
+      lookbackTotal = cdlShootingStarLookback ();
+      if( startIdx < lookbackTotal )
+         startIdx = lookbackTotal;
+      if( startIdx > endIdx )
+      {
+         outBegIdx.value = 0 ;
+         outNBElement.value = 0 ;
+         return RetCode.Success ;
+      }
+      BodyPeriodTotal = 0;
+      BodyTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ;
+      ShadowLongPeriodTotal = 0;
+      ShadowLongTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) ;
+      ShadowVeryShortPeriodTotal = 0;
+      ShadowVeryShortTrailingIdx = startIdx - (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) ;
+      i = BodyTrailingIdx;
+      while( i < startIdx ) {
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowLongTrailingIdx;
+      while( i < startIdx ) {
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      i = ShadowVeryShortTrailingIdx;
+      while( i < startIdx ) {
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ;
+         i++;
+      }
+      outIdx = 0;
+      do
+      {
+         if( ( Math.abs ( inClose[i] - inOpen[i] ) ) < ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) != 0.0? BodyPeriodTotal / (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) > ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) != 0.0? ShadowLongPeriodTotal / (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) < ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].factor) * ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) != 0.0? ShadowVeryShortPeriodTotal / (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].avgPeriod) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) ) ) / ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? 2.0 : 1.0 ) ) &&
+            ( (((inOpen[i]) < (inClose[i])) ? (inOpen[i]) : (inClose[i])) > (((inOpen[i-1]) > (inClose[i-1])) ? (inOpen[i-1]) : (inClose[i-1])) ) )
+            outInteger[outIdx++] = -100;
+         else
+            outInteger[outIdx++] = 0;
+         BodyPeriodTotal += ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[BodyTrailingIdx] - inOpen[BodyTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[BodyTrailingIdx] - inLow[BodyTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[BodyTrailingIdx] - ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inClose[BodyTrailingIdx] : inOpen[BodyTrailingIdx] ) ) + ( ( inClose[BodyTrailingIdx] >= inOpen[BodyTrailingIdx] ? inOpen[BodyTrailingIdx] : inClose[BodyTrailingIdx] ) - inLow[BodyTrailingIdx] ) : 0 ) ) ) ;
+         ShadowLongPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowLongTrailingIdx] - inOpen[ShadowLongTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowLongTrailingIdx] - inLow[ShadowLongTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowLong.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowLongTrailingIdx] - ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inClose[ShadowLongTrailingIdx] : inOpen[ShadowLongTrailingIdx] ) ) + ( ( inClose[ShadowLongTrailingIdx] >= inOpen[ShadowLongTrailingIdx] ? inOpen[ShadowLongTrailingIdx] : inClose[ShadowLongTrailingIdx] ) - inLow[ShadowLongTrailingIdx] ) : 0 ) ) ) ;
+         ShadowVeryShortPeriodTotal += ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[i] - inOpen[i] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[i] - inLow[i] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[i] - ( inClose[i] >= inOpen[i] ? inClose[i] : inOpen[i] ) ) + ( ( inClose[i] >= inOpen[i] ? inOpen[i] : inClose[i] ) - inLow[i] ) : 0 ) ) )
+            - ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.RealBody ? ( Math.abs ( inClose[ShadowVeryShortTrailingIdx] - inOpen[ShadowVeryShortTrailingIdx] ) ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.HighLow ? ( inHigh[ShadowVeryShortTrailingIdx] - inLow[ShadowVeryShortTrailingIdx] ) : ( (this.candleSettings[CandleSettingType.ShadowVeryShort.ordinal()].rangeType) == RangeType.Shadows ? ( inHigh[ShadowVeryShortTrailingIdx] - ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inClose[ShadowVeryShortTrailingIdx] : inOpen[ShadowVeryShortTrailingIdx] ) ) + ( ( inClose[ShadowVeryShortTrailingIdx] >= inOpen[ShadowVeryShortTrailingIdx] ? inOpen[ShadowVeryShortTrailingIdx] : inClose[ShadowVeryShortTrailingIdx] ) - inLow[ShadowVeryShortTrailingIdx] ) : 0 ) ) ) ;
+         i++;
+         BodyTrailingIdx++;
+         ShadowLongTrailingIdx++;
+         ShadowVeryShortTrailingIdx++;
+      } while( i <= endIdx );
+      outNBElement.value = outIdx;
+      outBegIdx.value = startIdx;
+      return RetCode.Success ;
+   }
+   /**
+    * Metoda zwraca odpowiedni zakres dla cdlShortLine
+    * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
+    */
+   public int cdlShortLineLookback( )
+   {
+      return ((( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) > ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ? ( (this.candleSettings[CandleSettingType.BodyShort.ordinal()].avgPeriod) ) : ( (this.candleSettings[CandleSettingType.ShadowShort.ordinal()].avgPeriod) )) ;
+   }
+   /**
+    * Short Line Candle
+    * @see <a href="http://thepatternsite.com/BlkCandleShort.html">site</a>
+    * <hr>
+    * <ul>
+    *  <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
+    *  <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
+    * </ul>
+    * @param startIdx indeks startowy
+    * @param endIdx indeks końcowy
+    * @param inOpen tablica cen otwarcia	
+    * @param inHigh tablica cen maksymalnych
+    * @param inLow tablica cen minimalnych
+    * @param inClose tablica cen zamknięcia
+    * @param outBegIdx początkowy indeks wyjściowy
+    * @param outNBElement liczba elementów wyjściowych    
+    * @param outInteger Tablica na elementy wyjściowe
+    * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlShortLine( int startIdx,
       int endIdx,
@@ -13029,6 +16125,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlShortLine( int startIdx,
       int endIdx,
@@ -13091,6 +16188,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlSpinningTop
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlSpinningTopLookback( )
    {
@@ -13114,6 +16212,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlSpinningTop( int startIdx,
       int endIdx,
@@ -13183,6 +16282,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlSpinningTop( int startIdx,
       int endIdx,
@@ -13237,6 +16337,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlStalledPattern
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlStalledPatternLookback( )
    {
@@ -13260,6 +16361,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlStalledPattern( int startIdx,
       int endIdx,
@@ -13379,6 +16481,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlStalledPattern( int startIdx,
       int endIdx,
@@ -13483,6 +16586,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlStickSandwhich
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlStickSandwhichLookback( )
    {
@@ -13506,6 +16610,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlStickSandwhich( int startIdx,
       int endIdx,
@@ -13579,6 +16684,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlStickSandwhich( int startIdx,
       int endIdx,
@@ -13637,6 +16743,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlTakuri
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlTakuriLookback( )
    {
@@ -13660,6 +16767,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlTakuri( int startIdx,
       int endIdx,
@@ -13749,6 +16857,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlTakuri( int startIdx,
       int endIdx,
@@ -13823,6 +16932,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlTasukiGap
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlTasukiGapLookback( )
    {
@@ -13846,6 +16956,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlTasukiGap( int startIdx,
       int endIdx,
@@ -13932,6 +17043,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlTasukiGap( int startIdx,
       int endIdx,
@@ -14003,6 +17115,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlThrusting
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlThrustingLookback( )
    {
@@ -14026,6 +17139,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlThrusting( int startIdx,
       int endIdx,
@@ -14109,6 +17223,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlThrusting( int startIdx,
       int endIdx,
@@ -14177,6 +17292,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlTristar
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlTristarLookback( )
    {
@@ -14200,6 +17316,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlTristar( int startIdx,
       int endIdx,
@@ -14281,6 +17398,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlTristar( int startIdx,
       int endIdx,
@@ -14347,6 +17465,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlUnique3River
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlUnique3RiverLookback( )
    {
@@ -14370,6 +17489,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlUnique3River( int startIdx,
       int endIdx,
@@ -14454,6 +17574,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlUnique3River( int startIdx,
       int endIdx,
@@ -14523,6 +17644,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca odpowiedni zakres dla cdlUpsideGap2Crows
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlUpsideGap2CrowsLookback( )
    {
@@ -14546,6 +17668,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlUpsideGap2Crows( int startIdx,
       int endIdx,
@@ -14630,6 +17753,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlUpsideGap2Crows( int startIdx,
       int endIdx,
@@ -14699,6 +17823,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Zwraca domyślną wartość dla cdlXSideGap3Methods
     * @return 2
+	* @author Komentarz - Lukasz Straszewski
     */
    public int cdlXSideGap3MethodsLookback( )
    {
@@ -14722,6 +17847,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlXSideGap3Methods( int startIdx,
       int endIdx,
@@ -14794,6 +17920,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement liczba elementów wyjściowych    
     * @param outInteger Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Lukasz Straszewski
     */
    public RetCode cdlXSideGap3Methods( int startIdx,
       int endIdx,
@@ -14850,10 +17977,10 @@ public RetCode cdlGravestoneDoji( int startIdx,
    }
    /* Generated */
    // TODO: Koniec Lukasz Straszewski
-   // TODO: Start Pawel Majka
    /**
     * Zwraca domyślną wartość dla ceil (zaokrąglania w górę).
     * @return 0
+	* @author Komentarz - Lukasz Straszewski
     */
    public int ceilLookback( )
    {
@@ -14874,6 +18001,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode ceil( int startIdx,
       int endIdx,
@@ -14911,6 +18039,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode ceil( int startIdx,
       int endIdx,
@@ -14937,6 +18066,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla CMO.
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Pawel Majka
     */
    public int cmoLookback( int optInTimePeriod )
    {
@@ -14966,6 +18096,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode cmo( int startIdx,
       int endIdx,
@@ -15119,6 +18250,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode cmo( int startIdx,
       int endIdx,
@@ -15261,6 +18393,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla correl.
     * @param optInTimePeriod liczba okresu (1 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Pawel Majka
     */
    public int correlLookback( int optInTimePeriod )
    {
@@ -15288,6 +18421,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode correl( int startIdx,
       int endIdx,
@@ -15382,6 +18516,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode correl( int startIdx,
       int endIdx,
@@ -15462,6 +18597,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Zwraca domyślną wartość dla cosinus
     * @return 0
+	* @author Komentarz - Pawel Majka
     */
    public int cosLookback( )
    {
@@ -15481,6 +18617,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode cos( int startIdx,
       int endIdx,
@@ -15517,6 +18654,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode cos( int startIdx,
       int endIdx,
@@ -15543,6 +18681,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Zwraca domyślną wartość dla cosinusa hiperbolicznego
     * @return 0
+	* @author Komentarz - Pawel Majka
     */
    public int coshLookback( )
    {
@@ -15562,6 +18701,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode cosh( int startIdx,
       int endIdx,
@@ -15598,6 +18738,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode cosh( int startIdx,
       int endIdx,
@@ -15625,6 +18766,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla DEMA.
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Pawel Majka
     */
    public int demaLookback( int optInTimePeriod )
    {
@@ -15650,6 +18792,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode dema( int startIdx,
       int endIdx,
@@ -15736,6 +18879,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode dema( int startIdx,
       int endIdx,
@@ -15805,6 +18949,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Zwraca domyślną wartość dla dzielenia (??)
     * @return 0
+	* @author Komentarz - Pawel Majka
     */
    public int divLookback( )
    {
@@ -15825,6 +18970,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode div( int startIdx,
       int endIdx,
@@ -15863,6 +19009,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode div( int startIdx,
       int endIdx,
@@ -15891,6 +19038,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla DX.
     * @param optInTimePeriod liczba okresu (2 do 100000)
     * @return odpowiedni zakres liczbowy
+	* @author Komentarz - Pawel Majka
     */
    public int dxLookback( int optInTimePeriod )
    {
@@ -15923,6 +19071,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode dx( int startIdx,
       int endIdx,
@@ -16087,6 +19236,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode dx( int startIdx,
       int endIdx,
@@ -16236,6 +19386,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca odpowiedni zakres dla EMA.
     * @param optInTimePeriod okres (2 do 100000)
     * @return odpowiedni zakres
+	* @author Komentarz - Pawel Majka
     */
    public int emaLookback( int optInTimePeriod )
    {
@@ -16262,6 +19413,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode ema( int startIdx,
       int endIdx,
@@ -16296,6 +19448,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode TA_INT_EMA( int startIdx,
       int endIdx,
@@ -16361,6 +19514,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode ema( int startIdx,
       int endIdx,
@@ -16395,6 +19549,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode TA_INT_EMA( int startIdx,
       int endIdx,
@@ -16447,6 +19602,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca podstawową wartość dla funkcji wykładniczej.
     * @return 0
+	* @author Komentarz - Pawel Majka
     */
    public int expLookback( )
    {
@@ -16466,6 +19622,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode exp( int startIdx,
       int endIdx,
@@ -16502,6 +19659,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode exp( int startIdx,
       int endIdx,
@@ -16528,6 +19686,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Zwraca domyślną wartość dla floor (zaokrąglania w górę).
     * @return 0
+	* @author Komentarz - Pawel Majka
     */
    public int floorLookback( )
    {
@@ -16548,6 +19707,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode floor( int startIdx,
       int endIdx,
@@ -16585,6 +19745,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode floor( int startIdx,
       int endIdx,
@@ -16611,6 +19772,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla HTDCPERIOD.
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int htDcPeriodLookback( )
    {
@@ -16631,6 +19793,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htDcPeriod( int startIdx,
       int endIdx,
@@ -16776,6 +19939,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htDcPeriod( int startIdx,
       int endIdx,
@@ -16910,6 +20074,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla HTDCPHASE. 
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int htDcPhaseLookback( )
    {
@@ -16930,6 +20095,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htDcPhase( int startIdx,
       int endIdx,
@@ -17119,6 +20285,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htDcPhase( int startIdx,
       int endIdx,
@@ -17297,6 +20464,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla HTPHASOR.
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int htPhasorLookback( )
    {
@@ -17318,6 +20486,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outInPhase Tablica na fazy wyjściowe
     * @param outQuadrature Tablica na kwadratury wyjściowe
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htPhasor( int startIdx,
       int endIdx,
@@ -17469,6 +20638,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outInPhase Tablica na fazy wyjściowe
     * @param outQuadrature Tablica na kwadratury wyjściowe
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htPhasor( int startIdx,
       int endIdx,
@@ -17608,6 +20778,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla HTSINE.
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int htSineLookback( )
    {
@@ -17629,6 +20800,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outSine Tablica wyjściowa z sinusoidami
     * @param outLeadSine Tablica wyjściowa z sinusoidami prowadzącymi
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htSine( int startIdx,
       int endIdx,
@@ -17822,6 +20994,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outSine Tablica wyjściowa z sinusoidami
     * @param outLeadSine Tablica wyjściowa z sinusoidami prowadzącymi
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htSine( int startIdx,
       int endIdx,
@@ -18003,6 +21176,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla HTTRENDLINE.
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int htTrendlineLookback( )
    {
@@ -18023,6 +21197,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htTrendline( int startIdx,
       int endIdx,
@@ -18192,6 +21367,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htTrendline( int startIdx,
       int endIdx,
@@ -18350,6 +21526,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla HTTRENDLINE.
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int htTrendModeLookback( )
    {
@@ -18370,6 +21547,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outInteger Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htTrendMode( int startIdx,
       int endIdx,
@@ -18605,6 +21783,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outInteger Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode htTrendMode( int startIdx,
       int endIdx,
@@ -18830,6 +22009,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla KAMA.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int kamaLookback( int optInTimePeriod )
    {
@@ -18855,6 +22035,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode kama( int startIdx,
       int endIdx,
@@ -18967,6 +22148,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode kama( int startIdx,
       int endIdx,
@@ -19068,6 +22250,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla LINEARREG.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int linearRegLookback( int optInTimePeriod )
    {
@@ -19094,6 +22277,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearReg( int startIdx,
       int endIdx,
@@ -19166,6 +22350,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearReg( int startIdx,
       int endIdx,
@@ -19226,6 +22411,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla LINEARREGANGLE.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int linearRegAngleLookback( int optInTimePeriod )
    {
@@ -19252,6 +22438,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearRegAngle( int startIdx,
       int endIdx,
@@ -19323,6 +22510,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearRegAngle( int startIdx,
       int endIdx,
@@ -19382,6 +22570,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla LINEARREGINTERCEPT.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int linearRegInterceptLookback( int optInTimePeriod )
    {
@@ -19408,6 +22597,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearRegIntercept( int startIdx,
       int endIdx,
@@ -19479,6 +22669,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearRegIntercept( int startIdx,
       int endIdx,
@@ -19538,6 +22729,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla LINEARREGSLOPE.
     * @param optInTimePeriod
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int linearRegSlopeLookback( int optInTimePeriod )
    {
@@ -19564,6 +22756,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearRegSlope( int startIdx,
       int endIdx,
@@ -19633,6 +22826,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode linearRegSlope( int startIdx,
       int endIdx,
@@ -19689,6 +22883,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla LN.
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int lnLookback( )
    {
@@ -19709,6 +22904,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode ln( int startIdx,
       int endIdx,
@@ -19746,6 +22942,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode ln( int startIdx,
       int endIdx,
@@ -19772,6 +22969,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca okres dla log10.
     * @return 0
+	* @author Komentarz - Pawel Majka
     */
    public int log10Lookback( )
    {
@@ -19792,6 +22990,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode log10( int startIdx,
       int endIdx,
@@ -19829,6 +23028,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na wyniki zaokrąglenia
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode log10( int startIdx,
       int endIdx,
@@ -19857,6 +23057,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param optInTimePeriod Okres czasu
     * @param optInMAType Typ wyliczeniowy dla funkcji Moving Average (średnia krocząca)
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int movingAverageLookback( int optInTimePeriod,
       MAType optInMAType )
@@ -19920,6 +23121,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode movingAverage( int startIdx,
       int endIdx,
@@ -20016,6 +23218,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode movingAverage( int startIdx,
       int endIdx,
@@ -20102,6 +23305,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param optInSlowPeriod Zakres (od 2 do 100000)
     * @param optInSignalPeriod Zakres (od 1 do 100000)
     * @return -1 lub emaLookback od parametrów
+	* @author Komentarz - Pawel Majka
     */
    public int macdLookback( int optInFastPeriod,
       int optInSlowPeriod,
@@ -20142,6 +23346,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param optInSlowPeriod Zakres (od 2 do 100000)
     * @param optInSignalPeriod Zakres (od 1 do 100000)
     * @return -1 lub emaLookback od parametrów
+	* @author Komentarz - Pawel Majka
     */
    public RetCode macd( int startIdx,
       int endIdx,
@@ -20195,6 +23400,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
     * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    RetCode TA_INT_MACD( int startIdx,
       int endIdx,
@@ -20312,6 +23518,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param optInSlowPeriod Zakres (od 2 do 100000)
     * @param optInSignalPeriod Zakres (od 1 do 100000)
     * @return -1 lub emaLookback od parametrów
+	* @author Komentarz - Pawel Majka
     */
    public RetCode macd( int startIdx,
       int endIdx,
@@ -20365,6 +23572,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
     * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    RetCode TA_INT_MACD( int startIdx,
       int endIdx,
@@ -20479,6 +23687,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param optInSignalPeriod Płynność dla linii sygnału (od 1 o 100000)
     * @param optInSignalMAType Typ od Moving Average dla linii sygnalu
     * @return wynik
+	* @author Komentarz - Pawel Majka
     */
    public int macdExtLookback( int optInFastPeriod,
       MAType optInFastMAType,
@@ -20530,6 +23739,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
     * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode macdExt( int startIdx,
       int endIdx,
@@ -20671,6 +23881,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
     * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode macdExt( int startIdx,
       int endIdx,
@@ -20793,6 +24004,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca dla MACDFIX
     * @param optInSignalPeriod płynność dla linii sygnalu (od 1 o 100000)
     * @return wynik
+	* @author Komentarz - Pawel Majka
     */
    public int macdFixLookback( int optInSignalPeriod )
    {
@@ -20822,6 +24034,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
     * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode macdFix( int startIdx,
       int endIdx,
@@ -20870,6 +24083,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMACDSignal Tablica wyjściowa z sygnałami MACD
     * @param outMACDHist Tablica wyjściowa z różnicą pomiędzy MACD a MACD Signal
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode macdFix( int startIdx,
       int endIdx,
@@ -20905,6 +24119,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param optInFastLimit Górna granica użyć
     * @param optInSlowLimit Dolna granica użyć
     * @return wynik
+	* @author Komentarz - Pawel Majka
     */
    public int mamaLookback( double optInFastLimit,
       double optInSlowLimit )
@@ -20938,6 +24153,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMAMA Tablica wyjściowa z MAMA
     * @param outFAMA Tablica wyjściowa z FAMA
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode mama( int startIdx,
       int endIdx,
@@ -21124,6 +24340,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outMAMA Tablica wyjściowa z MAMA
     * @param outFAMA Tablica wyjściowa z FAMA
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode mama( int startIdx,
       int endIdx,
@@ -21298,6 +24515,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param optInMaxPeriod Maksymalny okres
     * @param optInMAType Typ od Moving Average
     * @return wynik
+	* @author Komentarz - Pawel Majka
     */
    public int movingAverageVariablePeriodLookback( int optInMinPeriod,
       int optInMaxPeriod,
@@ -21333,6 +24551,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode movingAverageVariablePeriod( int startIdx,
       int endIdx,
@@ -21443,6 +24662,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode movingAverageVariablePeriod( int startIdx,
       int endIdx,
@@ -21538,6 +24758,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla MAX.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int maxLookback( int optInTimePeriod )
    {
@@ -21563,6 +24784,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode max( int startIdx,
       int endIdx,
@@ -21644,6 +24866,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode max( int startIdx,
       int endIdx,
@@ -21714,6 +24937,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla MAXINDEX.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int maxIndexLookback( int optInTimePeriod )
    {
@@ -21739,6 +24963,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode maxIndex( int startIdx,
       int endIdx,
@@ -21820,6 +25045,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outInteger
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode maxIndex( int startIdx,
       int endIdx,
@@ -21889,6 +25115,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
    /**
     * Metoda zwraca dla MEDPRICE.
     * @return 0
+	* @author Komentarz - Pawel Majka
     */
    public int medPriceLookback( )
    {
@@ -21910,6 +25137,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode medPrice( int startIdx,
       int endIdx,
@@ -21949,6 +25177,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode medPrice( int startIdx,
       int endIdx,
@@ -21977,6 +25206,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca dla MFI.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int mfiLookback( int optInTimePeriod )
    {
@@ -22006,6 +25236,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na lementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode mfi( int startIdx,
       int endIdx,
@@ -22165,6 +25396,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na lementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode mfi( int startIdx,
       int endIdx,
@@ -22309,6 +25541,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca dla MIDPOINT.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int midPointLookback( int optInTimePeriod )
    {
@@ -22335,6 +25568,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode midPoint( int startIdx,
       int endIdx,
@@ -22401,6 +25635,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode midPoint( int startIdx,
       int endIdx,
@@ -22455,6 +25690,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca dla MIDPRICE.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int midPriceLookback( int optInTimePeriod )
    {
@@ -22482,6 +25718,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na lementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode midPrice( int startIdx,
       int endIdx,
@@ -22552,6 +25789,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na lementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode midPrice( int startIdx,
       int endIdx,
@@ -22609,6 +25847,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * Metoda zwraca okres dla MIN.
     * @param optInTimePeriod Okres czasu
     * @return okres
+	* @author Komentarz - Pawel Majka
     */
    public int minLookback( int optInTimePeriod )
    {
@@ -22634,6 +25873,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode min( int startIdx,
       int endIdx,
@@ -22715,6 +25955,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
     * @param outNBElement Liczba elementów wyjściowych
     * @param outReal Tablica na elementy wyjściowe (wyniki)
     * @return Status
+	* @author Komentarz - Pawel Majka
     */
    public RetCode min( int startIdx,
       int endIdx,
@@ -22735,8991 +25976,4 @@ public RetCode cdlGravestoneDoji( int startIdx,
          optInTimePeriod = 30;
       else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
          return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      lowestIdx = -1;
-      lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmp = inReal[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inReal[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inReal[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-         }
-         outReal[outIdx++] = lowest;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca okres dla MININDEX.
-    * @param optInTimePeriod Okres czasu
-    * @return okres
-    */
-   public int minIndexLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return (optInTimePeriod-1);
-   }
-   /**
-    * MININDEX - Indeks najniższej wartości w określonym czasie
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outInteger
-    * @return Status
-    */
-   public RetCode minIndex( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      int outInteger[] )
-   {
-      double lowest, tmp;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, lowestIdx, today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      lowestIdx = -1;
-      lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmp = inReal[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inReal[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inReal[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-         }
-         outInteger[outIdx++] = lowestIdx;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * MININDEX - Indeks najniższej wartości w określonym czasie
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outInteger
-    * @return Status
-    */
-   public RetCode minIndex( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      int outInteger[] )
-   {
-      double lowest, tmp;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, lowestIdx, today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      lowestIdx = -1;
-      lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmp = inReal[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inReal[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inReal[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-         }
-         outInteger[outIdx++] = lowestIdx;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca okres dla MINMAX.
-    * @param optInTimePeriod Okres czasu
-    * @return okres
-    */
-   public int minMaxLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return (optInTimePeriod-1);
-   }
-   /**
-    * MINMAX - Najniższa i najwyższa wartość w określonym czasie
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outMin Tablica wyjściowa z okresami minimalnymi
-    * @param outMax Tablica wyjściowa z okresami maksymalnymi
-    * @return Status
-    */
-   public RetCode minMax( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outMin[],
-      double outMax[] )
-   {
-      double highest, lowest, tmpHigh, tmpLow;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, today, i, highestIdx, lowestIdx;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      highestIdx = -1;
-      highest = 0.0;
-      lowestIdx = -1;
-      lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmpLow = tmpHigh = inReal[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inReal[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmpHigh = inReal[i];
-               if( tmpHigh > highest )
-               {
-                  highestIdx = i;
-                  highest = tmpHigh;
-               }
-            }
-         }
-         else if( tmpHigh >= highest )
-         {
-            highestIdx = today;
-            highest = tmpHigh;
-         }
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inReal[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmpLow = inReal[i];
-               if( tmpLow < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmpLow;
-               }
-            }
-         }
-         else if( tmpLow <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmpLow;
-         }
-         outMax[outIdx] = highest;
-         outMin[outIdx] = lowest;
-         outIdx++;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * MINMAX - Najniższa i najwyższa wartość w określonym czasie
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outMin Tablica wyjściowa z okresami minimalnymi
-    * @param outMax Tablica wyjściowa z okresami maksymalnymi
-    * @return Status
-    */
-   public RetCode minMax( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outMin[],
-      double outMax[] )
-   {
-      double highest, lowest, tmpHigh, tmpLow;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, today, i, highestIdx, lowestIdx;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      highestIdx = -1;
-      highest = 0.0;
-      lowestIdx = -1;
-      lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmpLow = tmpHigh = inReal[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inReal[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmpHigh = inReal[i];
-               if( tmpHigh > highest )
-               {
-                  highestIdx = i;
-                  highest = tmpHigh;
-               }
-            }
-         }
-         else if( tmpHigh >= highest )
-         {
-            highestIdx = today;
-            highest = tmpHigh;
-         }
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inReal[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmpLow = inReal[i];
-               if( tmpLow < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmpLow;
-               }
-            }
-         }
-         else if( tmpLow <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmpLow;
-         }
-         outMax[outIdx] = highest;
-         outMin[outIdx] = lowest;
-         outIdx++;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca okres dla MINMAXINDEX.
-    * @param optInTimePeriod Okres czasu
-    * @return okres
-    */
-   public int minMaxIndexLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return (optInTimePeriod-1);
-   }
-   /**
-    * MINMAXINDEX - Indeksy najniższej i najwyższej wartości w określonym czasie
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outMinIdx Tablica wyjściowa z indeksami najniższych wartości
-    * @param outMaxIdx Tablica wyjściowa z indeksami najwyższych wartości
-    * @return Status
-    */
-   public RetCode minMaxIndex( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      int outMinIdx[],
-      int outMaxIdx[] )
-   {
-      double highest, lowest, tmpHigh, tmpLow;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, today, i, highestIdx, lowestIdx;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      highestIdx = -1;
-      highest = 0.0;
-      lowestIdx = -1;
-      lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmpLow = tmpHigh = inReal[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inReal[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmpHigh = inReal[i];
-               if( tmpHigh > highest )
-               {
-                  highestIdx = i;
-                  highest = tmpHigh;
-               }
-            }
-         }
-         else if( tmpHigh >= highest )
-         {
-            highestIdx = today;
-            highest = tmpHigh;
-         }
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inReal[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmpLow = inReal[i];
-               if( tmpLow < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmpLow;
-               }
-            }
-         }
-         else if( tmpLow <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmpLow;
-         }
-         outMaxIdx[outIdx] = highestIdx;
-         outMinIdx[outIdx] = lowestIdx;
-         outIdx++;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * MINMAXINDEX - Indeksy najniższej i najwyższej wartości w określonym czasie
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outMinIdx Tablica wyjściowa z indeksami najniższych wartości
-    * @param outMaxIdx Tablica wyjściowa z indeksami najwyższych wartości
-    * @return Status
-    */
-   public RetCode minMaxIndex( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      int outMinIdx[],
-      int outMaxIdx[] )
-   {
-      double highest, lowest, tmpHigh, tmpLow;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, today, i, highestIdx, lowestIdx;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      highestIdx = -1;
-      highest = 0.0;
-      lowestIdx = -1;
-      lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmpLow = tmpHigh = inReal[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inReal[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmpHigh = inReal[i];
-               if( tmpHigh > highest )
-               {
-                  highestIdx = i;
-                  highest = tmpHigh;
-               }
-            }
-         }
-         else if( tmpHigh >= highest )
-         {
-            highestIdx = today;
-            highest = tmpHigh;
-         }
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inReal[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmpLow = inReal[i];
-               if( tmpLow < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmpLow;
-               }
-            }
-         }
-         else if( tmpLow <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmpLow;
-         }
-         outMaxIdx[outIdx] = highestIdx;
-         outMinIdx[outIdx] = lowestIdx;
-         outIdx++;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   // TODO: Koniec Pawel Majka
-   // TODO: Start Ratajczak Artur
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni okres czasu dla -DI
-    * @param optInTimePeriod Przedział czasu
-    * @return okres czasu
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int minusDILookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( optInTimePeriod > 1 )
-         return optInTimePeriod + (this.unstablePeriod[FuncUnstId.MinusDI.ordinal()]) ;
-      else
-         return 1;
-   }
-   /**
-    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
-    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
-    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param inClose Cena zamknięcia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak 
-    */
-   public RetCode minusDI( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, prevClose;
-      double prevMinusDM, prevTR;
-      double tempReal, tempReal2, diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.MinusDI.ordinal()]) ;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         prevClose = inClose[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffM > 0) && (diffP < diffM) )
-            {
-               { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-               if( (((-0.00000001)<tempReal)&&(tempReal<0.00000001)) )
-                  outReal[outIdx++] = (double)0.0;
-               else
-                  outReal[outIdx++] = diffM/tempReal;
-            }
-            else
-               outReal[outIdx++] = (double)0.0;
-            prevClose = inClose[today];
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = today = startIdx;
-      prevMinusDM = 0.0;
-      prevTR = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      prevClose = inClose[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM += diffM;
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR += tempReal;
-         prevClose = inClose[today];
-      }
-      i = (this.unstablePeriod[FuncUnstId.MinusDI.ordinal()]) + 1;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-      }
-      if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-         outReal[0] = (100.0*(prevMinusDM/prevTR)) ;
-      else
-         outReal[0] = 0.0;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-         if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-            outReal[outIdx++] = (100.0*(prevMinusDM/prevTR)) ;
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
-    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
-    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param inClose Cena zamknięcia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak 
-    */
-   public RetCode minusDI( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, prevClose;
-      double prevMinusDM, prevTR;
-      double tempReal, tempReal2, diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.MinusDI.ordinal()]) ;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         prevClose = inClose[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffM > 0) && (diffP < diffM) )
-            {
-               { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-               if( (((-0.00000001)<tempReal)&&(tempReal<0.00000001)) )
-                  outReal[outIdx++] = (double)0.0;
-               else
-                  outReal[outIdx++] = diffM/tempReal;
-            }
-            else
-               outReal[outIdx++] = (double)0.0;
-            prevClose = inClose[today];
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = today = startIdx;
-      prevMinusDM = 0.0;
-      prevTR = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      prevClose = inClose[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM += diffM;
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR += tempReal;
-         prevClose = inClose[today];
-      }
-      i = (this.unstablePeriod[FuncUnstId.MinusDI.ordinal()]) + 1;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-      }
-      if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-         outReal[0] = (100.0*(prevMinusDM/prevTR)) ;
-      else
-         outReal[0] = 0.0;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-         if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-            outReal[outIdx++] = (100.0*(prevMinusDM/prevTR)) ;
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni okres czasu dla -DM
-    * @param optInTimePeriod Okres czasu
-    * @return okres czasu
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int minusDMLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( optInTimePeriod > 1 )
-         return optInTimePeriod + (this.unstablePeriod[FuncUnstId.MinusDM.ordinal()]) - 1;
-      else
-         return 1;
-   }
-   /**
-    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
-    * -DM występuje kiedy spadek niższy minus aktualny spadej jest większy niż aktualny wzrost minus wzrost.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Pierwszy element wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode minusDM( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, tempReal;
-      double prevMinusDM;
-      double diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.MinusDM.ordinal()]) - 1;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffM > 0) && (diffP < diffM) )
-            {
-               outReal[outIdx++] = diffM;
-            }
-            else
-               outReal[outIdx++] = 0;
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      prevMinusDM = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM += diffM;
-         }
-      }
-      i = (this.unstablePeriod[FuncUnstId.MinusDM.ordinal()]) ;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-      }
-      outReal[0] = prevMinusDM;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-         outReal[outIdx++] = prevMinusDM;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
-    * -DM występuje kiedy spadek niższy minus aktualny spadej jest większy niż aktualny wzrost minus wzrost.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Pierwszy element wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode minusDM( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, tempReal;
-      double prevMinusDM;
-      double diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.MinusDM.ordinal()]) - 1;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffM > 0) && (diffP < diffM) )
-            {
-               outReal[outIdx++] = diffM;
-            }
-            else
-               outReal[outIdx++] = 0;
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      prevMinusDM = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM += diffM;
-         }
-      }
-      i = (this.unstablePeriod[FuncUnstId.MinusDM.ordinal()]) ;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-      }
-      outReal[0] = prevMinusDM;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffM > 0) && (diffP < diffM) )
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod) + diffM;
-         }
-         else
-         {
-            prevMinusDM = prevMinusDM - (prevMinusDM/optInTimePeriod);
-         }
-         outReal[outIdx++] = prevMinusDM;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda oblicza zakres dla tablicy
-    * @param optInTimePeriod Ilosc elementów w tablicy
-    * @return zakres tablicy
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int momLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod;
-   }
-   /**
-    * Momentum jest miarą wzrostu i spadku cen. Na jego podstawie można wywnioskowac z jaką szybkością ceny rosną i spadają.
-    * Jest to różnica między ceną a ceną poprzednią.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z danymi
-    * @param optInTimePeriod Zakres tablicy
-    * @param outBegIdx Pierwszy indeks wyjściowy
-    * @param outNBElement Liczba elementów
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarze - Artur Ratajczak
-    */
-   public RetCode mom( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-         outReal[outIdx++] = inReal[inIdx++] - inReal[trailingIdx++];
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   
-   /**
-    * Momentum jest miarą wzrostu i spadku cen. Na jego podstawie można wywnioskowac z jaką szybkością ceny rosną i spadają.
-    * Jest to różnica między ceną a ceną poprzednią.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z danymi
-    * @param optInTimePeriod Zakres tablicy
-    * @param outBegIdx Pierwszy indeks wyjściowy
-    * @param outNBElement Liczba elementów
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarze - Artur Ratajczak
-    */
-   public RetCode mom( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-         outReal[outIdx++] = inReal[inIdx++] - inReal[trailingIdx++];
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca podstawową wartośc mnożenia
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int multLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda mnoży kolejne n-te elementy tablic. tab[n]*tab[n]
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal0 Pierwsza tablica z danymi
-    * @param inReal1 Druga tablica z danymi
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode mult( int startIdx,
-      int endIdx,
-      double inReal0[],
-      double inReal1[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = inReal0[i]*inReal1[i];
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda mnoży kolejne n-te elementy tablic. tab[n]*tab[n]
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal0 Pierwsza tablica z danymi
-    * @param inReal1 Druga tablica z danymi
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode mult( int startIdx,
-      int endIdx,
-      float inReal0[],
-      float inReal1[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = inReal0[i]*inReal1[i];
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni okres czasu dla NATR
-    * @param optInTimePeriod okres czasu
-    * @return odpowiedni okres czasu
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int natrLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod + (this.unstablePeriod[FuncUnstId.Natr.ordinal()]) ;
-   }
-   /**
-    * NATR jest to znormalizowany ATR wykorzystywany do badań porównawczych.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @see atr
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param inClose Cena zamknięcia 
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode natr( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      RetCode retCode;
-      int outIdx, today, lookbackTotal;
-      int nbATR;
-      MInteger outBegIdx1 = new MInteger() ;
-      MInteger outNbElement1 = new MInteger() ;
-      double prevATR, tempValue;
-      double []tempBuffer ;
-      double []prevATRTemp = new double[1] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      lookbackTotal = natrLookback ( optInTimePeriod );
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-         return RetCode.Success ;
-      if( optInTimePeriod <= 1 )
-      {
-         return trueRange ( startIdx, endIdx,
-            inHigh, inLow, inClose,
-            outBegIdx, outNBElement, outReal );
-      }
-      tempBuffer = new double[lookbackTotal+(endIdx-startIdx)+1] ;
-      retCode = trueRange ( (startIdx-lookbackTotal+1), endIdx,
-         inHigh, inLow, inClose,
-         outBegIdx1 , outNbElement1 ,
-         tempBuffer );
-      if( retCode != RetCode.Success )
-      {
-         return retCode;
-      }
-      retCode = TA_INT_SMA ( optInTimePeriod-1,
-         optInTimePeriod-1,
-         tempBuffer, optInTimePeriod,
-         outBegIdx1 , outNbElement1 ,
-         prevATRTemp );
-      if( retCode != RetCode.Success )
-      {
-         return retCode;
-      }
-      prevATR = prevATRTemp[0];
-      today = optInTimePeriod;
-      outIdx = (this.unstablePeriod[FuncUnstId.Natr.ordinal()]) ;
-      while( outIdx != 0 )
-      {
-         prevATR *= optInTimePeriod - 1;
-         prevATR += tempBuffer[today++];
-         prevATR /= optInTimePeriod;
-         outIdx--;
-      }
-      outIdx = 1;
-      tempValue = inClose[today];
-      if( ! (((-0.00000001)<tempValue)&&(tempValue<0.00000001)) )
-         outReal[0] = (prevATR/tempValue)*100.0;
-      else
-         outReal[0] = 0.0;
-      nbATR = (endIdx - startIdx)+1;
-      while( --nbATR != 0 )
-      {
-         prevATR *= optInTimePeriod - 1;
-         prevATR += tempBuffer[today++];
-         prevATR /= optInTimePeriod;
-         tempValue = inClose[today];
-         if( ! (((-0.00000001)<tempValue)&&(tempValue<0.00000001)) )
-            outReal[outIdx] = (prevATR/tempValue)*100.0;
-         else
-            outReal[0] = 0.0;
-         outIdx++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return retCode;
-   }
-   /**
-    * NATR jest to znormalizowany ATR wykorzystywany do badań porównawczych.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @see atr
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param inClose Cena zamknięcia 
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode natr( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      RetCode retCode;
-      int outIdx, today, lookbackTotal;
-      int nbATR;
-      MInteger outBegIdx1 = new MInteger() ;
-      MInteger outNbElement1 = new MInteger() ;
-      double prevATR, tempValue;
-      double []tempBuffer ;
-      double []prevATRTemp = new double[1] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      lookbackTotal = natrLookback ( optInTimePeriod );
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-         return RetCode.Success ;
-      if( optInTimePeriod <= 1 )
-      {
-         return trueRange ( startIdx, endIdx,
-            inHigh, inLow, inClose,
-            outBegIdx, outNBElement, outReal );
-      }
-      tempBuffer = new double[lookbackTotal+(endIdx-startIdx)+1] ;
-      retCode = trueRange ( (startIdx-lookbackTotal+1), endIdx,
-         inHigh, inLow, inClose,
-         outBegIdx1 , outNbElement1 ,
-         tempBuffer );
-      if( retCode != RetCode.Success )
-      {
-         return retCode;
-      }
-      retCode = TA_INT_SMA ( optInTimePeriod-1,
-         optInTimePeriod-1,
-         tempBuffer, optInTimePeriod,
-         outBegIdx1 , outNbElement1 ,
-         prevATRTemp );
-      if( retCode != RetCode.Success )
-      {
-         return retCode;
-      }
-      prevATR = prevATRTemp[0];
-      today = optInTimePeriod;
-      outIdx = (this.unstablePeriod[FuncUnstId.Natr.ordinal()]) ;
-      while( outIdx != 0 )
-      {
-         prevATR *= optInTimePeriod - 1;
-         prevATR += tempBuffer[today++];
-         prevATR /= optInTimePeriod;
-         outIdx--;
-      }
-      outIdx = 1;
-      tempValue = inClose[today];
-      if( ! (((-0.00000001)<tempValue)&&(tempValue<0.00000001)) )
-         outReal[0] = (prevATR/tempValue)*100.0;
-      else
-         outReal[0] = 0.0;
-      nbATR = (endIdx - startIdx)+1;
-      while( --nbATR != 0 )
-      {
-         prevATR *= optInTimePeriod - 1;
-         prevATR += tempBuffer[today++];
-         prevATR /= optInTimePeriod;
-         tempValue = inClose[today];
-         if( ! (((-0.00000001)<tempValue)&&(tempValue<0.00000001)) )
-            outReal[outIdx] = (prevATR/tempValue)*100.0;
-         else
-            outReal[0] = 0.0;
-         outIdx++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return retCode;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca domyślną wartośc OBV
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int obvLookback( )
-   {
-      return 0;
-   }
-   /**
-    * On Balance Volume działa na zasadzie OBV=OBV poprzedni +/- volume. Kiedy zamknięcie jest większe od poprzedniego zamknięcia
-    * wtedy Volumee jest dodawany do całości, kiedy zamknięcie jest niższe od zamknięcia poprzedniego wtedy Volume jest odejmowany od całości.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami close
-    * @param inVolume Tablica z volume
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na lementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode obv( int startIdx,
-      int endIdx,
-      double inReal[],
-      double inVolume[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int i;
-      int outIdx;
-      double prevReal, tempReal, prevOBV;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      prevOBV = inVolume[startIdx];
-      prevReal = inReal[startIdx];
-      outIdx = 0;
-      for(i=startIdx; i <= endIdx; i++ )
-      {
-         tempReal = inReal[i];
-         if( tempReal > prevReal )
-            prevOBV += inVolume[i];
-         else if( tempReal < prevReal )
-            prevOBV -= inVolume[i];
-         outReal[outIdx++] = prevOBV;
-         prevReal = tempReal;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * On Balance Volume działa na zasadzie OBV=OBV poprzedni +/- volume. Kiedy zamknięcie jest większe od poprzedniego zamknięcia
-    * wtedy Volumee jest dodawany do całości, kiedy zamknięcie jest niższe od zamknięcia poprzedniego wtedy Volume jest odejmowany od całości.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami close
-    * @param inVolume Tablica z volume
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na lementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode obv( int startIdx,
-      int endIdx,
-      float inReal[],
-      float inVolume[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int i;
-      int outIdx;
-      double prevReal, tempReal, prevOBV;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      prevOBV = inVolume[startIdx];
-      prevReal = inReal[startIdx];
-      outIdx = 0;
-      for(i=startIdx; i <= endIdx; i++ )
-      {
-         tempReal = inReal[i];
-         if( tempReal > prevReal )
-            prevOBV += inVolume[i];
-         else if( tempReal < prevReal )
-            prevOBV -= inVolume[i];
-         outReal[outIdx++] = prevOBV;
-         prevReal = tempReal;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni okres czasu dla +DI
-    * @param optInTimePeriod  Okres czasu
-    * @return okres czasu
-    * @author Komentarze - Artur Ratajczak
-    */
-   public int plusDILookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( optInTimePeriod > 1 )
-         return optInTimePeriod + (this.unstablePeriod[FuncUnstId.PlusDI.ordinal()]) ;
-      else
-         return 1;
-   }
-   /**
-    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
-    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
-    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param inClose Cena zamknięcia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak 
-    */
-   public RetCode plusDI( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, prevClose;
-      double prevPlusDM, prevTR;
-      double tempReal, tempReal2, diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.PlusDI.ordinal()]) ;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         prevClose = inClose[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffP > 0) && (diffP > diffM) )
-            {
-               { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-               if( (((-0.00000001)<tempReal)&&(tempReal<0.00000001)) )
-                  outReal[outIdx++] = (double)0.0;
-               else
-                  outReal[outIdx++] = diffP/tempReal;
-            }
-            else
-               outReal[outIdx++] = (double)0.0;
-            prevClose = inClose[today];
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = today = startIdx;
-      prevPlusDM = 0.0;
-      prevTR = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      prevClose = inClose[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM += diffP;
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR += tempReal;
-         prevClose = inClose[today];
-      }
-      i = (this.unstablePeriod[FuncUnstId.PlusDI.ordinal()]) + 1;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-      }
-      if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-         outReal[0] = (100.0*(prevPlusDM/prevTR)) ;
-      else
-         outReal[0] = 0.0;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-         if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-            outReal[outIdx++] = (100.0*(prevPlusDM/prevTR)) ;
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Zadaniem wskaźnika jest ustalenie czy notowania znajdują się w trendzie i ustalenie jego charakteru. Służą temu podstawowe dwie linie DMI+ (linia popytu) i DMI- (linia podaży). Podstawowym sygnałem jest przecięcie linii. 
-    * Sygnał kupna jest generowany kiedy +DI przekroczy -DI.
-    * Sygnał sprzedaży jest generowany kiedy -DI przekroczy +DI
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param inClose Cena zamknięcia
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak 
-    */
-   public RetCode plusDI( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, prevClose;
-      double prevPlusDM, prevTR;
-      double tempReal, tempReal2, diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.PlusDI.ordinal()]) ;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         prevClose = inClose[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffP > 0) && (diffP > diffM) )
-            {
-               { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-               if( (((-0.00000001)<tempReal)&&(tempReal<0.00000001)) )
-                  outReal[outIdx++] = (double)0.0;
-               else
-                  outReal[outIdx++] = diffP/tempReal;
-            }
-            else
-               outReal[outIdx++] = (double)0.0;
-            prevClose = inClose[today];
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = today = startIdx;
-      prevPlusDM = 0.0;
-      prevTR = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      prevClose = inClose[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM += diffP;
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR += tempReal;
-         prevClose = inClose[today];
-      }
-      i = (this.unstablePeriod[FuncUnstId.PlusDI.ordinal()]) + 1;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-      }
-      if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-         outReal[0] = (100.0*(prevPlusDM/prevTR)) ;
-      else
-         outReal[0] = 0.0;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-         { tempReal = prevHigh-prevLow; tempReal2 = Math.abs (prevHigh-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; tempReal2 = Math.abs (prevLow-prevClose); if( tempReal2 > tempReal ) tempReal = tempReal2; } ;
-         prevTR = prevTR - (prevTR/optInTimePeriod) + tempReal;
-         prevClose = inClose[today];
-         if( ! (((-0.00000001)<prevTR)&&(prevTR<0.00000001)) )
-            outReal[outIdx++] = (100.0*(prevPlusDM/prevTR)) ;
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni okres czasu dla +DM
-    * @param optInTimePeriod Okres czasu
-    * @return okres czasu
-    * @author Komentarz - Artur Ratajczak
-    * 
-    */
-   public int plusDMLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( optInTimePeriod > 1 )
-         return optInTimePeriod + (this.unstablePeriod[FuncUnstId.PlusDM.ordinal()]) - 1;
-      else
-         return 1;
-   }
-   /**
-    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
-    * +DM występuje wtedy kiedy aktualny wzrost minus wzros jest większy niż spadek minus aktualny spadek.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Pierwszy element wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode plusDM( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, tempReal;
-      double prevPlusDM;
-      double diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.PlusDM.ordinal()]) - 1;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffP > 0) && (diffP > diffM) )
-            {
-               outReal[outIdx++] = diffP;
-            }
-            else
-               outReal[outIdx++] = 0;
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      prevPlusDM = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM += diffP;
-         }
-      }
-      i = (this.unstablePeriod[FuncUnstId.PlusDM.ordinal()]) ;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-      }
-      outReal[0] = prevPlusDM;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-         outReal[outIdx++] = prevPlusDM;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Określa to porównanie między różniczą spadków a różnicą wzrostów.
-    * +DM występuje wtedy kiedy aktualny wzrost minus wzros jest większy niż spadek minus aktualny spadek.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param optInTimePeriod Okres czasu
-    * @param outBegIdx Pierwszy element wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode plusDM( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, lookbackTotal, outIdx;
-      double prevHigh, prevLow, tempReal;
-      double prevPlusDM;
-      double diffP, diffM;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInTimePeriod > 1 )
-         lookbackTotal = optInTimePeriod + (this.unstablePeriod[FuncUnstId.PlusDM.ordinal()]) - 1;
-      else
-         lookbackTotal = 1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( optInTimePeriod <= 1 )
-      {
-         outBegIdx.value = startIdx;
-         today = startIdx-1;
-         prevHigh = inHigh[today];
-         prevLow = inLow[today];
-         while( today < endIdx )
-         {
-            today++;
-            tempReal = inHigh[today];
-            diffP = tempReal-prevHigh;
-            prevHigh = tempReal;
-            tempReal = inLow[today];
-            diffM = prevLow-tempReal;
-            prevLow = tempReal;
-            if( (diffP > 0) && (diffP > diffM) )
-            {
-               outReal[outIdx++] = diffP;
-            }
-            else
-               outReal[outIdx++] = 0;
-         }
-         outNBElement.value = outIdx;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      prevPlusDM = 0.0;
-      today = startIdx - lookbackTotal;
-      prevHigh = inHigh[today];
-      prevLow = inLow[today];
-      i = optInTimePeriod-1;
-      while( i-- > 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM += diffP;
-         }
-      }
-      i = (this.unstablePeriod[FuncUnstId.PlusDM.ordinal()]) ;
-      while( i-- != 0 )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-      }
-      outReal[0] = prevPlusDM;
-      outIdx = 1;
-      while( today < endIdx )
-      {
-         today++;
-         tempReal = inHigh[today];
-         diffP = tempReal-prevHigh;
-         prevHigh = tempReal;
-         tempReal = inLow[today];
-         diffM = prevLow-tempReal;
-         prevLow = tempReal;
-         if( (diffP > 0) && (diffP > diffM) )
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod) + diffP;
-         }
-         else
-         {
-            prevPlusDM = prevPlusDM - (prevPlusDM/optInTimePeriod);
-         }
-         outReal[outIdx++] = prevPlusDM;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiednią ilośc elementów dla PPO
-    * @param optInFastPeriod Ilośc elementów dla 1 średniej
-    * @param optInSlowPeriod Ilośc elementów dla 2 średniej
-    * @param optInMAType Rodzaj średniej
-    * @return Ilośc elementów
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int ppoLookback( int optInFastPeriod,
-      int optInSlowPeriod,
-      MAType optInMAType )
-   {
-      if( (int)optInFastPeriod == ( Integer.MIN_VALUE ) )
-         optInFastPeriod = 12;
-      else if( ((int)optInFastPeriod < 2) || ((int)optInFastPeriod > 100000) )
-         return -1;
-      if( (int)optInSlowPeriod == ( Integer.MIN_VALUE ) )
-         optInSlowPeriod = 26;
-      else if( ((int)optInSlowPeriod < 2) || ((int)optInSlowPeriod > 100000) )
-         return -1;
-      return movingAverageLookback ( (((optInSlowPeriod) > (optInFastPeriod)) ? (optInSlowPeriod) : (optInFastPeriod)) , optInMAType );
-   }
-   /**
-    * Price Oscillator, Percent - ukazuje procentową różnicę pomiędzy dwoma średnimi kroczącymi.
-    * Sygnał kupna jest generowany wtedy, kiedy wartośc oscylatora przekracza 0 a sygnał sprzedaży kiedy spada poniżej 0.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami na podstawie których zostanie policzona średnia
-    * @param optInFastPeriod Ilośc elementów dla średniej FMA
-    * @param optInSlowPeriod Ilośc elementów dla średniej SMA
-    * @param optInMAType Rodzaj średniej
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode ppo( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInFastPeriod,
-      int optInSlowPeriod,
-      MAType optInMAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double []tempBuffer ;
-      RetCode retCode;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInFastPeriod == ( Integer.MIN_VALUE ) )
-         optInFastPeriod = 12;
-      else if( ((int)optInFastPeriod < 2) || ((int)optInFastPeriod > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInSlowPeriod == ( Integer.MIN_VALUE ) )
-         optInSlowPeriod = 26;
-      else if( ((int)optInSlowPeriod < 2) || ((int)optInSlowPeriod > 100000) )
-         return RetCode.BadParam ;
-      tempBuffer = new double[endIdx-startIdx+1] ;
-      retCode = TA_INT_PO ( startIdx, endIdx, inReal,
-         optInFastPeriod,
-         optInSlowPeriod,
-         optInMAType,
-         outBegIdx,
-         outNBElement,
-         outReal,
-         tempBuffer,
-         1 );
-      return retCode;
-   }
-   /**
-    * Price Oscillator, Percent - ukazuje procentową różnicę pomiędzy dwoma średnimi kroczącymi.
-    * Sygnał kupna jest generowany wtedy, kiedy wartośc oscylatora przekracza 0 a sygnał sprzedaży kiedy spada poniżej 0.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami na podstawie których zostanie policzona średnia
-    * @param optInFastPeriod Ilośc elementów dla średniej FMA
-    * @param optInSlowPeriod Ilośc elementów dla średniej SMA
-    * @param optInMAType Rodzaj średniej
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode ppo( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInFastPeriod,
-      int optInSlowPeriod,
-      MAType optInMAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double []tempBuffer ;
-      RetCode retCode;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInFastPeriod == ( Integer.MIN_VALUE ) )
-         optInFastPeriod = 12;
-      else if( ((int)optInFastPeriod < 2) || ((int)optInFastPeriod > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInSlowPeriod == ( Integer.MIN_VALUE ) )
-         optInSlowPeriod = 26;
-      else if( ((int)optInSlowPeriod < 2) || ((int)optInSlowPeriod > 100000) )
-         return RetCode.BadParam ;
-      tempBuffer = new double[endIdx-startIdx+1] ;
-      retCode = TA_INT_PO ( startIdx, endIdx, inReal,
-         optInFastPeriod,
-         optInSlowPeriod,
-         optInMAType,
-         outBegIdx,
-         outNBElement,
-         outReal,
-         tempBuffer,
-         1 );
-      return retCode;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni zakres dla ROC
-    * @param optInTimePeriod Zakres liczenia
-    * @return Odpowiedni zakres liczenia
-    * @author  Komentarz - Artur Ratajczak
-    */
-   public int rocLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie ((cena/poprzedniaCena)-1)*100
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode roc( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = ((inReal[inIdx] / tempReal)-1.0)*100.0;
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie ((cena/poprzedniaCena)-1)*100
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode roc( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = ((inReal[inIdx] / tempReal)-1.0)*100.0;
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni zakres dla ROCP
-    * @param optInTimePeriod Zakres liczenia
-    * @return Odpowiedni zakres liczenia
-    * @author  Komentarz - Artur Ratajczak
-    */
-   public int rocPLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie (cena-poprzedniaCena)/poprzedniaCena
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rocP( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = (inReal[inIdx]-tempReal)/tempReal;
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie (cena-poprzedniaCena)/poprzedniaCena
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rocP( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = (inReal[inIdx]-tempReal)/tempReal;
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni zakres dla ROCR
-    * @param optInTimePeriod Zakres liczenia
-    * @return Odpowiedni zakres liczenia
-    * @author  Komentarz - Artur Ratajczak
-    */
-   public int rocRLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rocR( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = (inReal[inIdx] / tempReal);
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rocR( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = (inReal[inIdx] / tempReal);
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca odpowiedni zakres dla ROCR100
-    * @param optInTimePeriod Zakres liczenia
-    * @return Odpowiedni zakres liczenia
-    * @author  Komentarz - Artur Ratajczak
-    */
-   public int rocR100Lookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)*100
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rocR100( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = (inReal[inIdx] / tempReal)*100.0;
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    *  Prędkośc zmian liczona na podstawie (cena/poprzedniaCena)*100
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica cen
-    * @param optInTimePeriod Zakres liczenia (ilośc elementów)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rocR100( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, trailingIdx;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 10;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( startIdx < optInTimePeriod )
-         startIdx = optInTimePeriod;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      inIdx = startIdx;
-      trailingIdx = startIdx - optInTimePeriod;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[trailingIdx++];
-         if( tempReal != 0.0 )
-            outReal[outIdx++] = (inReal[inIdx] / tempReal)*100.0;
-         else
-            outReal[outIdx++] = 0.0;
-         inIdx++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca okres czasowy dla RSI
-    * @param optInTimePeriod 
-    * @return Okres czasowy
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int rsiLookback( int optInTimePeriod )
-   {
-      int retValue;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      retValue = optInTimePeriod + (this.unstablePeriod[FuncUnstId.Rsi.ordinal()]) ;
-      if( (this.compatibility) == Compatibility.Metastock )
-         retValue--;
-      return retValue;
-   }
-   /**
-    * Relative Strength Index (wskaźnik siły) określa wewnętrzną siłę akcji ( jej trendu ) i zależy od zmian następujących w cenach i określa jakościowo momentum cen. Ponieważ zawiera w sobie czynnik ważący jest ważoną średnią ruchomą. Może przyjmować wartości od 0 do 100. 
-    * <hr>
-    * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami 
-    * @param optInTimePeriod Okres czasowy
-    * @param outBegIdx Początkowy indeks wyjściowy 
-    * @param outNBElement Końcowy indeks wyjściowy
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rsi( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int today, lookbackTotal, unstablePeriod, i;
-      double prevGain, prevLoss, prevValue, savePrevValue;
-      double tempValue1, tempValue2;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      lookbackTotal = rsiLookback ( optInTimePeriod );
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-         return RetCode.Success ;
-      outIdx = 0;
-      if( optInTimePeriod == 1 )
-      {
-         outBegIdx.value = startIdx;
-         i = (endIdx-startIdx)+1;
-         outNBElement.value = i;
-         System.arraycopy(inReal,startIdx,outReal,0,i) ;
-         return RetCode.Success ;
-      }
-      today = startIdx-lookbackTotal;
-      prevValue = inReal[today];
-      unstablePeriod = (this.unstablePeriod[FuncUnstId.Rsi.ordinal()]) ;
-      if( (unstablePeriod == 0) &&
-         ( (this.compatibility) == Compatibility.Metastock ))
-      {
-         savePrevValue = prevValue;
-         prevGain = 0.0;
-         prevLoss = 0.0;
-         for( i=optInTimePeriod; i > 0; i-- )
-         {
-            tempValue1 = inReal[today++];
-            tempValue2 = tempValue1 - prevValue;
-            prevValue = tempValue1;
-            if( tempValue2 < 0 )
-               prevLoss -= tempValue2;
-            else
-               prevGain += tempValue2;
-         }
-         tempValue1 = prevLoss/optInTimePeriod;
-         tempValue2 = prevGain/optInTimePeriod;
-         tempValue1 = tempValue2+tempValue1;
-         if( ! (((-0.00000001)<tempValue1)&&(tempValue1<0.00000001)) )
-            outReal[outIdx++] = 100*(tempValue2/tempValue1);
-         else
-            outReal[outIdx++] = 0.0;
-         if( today > endIdx )
-         {
-            outBegIdx.value = startIdx;
-            outNBElement.value = outIdx;
-            return RetCode.Success ;
-         }
-         today -= optInTimePeriod;
-         prevValue = savePrevValue;
-      }
-      prevGain = 0.0;
-      prevLoss = 0.0;
-      today++;
-      for( i=optInTimePeriod; i > 0; i-- )
-      {
-         tempValue1 = inReal[today++];
-         tempValue2 = tempValue1 - prevValue;
-         prevValue = tempValue1;
-         if( tempValue2 < 0 )
-            prevLoss -= tempValue2;
-         else
-            prevGain += tempValue2;
-      }
-      prevLoss /= optInTimePeriod;
-      prevGain /= optInTimePeriod;
-      if( today > startIdx )
-      {
-         tempValue1 = prevGain+prevLoss;
-         if( ! (((-0.00000001)<tempValue1)&&(tempValue1<0.00000001)) )
-            outReal[outIdx++] = 100.0*(prevGain/tempValue1);
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      else
-      {
-         while( today < startIdx )
-         {
-            tempValue1 = inReal[today];
-            tempValue2 = tempValue1 - prevValue;
-            prevValue = tempValue1;
-            prevLoss *= (optInTimePeriod-1);
-            prevGain *= (optInTimePeriod-1);
-            if( tempValue2 < 0 )
-               prevLoss -= tempValue2;
-            else
-               prevGain += tempValue2;
-            prevLoss /= optInTimePeriod;
-            prevGain /= optInTimePeriod;
-            today++;
-         }
-      }
-      while( today <= endIdx )
-      {
-         tempValue1 = inReal[today++];
-         tempValue2 = tempValue1 - prevValue;
-         prevValue = tempValue1;
-         prevLoss *= (optInTimePeriod-1);
-         prevGain *= (optInTimePeriod-1);
-         if( tempValue2 < 0 )
-            prevLoss -= tempValue2;
-         else
-            prevGain += tempValue2;
-         prevLoss /= optInTimePeriod;
-         prevGain /= optInTimePeriod;
-         tempValue1 = prevGain+prevLoss;
-         if( ! (((-0.00000001)<tempValue1)&&(tempValue1<0.00000001)) )
-            outReal[outIdx++] = 100.0*(prevGain/tempValue1);
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Relative Strength Index (wskaźnik siły) określa wewnętrzną siłę akcji ( jej trendu ) i zależy od zmian następujących w cenach i określa jakościowo momentum cen. Ponieważ zawiera w sobie czynnik ważący jest ważoną średnią ruchomą. Może przyjmować wartości od 0 do 100. 
-    * <hr>
-    * Najczęściej RSI interpretuje się w oparciu o linie wykupienia ( 70 % ) i wysprzedania ( 30 % ). Momentem kupna jest wtedy spadek poniżej linii wysprzedania i jej przebicie od dołu, a sprzedaży wyjście ponad linie wykupienia i jej przecięcie od góry.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami 
-    * @param optInTimePeriod Okres czasowy
-    * @param outBegIdx Początkowy indeks wyjściowy 
-    * @param outNBElement Końcowy indeks wyjściowy
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode rsi( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int today, lookbackTotal, unstablePeriod, i;
-      double prevGain, prevLoss, prevValue, savePrevValue;
-      double tempValue1, tempValue2;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      lookbackTotal = rsiLookback ( optInTimePeriod );
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-         return RetCode.Success ;
-      outIdx = 0;
-      if( optInTimePeriod == 1 )
-      {
-         outBegIdx.value = startIdx;
-         i = (endIdx-startIdx)+1;
-         outNBElement.value = i;
-         System.arraycopy(inReal,startIdx,outReal,0,i) ;
-         return RetCode.Success ;
-      }
-      today = startIdx-lookbackTotal;
-      prevValue = inReal[today];
-      unstablePeriod = (this.unstablePeriod[FuncUnstId.Rsi.ordinal()]) ;
-      if( (unstablePeriod == 0) &&
-         ( (this.compatibility) == Compatibility.Metastock ))
-      {
-         savePrevValue = prevValue;
-         prevGain = 0.0;
-         prevLoss = 0.0;
-         for( i=optInTimePeriod; i > 0; i-- )
-         {
-            tempValue1 = inReal[today++];
-            tempValue2 = tempValue1 - prevValue;
-            prevValue = tempValue1;
-            if( tempValue2 < 0 )
-               prevLoss -= tempValue2;
-            else
-               prevGain += tempValue2;
-         }
-         tempValue1 = prevLoss/optInTimePeriod;
-         tempValue2 = prevGain/optInTimePeriod;
-         tempValue1 = tempValue2+tempValue1;
-         if( ! (((-0.00000001)<tempValue1)&&(tempValue1<0.00000001)) )
-            outReal[outIdx++] = 100*(tempValue2/tempValue1);
-         else
-            outReal[outIdx++] = 0.0;
-         if( today > endIdx )
-         {
-            outBegIdx.value = startIdx;
-            outNBElement.value = outIdx;
-            return RetCode.Success ;
-         }
-         today -= optInTimePeriod;
-         prevValue = savePrevValue;
-      }
-      prevGain = 0.0;
-      prevLoss = 0.0;
-      today++;
-      for( i=optInTimePeriod; i > 0; i-- )
-      {
-         tempValue1 = inReal[today++];
-         tempValue2 = tempValue1 - prevValue;
-         prevValue = tempValue1;
-         if( tempValue2 < 0 )
-            prevLoss -= tempValue2;
-         else
-            prevGain += tempValue2;
-      }
-      prevLoss /= optInTimePeriod;
-      prevGain /= optInTimePeriod;
-      if( today > startIdx )
-      {
-         tempValue1 = prevGain+prevLoss;
-         if( ! (((-0.00000001)<tempValue1)&&(tempValue1<0.00000001)) )
-            outReal[outIdx++] = 100.0*(prevGain/tempValue1);
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      else
-      {
-         while( today < startIdx )
-         {
-            tempValue1 = inReal[today];
-            tempValue2 = tempValue1 - prevValue;
-            prevValue = tempValue1;
-            prevLoss *= (optInTimePeriod-1);
-            prevGain *= (optInTimePeriod-1);
-            if( tempValue2 < 0 )
-               prevLoss -= tempValue2;
-            else
-               prevGain += tempValue2;
-            prevLoss /= optInTimePeriod;
-            prevGain /= optInTimePeriod;
-            today++;
-         }
-      }
-      while( today <= endIdx )
-      {
-         tempValue1 = inReal[today++];
-         tempValue2 = tempValue1 - prevValue;
-         prevValue = tempValue1;
-         prevLoss *= (optInTimePeriod-1);
-         prevGain *= (optInTimePeriod-1);
-         if( tempValue2 < 0 )
-            prevLoss -= tempValue2;
-         else
-            prevGain += tempValue2;
-         prevLoss /= optInTimePeriod;
-         prevGain /= optInTimePeriod;
-         tempValue1 = prevGain+prevLoss;
-         if( ! (((-0.00000001)<tempValue1)&&(tempValue1<0.00000001)) )
-            outReal[outIdx++] = 100.0*(prevGain/tempValue1);
-         else
-            outReal[outIdx++] = 0.0;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda sprawdza poprawnośc wprowadzonego Akceleratora oraz wartości maksymalnej
-    * @param optInAcceleration Akcelerator
-    * @param optInMaximum Wartośc maksymalna
-    * @return Status w postaci -1 lub 1;
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int sarLookback( double optInAcceleration,
-      double optInMaximum )
-   {
-      if( optInAcceleration == (-4e+37) )
-         optInAcceleration = 2.000000e-2;
-      else if( (optInAcceleration < 0.000000e+0) || (optInAcceleration > 3.000000e+37) )
-         return -1;
-      if( optInMaximum == (-4e+37) )
-         optInMaximum = 2.000000e-1;
-      else if( (optInMaximum < 0.000000e+0) || (optInMaximum > 3.000000e+37) )
-         return -1;
-      return 1;
-   }
-   /**
-   * Parabolic SAR
-   * @see <a href="http://www.metastock.com/Customer/Resources/TAAZ/Default.aspx?p=87">site</a>
-   * <hr>
-   * <ul>
-   * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-   * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-   * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
-   * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param optInAcceleration Akcelerator
-    * @param optInMaximum  Wartośc maksymalna
-    * @param outBegIdx Pierwszy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sar( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double optInAcceleration,
-      double optInMaximum,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      RetCode retCode;
-      int isLong;
-      int todayIdx, outIdx;
-      MInteger tempInt = new MInteger() ;
-      double newHigh, newLow, prevHigh, prevLow;
-      double af, ep, sar;
-      double []ep_temp = new double[1] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( optInAcceleration == (-4e+37) )
-         optInAcceleration = 2.000000e-2;
-      else if( (optInAcceleration < 0.000000e+0) || (optInAcceleration > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInMaximum == (-4e+37) )
-         optInMaximum = 2.000000e-1;
-      else if( (optInMaximum < 0.000000e+0) || (optInMaximum > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( startIdx < 1 )
-         startIdx = 1;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      af = optInAcceleration;
-      if( af > optInMaximum )
-         af = optInAcceleration = optInMaximum;
-      retCode = minusDM ( startIdx, startIdx, inHigh, inLow, 1,
-         tempInt , tempInt ,
-         ep_temp );
-      if( ep_temp[0] > 0 )
-         isLong = 0;
-      else
-         isLong = 1;
-      if( retCode != RetCode.Success )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      outBegIdx.value = startIdx;
-      outIdx = 0;
-      todayIdx = startIdx;
-      newHigh = inHigh[todayIdx-1];
-      newLow = inLow[todayIdx-1];
-      if( isLong == 1 )
-      {
-         ep = inHigh[todayIdx];
-         sar = newLow;
-      }
-      else
-      {
-         ep = inLow[todayIdx];
-         sar = newHigh;
-      }
-      newLow = inLow[todayIdx];
-      newHigh = inHigh[todayIdx];
-      while( todayIdx <= endIdx )
-      {
-         prevLow = newLow;
-         prevHigh = newHigh;
-         newLow = inLow[todayIdx];
-         newHigh = inHigh[todayIdx];
-         todayIdx++;
-         if( isLong == 1 )
-         {
-            if( newLow <= sar )
-            {
-               isLong = 0;
-               sar = ep;
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-               outReal[outIdx++] = sar;
-               af = optInAcceleration;
-               ep = newLow;
-               sar = sar + af * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-            else
-            {
-               outReal[outIdx++] = sar;
-               if( newHigh > ep )
-               {
-                  ep = newHigh;
-                  af += optInAcceleration;
-                  if( af > optInMaximum )
-                     af = optInMaximum;
-               }
-               sar = sar + af * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-         }
-         else
-         {
-            if( newHigh >= sar )
-            {
-               isLong = 1;
-               sar = ep;
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-               outReal[outIdx++] = sar;
-               af = optInAcceleration;
-               ep = newHigh;
-               sar = sar + af * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-            else
-            {
-               outReal[outIdx++] = sar;
-               if( newLow < ep )
-               {
-                  ep = newLow;
-                  af += optInAcceleration;
-                  if( af > optInMaximum )
-                     af = optInMaximum;
-               }
-               sar = sar + af * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-         }
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Parabolic SAR
-    * @see <a href="http://www.metastock.com/Customer/Resources/TAAZ/Default.aspx?p=87">site</a>
-    * <hr>
-    * <ul>
-    * <li> RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny</li>
-    * <li> RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny </li>
-    * <li> RetCode.BadParam kiedy wprowadzono zły parametr</li>
-    * </ul>
-     * @param startIdx Indeks startowy
-     * @param endIdx Indeks końcowy
-     * @param inHigh Maksymalna cena
-     * @param inLow Minimalna cena
-     * @param optInAcceleration Akcelerator
-     * @param optInMaximum  Wartośc maksymalna
-     * @param outBegIdx Pierwszy indeks wyjściowy
-     * @param outNBElement Liczba elementów wyjściowych
-     * @param outReal Tablica na elementy wyjściowe (wyniki)
-     * @return Status
-     * @author Komentarz - Artur Ratajczak
-     */
-   public RetCode sar( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      double optInAcceleration,
-      double optInMaximum,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      RetCode retCode;
-      int isLong;
-      int todayIdx, outIdx;
-      MInteger tempInt = new MInteger() ;
-      double newHigh, newLow, prevHigh, prevLow;
-      double af, ep, sar;
-      double []ep_temp = new double[1] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( optInAcceleration == (-4e+37) )
-         optInAcceleration = 2.000000e-2;
-      else if( (optInAcceleration < 0.000000e+0) || (optInAcceleration > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInMaximum == (-4e+37) )
-         optInMaximum = 2.000000e-1;
-      else if( (optInMaximum < 0.000000e+0) || (optInMaximum > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( startIdx < 1 )
-         startIdx = 1;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      af = optInAcceleration;
-      if( af > optInMaximum )
-         af = optInAcceleration = optInMaximum;
-      retCode = minusDM ( startIdx, startIdx, inHigh, inLow, 1,
-         tempInt , tempInt ,
-         ep_temp );
-      if( ep_temp[0] > 0 )
-         isLong = 0;
-      else
-         isLong = 1;
-      if( retCode != RetCode.Success )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      outBegIdx.value = startIdx;
-      outIdx = 0;
-      todayIdx = startIdx;
-      newHigh = inHigh[todayIdx-1];
-      newLow = inLow[todayIdx-1];
-      if( isLong == 1 )
-      {
-         ep = inHigh[todayIdx];
-         sar = newLow;
-      }
-      else
-      {
-         ep = inLow[todayIdx];
-         sar = newHigh;
-      }
-      newLow = inLow[todayIdx];
-      newHigh = inHigh[todayIdx];
-      while( todayIdx <= endIdx )
-      {
-         prevLow = newLow;
-         prevHigh = newHigh;
-         newLow = inLow[todayIdx];
-         newHigh = inHigh[todayIdx];
-         todayIdx++;
-         if( isLong == 1 )
-         {
-            if( newLow <= sar )
-            {
-               isLong = 0;
-               sar = ep;
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-               outReal[outIdx++] = sar;
-               af = optInAcceleration;
-               ep = newLow;
-               sar = sar + af * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-            else
-            {
-               outReal[outIdx++] = sar;
-               if( newHigh > ep )
-               {
-                  ep = newHigh;
-                  af += optInAcceleration;
-                  if( af > optInMaximum )
-                     af = optInMaximum;
-               }
-               sar = sar + af * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-         }
-         else
-         {
-            if( newHigh >= sar )
-            {
-               isLong = 1;
-               sar = ep;
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-               outReal[outIdx++] = sar;
-               af = optInAcceleration;
-               ep = newHigh;
-               sar = sar + af * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-            else
-            {
-               outReal[outIdx++] = sar;
-               if( newLow < ep )
-               {
-                  ep = newLow;
-                  af += optInAcceleration;
-                  if( af > optInMaximum )
-                     af = optInMaximum;
-               }
-               sar = sar + af * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-         }
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda sprawdza poprawnosc parametrow dla SAREXT
-    * @param optInStartValue wartosc startowa
-    * @param optInOffsetOnReverse wartosc offset on reverse
-    * @param optInAccelerationInitLong wartosc initlong akceleratora
-    * @param optInAccelerationLong wartosc long akceleratora
-    * @param optInAccelerationMaxLong wartosc maksymalna long akceleratora
-    * @param optInAccelerationInitShort wartosc initshort akceleratora
-    * @param optInAccelerationShort wartosc short akceleratora
-    * @param optInAccelerationMaxShort wartosc maksymalna short akceleratora
-    * @return status w postaci -1 lub 1
-    */
-   public int sarExtLookback( double optInStartValue,
-      double optInOffsetOnReverse,
-      double optInAccelerationInitLong,
-      double optInAccelerationLong,
-      double optInAccelerationMaxLong,
-      double optInAccelerationInitShort,
-      double optInAccelerationShort,
-      double optInAccelerationMaxShort )
-   {
-      if( optInStartValue == (-4e+37) )
-         optInStartValue = 0.000000e+0;
-      else if( (optInStartValue < -3.000000e+37) || (optInStartValue > 3.000000e+37) )
-         return -1;
-      if( optInOffsetOnReverse == (-4e+37) )
-         optInOffsetOnReverse = 0.000000e+0;
-      else if( (optInOffsetOnReverse < 0.000000e+0) || (optInOffsetOnReverse > 3.000000e+37) )
-         return -1;
-      if( optInAccelerationInitLong == (-4e+37) )
-         optInAccelerationInitLong = 2.000000e-2;
-      else if( (optInAccelerationInitLong < 0.000000e+0) || (optInAccelerationInitLong > 3.000000e+37) )
-         return -1;
-      if( optInAccelerationLong == (-4e+37) )
-         optInAccelerationLong = 2.000000e-2;
-      else if( (optInAccelerationLong < 0.000000e+0) || (optInAccelerationLong > 3.000000e+37) )
-         return -1;
-      if( optInAccelerationMaxLong == (-4e+37) )
-         optInAccelerationMaxLong = 2.000000e-1;
-      else if( (optInAccelerationMaxLong < 0.000000e+0) || (optInAccelerationMaxLong > 3.000000e+37) )
-         return -1;
-      if( optInAccelerationInitShort == (-4e+37) )
-         optInAccelerationInitShort = 2.000000e-2;
-      else if( (optInAccelerationInitShort < 0.000000e+0) || (optInAccelerationInitShort > 3.000000e+37) )
-         return -1;
-      if( optInAccelerationShort == (-4e+37) )
-         optInAccelerationShort = 2.000000e-2;
-      else if( (optInAccelerationShort < 0.000000e+0) || (optInAccelerationShort > 3.000000e+37) )
-         return -1;
-      if( optInAccelerationMaxShort == (-4e+37) )
-         optInAccelerationMaxShort = 2.000000e-1;
-      else if( (optInAccelerationMaxShort < 0.000000e+0) || (optInAccelerationMaxShort > 3.000000e+37) )
-         return -1;
-      return 1;
-   }
-   /**
-    * Jest to rozszerzona metoda obliczania Parabolic SAR
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param optInStartValue Wartośc startowa
-    * @param optInOffsetOnReverse Wartośc offset on Reverse
-    * @param optInAccelerationInitLong wartośc initLong akceleratora
-    * @param optInAccelerationLong wartosc long akceleratora
-    * @param optInAccelerationMaxLong wartosc maksymalna logn akceleratora
-    * @param optInAccelerationInitShort wartosc initShort akceleratora
-    * @param optInAccelerationShort wartosc short akceleratora
-    * @param optInAccelerationMaxShort wartosc maksymalna short akceleratora
-    * @param outBegIdx poczatkowy indeks wyjsciowy
-    * @param outNBElement liczba elementow wysjciowych
-    * @param outReal tabica na elementy wyjsciowe (wyniki)
-    * @return Status
-    */
-   public RetCode sarExt( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double optInStartValue,
-      double optInOffsetOnReverse,
-      double optInAccelerationInitLong,
-      double optInAccelerationLong,
-      double optInAccelerationMaxLong,
-      double optInAccelerationInitShort,
-      double optInAccelerationShort,
-      double optInAccelerationMaxShort,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      RetCode retCode;
-      int isLong;
-      int todayIdx, outIdx;
-      MInteger tempInt = new MInteger() ;
-      double newHigh, newLow, prevHigh, prevLow;
-      double afLong, afShort, ep, sar;
-      double []ep_temp = new double[1] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( optInStartValue == (-4e+37) )
-         optInStartValue = 0.000000e+0;
-      else if( (optInStartValue < -3.000000e+37) || (optInStartValue > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInOffsetOnReverse == (-4e+37) )
-         optInOffsetOnReverse = 0.000000e+0;
-      else if( (optInOffsetOnReverse < 0.000000e+0) || (optInOffsetOnReverse > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationInitLong == (-4e+37) )
-         optInAccelerationInitLong = 2.000000e-2;
-      else if( (optInAccelerationInitLong < 0.000000e+0) || (optInAccelerationInitLong > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationLong == (-4e+37) )
-         optInAccelerationLong = 2.000000e-2;
-      else if( (optInAccelerationLong < 0.000000e+0) || (optInAccelerationLong > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationMaxLong == (-4e+37) )
-         optInAccelerationMaxLong = 2.000000e-1;
-      else if( (optInAccelerationMaxLong < 0.000000e+0) || (optInAccelerationMaxLong > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationInitShort == (-4e+37) )
-         optInAccelerationInitShort = 2.000000e-2;
-      else if( (optInAccelerationInitShort < 0.000000e+0) || (optInAccelerationInitShort > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationShort == (-4e+37) )
-         optInAccelerationShort = 2.000000e-2;
-      else if( (optInAccelerationShort < 0.000000e+0) || (optInAccelerationShort > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationMaxShort == (-4e+37) )
-         optInAccelerationMaxShort = 2.000000e-1;
-      else if( (optInAccelerationMaxShort < 0.000000e+0) || (optInAccelerationMaxShort > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( startIdx < 1 )
-         startIdx = 1;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      afLong = optInAccelerationInitLong;
-      afShort = optInAccelerationInitShort;
-      if( afLong > optInAccelerationMaxLong )
-         afLong = optInAccelerationInitLong = optInAccelerationMaxLong;
-      if( optInAccelerationLong > optInAccelerationMaxLong )
-         optInAccelerationLong = optInAccelerationMaxLong;
-      if( afShort > optInAccelerationMaxShort)
-         afShort = optInAccelerationInitShort = optInAccelerationMaxShort;
-      if( optInAccelerationShort > optInAccelerationMaxShort )
-         optInAccelerationShort = optInAccelerationMaxShort;
-      if(optInStartValue == 0)
-      {
-         retCode = minusDM ( startIdx, startIdx, inHigh, inLow, 1,
-            tempInt , tempInt ,
-            ep_temp );
-         if( ep_temp[0] > 0 )
-            isLong = 0;
-         else
-            isLong = 1;
-         if( retCode != RetCode.Success )
-         {
-            outBegIdx.value = 0 ;
-            outNBElement.value = 0 ;
-            return retCode;
-         }
-      }
-      else if( optInStartValue > 0 )
-      {
-         isLong = 1;
-      }
-      else
-      {
-         isLong = 0;
-      }
-      outBegIdx.value = startIdx;
-      outIdx = 0;
-      todayIdx = startIdx;
-      newHigh = inHigh[todayIdx-1];
-      newLow = inLow[todayIdx-1];
-      if(optInStartValue == 0)
-      {
-         if( isLong == 1 )
-         {
-            ep = inHigh[todayIdx];
-            sar = newLow;
-         }
-         else
-         {
-            ep = inLow[todayIdx];
-            sar = newHigh;
-         }
-      }
-      else if ( optInStartValue > 0 )
-      {
-         ep = inHigh[todayIdx];
-         sar = optInStartValue;
-      }
-      else
-      {
-         ep = inLow[todayIdx];
-         sar = Math.abs (optInStartValue);
-      }
-      newLow = inLow[todayIdx];
-      newHigh = inHigh[todayIdx];
-      while( todayIdx <= endIdx )
-      {
-         prevLow = newLow;
-         prevHigh = newHigh;
-         newLow = inLow[todayIdx];
-         newHigh = inHigh[todayIdx];
-         todayIdx++;
-         if( isLong == 1 )
-         {
-            if( newLow <= sar )
-            {
-               isLong = 0;
-               sar = ep;
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-               if( optInOffsetOnReverse != 0.0 )
-                  sar += sar * optInOffsetOnReverse;
-               outReal[outIdx++] = -sar;
-               afShort = optInAccelerationInitShort;
-               ep = newLow;
-               sar = sar + afShort * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-            else
-            {
-               outReal[outIdx++] = sar;
-               if( newHigh > ep )
-               {
-                  ep = newHigh;
-                  afLong += optInAccelerationLong;
-                  if( afLong > optInAccelerationMaxLong )
-                     afLong = optInAccelerationMaxLong;
-               }
-               sar = sar + afLong * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-         }
-         else
-         {
-            if( newHigh >= sar )
-            {
-               isLong = 1;
-               sar = ep;
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-               if( optInOffsetOnReverse != 0.0 )
-                  sar -= sar * optInOffsetOnReverse;
-               outReal[outIdx++] = sar;
-               afLong = optInAccelerationInitLong;
-               ep = newHigh;
-               sar = sar + afLong * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-            else
-            {
-               outReal[outIdx++] = -sar;
-               if( newLow < ep )
-               {
-                  ep = newLow;
-                  afShort += optInAccelerationShort;
-                  if( afShort > optInAccelerationMaxShort )
-                     afShort = optInAccelerationMaxShort;
-               }
-               sar = sar + afShort * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-         }
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Jest to rozszerzona metoda obliczania Parabolic SAR
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna cena
-    * @param inLow Minimalna cena
-    * @param optInStartValue Wartośc startowa
-    * @param optInOffsetOnReverse Wartośc offset on Reverse
-    * @param optInAccelerationInitLong wartośc initLong akceleratora
-    * @param optInAccelerationLong wartosc long akceleratora
-    * @param optInAccelerationMaxLong wartosc maksymalna logn akceleratora
-    * @param optInAccelerationInitShort wartosc initShort akceleratora
-    * @param optInAccelerationShort wartosc short akceleratora
-    * @param optInAccelerationMaxShort wartosc maksymalna short akceleratora
-    * @param outBegIdx poczatkowy indeks wyjsciowy
-    * @param outNBElement liczba elementow wysjciowych
-    * @param outReal tabica na elementy wyjsciowe (wyniki)
-    * @return Status
-    */
-   public RetCode sarExt( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      double optInStartValue,
-      double optInOffsetOnReverse,
-      double optInAccelerationInitLong,
-      double optInAccelerationLong,
-      double optInAccelerationMaxLong,
-      double optInAccelerationInitShort,
-      double optInAccelerationShort,
-      double optInAccelerationMaxShort,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      RetCode retCode;
-      int isLong;
-      int todayIdx, outIdx;
-      MInteger tempInt = new MInteger() ;
-      double newHigh, newLow, prevHigh, prevLow;
-      double afLong, afShort, ep, sar;
-      double []ep_temp = new double[1] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( optInStartValue == (-4e+37) )
-         optInStartValue = 0.000000e+0;
-      else if( (optInStartValue < -3.000000e+37) || (optInStartValue > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInOffsetOnReverse == (-4e+37) )
-         optInOffsetOnReverse = 0.000000e+0;
-      else if( (optInOffsetOnReverse < 0.000000e+0) || (optInOffsetOnReverse > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationInitLong == (-4e+37) )
-         optInAccelerationInitLong = 2.000000e-2;
-      else if( (optInAccelerationInitLong < 0.000000e+0) || (optInAccelerationInitLong > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationLong == (-4e+37) )
-         optInAccelerationLong = 2.000000e-2;
-      else if( (optInAccelerationLong < 0.000000e+0) || (optInAccelerationLong > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationMaxLong == (-4e+37) )
-         optInAccelerationMaxLong = 2.000000e-1;
-      else if( (optInAccelerationMaxLong < 0.000000e+0) || (optInAccelerationMaxLong > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationInitShort == (-4e+37) )
-         optInAccelerationInitShort = 2.000000e-2;
-      else if( (optInAccelerationInitShort < 0.000000e+0) || (optInAccelerationInitShort > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationShort == (-4e+37) )
-         optInAccelerationShort = 2.000000e-2;
-      else if( (optInAccelerationShort < 0.000000e+0) || (optInAccelerationShort > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( optInAccelerationMaxShort == (-4e+37) )
-         optInAccelerationMaxShort = 2.000000e-1;
-      else if( (optInAccelerationMaxShort < 0.000000e+0) || (optInAccelerationMaxShort > 3.000000e+37) )
-         return RetCode.BadParam ;
-      if( startIdx < 1 )
-         startIdx = 1;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      afLong = optInAccelerationInitLong;
-      afShort = optInAccelerationInitShort;
-      if( afLong > optInAccelerationMaxLong )
-         afLong = optInAccelerationInitLong = optInAccelerationMaxLong;
-      if( optInAccelerationLong > optInAccelerationMaxLong )
-         optInAccelerationLong = optInAccelerationMaxLong;
-      if( afShort > optInAccelerationMaxShort)
-         afShort = optInAccelerationInitShort = optInAccelerationMaxShort;
-      if( optInAccelerationShort > optInAccelerationMaxShort )
-         optInAccelerationShort = optInAccelerationMaxShort;
-      if(optInStartValue == 0)
-      {
-         retCode = minusDM ( startIdx, startIdx, inHigh, inLow, 1,
-            tempInt , tempInt ,
-            ep_temp );
-         if( ep_temp[0] > 0 )
-            isLong = 0;
-         else
-            isLong = 1;
-         if( retCode != RetCode.Success )
-         {
-            outBegIdx.value = 0 ;
-            outNBElement.value = 0 ;
-            return retCode;
-         }
-      }
-      else if( optInStartValue > 0 )
-      {
-         isLong = 1;
-      }
-      else
-      {
-         isLong = 0;
-      }
-      outBegIdx.value = startIdx;
-      outIdx = 0;
-      todayIdx = startIdx;
-      newHigh = inHigh[todayIdx-1];
-      newLow = inLow[todayIdx-1];
-      if(optInStartValue == 0)
-      {
-         if( isLong == 1 )
-         {
-            ep = inHigh[todayIdx];
-            sar = newLow;
-         }
-         else
-         {
-            ep = inLow[todayIdx];
-            sar = newHigh;
-         }
-      }
-      else if ( optInStartValue > 0 )
-      {
-         ep = inHigh[todayIdx];
-         sar = optInStartValue;
-      }
-      else
-      {
-         ep = inLow[todayIdx];
-         sar = Math.abs (optInStartValue);
-      }
-      newLow = inLow[todayIdx];
-      newHigh = inHigh[todayIdx];
-      while( todayIdx <= endIdx )
-      {
-         prevLow = newLow;
-         prevHigh = newHigh;
-         newLow = inLow[todayIdx];
-         newHigh = inHigh[todayIdx];
-         todayIdx++;
-         if( isLong == 1 )
-         {
-            if( newLow <= sar )
-            {
-               isLong = 0;
-               sar = ep;
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-               if( optInOffsetOnReverse != 0.0 )
-                  sar += sar * optInOffsetOnReverse;
-               outReal[outIdx++] = -sar;
-               afShort = optInAccelerationInitShort;
-               ep = newLow;
-               sar = sar + afShort * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-            else
-            {
-               outReal[outIdx++] = sar;
-               if( newHigh > ep )
-               {
-                  ep = newHigh;
-                  afLong += optInAccelerationLong;
-                  if( afLong > optInAccelerationMaxLong )
-                     afLong = optInAccelerationMaxLong;
-               }
-               sar = sar + afLong * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-         }
-         else
-         {
-            if( newHigh >= sar )
-            {
-               isLong = 1;
-               sar = ep;
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-               if( optInOffsetOnReverse != 0.0 )
-                  sar -= sar * optInOffsetOnReverse;
-               outReal[outIdx++] = sar;
-               afLong = optInAccelerationInitLong;
-               ep = newHigh;
-               sar = sar + afLong * (ep - sar);
-               if( sar > prevLow )
-                  sar = prevLow;
-               if( sar > newLow )
-                  sar = newLow;
-            }
-            else
-            {
-               outReal[outIdx++] = -sar;
-               if( newLow < ep )
-               {
-                  ep = newLow;
-                  afShort += optInAccelerationShort;
-                  if( afShort > optInAccelerationMaxShort )
-                     afShort = optInAccelerationMaxShort;
-               }
-               sar = sar + afShort * (ep - sar);
-               if( sar < prevHigh )
-                  sar = prevHigh;
-               if( sar < newHigh )
-                  sar = newHigh;
-            }
-         }
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca domyślną wartośc sine (sinusa)
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int sinLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda oblicza wartośc sine (sinusa)
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami (radianami)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sin( int startIdx,
-      int endIdx,
-      double inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.sin (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza wartośc sine (sinusa)
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami (radianami)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sin( int startIdx,
-      int endIdx,
-      float inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.sin (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca domyślną wartośc funkcji Hyperbolic sine (sinus hiperboliczny).
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int sinhLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami (radianami)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sinh( int startIdx,
-      int endIdx,
-      double inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.sinh (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza wartośc Hyperbolic sine (sinus hiperboliczny).
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami (radianami)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sinh( int startIdx,
-      int endIdx,
-      float inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.sinh (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca liczbę n na podstawie ilości elementów dla metody SMA,
-    * @param optInTimePeriod Iloś elementów
-    * @return Liczba n
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int smaLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod - 1;
-   }
-   /**
-    * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z liczbami
-    * @param optInTimePeriod Liczba n
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wynik w postaci średniej arytmetycznej)
-    * @return Status 
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sma( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      return TA_INT_SMA ( startIdx, endIdx,
-         inReal, optInTimePeriod,
-         outBegIdx, outNBElement, outReal );
-   }
-   RetCode TA_INT_SMA( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double periodTotal, tempReal;
-      int i, outIdx, trailingIdx, lookbackTotal;
-      lookbackTotal = (optInTimePeriod-1);
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      periodTotal = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      i=trailingIdx;
-      if( optInTimePeriod > 1 )
-      {
-         while( i < startIdx )
-            periodTotal += inReal[i++];
-      }
-      outIdx = 0;
-      do
-      {
-         periodTotal += inReal[i++];
-         tempReal = periodTotal;
-         periodTotal -= inReal[trailingIdx++];
-         outReal[outIdx++] = tempReal / optInTimePeriod;
-      } while( i <= endIdx );
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Simple Moving Average (średnia arytmetyczna). Oblicza średnią arytmetyczną z n liczb.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z liczbami
-    * @param optInTimePeriod Liczba n
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wynik w postaci średniej arytmetycznej)
-    * @return Status 
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sma( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      return TA_INT_SMA ( startIdx, endIdx,
-         inReal, optInTimePeriod,
-         outBegIdx, outNBElement, outReal );
-   }
-   RetCode TA_INT_SMA( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double periodTotal, tempReal;
-      int i, outIdx, trailingIdx, lookbackTotal;
-      lookbackTotal = (optInTimePeriod-1);
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      periodTotal = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      i=trailingIdx;
-      if( optInTimePeriod > 1 )
-      {
-         while( i < startIdx )
-            periodTotal += inReal[i++];
-      }
-      outIdx = 0;
-      do
-      {
-         periodTotal += inReal[i++];
-         tempReal = periodTotal;
-         periodTotal -= inReal[trailingIdx++];
-         outReal[outIdx++] = tempReal / optInTimePeriod;
-      } while( i <= endIdx );
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca domyślna wartośc pierwiasta
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int sqrtLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda liczy pierwiastek z każdego elementu wejściowego.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami z których ma byc obliczony pierwiastek
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci obliczonych pierwiastków z liczby)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sqrt( int startIdx,
-      int endIdx,
-      double inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.sqrt (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda liczy pierwiastek z każdego elementu wejściowego.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami z których ma byc obliczony pierwiastek
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci obliczonych pierwiastków z liczby)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sqrt( int startIdx,
-      int endIdx,
-      float inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.sqrt (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda okresla zakres przedizłu wejściowego dla stdDev.
-    * @param optInTimePeriod Okres czasowy
-    * @param optInNbDev wartośc oczekiwana
-    * @return Zakres przedziału wejściowego.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int stdDevLookback( int optInTimePeriod,
-      double optInNbDev )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( optInNbDev == (-4e+37) )
-         optInNbDev = 1.000000e+0;
-      else if( (optInNbDev < -3.000000e+37) || (optInNbDev > 3.000000e+37) )
-         return -1;
-      return varianceLookback ( optInTimePeriod, optInNbDev );
-   }
-   /**
-    * Moving Standard Deviation (odchylenie standardowe) jest to klasyczna miara zmienności. 
-    * Intuicyjnie rzecz ujmując, odchylenie standardowe mówi, jak szeroko wartości jakiejś wielkości (takiej jak np. wiek, inflacja, kurs akcji itp.) są rozrzucone wokół jej średniej. 
-    * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica Tablica z wariacjami
-    * @param optInTimePeriod Zakres przedziału wejściowego
-    * @param optInNbDev Wartośc oczekiwana
-    * @param outBegIdx Początkowy indek wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci odchylenia standardowego)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stdDev( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      double optInNbDev,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int i;
-      RetCode retCode;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInNbDev == (-4e+37) )
-         optInNbDev = 1.000000e+0;
-      else if( (optInNbDev < -3.000000e+37) || (optInNbDev > 3.000000e+37) )
-         return RetCode.BadParam ;
-      retCode = TA_INT_VAR ( startIdx, endIdx,
-         inReal, optInTimePeriod,
-         outBegIdx, outNBElement, outReal );
-      if( retCode != RetCode.Success )
-         return retCode;
-      if( optInNbDev != 1.0 )
-      {
-         for( i=0; i < (int) outNBElement.value ; i++ )
-         {
-            tempReal = outReal[i];
-            if( ! (tempReal<0.00000001) )
-               outReal[i] = Math.sqrt (tempReal) * optInNbDev;
-            else
-               outReal[i] = (double)0.0;
-         }
-      }
-      else
-      {
-         for( i=0; i < (int) outNBElement.value ; i++ )
-         {
-            tempReal = outReal[i];
-            if( ! (tempReal<0.00000001) )
-               outReal[i] = Math.sqrt (tempReal);
-            else
-               outReal[i] = (double)0.0;
-         }
-      }
-      return RetCode.Success ;
-   }
-   void TA_INT_stddev_using_precalc_ma( double inReal[],
-      double inMovAvg[],
-      int inMovAvgBegIdx,
-      int inMovAvgNbElement,
-      int timePeriod,
-      double output[] )
-   {
-      double tempReal, periodTotal2, meanValue2;
-      int outIdx;
-      int startSum, endSum;
-      startSum = 1+inMovAvgBegIdx-timePeriod;
-      endSum = inMovAvgBegIdx;
-      periodTotal2 = 0;
-      for( outIdx = startSum; outIdx < endSum; outIdx++)
-      {
-         tempReal = inReal[outIdx];
-         tempReal *= tempReal;
-         periodTotal2 += tempReal;
-      }
-      for( outIdx=0; outIdx < inMovAvgNbElement; outIdx++, startSum++, endSum++ )
-      {
-         tempReal = inReal[endSum];
-         tempReal *= tempReal;
-         periodTotal2 += tempReal;
-         meanValue2 = periodTotal2/timePeriod;
-         tempReal = inReal[startSum];
-         tempReal *= tempReal;
-         periodTotal2 -= tempReal;
-         tempReal = inMovAvg[outIdx];
-         tempReal *= tempReal;
-         meanValue2 -= tempReal;
-         if( ! (meanValue2<0.00000001) )
-            output[outIdx] = Math.sqrt (meanValue2);
-         else
-            output[outIdx] = (double)0.0;
-      }
-   }
-   /**
-    * Moving Standard Deviation (odchylenie standardowe) jest to klasyczna miara zmienności. 
-    * Intuicyjnie rzecz ujmując, odchylenie standardowe mówi, jak szeroko wartości jakiejś wielkości (takiej jak np. wiek, inflacja, kurs akcji itp.) są rozrzucone wokół jej średniej. 
-    * Im mniejsza wartość odchylenia tym obserwacje są bardziej skupione wokół średniej.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica Tablica z wariacjami
-    * @param optInTimePeriod Zakres przedziału wejściowego
-    * @param optInNbDev Wartośc oczekiwana
-    * @param outBegIdx Początkowy indek wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki w postaci odchylenia standardowego)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stdDev( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      double optInNbDev,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int i;
-      RetCode retCode;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInNbDev == (-4e+37) )
-         optInNbDev = 1.000000e+0;
-      else if( (optInNbDev < -3.000000e+37) || (optInNbDev > 3.000000e+37) )
-         return RetCode.BadParam ;
-      retCode = TA_INT_VAR ( startIdx, endIdx,
-         inReal, optInTimePeriod,
-         outBegIdx, outNBElement, outReal );
-      if( retCode != RetCode.Success )
-         return retCode;
-      if( optInNbDev != 1.0 )
-      {
-         for( i=0; i < (int) outNBElement.value ; i++ )
-         {
-            tempReal = outReal[i];
-            if( ! (tempReal<0.00000001) )
-               outReal[i] = Math.sqrt (tempReal) * optInNbDev;
-            else
-               outReal[i] = (double)0.0;
-         }
-      }
-      else
-      {
-         for( i=0; i < (int) outNBElement.value ; i++ )
-         {
-            tempReal = outReal[i];
-            if( ! (tempReal<0.00000001) )
-               outReal[i] = Math.sqrt (tempReal);
-            else
-               outReal[i] = (double)0.0;
-         }
-      }
-      return RetCode.Success ;
-   }
-   void TA_INT_stddev_using_precalc_ma( float inReal[],
-      double inMovAvg[],
-      int inMovAvgBegIdx,
-      int inMovAvgNbElement,
-      int timePeriod,
-      double output[] )
-   {
-      double tempReal, periodTotal2, meanValue2;
-      int outIdx;
-      int startSum, endSum;
-      startSum = 1+inMovAvgBegIdx-timePeriod;
-      endSum = inMovAvgBegIdx;
-      periodTotal2 = 0;
-      for( outIdx = startSum; outIdx < endSum; outIdx++)
-      {
-         tempReal = inReal[outIdx];
-         tempReal *= tempReal;
-         periodTotal2 += tempReal;
-      }
-      for( outIdx=0; outIdx < inMovAvgNbElement; outIdx++, startSum++, endSum++ )
-      {
-         tempReal = inReal[endSum];
-         tempReal *= tempReal;
-         periodTotal2 += tempReal;
-         meanValue2 = periodTotal2/timePeriod;
-         tempReal = inReal[startSum];
-         tempReal *= tempReal;
-         periodTotal2 -= tempReal;
-         tempReal = inMovAvg[outIdx];
-         tempReal *= tempReal;
-         meanValue2 -= tempReal;
-         if( ! (meanValue2<0.00000001) )
-            output[outIdx] = Math.sqrt (meanValue2);
-         else
-            output[outIdx] = (double)0.0;
-      }
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca okres czasu dla Stoch.
-    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
-    * @param optInSlowK_Period Liczba okresów dla linii wolnej %K
-    * @param optInSlowK_MAType Typ średniej kroczącej dla linii wolnej %K
-    * @param optInSlowD_Period Liczba okresów dla linii wolnej %D
-    * @param optInSlowD_MAType Typ średniej kroczącej dla linii wolnej %D
-    * @return Liczba okresów
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int stochLookback( int optInFastK_Period,
-      int optInSlowK_Period,
-      MAType optInSlowK_MAType,
-      int optInSlowD_Period,
-      MAType optInSlowD_MAType )
-   {
-      int retValue;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return -1;
-      if( (int)optInSlowK_Period == ( Integer.MIN_VALUE ) )
-         optInSlowK_Period = 3;
-      else if( ((int)optInSlowK_Period < 1) || ((int)optInSlowK_Period > 100000) )
-         return -1;
-      if( (int)optInSlowD_Period == ( Integer.MIN_VALUE ) )
-         optInSlowD_Period = 3;
-      else if( ((int)optInSlowD_Period < 1) || ((int)optInSlowD_Period > 100000) )
-         return -1;
-      retValue = (optInFastK_Period - 1);
-      retValue += movingAverageLookback ( optInSlowK_Period, optInSlowK_MAType );
-      retValue += movingAverageLookback ( optInSlowD_Period, optInSlowD_MAType );
-      return retValue;
-   }
-   /**
-    * Wolny oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
-    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
-	* (w trendzie spadkowym zaś minimum).
-	* <hr>
-	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
-	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
-	* <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna najwyższa cena z n sesji
-    * @param inLow Minimalna najniższa cena z n sesji
-    * @param inClose Aktualna cena zamknięcia 
-    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
-    * @param optInSlowK_Period Liczba okresów dla linii wolnej %K
-    * @param optInSlowK_MAType Typ średniej kroczącej dla linii wolnej %K
-    * @param optInSlowD_Period Liczba okresów dla linii wolnej %D
-    * @param optInSlowD_MAType Typ średniej kroczącej dla linii wolnej %D
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outSlowK Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %K)
-    * @param outSlowD Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %D)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stoch( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      int optInFastK_Period,
-      int optInSlowK_Period,
-      MAType optInSlowK_MAType,
-      int optInSlowD_Period,
-      MAType optInSlowD_MAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outSlowK[],
-      double outSlowD[] )
-   {
-      RetCode retCode;
-      double lowest, highest, tmp, diff;
-      double []tempBuffer ;
-      int outIdx, lowestIdx, highestIdx;
-      int lookbackTotal, lookbackK, lookbackKSlow, lookbackDSlow;
-      int trailingIdx, today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInSlowK_Period == ( Integer.MIN_VALUE ) )
-         optInSlowK_Period = 3;
-      else if( ((int)optInSlowK_Period < 1) || ((int)optInSlowK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInSlowD_Period == ( Integer.MIN_VALUE ) )
-         optInSlowD_Period = 3;
-      else if( ((int)optInSlowD_Period < 1) || ((int)optInSlowD_Period > 100000) )
-         return RetCode.BadParam ;
-      lookbackK = optInFastK_Period-1;
-      lookbackKSlow = movingAverageLookback ( optInSlowK_Period, optInSlowK_MAType );
-      lookbackDSlow = movingAverageLookback ( optInSlowD_Period, optInSlowD_MAType );
-      lookbackTotal = lookbackK + lookbackDSlow + lookbackKSlow;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      today = trailingIdx+lookbackK;
-      lowestIdx = highestIdx = -1;
-      diff = highest = lowest = 0.0;
-      if( (outSlowK == inHigh) ||
-         (outSlowK == inLow) ||
-         (outSlowK == inClose) )
-      {
-         tempBuffer = outSlowK;
-      }
-      else if( (outSlowD == inHigh) ||
-         (outSlowD == inLow) ||
-         (outSlowD == inClose) )
-      {
-         tempBuffer = outSlowD;
-      }
-      else
-      {
-         tempBuffer = new double[endIdx-today+1] ;
-      }
-      while( today <= endIdx )
-      {
-         tmp = inLow[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inLow[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inLow[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         tmp = inHigh[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inHigh[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmp = inHigh[i];
-               if( tmp > highest )
-               {
-                  highestIdx = i;
-                  highest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp >= highest )
-         {
-            highestIdx = today;
-            highest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         if( diff != 0.0 )
-            tempBuffer[outIdx++] = (inClose[today]-lowest)/diff;
-         else
-            tempBuffer[outIdx++] = 0.0;
-         trailingIdx++;
-         today++;
-      }
-      retCode = movingAverage ( 0, outIdx-1,
-         tempBuffer, optInSlowK_Period,
-         optInSlowK_MAType,
-         outBegIdx, outNBElement, tempBuffer );
-      if( (retCode != RetCode.Success ) || ((int) outNBElement.value == 0) )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      retCode = movingAverage ( 0, (int) outNBElement.value -1,
-         tempBuffer, optInSlowD_Period,
-         optInSlowD_MAType,
-         outBegIdx, outNBElement, outSlowD );
-      System.arraycopy(tempBuffer,lookbackDSlow,outSlowK,0,(int)outNBElement.value) ;
-      if( retCode != RetCode.Success )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Wolny oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
-    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
-	* (w trendzie spadkowym zaś minimum).
-	* <hr>
-	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
-	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
-	* <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Maksymalna najwyższa cena z n sesji
-    * @param inLow Minimalna najniższa cena z n sesji
-    * @param inClose Aktualna cena zamknięcia 
-    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
-    * @param optInSlowK_Period Liczba okresów dla linii wolnej %K
-    * @param optInSlowK_MAType Typ średniej kroczącej dla linii wolnej %K
-    * @param optInSlowD_Period Liczba okresów dla linii wolnej %D
-    * @param optInSlowD_MAType Typ średniej kroczącej dla linii wolnej %D
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outSlowK Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %K)
-    * @param outSlowD Tablica na elementy wyjściowe (wyniki w postaci linii wolnej %D)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stoch( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      int optInFastK_Period,
-      int optInSlowK_Period,
-      MAType optInSlowK_MAType,
-      int optInSlowD_Period,
-      MAType optInSlowD_MAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outSlowK[],
-      double outSlowD[] )
-   {
-      RetCode retCode;
-      double lowest, highest, tmp, diff;
-      double []tempBuffer ;
-      int outIdx, lowestIdx, highestIdx;
-      int lookbackTotal, lookbackK, lookbackKSlow, lookbackDSlow;
-      int trailingIdx, today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInSlowK_Period == ( Integer.MIN_VALUE ) )
-         optInSlowK_Period = 3;
-      else if( ((int)optInSlowK_Period < 1) || ((int)optInSlowK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInSlowD_Period == ( Integer.MIN_VALUE ) )
-         optInSlowD_Period = 3;
-      else if( ((int)optInSlowD_Period < 1) || ((int)optInSlowD_Period > 100000) )
-         return RetCode.BadParam ;
-      lookbackK = optInFastK_Period-1;
-      lookbackKSlow = movingAverageLookback ( optInSlowK_Period, optInSlowK_MAType );
-      lookbackDSlow = movingAverageLookback ( optInSlowD_Period, optInSlowD_MAType );
-      lookbackTotal = lookbackK + lookbackDSlow + lookbackKSlow;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      today = trailingIdx+lookbackK;
-      lowestIdx = highestIdx = -1;
-      diff = highest = lowest = 0.0;
-      tempBuffer = new double[endIdx-today+1] ;
-      while( today <= endIdx )
-      {
-         tmp = inLow[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inLow[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inLow[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         tmp = inHigh[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inHigh[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmp = inHigh[i];
-               if( tmp > highest )
-               {
-                  highestIdx = i;
-                  highest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp >= highest )
-         {
-            highestIdx = today;
-            highest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         if( diff != 0.0 )
-            tempBuffer[outIdx++] = (inClose[today]-lowest)/diff;
-         else
-            tempBuffer[outIdx++] = 0.0;
-         trailingIdx++;
-         today++;
-      }
-      retCode = movingAverage ( 0, outIdx-1,
-         tempBuffer, optInSlowK_Period,
-         optInSlowK_MAType,
-         outBegIdx, outNBElement, tempBuffer );
-      if( (retCode != RetCode.Success ) || ((int) outNBElement.value == 0) )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      retCode = movingAverage ( 0, (int) outNBElement.value -1,
-         tempBuffer, optInSlowD_Period,
-         optInSlowD_MAType,
-         outBegIdx, outNBElement, outSlowD );
-      System.arraycopy(tempBuffer,lookbackDSlow,outSlowK,0,(int)outNBElement.value) ;
-      if( retCode != RetCode.Success )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca okres czasu dla StochF.
-    * @param optInFastK_Period Liczba okresów dla linii szybkiej %K
-    * @param optInFastD_Period Liczba okresów dla linii szybkiej %D
-    * @param optInFastD_MAType Typ średniej kroczącej dla linii %D
-    * @return Okres czasu dla StochF.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int stochFLookback( int optInFastK_Period,
-      int optInFastD_Period,
-      MAType optInFastD_MAType )
-   {
-      int retValue;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return -1;
-      if( (int)optInFastD_Period == ( Integer.MIN_VALUE ) )
-         optInFastD_Period = 3;
-      else if( ((int)optInFastD_Period < 1) || ((int)optInFastD_Period > 100000) )
-         return -1;
-      retValue = (optInFastK_Period - 1);
-      retValue += movingAverageLookback ( optInFastD_Period, optInFastD_MAType );
-      return retValue;
-   }
-   /**
-    * Szybko oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
-    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
-	* (w trendzie spadkowym zaś minimum).
-	* <hr>
-	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
-	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
-	* <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Najwyższa cena maksymalna z n sesji
-    * @param inLow Najniższa cena minimalna z n sesji
-    * @param inClose bierząca cena zamknięcia
-    * @param optInFastK_Period Liczba okresów linii szybkiej %K
-    * @param optInFastD_Period Liczba okresów linii szybkiej %D
-    * @param optInFastD_MAType Typ średniej kroczącej dla linii szybkiej %D
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outFastK Tablica na elementy wyjściowe (wyniki w postaci linii szybkiej %K)
-    * @param outFastD Tablica na elementy wyjściowe (wyniki w postaci linii szybiej %D)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stochF( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      int optInFastK_Period,
-      int optInFastD_Period,
-      MAType optInFastD_MAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outFastK[],
-      double outFastD[] )
-   {
-      RetCode retCode;
-      double lowest, highest, tmp, diff;
-      double []tempBuffer ;
-      int outIdx, lowestIdx, highestIdx;
-      int lookbackTotal, lookbackK, lookbackFastD;
-      int trailingIdx, today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInFastD_Period == ( Integer.MIN_VALUE ) )
-         optInFastD_Period = 3;
-      else if( ((int)optInFastD_Period < 1) || ((int)optInFastD_Period > 100000) )
-         return RetCode.BadParam ;
-      lookbackK = optInFastK_Period-1;
-      lookbackFastD = movingAverageLookback ( optInFastD_Period, optInFastD_MAType );
-      lookbackTotal = lookbackK + lookbackFastD;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      today = trailingIdx+lookbackK;
-      lowestIdx = highestIdx = -1;
-      diff = highest = lowest = 0.0;
-      if( (outFastK == inHigh) ||
-         (outFastK == inLow) ||
-         (outFastK == inClose) )
-      {
-         tempBuffer = outFastK;
-      }
-      else if( (outFastD == inHigh) ||
-         (outFastD == inLow) ||
-         (outFastD == inClose) )
-      {
-         tempBuffer = outFastD;
-      }
-      else
-      {
-         tempBuffer = new double[endIdx-today+1] ;
-      }
-      while( today <= endIdx )
-      {
-         tmp = inLow[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inLow[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inLow[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         tmp = inHigh[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inHigh[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmp = inHigh[i];
-               if( tmp > highest )
-               {
-                  highestIdx = i;
-                  highest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp >= highest )
-         {
-            highestIdx = today;
-            highest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         if( diff != 0.0 )
-            tempBuffer[outIdx++] = (inClose[today]-lowest)/diff;
-         else
-            tempBuffer[outIdx++] = 0.0;
-         trailingIdx++;
-         today++;
-      }
-      retCode = movingAverage ( 0, outIdx-1,
-         tempBuffer, optInFastD_Period,
-         optInFastD_MAType,
-         outBegIdx, outNBElement, outFastD );
-      if( (retCode != RetCode.Success ) || ((int) outNBElement.value ) == 0 )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      System.arraycopy(tempBuffer,lookbackFastD,outFastK,0,(int)outNBElement.value) ;
-      if( retCode != RetCode.Success )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Szybko oscylator stochastyczny. mierzy skalę wykupienia i wyprzedania rynku w skali procentowej (od 0 do 100).
-    * budowa oscylatora opiera się na spostrzeżeniu, że w silnym trendzie wzrostowym ceny zamknięcia są bliskie górniej części zakresu wahań cen z danej sesji – blisko maksimum 
-	* (w trendzie spadkowym zaś minimum).
-	* <hr>
-	* wykupienia – jeśli linie wskaźnika znajdują się ponad poziomem 70 lub 80
-	* wyprzedania – jeśli linie te spadną poniżej poziomu 30 lub 20%
-	* <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Najwyższa cena maksymalna z n sesji
-    * @param inLow Najniższa cena minimalna z n sesji
-    * @param inClose bierząca cena zamknięcia
-    * @param optInFastK_Period Liczba okresów linii szybkiej %K
-    * @param optInFastD_Period Liczba okresów linii szybkiej %D
-    * @param optInFastD_MAType Typ średniej kroczącej dla linii szybkiej %D
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outFastK Tablica na elementy wyjściowe (wyniki w postaci linii szybkiej %K)
-    * @param outFastD Tablica na elementy wyjściowe (wyniki w postaci linii szybiej %D)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stochF( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      int optInFastK_Period,
-      int optInFastD_Period,
-      MAType optInFastD_MAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outFastK[],
-      double outFastD[] )
-   {
-      RetCode retCode;
-      double lowest, highest, tmp, diff;
-      double []tempBuffer ;
-      int outIdx, lowestIdx, highestIdx;
-      int lookbackTotal, lookbackK, lookbackFastD;
-      int trailingIdx, today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInFastD_Period == ( Integer.MIN_VALUE ) )
-         optInFastD_Period = 3;
-      else if( ((int)optInFastD_Period < 1) || ((int)optInFastD_Period > 100000) )
-         return RetCode.BadParam ;
-      lookbackK = optInFastK_Period-1;
-      lookbackFastD = movingAverageLookback ( optInFastD_Period, optInFastD_MAType );
-      lookbackTotal = lookbackK + lookbackFastD;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      today = trailingIdx+lookbackK;
-      lowestIdx = highestIdx = -1;
-      diff = highest = lowest = 0.0;
-      tempBuffer = new double[endIdx-today+1] ;
-      while( today <= endIdx )
-      {
-         tmp = inLow[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inLow[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inLow[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         tmp = inHigh[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inHigh[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmp = inHigh[i];
-               if( tmp > highest )
-               {
-                  highestIdx = i;
-                  highest = tmp;
-               }
-            }
-            diff = (highest - lowest)/100.0;
-         }
-         else if( tmp >= highest )
-         {
-            highestIdx = today;
-            highest = tmp;
-            diff = (highest - lowest)/100.0;
-         }
-         if( diff != 0.0 )
-            tempBuffer[outIdx++] = (inClose[today]-lowest)/diff;
-         else
-            tempBuffer[outIdx++] = 0.0;
-         trailingIdx++;
-         today++;
-      }
-      retCode = movingAverage ( 0, outIdx-1,
-         tempBuffer, optInFastD_Period,
-         optInFastD_MAType,
-         outBegIdx, outNBElement, outFastD );
-      if( (retCode != RetCode.Success ) || ((int) outNBElement.value ) == 0 )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      System.arraycopy(tempBuffer,lookbackFastD,outFastK,0,(int)outNBElement.value) ;
-      if( retCode != RetCode.Success )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca przedział czasowy(liczbę okresów) dla StochRSI.
-    * @param optInTimePeriod Przedział czasowy
-    * @param optInFastK_Period Liczba okresów dla szbkiej linii %K
-    * @param optInFastD_Period Liczba okresów dla szybkiej linii %D
-    * @param optInFastD_MAType Typ średniej kroczącej dla linii %D
-    * @return przedział czasowy(liczba okresów)
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int stochRsiLookback( int optInTimePeriod,
-      int optInFastK_Period,
-      int optInFastD_Period,
-      MAType optInFastD_MAType )
-   {
-      int retValue;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return -1;
-      if( (int)optInFastD_Period == ( Integer.MIN_VALUE ) )
-         optInFastD_Period = 3;
-      else if( ((int)optInFastD_Period < 1) || ((int)optInFastD_Period > 100000) )
-         return -1;
-      retValue = rsiLookback ( optInTimePeriod ) + stochFLookback ( optInFastK_Period, optInFastD_Period, optInFastD_MAType );
-      return retValue;
-   }
-   /**
-    * Stochastic RSI jest wskaźnikiem liczonym ze wskaźniów (oscylatora stochastycznego oraz wskaźnika siły względnej RSI).
-    * RSI liczone jest w stosunku do jego zakresu w celu zwiększenia czułości.
-    * Stochastic RSI przyjmuje wartości od 0 do 1.
-    * <hr>
-    * Warunki wykupienia/wyprzedaży zachodzą w momencie kiedy StochRSI przekracza powyżej 0.8/poniżej 0.2.
-    * Sygnał kupna generowany jest wtegy gdy StochRSI przechodzi z wyprzedaży powyżej punktu środkowego 0.5.
-    * Sygnał sprzedaży generowany jest wtedy gdy StochRSI przechodzi z wykupienia poniżej punktu środkowego.
-    * Indeks ten może byc interpretowany na kilka sposobów. 
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do policzenia.
-    * @param optInTimePeriod Liczba okresów
-    * @param optInFastK_Period Liczba okresów dla linii %K szybkiej.
-    * @param optInFastD_Period Liczba okresów dla linii %D szybkiej.
-    * @param optInFastD_MAType Typ średniej kroczącej dla lini %D szybkiej.
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outFastK Tablica na elementy wyjściowe (linię %K szybką)
-    * @param outFastD Tablica ne elementy wyjściowe (linię %D szybką)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stochRsi( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      int optInFastK_Period,
-      int optInFastD_Period,
-      MAType optInFastD_MAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outFastK[],
-      double outFastD[] )
-   {
-      double []tempRSIBuffer ;
-      RetCode retCode;
-      int lookbackTotal, lookbackSTOCHF, tempArraySize;
-      MInteger outBegIdx1 = new MInteger() ;
-      MInteger outBegIdx2 = new MInteger() ;
-      MInteger outNbElement1 = new MInteger() ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInFastD_Period == ( Integer.MIN_VALUE ) )
-         optInFastD_Period = 3;
-      else if( ((int)optInFastD_Period < 1) || ((int)optInFastD_Period > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      lookbackSTOCHF = stochFLookback ( optInFastK_Period, optInFastD_Period, optInFastD_MAType );
-      lookbackTotal = rsiLookback ( optInTimePeriod ) + lookbackSTOCHF;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      tempArraySize = (endIdx - startIdx) + 1 + lookbackSTOCHF;
-      tempRSIBuffer = new double[tempArraySize] ;
-      retCode = rsi (startIdx-lookbackSTOCHF,
-         endIdx,
-         inReal,
-         optInTimePeriod,
-         outBegIdx1 ,
-         outNbElement1 ,
-         tempRSIBuffer);
-      if( retCode != RetCode.Success || outNbElement1.value == 0 )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      retCode = stochF (0,
-         tempArraySize-1,
-         tempRSIBuffer,
-         tempRSIBuffer,
-         tempRSIBuffer,
-         optInFastK_Period,
-         optInFastD_Period,
-         optInFastD_MAType,
-         outBegIdx2 ,
-         outNBElement,
-         outFastK,
-         outFastD);
-      if( retCode != RetCode.Success || ((int) outNBElement.value ) == 0 )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      return RetCode.Success ;
-   }
-   /**
-    * Stochastic RSI jest wskaźnikiem liczonym ze wskaźniów (oscylatora stochastycznego oraz wskaźnika siły względnej RSI).
-    * RSI liczone jest w stosunku do jego zakresu w celu zwiększenia czułości.
-    * Stochastic RSI przyjmuje wartości od 0 do 1.
-    * <hr>
-    * Warunki wykupienia/wyprzedaży zachodzą w momencie kiedy StochRSI przekracza powyżej 0.8/poniżej 0.2.
-    * Sygnał kupna generowany jest wtegy gdy StochRSI przechodzi z wyprzedaży powyżej punktu środkowego 0.5.
-    * Sygnał sprzedaży generowany jest wtedy gdy StochRSI przechodzi z wykupienia poniżej punktu środkowego.
-    * Indeks ten może byc interpretowany na kilka sposobów. 
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do policzenia.
-    * @param optInTimePeriod Liczba okresów
-    * @param optInFastK_Period Liczba okresów dla linii %K szybkiej.
-    * @param optInFastD_Period Liczba okresów dla linii %D szybkiej.
-    * @param optInFastD_MAType Typ średniej kroczącej dla lini %D szybkiej.
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outFastK Tablica na elementy wyjściowe (linię %K szybką)
-    * @param outFastD Tablica ne elementy wyjściowe (linię %D szybką)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode stochRsi( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      int optInFastK_Period,
-      int optInFastD_Period,
-      MAType optInFastD_MAType,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outFastK[],
-      double outFastD[] )
-   {
-      double []tempRSIBuffer ;
-      RetCode retCode;
-      int lookbackTotal, lookbackSTOCHF, tempArraySize;
-      MInteger outBegIdx1 = new MInteger() ;
-      MInteger outBegIdx2 = new MInteger() ;
-      MInteger outNbElement1 = new MInteger() ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInFastK_Period == ( Integer.MIN_VALUE ) )
-         optInFastK_Period = 5;
-      else if( ((int)optInFastK_Period < 1) || ((int)optInFastK_Period > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInFastD_Period == ( Integer.MIN_VALUE ) )
-         optInFastD_Period = 3;
-      else if( ((int)optInFastD_Period < 1) || ((int)optInFastD_Period > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      lookbackSTOCHF = stochFLookback ( optInFastK_Period, optInFastD_Period, optInFastD_MAType );
-      lookbackTotal = rsiLookback ( optInTimePeriod ) + lookbackSTOCHF;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      tempArraySize = (endIdx - startIdx) + 1 + lookbackSTOCHF;
-      tempRSIBuffer = new double[tempArraySize] ;
-      retCode = rsi (startIdx-lookbackSTOCHF,
-         endIdx,
-         inReal,
-         optInTimePeriod,
-         outBegIdx1 ,
-         outNbElement1 ,
-         tempRSIBuffer);
-      if( retCode != RetCode.Success || outNbElement1.value == 0 )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      retCode = stochF (0,
-         tempArraySize-1,
-         tempRSIBuffer,
-         tempRSIBuffer,
-         tempRSIBuffer,
-         optInFastK_Period,
-         optInFastD_Period,
-         optInFastD_MAType,
-         outBegIdx2 ,
-         outNBElement,
-         outFastK,
-         outFastD);
-      if( retCode != RetCode.Success || ((int) outNBElement.value ) == 0 )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return retCode;
-      }
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca podstawową wartośc różnicy
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int subLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda oblicza różnice między n-tymi elementami zbiorów.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal0 Tablica z wartościami (zbiór 1)
-    * @param inReal1 Tablica z wartościami (zbiór 2)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sub( int startIdx,
-      int endIdx,
-      double inReal0[],
-      double inReal1[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = inReal0[i]-inReal1[i];
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza różnice między n-tymi elementami zbiorów.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal0 Tablica z wartościami (zbiór 1)
-    * @param inReal1 Tablica z wartościami (zbiór 2)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sub( int startIdx,
-      int endIdx,
-      float inReal0[],
-      float inReal1[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = inReal0[i]-inReal1[i];
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda określa przedział sumowania.
-    * @param optInTimePeriod Ilosc elementów
-    * @return Przedział dla sumy.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int sumLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod-1;
-   }
-   /**
-    * Metoda oblicza sumę z danego przedziału.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do sumowania
-    * @param optInTimePeriod Ilośc elementów do sumowania
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @autor Komentarz - Artur Ratajczak
-    */
-   public RetCode sum( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double periodTotal, tempReal;
-      int i, outIdx, trailingIdx, lookbackTotal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = (optInTimePeriod-1);
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      periodTotal = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      i=trailingIdx;
-      if( optInTimePeriod > 1 )
-      {
-         while( i < startIdx )
-            periodTotal += inReal[i++];
-      }
-      outIdx = 0;
-      do
-      {
-         periodTotal += inReal[i++];
-         tempReal = periodTotal;
-         periodTotal -= inReal[trailingIdx++];
-         outReal[outIdx++] = tempReal;
-      } while( i <= endIdx );
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza sumę z danego przedziału.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do sumowania
-    * @param optInTimePeriod Ilośc elementów do sumowania
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode sum( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double periodTotal, tempReal;
-      int i, outIdx, trailingIdx, lookbackTotal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = (optInTimePeriod-1);
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      periodTotal = 0;
-      trailingIdx = startIdx-lookbackTotal;
-      i=trailingIdx;
-      if( optInTimePeriod > 1 )
-      {
-         while( i < startIdx )
-            periodTotal += inReal[i++];
-      }
-      outIdx = 0;
-      do
-      {
-         periodTotal += inReal[i++];
-         tempReal = periodTotal;
-         periodTotal -= inReal[trailingIdx++];
-         outReal[outIdx++] = tempReal;
-      } while( i <= endIdx );
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda oblicza przedział czasowy dla T3.
-    * @param optInTimePeriod Przedział czasu
-    * @param optInVFactor wektor dodania vFactor z przedziału (0;1)
-    * @return Przedział czasowy T3.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int t3Lookback( int optInTimePeriod,
-      double optInVFactor )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( optInVFactor == (-4e+37) )
-         optInVFactor = 7.000000e-1;
-      else if( (optInVFactor < 0.000000e+0) || (optInVFactor > 1.000000e+0) )
-         return -1;
-      return 6 * (optInTimePeriod-1) + (this.unstablePeriod[FuncUnstId.T3.ordinal()]) ;
-   }
-   /** T3 jest typem średniej kroczącej lub funkcją wygładzającą. Opartay jest na DEMA.T3 bierze kalkulacje DEMA i dodaje do
-    * nich dodatkowy parametr zwany vFactor z przedziału od 0 do 1. Rezultat funkcji nazwany się GD lub Generalizer DEMA.
-    * <hr>
-    * Gdy parametr vFactor przyjmie wartośc 1, to T3 zachowuje się dokładnie tak samo jak DEMA.
-    * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do liczenia
-    * @param optInTimePeriod Przedział czasu
-    * @param optInVFactor Wartośc parametr dodatkowego potrzebna by obliczyc T3. Powinna się znajdowac w przedziale od 1 do 0. 
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode t3( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      double optInVFactor,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx, lookbackTotal;
-      int today, i;
-      double k, one_minus_k;
-      double e1, e2, e3, e4, e5, e6;
-      double c1, c2, c3, c4;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInVFactor == (-4e+37) )
-         optInVFactor = 7.000000e-1;
-      else if( (optInVFactor < 0.000000e+0) || (optInVFactor > 1.000000e+0) )
-         return RetCode.BadParam ;
-      lookbackTotal = 6 * (optInTimePeriod - 1) + (this.unstablePeriod[FuncUnstId.T3.ordinal()]) ;
-      if( startIdx <= lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      today = startIdx - lookbackTotal;
-      k = 2.0/(optInTimePeriod+1.0);
-      one_minus_k = 1.0-k;
-      tempReal = inReal[today++];
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-         tempReal += inReal[today++];
-      e1 = tempReal / optInTimePeriod;
-      tempReal = e1;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         tempReal += e1;
-      }
-      e2 = tempReal / optInTimePeriod;
-      tempReal = e2;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         tempReal += e2;
-      }
-      e3 = tempReal / optInTimePeriod;
-      tempReal = e3;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         tempReal += e3;
-      }
-      e4 = tempReal / optInTimePeriod;
-      tempReal = e4;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         tempReal += e4;
-      }
-      e5 = tempReal / optInTimePeriod;
-      tempReal = e5;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         e5 = (k*e4)+(one_minus_k*e5);
-         tempReal += e5;
-      }
-      e6 = tempReal / optInTimePeriod;
-      while( today <= startIdx )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         e5 = (k*e4)+(one_minus_k*e5);
-         e6 = (k*e5)+(one_minus_k*e6);
-      }
-      tempReal = optInVFactor * optInVFactor;
-      c1 = -(tempReal * optInVFactor);
-      c2 = 3.0 * (tempReal - c1);
-      c3 = -6.0 * tempReal - 3.0 * (optInVFactor-c1);
-      c4 = 1.0 + 3.0 * optInVFactor - c1 + 3.0 * tempReal;
-      outIdx = 0;
-      outReal[outIdx++] = c1*e6+c2*e5+c3*e4+c4*e3;
-      while( today <= endIdx )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         e5 = (k*e4)+(one_minus_k*e5);
-         e6 = (k*e5)+(one_minus_k*e6);
-         outReal[outIdx++] = c1*e6+c2*e5+c3*e4+c4*e3;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /** T3 jest typem średniej kroczącej lub funkcją wygładzającą. Opartay jest na DEMA.T3 bierze kalkulacje DEMA i dodaje do
-    * nich dodatkowy parametr zwany vFactor z przedziału od 0 do 1. Rezultat funkcji nazwany się GD lub Generalizer DEMA.
-    * <hr>
-    * Gdy parametr vFactor przyjmie wartośc 1, to T3 zachowuje się dokładnie tak samo jak DEMA.
-    * Gdy przyjmie wartośc 0 T3 jest takie samo jak Exponential Moving Average (EMA). Domyślną wartościa vFactor jest 0.7.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do liczenia
-    * @param optInTimePeriod Przedział czasu
-    * @param optInVFactor Wartośc parametr dodatkowego potrzebna by obliczyc T3. Powinna się znajdowac w przedziale od 1 do 0. 
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode t3( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      double optInVFactor,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx, lookbackTotal;
-      int today, i;
-      double k, one_minus_k;
-      double e1, e2, e3, e4, e5, e6;
-      double c1, c2, c3, c4;
-      double tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInVFactor == (-4e+37) )
-         optInVFactor = 7.000000e-1;
-      else if( (optInVFactor < 0.000000e+0) || (optInVFactor > 1.000000e+0) )
-         return RetCode.BadParam ;
-      lookbackTotal = 6 * (optInTimePeriod - 1) + (this.unstablePeriod[FuncUnstId.T3.ordinal()]) ;
-      if( startIdx <= lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      today = startIdx - lookbackTotal;
-      k = 2.0/(optInTimePeriod+1.0);
-      one_minus_k = 1.0-k;
-      tempReal = inReal[today++];
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-         tempReal += inReal[today++];
-      e1 = tempReal / optInTimePeriod;
-      tempReal = e1;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         tempReal += e1;
-      }
-      e2 = tempReal / optInTimePeriod;
-      tempReal = e2;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         tempReal += e2;
-      }
-      e3 = tempReal / optInTimePeriod;
-      tempReal = e3;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         tempReal += e3;
-      }
-      e4 = tempReal / optInTimePeriod;
-      tempReal = e4;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         tempReal += e4;
-      }
-      e5 = tempReal / optInTimePeriod;
-      tempReal = e5;
-      for( i=optInTimePeriod-1; i > 0 ; i-- )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         e5 = (k*e4)+(one_minus_k*e5);
-         tempReal += e5;
-      }
-      e6 = tempReal / optInTimePeriod;
-      while( today <= startIdx )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         e5 = (k*e4)+(one_minus_k*e5);
-         e6 = (k*e5)+(one_minus_k*e6);
-      }
-      tempReal = optInVFactor * optInVFactor;
-      c1 = -(tempReal * optInVFactor);
-      c2 = 3.0 * (tempReal - c1);
-      c3 = -6.0 * tempReal - 3.0 * (optInVFactor-c1);
-      c4 = 1.0 + 3.0 * optInVFactor - c1 + 3.0 * tempReal;
-      outIdx = 0;
-      outReal[outIdx++] = c1*e6+c2*e5+c3*e4+c4*e3;
-      while( today <= endIdx )
-      {
-         e1 = (k*inReal[today++])+(one_minus_k*e1);
-         e2 = (k*e1)+(one_minus_k*e2);
-         e3 = (k*e2)+(one_minus_k*e3);
-         e4 = (k*e3)+(one_minus_k*e4);
-         e5 = (k*e4)+(one_minus_k*e5);
-         e6 = (k*e5)+(one_minus_k*e6);
-         outReal[outIdx++] = c1*e6+c2*e5+c3*e4+c4*e3;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca podstawową wartośc tangent 
-    * @return 0 
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int tanLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda oblicza wartośc funkcji tangent (tangens) 
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia (radiany)
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementow wyjsciowych
-    * @param outReal Tablica na elementy wyjsciowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tan( int startIdx,
-      int endIdx,
-      double inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.tan (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza wartośc funkcji tangent (tangens) 
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia (radiany)
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementow wyjsciowych
-    * @param outReal Tablica na elementy wyjsciowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tan( int startIdx,
-      int endIdx,
-      float inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.tan (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca podstawową wartoś hyperbolic tangent 
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int tanhLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do wyliczenia (radiany)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tanh( int startIdx,
-      int endIdx,
-      double inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.tanh (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza wartości hyperbolic tangent ( tangens hiperboliczny)
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do wyliczenia (radiany)
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tanh( int startIdx,
-      int endIdx,
-      float inReal[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      for( i=startIdx, outIdx=0; i <= endIdx; i++, outIdx++ )
-      {
-         outReal[outIdx] = Math.tanh (inReal[i]);
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda oblicza zakres czasowy dla TEMA 
-    * @param optInTimePeriod Przedział czas
-    * @return Zakres czasu dla TEMA
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int temaLookback( int optInTimePeriod )
-   {
-      int retValue;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      retValue = emaLookback ( optInTimePeriod );
-      return retValue * 3;
-   }
-   /**
-    * Wskaźnika Triple Exponential Moving Avarage używa się do wygładzenia cen oraz innych danych. Jest to połączenie
-    * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Zakres czasu
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tema( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double []firstEMA ;
-      double []secondEMA ;
-      double k;
-      MInteger firstEMABegIdx = new MInteger() ;
-      MInteger firstEMANbElement = new MInteger() ;
-      MInteger secondEMABegIdx = new MInteger() ;
-      MInteger secondEMANbElement = new MInteger() ;
-      MInteger thirdEMABegIdx = new MInteger() ;
-      MInteger thirdEMANbElement = new MInteger() ;
-      int tempInt, outIdx, lookbackTotal, lookbackEMA;
-      int firstEMAIdx, secondEMAIdx;
-      RetCode retCode;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      outNBElement.value = 0 ;
-      outBegIdx.value = 0 ;
-      lookbackEMA = emaLookback ( optInTimePeriod );
-      lookbackTotal = lookbackEMA * 3;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-         return RetCode.Success ;
-      tempInt = lookbackTotal+(endIdx-startIdx)+1;
-      firstEMA = new double[tempInt] ;
-      k = ((double)2.0 / ((double)(optInTimePeriod + 1))) ;
-      retCode = TA_INT_EMA ( startIdx-(lookbackEMA*2), endIdx, inReal,
-         optInTimePeriod, k,
-         firstEMABegIdx , firstEMANbElement ,
-         firstEMA );
-      if( (retCode != RetCode.Success ) || ( firstEMANbElement.value == 0) )
-      {
-         return retCode;
-      }
-      secondEMA = new double[firstEMANbElement.value] ;
-      retCode = TA_INT_EMA ( 0, firstEMANbElement.value -1, firstEMA,
-         optInTimePeriod, k,
-         secondEMABegIdx , secondEMANbElement ,
-         secondEMA );
-      if( (retCode != RetCode.Success ) || ( secondEMANbElement.value == 0) )
-      {
-         return retCode;
-      }
-      retCode = TA_INT_EMA ( 0, secondEMANbElement.value -1, secondEMA,
-         optInTimePeriod, k,
-         thirdEMABegIdx , thirdEMANbElement ,
-         outReal );
-      if( (retCode != RetCode.Success ) || ( thirdEMANbElement.value == 0) )
-      {
-         return retCode;
-      }
-      firstEMAIdx = thirdEMABegIdx.value + secondEMABegIdx.value ;
-      secondEMAIdx = thirdEMABegIdx.value ;
-      outBegIdx.value = firstEMAIdx + firstEMABegIdx.value ;
-      outIdx = 0;
-      while( outIdx < thirdEMANbElement.value )
-      {
-         outReal[outIdx] += (3.0*firstEMA[firstEMAIdx++]) - (3.0*secondEMA[secondEMAIdx++]);
-         outIdx++;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Wskaźnika Triple Exponential Moving Avarage używa się do wygładzenia cen oraz innych danych. Jest to połączenie
-    * pojedyńczego EMA, podwójnego EMA oraz potrójnego EMA co zmniejsza również opóźnienia.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Zakres czasu
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tema( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double []firstEMA ;
-      double []secondEMA ;
-      double k;
-      MInteger firstEMABegIdx = new MInteger() ;
-      MInteger firstEMANbElement = new MInteger() ;
-      MInteger secondEMABegIdx = new MInteger() ;
-      MInteger secondEMANbElement = new MInteger() ;
-      MInteger thirdEMABegIdx = new MInteger() ;
-      MInteger thirdEMANbElement = new MInteger() ;
-      int tempInt, outIdx, lookbackTotal, lookbackEMA;
-      int firstEMAIdx, secondEMAIdx;
-      RetCode retCode;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      outNBElement.value = 0 ;
-      outBegIdx.value = 0 ;
-      lookbackEMA = emaLookback ( optInTimePeriod );
-      lookbackTotal = lookbackEMA * 3;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-         return RetCode.Success ;
-      tempInt = lookbackTotal+(endIdx-startIdx)+1;
-      firstEMA = new double[tempInt] ;
-      k = ((double)2.0 / ((double)(optInTimePeriod + 1))) ;
-      retCode = TA_INT_EMA ( startIdx-(lookbackEMA*2), endIdx, inReal,
-         optInTimePeriod, k,
-         firstEMABegIdx , firstEMANbElement ,
-         firstEMA );
-      if( (retCode != RetCode.Success ) || ( firstEMANbElement.value == 0) )
-      {
-         return retCode;
-      }
-      secondEMA = new double[firstEMANbElement.value] ;
-      retCode = TA_INT_EMA ( 0, firstEMANbElement.value -1, firstEMA,
-         optInTimePeriod, k,
-         secondEMABegIdx , secondEMANbElement ,
-         secondEMA );
-      if( (retCode != RetCode.Success ) || ( secondEMANbElement.value == 0) )
-      {
-         return retCode;
-      }
-      retCode = TA_INT_EMA ( 0, secondEMANbElement.value -1, secondEMA,
-         optInTimePeriod, k,
-         thirdEMABegIdx , thirdEMANbElement ,
-         outReal );
-      if( (retCode != RetCode.Success ) || ( thirdEMANbElement.value == 0) )
-      {
-         return retCode;
-      }
-      firstEMAIdx = thirdEMABegIdx.value + secondEMABegIdx.value ;
-      secondEMAIdx = thirdEMABegIdx.value ;
-      outBegIdx.value = firstEMAIdx + firstEMABegIdx.value ;
-      outIdx = 0;
-      while( outIdx < thirdEMANbElement.value )
-      {
-         outReal[outIdx] += (3.0*firstEMA[firstEMAIdx++]) - (3.0*secondEMA[secondEMAIdx++]);
-         outIdx++;
-      }
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca domyślną wartośc True Range.
-    * @return 1
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int trueRangeLookback( )
-   {
-      return 1;
-   }
-   /**
-    * Funkcja True Range jest użyta do obliczania wielu wskaźników w szczególności do Welles Wilder DX.
-    *Jest to podstawowy wynik do określenia normalnego zakresu handlu zasobami.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Tablica cen maksymalnych
-    * @param inLow Tablica cen minimalnych
-    * @param inClose Tablica cen zamknięcia 
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode trueRange( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, outIdx;
-      double val2, val3, greatest;
-      double tempCY, tempLT, tempHT;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( startIdx < 1 )
-         startIdx = 1;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      while( today <= endIdx )
-      {
-         tempLT = inLow[today];
-         tempHT = inHigh[today];
-         tempCY = inClose[today-1];
-         greatest = tempHT - tempLT;
-         val2 = Math.abs ( tempCY - tempHT );
-         if( val2 > greatest )
-            greatest = val2;
-         val3 = Math.abs ( tempCY - tempLT );
-         if( val3 > greatest )
-            greatest = val3;
-         outReal[outIdx++] = greatest;
-         today++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Funkcja True Range jest użyta do obliczania wielu wskaźników w szczególności do Welles Wilder DX.
-    *Jest to podstawowy wynik do określenia normalnego zakresu handlu zasobami.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inHigh Tablica cen maksymalnych
-    * @param inLow Tablica cen minimalnych
-    * @param inClose Tablica cen zamknięcia 
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode trueRange( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int today, outIdx;
-      double val2, val3, greatest;
-      double tempCY, tempLT, tempHT;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( startIdx < 1 )
-         startIdx = 1;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      while( today <= endIdx )
-      {
-         tempLT = inLow[today];
-         tempHT = inHigh[today];
-         tempCY = inClose[today-1];
-         greatest = tempHT - tempLT;
-         val2 = Math.abs ( tempCY - tempHT );
-         if( val2 > greatest )
-            greatest = val2;
-         val3 = Math.abs ( tempCY - tempLT );
-         if( val3 > greatest )
-            greatest = val3;
-         outReal[outIdx++] = greatest;
-         today++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca zakres przedziału wejściowego.
-    * @param optInTimePeriod Iloś elementów wejściowych.
-    * @return zakres przedziału.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int trimaLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod-1;
-   }
-   /**
-    * Triangular Moving Avarage (trójkątna średnia krocząca) jest to forma średniej ważonej w której rozłożenie wag przyjmuje postac trójkątną.
-    * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Przedział wartości do obliczenia
-    * @param outBegIdx Początkowy indeks końcowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode trima( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int lookbackTotal;
-      double numerator;
-      double numeratorSub;
-      double numeratorAdd;
-      int i, outIdx, todayIdx, trailingIdx, middleIdx;
-      double factor, tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = (optInTimePeriod-1);
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( (optInTimePeriod % 2) == 1 )
-      {
-         i = (optInTimePeriod>>1);
-         factor = (i+1)*(i+1);
-         factor = 1.0/factor;
-         trailingIdx = startIdx-lookbackTotal;
-         middleIdx = trailingIdx + i;
-         todayIdx = middleIdx + i;
-         numerator = 0.0;
-         numeratorSub = 0.0;
-         for( i=middleIdx; i >= trailingIdx; i-- )
-         {
-            tempReal = inReal[i];
-            numeratorSub += tempReal;
-            numerator += numeratorSub;
-         }
-         numeratorAdd = 0.0;
-         middleIdx++;
-         for( i=middleIdx; i <= todayIdx; i++ )
-         {
-            tempReal = inReal[i];
-            numeratorAdd += tempReal;
-            numerator += numeratorAdd;
-         }
-         outIdx = 0;
-         tempReal = inReal[trailingIdx++];
-         outReal[outIdx++] = numerator * factor;
-         todayIdx++;
-         while( todayIdx <= endIdx )
-         {
-            numerator -= numeratorSub;
-            numeratorSub -= tempReal;
-            tempReal = inReal[middleIdx++];
-            numeratorSub += tempReal;
-            numerator += numeratorAdd;
-            numeratorAdd -= tempReal;
-            tempReal = inReal[todayIdx++];
-            numeratorAdd += tempReal;
-            numerator += tempReal;
-            tempReal = inReal[trailingIdx++];
-            outReal[outIdx++] = numerator * factor;
-         }
-      }
-      else
-      {
-         i = (optInTimePeriod>>1);
-         factor = i*(i+1);
-         factor = 1.0/factor;
-         trailingIdx = startIdx-lookbackTotal;
-         middleIdx = trailingIdx + i - 1;
-         todayIdx = middleIdx + i;
-         numerator = 0.0;
-         numeratorSub = 0.0;
-         for( i=middleIdx; i >= trailingIdx; i-- )
-         {
-            tempReal = inReal[i];
-            numeratorSub += tempReal;
-            numerator += numeratorSub;
-         }
-         numeratorAdd = 0.0;
-         middleIdx++;
-         for( i=middleIdx; i <= todayIdx; i++ )
-         {
-            tempReal = inReal[i];
-            numeratorAdd += tempReal;
-            numerator += numeratorAdd;
-         }
-         outIdx = 0;
-         tempReal = inReal[trailingIdx++];
-         outReal[outIdx++] = numerator * factor;
-         todayIdx++;
-         while( todayIdx <= endIdx )
-         {
-            numerator -= numeratorSub;
-            numeratorSub -= tempReal;
-            tempReal = inReal[middleIdx++];
-            numeratorSub += tempReal;
-            numeratorAdd -= tempReal;
-            numerator += numeratorAdd;
-            tempReal = inReal[todayIdx++];
-            numeratorAdd += tempReal;
-            numerator += tempReal;
-            tempReal = inReal[trailingIdx++];
-            outReal[outIdx++] = numerator * factor;
-         }
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Triangular Moving Avarage (trójkątna średnia krocząca) jest to forma średniej ważonej w której rozłożenie wag przyjmuje postac trójkątną.
-    * Największe wagi znajdują się po środku np. 1,2,3,4,3,2,1. Dzięki temu nowe oraz stare wartości mają mniejsze wagi.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Przedział wartości do obliczenia
-    * @param outBegIdx Początkowy indeks końcowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode trima( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int lookbackTotal;
-      double numerator;
-      double numeratorSub;
-      double numeratorAdd;
-      int i, outIdx, todayIdx, trailingIdx, middleIdx;
-      double factor, tempReal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = (optInTimePeriod-1);
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      if( (optInTimePeriod % 2) == 1 )
-      {
-         i = (optInTimePeriod>>1);
-         factor = (i+1)*(i+1);
-         factor = 1.0/factor;
-         trailingIdx = startIdx-lookbackTotal;
-         middleIdx = trailingIdx + i;
-         todayIdx = middleIdx + i;
-         numerator = 0.0;
-         numeratorSub = 0.0;
-         for( i=middleIdx; i >= trailingIdx; i-- )
-         {
-            tempReal = inReal[i];
-            numeratorSub += tempReal;
-            numerator += numeratorSub;
-         }
-         numeratorAdd = 0.0;
-         middleIdx++;
-         for( i=middleIdx; i <= todayIdx; i++ )
-         {
-            tempReal = inReal[i];
-            numeratorAdd += tempReal;
-            numerator += numeratorAdd;
-         }
-         outIdx = 0;
-         tempReal = inReal[trailingIdx++];
-         outReal[outIdx++] = numerator * factor;
-         todayIdx++;
-         while( todayIdx <= endIdx )
-         {
-            numerator -= numeratorSub;
-            numeratorSub -= tempReal;
-            tempReal = inReal[middleIdx++];
-            numeratorSub += tempReal;
-            numerator += numeratorAdd;
-            numeratorAdd -= tempReal;
-            tempReal = inReal[todayIdx++];
-            numeratorAdd += tempReal;
-            numerator += tempReal;
-            tempReal = inReal[trailingIdx++];
-            outReal[outIdx++] = numerator * factor;
-         }
-      }
-      else
-      {
-         i = (optInTimePeriod>>1);
-         factor = i*(i+1);
-         factor = 1.0/factor;
-         trailingIdx = startIdx-lookbackTotal;
-         middleIdx = trailingIdx + i - 1;
-         todayIdx = middleIdx + i;
-         numerator = 0.0;
-         numeratorSub = 0.0;
-         for( i=middleIdx; i >= trailingIdx; i-- )
-         {
-            tempReal = inReal[i];
-            numeratorSub += tempReal;
-            numerator += numeratorSub;
-         }
-         numeratorAdd = 0.0;
-         middleIdx++;
-         for( i=middleIdx; i <= todayIdx; i++ )
-         {
-            tempReal = inReal[i];
-            numeratorAdd += tempReal;
-            numerator += numeratorAdd;
-         }
-         outIdx = 0;
-         tempReal = inReal[trailingIdx++];
-         outReal[outIdx++] = numerator * factor;
-         todayIdx++;
-         while( todayIdx <= endIdx )
-         {
-            numerator -= numeratorSub;
-            numeratorSub -= tempReal;
-            tempReal = inReal[middleIdx++];
-            numeratorSub += tempReal;
-            numeratorAdd -= tempReal;
-            numerator += numeratorAdd;
-            tempReal = inReal[todayIdx++];
-            numeratorAdd += tempReal;
-            numerator += tempReal;
-            tempReal = inReal[trailingIdx++];
-            outReal[outIdx++] = numerator * factor;
-         }
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca przedział czasowy dla Trix.
-    * @param optInTimePeriod Przedział czasowy
-    * @return Przedział czasowy dla Trix.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int trixLookback( int optInTimePeriod )
-   {
-      int emaLookback;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      emaLookback = emaLookback ( optInTimePeriod );
-      return (emaLookback*3) + rocRLookback ( 1 );
-   }
-   /**
-    *Wskaźnik Trix oblicza szybkosc zmian potrójnej wykładniczej średniej kroczącej (EMA). Wartośc wskaźnika oscyluje o okolicach zera.
-    *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Przedział czasu
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementów wyjsciowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode trix( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double k;
-      double []tempBuffer ;
-      MInteger nbElement = new MInteger() ;
-      MInteger begIdx = new MInteger() ;
-      int totalLookback;
-      int emaLookback, rocLookback;
-      RetCode retCode;
-      int nbElementToOutput;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      emaLookback = emaLookback ( optInTimePeriod );
-      rocLookback = rocRLookback ( 1 );
-      totalLookback = (emaLookback*3) + rocLookback;
-      if( startIdx < totalLookback )
-         startIdx = totalLookback;
-      if( startIdx > endIdx )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      nbElementToOutput = (endIdx-startIdx)+1+totalLookback;
-      tempBuffer = new double[nbElementToOutput] ;
-      k = ((double)2.0 / ((double)(optInTimePeriod + 1))) ;
-      retCode = TA_INT_EMA ( (startIdx-totalLookback), endIdx, inReal,
-         optInTimePeriod, k,
-         begIdx , nbElement ,
-         tempBuffer );
-      if( (retCode != RetCode.Success ) || ( nbElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      nbElementToOutput--;
-      nbElementToOutput -= emaLookback;
-      retCode = TA_INT_EMA ( 0, nbElementToOutput, tempBuffer,
-         optInTimePeriod, k,
-         begIdx , nbElement ,
-         tempBuffer );
-      if( (retCode != RetCode.Success ) || ( nbElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      nbElementToOutput -= emaLookback;
-      retCode = TA_INT_EMA ( 0, nbElementToOutput, tempBuffer,
-         optInTimePeriod, k,
-         begIdx , nbElement ,
-         tempBuffer );
-      if( (retCode != RetCode.Success ) || ( nbElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      nbElementToOutput -= emaLookback;
-      retCode = roc ( 0, nbElementToOutput,
-         tempBuffer,
-         1, begIdx , outNBElement,
-         outReal );
-      if( (retCode != RetCode.Success ) || ((int) outNBElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      return RetCode.Success ;
-   }
-   /**
-    *Wskaźnik Trix oblicza szybkosc zmian potrójnej wykładniczej średniej kroczącej (EMA). Wartośc wskaźnika oscyluje o okolicach zera.
-    *Sygnały kupna/sprzedaży są generowane kiedy TRIX przechodzi powyżej/poniżej zera.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks startowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Przedział czasu
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementów wyjsciowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode trix( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double k;
-      double []tempBuffer ;
-      MInteger nbElement = new MInteger() ;
-      MInteger begIdx = new MInteger() ;
-      int totalLookback;
-      int emaLookback, rocLookback;
-      RetCode retCode;
-      int nbElementToOutput;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      emaLookback = emaLookback ( optInTimePeriod );
-      rocLookback = rocRLookback ( 1 );
-      totalLookback = (emaLookback*3) + rocLookback;
-      if( startIdx < totalLookback )
-         startIdx = totalLookback;
-      if( startIdx > endIdx )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return RetCode.Success ;
-      }
-      outBegIdx.value = startIdx;
-      nbElementToOutput = (endIdx-startIdx)+1+totalLookback;
-      tempBuffer = new double[nbElementToOutput] ;
-      k = ((double)2.0 / ((double)(optInTimePeriod + 1))) ;
-      retCode = TA_INT_EMA ( (startIdx-totalLookback), endIdx, inReal,
-         optInTimePeriod, k,
-         begIdx , nbElement ,
-         tempBuffer );
-      if( (retCode != RetCode.Success ) || ( nbElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      nbElementToOutput--;
-      nbElementToOutput -= emaLookback;
-      retCode = TA_INT_EMA ( 0, nbElementToOutput, tempBuffer,
-         optInTimePeriod, k,
-         begIdx , nbElement ,
-         tempBuffer );
-      if( (retCode != RetCode.Success ) || ( nbElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      nbElementToOutput -= emaLookback;
-      retCode = TA_INT_EMA ( 0, nbElementToOutput, tempBuffer,
-         optInTimePeriod, k,
-         begIdx , nbElement ,
-         tempBuffer );
-      if( (retCode != RetCode.Success ) || ( nbElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      nbElementToOutput -= emaLookback;
-      retCode = roc ( 0, nbElementToOutput,
-         tempBuffer,
-         1, begIdx , outNBElement,
-         outReal );
-      if( (retCode != RetCode.Success ) || ((int) outNBElement.value == 0) )
-      {
-         outNBElement.value = 0 ;
-         outBegIdx.value = 0 ;
-         return retCode;
-      }
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca zakres przedziału wejściowego.
-    * @param optInTimePeriod Ilośc elementów wejściowych.
-    * @return Zakres przedziału.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int tsfLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod-1;
-   }
-   /**
-    * Wskaźnik Time Series Forecast wyświetla statystyczny trend cen w określonym czasie. Trend wyznaczany jest za pomocą analizy regresji liniowej.
-    *  W przeciwieństwie do wykreślonych prostych linii trendu regresji liniowej, Time Series Forecast kreśli ostatnie punkty wielu linii trendu owej regresji.
-    *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Przedział czasowy
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tsf( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int today, lookbackTotal;
-      double SumX, SumXY, SumY, SumXSqr, Divisor;
-      double m, b;
-      int i;
-      double tempValue1;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = tsfLookback ( optInTimePeriod );
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      SumX = optInTimePeriod * ( optInTimePeriod - 1 ) * 0.5;
-      SumXSqr = optInTimePeriod * ( optInTimePeriod - 1 ) * ( 2 * optInTimePeriod - 1 ) / 6;
-      Divisor = SumX * SumX - optInTimePeriod * SumXSqr;
-      while( today <= endIdx )
-      {
-         SumXY = 0;
-         SumY = 0;
-         for( i = optInTimePeriod; i-- != 0; )
-         {
-            SumY += tempValue1 = inReal[today - i];
-            SumXY += (double)i * tempValue1;
-         }
-         m = ( optInTimePeriod * SumXY - SumX * SumY) / Divisor;
-         b = ( SumY - m * SumX ) / (double)optInTimePeriod;
-         outReal[outIdx++] = b + m * (double)optInTimePeriod;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Wskaźnik Time Series Forecast wyświetla statystyczny trend cen w określonym czasie. Trend wyznaczany jest za pomocą analizy regresji liniowej.
-    *  W przeciwieństwie do wykreślonych prostych linii trendu regresji liniowej, Time Series Forecast kreśli ostatnie punkty wielu linii trendu owej regresji.
-    *  W rezultacie otrzymujemy coś co nazywane jest ruchomą regresją liniową.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Indeks początkowy
-    * @param endIdx Indeks końcowy
-    * @param inReal Tablica z wartościami do obliczenia
-    * @param optInTimePeriod Przedział czasowy
-    * @param outBegIdx Początkowy indeks wyjsciowy
-    * @param outNBElement Liczba elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode tsf( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx;
-      int today, lookbackTotal;
-      double SumX, SumXY, SumY, SumXSqr, Divisor;
-      double m, b;
-      int i;
-      double tempValue1;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = tsfLookback ( optInTimePeriod );
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      outIdx = 0;
-      today = startIdx;
-      SumX = optInTimePeriod * ( optInTimePeriod - 1 ) * 0.5;
-      SumXSqr = optInTimePeriod * ( optInTimePeriod - 1 ) * ( 2 * optInTimePeriod - 1 ) / 6;
-      Divisor = SumX * SumX - optInTimePeriod * SumXSqr;
-      while( today <= endIdx )
-      {
-         SumXY = 0;
-         SumY = 0;
-         for( i = optInTimePeriod; i-- != 0; )
-         {
-            SumY += tempValue1 = inReal[today - i];
-            SumXY += (double)i * tempValue1;
-         }
-         m = ( optInTimePeriod * SumXY - SumX * SumY) / Divisor;
-         b = ( SumY - m * SumX ) / (double)optInTimePeriod;
-         outReal[outIdx++] = b + m * (double)optInTimePeriod;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca domyślną wartośc Typical Price
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int typPriceLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda oblicza Typical Price jest to średnia z cen maksymalnych, minimalnych i zamknięcia. Srednia ta używana jest do obliczania kilku innych wskaźników.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Startowy indeks.
-    * @param endIdx Końcowy indeks
-    * @param inHigh Tablica cen maksymalnych
-    * @param inLow Tablica cen minimalnych.
-    * @param inClose Tablica cen zamknięcia 
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode typPrice( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      outIdx = 0;
-      for( i= startIdx; i <= endIdx; i++ )
-      {
-         outReal[outIdx++] = ( inHigh [i] +
-            inLow [i] +
-            inClose[i] ) / 3.0;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza Typical Price jest to średnia z cen maksymalnych, minimalnych i zamknięcia. Srednia ta używana jest do obliczania kilku innych wskaźników.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Startowy indeks.
-    * @param endIdx Końcowy indeks
-    * @param inHigh Tablica cen maksymalnych
-    * @param inLow Tablica cen minimalnych.
-    * @param inClose Tablica cen zamknięcia 
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode typPrice( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      outIdx = 0;
-      for( i= startIdx; i <= endIdx; i++ )
-      {
-         outReal[outIdx++] = ( inHigh [i] +
-            inLow [i] +
-            inClose[i] ) / 3.0;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca zakres z maksymalnego przedziału wejściowego.
-    * 
-    * @param optInTimePeriod1 Pierwszy przedział czasowy (siedmiodniowy)
-    * @param optInTimePeriod2 Drugi przedział czasowy (czternastodniowy)
-    * @param optInTimePeriod3 Trzeci przedział czasowy (dwudziestoośmiodniowy)
-    * @return zakres przedziału czasowego
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int ultOscLookback( int optInTimePeriod1,
-      int optInTimePeriod2,
-      int optInTimePeriod3 )
-   {
-      int maxPeriod;
-      if( (int)optInTimePeriod1 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod1 = 7;
-      else if( ((int)optInTimePeriod1 < 1) || ((int)optInTimePeriod1 > 100000) )
-         return -1;
-      if( (int)optInTimePeriod2 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod2 = 14;
-      else if( ((int)optInTimePeriod2 < 1) || ((int)optInTimePeriod2 > 100000) )
-         return -1;
-      if( (int)optInTimePeriod3 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod3 = 28;
-      else if( ((int)optInTimePeriod3 < 1) || ((int)optInTimePeriod3 > 100000) )
-         return -1;
-      maxPeriod = ((( (((optInTimePeriod1) > (optInTimePeriod2)) ? (optInTimePeriod1) : (optInTimePeriod2)) ) > (optInTimePeriod3)) ? ( (((optInTimePeriod1) > (optInTimePeriod2)) ? (optInTimePeriod1) : (optInTimePeriod2)) ) : (optInTimePeriod3)) ;
-      return smaLookback ( maxPeriod ) + 1;
-   }
-   /**
-    * Wskaźnik Ultimate Oscillator jest oscylatorem, którego wynikiem jest ważona suma 3 oscylatorów o róznych przedziałaczh czasowych
-    * nakładających się na siebie (7,14,28 dniowych). Wynik przedstawiony jest w postaci wykresu osculującego w skali od 0 do 100 punktów.
-    * Dodatkowo wskaźnik można interpretowa w oparciu o jego przebieg w stosunku do poziomów wykupienia (powyżej 70) i wyprzedania (poniżej 30).
-    * Przebicie w dół poziomy wykupienia powoduje wygenerowanie sygnału sprzedaży, przebicie w górę poziomy wyprzedania powoduje wygenerowanie sygnału kupna.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Startowy indeks
-    * @param endIdx Końcowy indeks
-    * @param inHigh Tablica cen maksymalnych.
-    * @param inLow Tablica cen minimalnych.
-    * @param inClose Tablica cen zamknięcia.
-    * @param optInTimePeriod1 Pierwszy przedział czasowy
-    * @param optInTimePeriod2 Drugi przediał czasowy
-    * @param optInTimePeriod3 Trzeci przedział czasowy
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode ultOsc( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      int optInTimePeriod1,
-      int optInTimePeriod2,
-      int optInTimePeriod3,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double a1Total, a2Total, a3Total;
-      double b1Total, b2Total, b3Total;
-      double trueLow, trueRange, closeMinusTrueLow;
-      double tempDouble, output, tempHT, tempLT, tempCY;
-      int lookbackTotal;
-      int longestPeriod, longestIndex;
-      int i,j,today,outIdx;
-      int trailingIdx1, trailingIdx2, trailingIdx3;
-      int []usedFlag = new int[3] ;
-      int []periods = new int[3] ;
-      int []sortedPeriods = new int[3] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod1 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod1 = 7;
-      else if( ((int)optInTimePeriod1 < 1) || ((int)optInTimePeriod1 > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInTimePeriod2 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod2 = 14;
-      else if( ((int)optInTimePeriod2 < 1) || ((int)optInTimePeriod2 > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInTimePeriod3 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod3 = 28;
-      else if( ((int)optInTimePeriod3 < 1) || ((int)optInTimePeriod3 > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      periods[0] = optInTimePeriod1;
-      periods[1] = optInTimePeriod2;
-      periods[2] = optInTimePeriod3;
-      usedFlag[0] = 0;
-      usedFlag[1] = 0;
-      usedFlag[2] = 0;
-      for ( i = 0; i < 3; ++i )
-      {
-         longestPeriod = 0;
-         longestIndex = 0;
-         for ( j = 0; j < 3; ++j )
-         {
-            if ( (usedFlag[j] == 0) && (periods[j] > longestPeriod) )
-            {
-               longestPeriod = periods[j];
-               longestIndex = j;
-            }
-         }
-         usedFlag[longestIndex] = 1;
-         sortedPeriods[i] = longestPeriod;
-      }
-      optInTimePeriod1 = sortedPeriods[2];
-      optInTimePeriod2 = sortedPeriods[1];
-      optInTimePeriod3 = sortedPeriods[0];
-      lookbackTotal = ultOscLookback ( optInTimePeriod1, optInTimePeriod2, optInTimePeriod3 );
-      if( startIdx < lookbackTotal ) startIdx = lookbackTotal;
-      if( startIdx > endIdx ) return RetCode.Success ;
-      { a1Total = 0; b1Total = 0; for ( i = startIdx-optInTimePeriod1+1; i < startIdx; ++i ) { { tempLT = inLow[i]; tempHT = inHigh[i]; tempCY = inClose[i-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[i] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ; a1Total += closeMinusTrueLow; b1Total += trueRange; } } ;
-      { a2Total = 0; b2Total = 0; for ( i = startIdx-optInTimePeriod2+1; i < startIdx; ++i ) { { tempLT = inLow[i]; tempHT = inHigh[i]; tempCY = inClose[i-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[i] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ; a2Total += closeMinusTrueLow; b2Total += trueRange; } } ;
-      { a3Total = 0; b3Total = 0; for ( i = startIdx-optInTimePeriod3+1; i < startIdx; ++i ) { { tempLT = inLow[i]; tempHT = inHigh[i]; tempCY = inClose[i-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[i] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ; a3Total += closeMinusTrueLow; b3Total += trueRange; } } ;
-      today = startIdx;
-      outIdx = 0;
-      trailingIdx1 = today - optInTimePeriod1 + 1;
-      trailingIdx2 = today - optInTimePeriod2 + 1;
-      trailingIdx3 = today - optInTimePeriod3 + 1;
-      while( today <= endIdx )
-      {
-         { tempLT = inLow[today]; tempHT = inHigh[today]; tempCY = inClose[today-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[today] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a1Total += closeMinusTrueLow;
-         a2Total += closeMinusTrueLow;
-         a3Total += closeMinusTrueLow;
-         b1Total += trueRange;
-         b2Total += trueRange;
-         b3Total += trueRange;
-         output = 0.0;
-         if( ! (((-0.00000001)<b1Total)&&(b1Total<0.00000001)) ) output += 4.0*(a1Total/b1Total);
-         if( ! (((-0.00000001)<b2Total)&&(b2Total<0.00000001)) ) output += 2.0*(a2Total/b2Total);
-         if( ! (((-0.00000001)<b3Total)&&(b3Total<0.00000001)) ) output += a3Total/b3Total;
-         { tempLT = inLow[trailingIdx1]; tempHT = inHigh[trailingIdx1]; tempCY = inClose[trailingIdx1-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[trailingIdx1] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a1Total -= closeMinusTrueLow;
-         b1Total -= trueRange;
-         { tempLT = inLow[trailingIdx2]; tempHT = inHigh[trailingIdx2]; tempCY = inClose[trailingIdx2-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[trailingIdx2] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a2Total -= closeMinusTrueLow;
-         b2Total -= trueRange;
-         { tempLT = inLow[trailingIdx3]; tempHT = inHigh[trailingIdx3]; tempCY = inClose[trailingIdx3-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[trailingIdx3] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a3Total -= closeMinusTrueLow;
-         b3Total -= trueRange;
-         outReal[outIdx] = 100.0 * (output / 7.0);
-         outIdx++;
-         today++;
-         trailingIdx1++;
-         trailingIdx2++;
-         trailingIdx3++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Wskaźnik Ultimate Oscillator jest oscylatorem, którego wynikiem jest ważona suma 3 oscylatorów o róznych przedziałaczh czasowych
-    * nakładających się na siebie (7,14,28 dniowych). Wynik przedstawiony jest w postaci wykresu osculującego w skali od 0 do 100 punktów.
-    * Dodatkowo wskaźnik można interpretowa w oparciu o jego przebieg w stosunku do poziomów wykupienia (powyżej 70) i wyprzedania (poniżej 30).
-    * Przebicie w dół poziomy wykupienia powoduje wygenerowanie sygnału sprzedaży, przebicie w górę poziomy wyprzedania powoduje wygenerowanie sygnału kupna.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy wprowadzono jakiś zły parametr.</li>
-    * </ul>
-    * @param startIdx Startowy indeks
-    * @param endIdx Końcowy indeks
-    * @param inHigh Tablica cen maksymalnych.
-    * @param inLow Tablica cen minimalnych.
-    * @param inClose Tablica cen zamknięcia.
-    * @param optInTimePeriod1 Pierwszy przedział czasowy
-    * @param optInTimePeriod2 Drugi przediał czasowy
-    * @param optInTimePeriod3 Trzeci przedział czasowy
-    * @param outBegIdx Początkowy indeks wyjściowy
-    * @param outNBElement Ilośc elementów wyjściowych
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode ultOsc( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      int optInTimePeriod1,
-      int optInTimePeriod2,
-      int optInTimePeriod3,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double a1Total, a2Total, a3Total;
-      double b1Total, b2Total, b3Total;
-      double trueLow, trueRange, closeMinusTrueLow;
-      double tempDouble, output, tempHT, tempLT, tempCY;
-      int lookbackTotal;
-      int longestPeriod, longestIndex;
-      int i,j,today,outIdx;
-      int trailingIdx1, trailingIdx2, trailingIdx3;
-      int []usedFlag = new int[3] ;
-      int []periods = new int[3] ;
-      int []sortedPeriods = new int[3] ;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod1 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod1 = 7;
-      else if( ((int)optInTimePeriod1 < 1) || ((int)optInTimePeriod1 > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInTimePeriod2 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod2 = 14;
-      else if( ((int)optInTimePeriod2 < 1) || ((int)optInTimePeriod2 > 100000) )
-         return RetCode.BadParam ;
-      if( (int)optInTimePeriod3 == ( Integer.MIN_VALUE ) )
-         optInTimePeriod3 = 28;
-      else if( ((int)optInTimePeriod3 < 1) || ((int)optInTimePeriod3 > 100000) )
-         return RetCode.BadParam ;
-      outBegIdx.value = 0 ;
-      outNBElement.value = 0 ;
-      periods[0] = optInTimePeriod1;
-      periods[1] = optInTimePeriod2;
-      periods[2] = optInTimePeriod3;
-      usedFlag[0] = 0;
-      usedFlag[1] = 0;
-      usedFlag[2] = 0;
-      for ( i = 0; i < 3; ++i )
-      {
-         longestPeriod = 0;
-         longestIndex = 0;
-         for ( j = 0; j < 3; ++j )
-         {
-            if ( (usedFlag[j] == 0) && (periods[j] > longestPeriod) )
-            {
-               longestPeriod = periods[j];
-               longestIndex = j;
-            }
-         }
-         usedFlag[longestIndex] = 1;
-         sortedPeriods[i] = longestPeriod;
-      }
-      optInTimePeriod1 = sortedPeriods[2];
-      optInTimePeriod2 = sortedPeriods[1];
-      optInTimePeriod3 = sortedPeriods[0];
-      lookbackTotal = ultOscLookback ( optInTimePeriod1, optInTimePeriod2, optInTimePeriod3 );
-      if( startIdx < lookbackTotal ) startIdx = lookbackTotal;
-      if( startIdx > endIdx ) return RetCode.Success ;
-      { a1Total = 0; b1Total = 0; for ( i = startIdx-optInTimePeriod1+1; i < startIdx; ++i ) { { tempLT = inLow[i]; tempHT = inHigh[i]; tempCY = inClose[i-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[i] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ; a1Total += closeMinusTrueLow; b1Total += trueRange; } } ;
-      { a2Total = 0; b2Total = 0; for ( i = startIdx-optInTimePeriod2+1; i < startIdx; ++i ) { { tempLT = inLow[i]; tempHT = inHigh[i]; tempCY = inClose[i-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[i] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ; a2Total += closeMinusTrueLow; b2Total += trueRange; } } ;
-      { a3Total = 0; b3Total = 0; for ( i = startIdx-optInTimePeriod3+1; i < startIdx; ++i ) { { tempLT = inLow[i]; tempHT = inHigh[i]; tempCY = inClose[i-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[i] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ; a3Total += closeMinusTrueLow; b3Total += trueRange; } } ;
-      today = startIdx;
-      outIdx = 0;
-      trailingIdx1 = today - optInTimePeriod1 + 1;
-      trailingIdx2 = today - optInTimePeriod2 + 1;
-      trailingIdx3 = today - optInTimePeriod3 + 1;
-      while( today <= endIdx )
-      {
-         { tempLT = inLow[today]; tempHT = inHigh[today]; tempCY = inClose[today-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[today] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a1Total += closeMinusTrueLow;
-         a2Total += closeMinusTrueLow;
-         a3Total += closeMinusTrueLow;
-         b1Total += trueRange;
-         b2Total += trueRange;
-         b3Total += trueRange;
-         output = 0.0;
-         if( ! (((-0.00000001)<b1Total)&&(b1Total<0.00000001)) ) output += 4.0*(a1Total/b1Total);
-         if( ! (((-0.00000001)<b2Total)&&(b2Total<0.00000001)) ) output += 2.0*(a2Total/b2Total);
-         if( ! (((-0.00000001)<b3Total)&&(b3Total<0.00000001)) ) output += a3Total/b3Total;
-         { tempLT = inLow[trailingIdx1]; tempHT = inHigh[trailingIdx1]; tempCY = inClose[trailingIdx1-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[trailingIdx1] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a1Total -= closeMinusTrueLow;
-         b1Total -= trueRange;
-         { tempLT = inLow[trailingIdx2]; tempHT = inHigh[trailingIdx2]; tempCY = inClose[trailingIdx2-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[trailingIdx2] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a2Total -= closeMinusTrueLow;
-         b2Total -= trueRange;
-         { tempLT = inLow[trailingIdx3]; tempHT = inHigh[trailingIdx3]; tempCY = inClose[trailingIdx3-1]; trueLow = (((tempLT) < (tempCY)) ? (tempLT) : (tempCY)) ; closeMinusTrueLow = inClose[trailingIdx3] - trueLow; trueRange = tempHT - tempLT; tempDouble = Math.abs ( tempCY - tempHT ); if( tempDouble > trueRange ) trueRange = tempDouble; tempDouble = Math.abs ( tempCY - tempLT ); if( tempDouble > trueRange ) trueRange = tempDouble; } ;
-         a3Total -= closeMinusTrueLow;
-         b3Total -= trueRange;
-         outReal[outIdx] = 100.0 * (output / 7.0);
-         outIdx++;
-         today++;
-         trailingIdx1++;
-         trailingIdx2++;
-         trailingIdx3++;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda określa zakres przedziału wejściowego dla wariacji.
-    * @param optInTimePeriod Liczba elementów
-    * @param optInNbDev Wartoś oczekiwana
-    * @return Zakres przedziału
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int varianceLookback( int optInTimePeriod,
-      double optInNbDev )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      if( optInNbDev == (-4e+37) )
-         optInNbDev = 1.000000e+0;
-      else if( (optInNbDev < -3.000000e+37) || (optInNbDev > 3.000000e+37) )
-         return -1;
-      return optInTimePeriod-1;
-   }
-   /**
-    * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
-    *  <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
-    * </ul>
-    * @param startIdx Startowy indeks w tablicy
-    * @param endIdx Końcowy indeks w tablicy
-    * @param inReal Tablica wartości cech.
-    * @param optInTimePeriod Zakres przedziału wartości cech.
-    * @param optInNbDev Wartośc oczekiwana.
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode variance( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      double optInNbDev,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInNbDev == (-4e+37) )
-         optInNbDev = 1.000000e+0;
-      else if( (optInNbDev < -3.000000e+37) || (optInNbDev > 3.000000e+37) )
-         return RetCode.BadParam ;
-      return TA_INT_VAR ( startIdx, endIdx, inReal,
-         optInTimePeriod,
-         outBegIdx, outNBElement, outReal );
-   }
-   public RetCode TA_INT_VAR( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double tempReal, periodTotal1, periodTotal2, meanValue1, meanValue2;
-      int i, outIdx, trailingIdx, nbInitialElementNeeded;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      periodTotal1 = 0;
-      periodTotal2 = 0;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      i=trailingIdx;
-      if( optInTimePeriod > 1 )
-      {
-         while( i < startIdx ) {
-            tempReal = inReal[i++];
-            periodTotal1 += tempReal;
-            tempReal *= tempReal;
-            periodTotal2 += tempReal;
-         }
-      }
-      outIdx = 0;
-      do
-      {
-         tempReal = inReal[i++];
-         periodTotal1 += tempReal;
-         tempReal *= tempReal;
-         periodTotal2 += tempReal;
-         meanValue1 = periodTotal1 / optInTimePeriod;
-         meanValue2 = periodTotal2 / optInTimePeriod;
-         tempReal = inReal[trailingIdx++];
-         periodTotal1 -= tempReal;
-         tempReal *= tempReal;
-         periodTotal2 -= tempReal;
-         outReal[outIdx++] = meanValue2-meanValue1*meanValue1;
-      } while( i <= endIdx );
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda liczy wariacje. Wariacja jest średnią arytmetyczną kwadratów odchyleń (różnic) poszczególnych wartości chech od wartości oczekiwanej.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex jeśli indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex jeśli indeks końcowy jest ujemny albo mniejszy od indeksu startowego.</li>
-    *  <li>RetCode.BadParam jeśli wartośc oczekiwana jest zbyt mała lub wysoka.</li>
-    * </ul>
-    * @param startIdx Startowy indeks w tablicy
-    * @param endIdx Końcowy indeks w tablicy
-    * @param inReal Tablica wartości cech.
-    * @param optInTimePeriod Zakres przedziału wartości cech.
-    * @param optInNbDev Wartośc oczekiwana.
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode variance( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      double optInNbDev,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 5;
-      else if( ((int)optInTimePeriod < 1) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      if( optInNbDev == (-4e+37) )
-         optInNbDev = 1.000000e+0;
-      else if( (optInNbDev < -3.000000e+37) || (optInNbDev > 3.000000e+37) )
-         return RetCode.BadParam ;
-      return TA_INT_VAR ( startIdx, endIdx, inReal,
-         optInTimePeriod,
-         outBegIdx, outNBElement, outReal );
-   }
-   public RetCode TA_INT_VAR( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double tempReal, periodTotal1, periodTotal2, meanValue1, meanValue2;
-      int i, outIdx, trailingIdx, nbInitialElementNeeded;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      periodTotal1 = 0;
-      periodTotal2 = 0;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      i=trailingIdx;
-      if( optInTimePeriod > 1 )
-      {
-         while( i < startIdx ) {
-            tempReal = inReal[i++];
-            periodTotal1 += tempReal;
-            tempReal *= tempReal;
-            periodTotal2 += tempReal;
-         }
-      }
-      outIdx = 0;
-      do
-      {
-         tempReal = inReal[i++];
-         periodTotal1 += tempReal;
-         tempReal *= tempReal;
-         periodTotal2 += tempReal;
-         meanValue1 = periodTotal1 / optInTimePeriod;
-         meanValue2 = periodTotal2 / optInTimePeriod;
-         tempReal = inReal[trailingIdx++];
-         periodTotal1 -= tempReal;
-         tempReal *= tempReal;
-         periodTotal2 -= tempReal;
-         outReal[outIdx++] = meanValue2-meanValue1*meanValue1;
-      } while( i <= endIdx );
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda zwraca domyślną wartośc Weighted Close.
-    * @return 0
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int wclPriceLookback( )
-   {
-      return 0;
-   }
-   /**
-    * Metoda oblicza Weighted Close jest średnia wyliczona na podstawie cen maksymalnych, minimalnych oraz zamknięcia. Cena zamknięcia liczona jest podwójnie.
-    * Jest stosowany do obliczeń wielu wskaźników bądź ich wygładzania. 
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-    * @param startIdx Startowy indeks w tablicy.
-    * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
-    * @param inHigh Tablica cen maksymalnych.
-    * @param inLow Tablica cen minimalnych.
-    * @param inClose Tablica cen zamknięcia.
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode wclPrice( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      outIdx = 0;
-      for( i= startIdx; i <= endIdx; i++ )
-      {
-         outReal[outIdx++] = ( inHigh [i] +
-            inLow [i] +
-            (inClose[i]*2.0) ) / 4.0;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Metoda oblicza Weighted Close jest średnia wyliczona na podstawie cen maksymalnych, minimalnych oraz zamknięcia. Cena zamknięcia liczona jest podwójnie.
-    * Jest stosowany do obliczeń wielu wskaźników bądź ich wygładzania. 
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    * </ul>
-  * @param startIdx Startowy indeks w tablicy.
-    * @param endIdx Końcowy indeks w tablicy (indeks do którego liczymy)
-    * @param inHigh Tablica cen maksymalnych.
-    * @param inLow Tablica cen minimalnych.
-    * @param inClose Tablica cen zamknięcia.
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode wclPrice( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int outIdx, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      outIdx = 0;
-      for( i= startIdx; i <= endIdx; i++ )
-      {
-         outReal[outIdx++] = ( inHigh [i] +
-            inLow [i] +
-            (inClose[i]*2.0) ) / 4.0;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda określa zakres przedziału wejściowego.
-    * np. Dla 100 elementów zakres przedziału wynosi 99. Ponieważ od elementu 0 do 99 jest łącznie 100 elementów.
-    * <hr>
-    * Wyjątki:
-    * <ul>
-    *  <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 14.</li>
-    *  <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
-    * </ul>
-    * @param optInTimePeriod Liczba elementów występująca w przedziale
-    * @return Zakres przedziału wejściowego.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int willRLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return (optInTimePeriod-1);
-   }
-   /**
-    * %R Williamsa - wskaźnik używany w analizie techniczej. 
-    * Jest oscylatorem, który pokazuje zależność obecnej ceny zamknięcia w relacji do maksymalnej i minimalnej ceny z poprzednich N dni.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    * </ul>
-    * @param startIdx Startowy indeks w tablicy
-    * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
-    * @param inHigh Tablica z cenami meksymalnymi z n-dni
-    * @param inLow Tablica z ceniami minimalnymi z n-dni
-    * @param inClose Cena zamknięcia z dziś.
-    * @param optInTimePeriod Przedział czasowy (n-dni)
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode willR( int startIdx,
-      int endIdx,
-      double inHigh[],
-      double inLow[],
-      double inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double lowest, highest, tmp, diff;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, lowestIdx, highestIdx;
-      int today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      diff = 0.0;
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      lowestIdx = highestIdx = -1;
-      diff = highest = lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmp = inLow[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inLow[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inLow[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-            diff = (highest - lowest)/(-100.0);
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-            diff = (highest - lowest)/(-100.0);
-         }
-         tmp = inHigh[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inHigh[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmp = inHigh[i];
-               if( tmp > highest )
-               {
-                  highestIdx = i;
-                  highest = tmp;
-               }
-            }
-            diff = (highest - lowest)/(-100.0);
-         }
-         else if( tmp >= highest )
-         {
-            highestIdx = today;
-            highest = tmp;
-            diff = (highest - lowest)/(-100.0);
-         }
-         if( diff != 0.0 )
-            outReal[outIdx++] = (highest-inClose[today])/diff;
-         else
-            outReal[outIdx++] = 0.0;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * %R Williamsa - wskaźnik używany w analizie techniczej. 
-    * Jest oscylatorem, który pokazuje zależność obecnej ceny zamknięcia w relacji do maksymalnej i minimalnej ceny z poprzednich N dni.
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    * </ul>
-    * @param startIdx Startowy indeks w tablicy
-    * @param endIdx Końcowy indeks w tablicy (indeks do którego sprawdzamy)
-    * @param inHigh Tablica z cenami meksymalnymi z n-dni
-    * @param inLow Tablica z ceniami minimalnymi z n-dni
-    * @param inClose Cena zamknięcia z dziś.
-    * @param optInTimePeriod Przedział czasowy (n-dni)
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode willR( int startIdx,
-      int endIdx,
-      float inHigh[],
-      float inLow[],
-      float inClose[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      double lowest, highest, tmp, diff;
-      int outIdx, nbInitialElementNeeded;
-      int trailingIdx, lowestIdx, highestIdx;
-      int today, i;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 14;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      nbInitialElementNeeded = (optInTimePeriod-1);
-      if( startIdx < nbInitialElementNeeded )
-         startIdx = nbInitialElementNeeded;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      diff = 0.0;
-      outIdx = 0;
-      today = startIdx;
-      trailingIdx = startIdx-nbInitialElementNeeded;
-      lowestIdx = highestIdx = -1;
-      diff = highest = lowest = 0.0;
-      while( today <= endIdx )
-      {
-         tmp = inLow[today];
-         if( lowestIdx < trailingIdx )
-         {
-            lowestIdx = trailingIdx;
-            lowest = inLow[lowestIdx];
-            i = lowestIdx;
-            while( ++i<=today )
-            {
-               tmp = inLow[i];
-               if( tmp < lowest )
-               {
-                  lowestIdx = i;
-                  lowest = tmp;
-               }
-            }
-            diff = (highest - lowest)/(-100.0);
-         }
-         else if( tmp <= lowest )
-         {
-            lowestIdx = today;
-            lowest = tmp;
-            diff = (highest - lowest)/(-100.0);
-         }
-         tmp = inHigh[today];
-         if( highestIdx < trailingIdx )
-         {
-            highestIdx = trailingIdx;
-            highest = inHigh[highestIdx];
-            i = highestIdx;
-            while( ++i<=today )
-            {
-               tmp = inHigh[i];
-               if( tmp > highest )
-               {
-                  highestIdx = i;
-                  highest = tmp;
-               }
-            }
-            diff = (highest - lowest)/(-100.0);
-         }
-         else if( tmp >= highest )
-         {
-            highestIdx = today;
-            highest = tmp;
-            diff = (highest - lowest)/(-100.0);
-         }
-         if( diff != 0.0 )
-            outReal[outIdx++] = (highest-inClose[today])/diff;
-         else
-            outReal[outIdx++] = 0.0;
-         trailingIdx++;
-         today++;
-      }
-      outBegIdx.value = startIdx;
-      outNBElement.value = outIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   /**
-    * Metoda określa zakres przedziału wejściowego.
-    * np. Dla 100 elementów zakres przedziału wynosi 99. Ponieważ od elementu 0 do 99 jest łącznie 100 elementów.
-    * <hr>
-    * Wyjątki:
-    * <ul>
-    *  <li>Gdy liczba elementów wynosi Integer.MIN_VALUE zakres przedziału = 30.</li>
-    *  <li>Gdy liczba elementów wynosi <2 lub >100000 zakres przedziału = -1;</li>
-    * </ul>
-    * @param optInTimePeriod Liczba elementów występująca w przedziale
-    * @return Zakres przedziału wejściowego.
-    * @author Komentarz - Artur Ratajczak
-    */
-   public int wmaLookback( int optInTimePeriod )
-   {
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return -1;
-      return optInTimePeriod - 1;
-   }
-   /**
-    * Weighted Moving Average(ważona średnia krocząca).
-    * WMA liczy wagi dla każdej wartości w serii. Nowszym wartością są przypisywane większe wagi.
-    * Metoda oblicza WMA dla zestawu danych podanych w postaci tablicy double[]<hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    * </ul>
-    * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
-    * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)
-    * @param inReal Tablica z wartosciami do policzenia
-    * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode wma( int startIdx,
-      int endIdx,
-      double inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, i, trailingIdx, divider;
-      double periodSum, periodSub, tempReal, trailingValue;
-      int lookbackTotal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = optInTimePeriod-1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      if( optInTimePeriod == 1 )
-      {
-         outBegIdx.value = startIdx;
-         outNBElement.value = endIdx-startIdx+1;
-         System.arraycopy(inReal,startIdx,outReal,0,(int)outNBElement.value) ;
-         return RetCode.Success ;
-      }
-      divider = (optInTimePeriod*(optInTimePeriod+1))>>1;
-      outIdx = 0;
-      trailingIdx = startIdx - lookbackTotal;
-      periodSum = periodSub = (double)0.0;
-      inIdx=trailingIdx;
-      i = 1;
-      while( inIdx < startIdx )
-      {
-         tempReal = inReal[inIdx++];
-         periodSub += tempReal;
-         periodSum += tempReal*i;
-         i++;
-      }
-      trailingValue = 0.0;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[inIdx++];
-         periodSub += tempReal;
-         periodSub -= trailingValue;
-         periodSum += tempReal*optInTimePeriod;
-         trailingValue = inReal[trailingIdx++];
-         outReal[outIdx++] = periodSum / divider;
-         periodSum -= periodSub;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /**
-    * Weighted Moving Average(ważona średnia krocząca).
-    * WMA liczy wagi dla każdej wartości w serii. Nowszym wartością są przypisywane większe wagi.
-    * Metoda oblicza WMA dla zestawu danych podanych w postaci tablicy float[]
-    * <hr>
-    * <ul>
-    *  <li>RetCode.OutOfRangeStartIndex gdy indeks startowy jest ujemny.</li>
-    *  <li>RetCode.OutOfRangeEndIndex gdy indeks końcowy jest mniejszy od indeksu początkowego lub ujemny</li>
-    *  <li>RetCode.BadParam gdy liczba elementów jest < 2 lub > 100000</li>
-    * </ul>
-    * @param startIdx Startowy indeks w tablicy (od którego elementu chcemy zacząc liczenie)
-    * @param endIdx Końcowy indeks w tablicy (do którego elementu chcemy liczyc)
-    * @param inReal Tablica z wartosciami do policzenia
-    * @param optInTimePeriod Liczba elementów jaką liczymy (przedział liczący)
-    * @param outBegIdx Indeks początkowego elementu wyjściowego (poczatek wyniku)
-    * @param outNBElement Ilośc elementów wyjściowych (ilosc wyników)
-    * @param outReal Tablica na elementy wyjściowe (wyniki)
-    * @return Status - ReturnCode z RetCode
-    * @author Komentarz - Artur Ratajczak
-    */
-   public RetCode wma( int startIdx,
-      int endIdx,
-      float inReal[],
-      int optInTimePeriod,
-      MInteger outBegIdx,
-      MInteger outNBElement,
-      double outReal[] )
-   {
-      int inIdx, outIdx, i, trailingIdx, divider;
-      double periodSum, periodSub, tempReal, trailingValue;
-      int lookbackTotal;
-      if( startIdx < 0 )
-         return RetCode.OutOfRangeStartIndex ;
-      if( (endIdx < 0) || (endIdx < startIdx))
-         return RetCode.OutOfRangeEndIndex ;
-      if( (int)optInTimePeriod == ( Integer.MIN_VALUE ) )
-         optInTimePeriod = 30;
-      else if( ((int)optInTimePeriod < 2) || ((int)optInTimePeriod > 100000) )
-         return RetCode.BadParam ;
-      lookbackTotal = optInTimePeriod-1;
-      if( startIdx < lookbackTotal )
-         startIdx = lookbackTotal;
-      if( startIdx > endIdx )
-      {
-         outBegIdx.value = 0 ;
-         outNBElement.value = 0 ;
-         return RetCode.Success ;
-      }
-      if( optInTimePeriod == 1 )
-      {
-         outBegIdx.value = startIdx;
-         outNBElement.value = endIdx-startIdx+1;
-         System.arraycopy(inReal,startIdx,outReal,0,(int)outNBElement.value) ;
-         return RetCode.Success ;
-      }
-      divider = (optInTimePeriod*(optInTimePeriod+1))>>1;
-      outIdx = 0;
-      trailingIdx = startIdx - lookbackTotal;
-      periodSum = periodSub = (double)0.0;
-      inIdx=trailingIdx;
-      i = 1;
-      while( inIdx < startIdx )
-      {
-         tempReal = inReal[inIdx++];
-         periodSub += tempReal;
-         periodSum += tempReal*i;
-         i++;
-      }
-      trailingValue = 0.0;
-      while( inIdx <= endIdx )
-      {
-         tempReal = inReal[inIdx++];
-         periodSub += tempReal;
-         periodSub -= trailingValue;
-         periodSum += tempReal*optInTimePeriod;
-         trailingValue = inReal[trailingIdx++];
-         outReal[outIdx++] = periodSum / divider;
-         periodSum -= periodSub;
-      }
-      outNBElement.value = outIdx;
-      outBegIdx.value = startIdx;
-      return RetCode.Success ;
-   }
-   /* Generated */
-   // TODO: Koniec Artur Ratajczak
-   /**** END GENCODE SECTION 1 - DO NOT DELETE THIS LINE ****/
-   
-}
+      nbInitialElementNee
