@@ -1,15 +1,11 @@
 Core:
 
-cdlDoji
-cdlDoji
-mfi
-mfi
-cmo
-cmo
-rsi
-rsi
-cdlXSideGap3Methods
-cdlXSideGap3Methods
+mfi						- Zrobione
+mfi						- Zrobione
+cmo						- Zrobione
+cmo						- Zrobione
+rsi						- Zrobione
+rsi						- Zrobione
 sar						- Zrobione
 sar						- Zrobione
 trima					- Zrobione
@@ -20,6 +16,8 @@ stoch
 stoch
 stochF
 stochF
+stochRsi
+stochRsi
 bbands
 bbands
 kama					- Zrobione	
@@ -30,42 +28,45 @@ minusDM					- Zrobione
 minusDM					- Zrobione	
 plusDM					- Zrobione
 plusDM					- Zrobione
-minMax
-minMax
-macdExt
-macdExt
-adOsc
-adOsc
+minMax					- Zrobione
+minMax					- Zrobione
+adOsc					- Zrobione
+adOsc					- Zrobione
 correl
 correl
+macdExt
+macdExt
 TA_INT_MACD
 TA_INT_MACD
-natr
-natr
-cdlAdvanceBlockLookback
+natr					- Zrobione
+natr					- Zrobione
+tema					- Zrobione
+tema					- Zrobione
+willR					- Zrobione
+willR					- Zrobione
+cci						- Zrobione
+cci						- Zrobione
+atr						- Zrobione
+atr						- Zrobione
+movingAverage
+movingAverage
+movingAverageVariablePeriod
+movingAverageVariablePeriod
+trix					- Zrobione
+trix					- Zrobione
+aroon					- Zrobione
+aroon					- Zrobione
+aroonOsc				- Zrobione
+aroonOsc				- Zrobione 
+
+cdlDoji
+cdlDoji
 cdlHikkake
 cdlHikkake
 cdl3Outside
 cdl3Outside
-tema					- Zrobione
-tema					- Zrobione
-willR
-willR
-cci
-cci
-atr
-atr
-movingAverageVariablePeriod
-movingAverageVariablePeriod
-trix
-trix
-aroon
-aroon
-movingAverage
-movingAverage
-stochRsi
-stochRsi
-aroonOsc
-aroonOsc
 cdlEngulfing
 cdlEngulfing
+cdlXSideGap3Methods
+cdlXSideGap3Methods
+cdlAdvanceBlockLookback	- Zrobione
