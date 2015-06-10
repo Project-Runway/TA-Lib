@@ -19778,7 +19778,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return 0;
    }
    /**
-    * Log10 - Logarytm o podstawi 10
+    * Log10 - Logarytm o podstawie 10
     * @see <a href="http://pl.wikipedia.org/wiki/Logarytm">site</a>
     * <hr>
     * <ul>
@@ -19815,7 +19815,7 @@ public RetCode cdlGravestoneDoji( int startIdx,
       return RetCode.Success ;
    }
    /**
-    * Log10 - Logarytm o podstawi 10
+    * Log10 - Logarytm o podstawie 10
     * @see <a href="http://pl.wikipedia.org/wiki/Logarytm">site</a>
     * <hr>
     * <ul>
