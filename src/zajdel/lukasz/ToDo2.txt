@@ -22,12 +22,12 @@ isNN
 
 PriceHolder:
 
-PriceHolder
-toArrays
-getSize
-getO
-getH
-getL
-getC
-getV
-getI
+PriceHolder				//done
+toArrays				//done
+getSize					//done	
+getO					//done
+getH					//done
+getL					//done
+getC					//done
+getV					//done
+getI					//done
