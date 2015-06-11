@@ -45,17 +45,76 @@ public class TestPriceHolder {
 	}
 
 	@Test(expected = NullPointerException.class)
-	public void testPriceHolderNullPointerExceptions() {
+	public void testPriceHolderNullPointerExceptionsO() {
 		priceHolder = new PriceHolder(null, null, null, null, null, null);
 	}
 
+	@Test(expected = NullPointerException.class)
+	public void testPriceHolderNullPointerExceptionsH() {
+		priceHolder = new PriceHolder(new double[] { 1 }, null, null, null,
+				null, null);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void testPriceHolderNullPointerExceptionsL() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 1 },
+				null, null, null, null);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void testPriceHolderNullPointerExceptionsC() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 1 },
+				new double[] { 1 }, null, null, null);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void testPriceHolderNullPointerExceptionsV() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 1 },
+				new double[] { 1 }, new double[] { 1 }, null, null);
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void testPriceHolderNullPointerExceptionsI() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 1 },
+				new double[] { 1 }, new double[] { 1 }, new double[] { 1 },
+				null);
+	}
+
 	@Test(expected = IllegalArgumentException.class)
-	public void testPriceHolderIllegalArgumentException() {
+	public void testPriceHolderIllegalArgumentExceptionO() {
 		priceHolder = new PriceHolder(new double[] { 1 },
 				new double[] { 2, 3 }, new double[] { 3, 4, 5 }, new double[] {
 						4, 1, 2, 3 }, new double[] { 5, 2, 3, 5, 6 },
 				new double[] { 6, 3, 2, 3, 4, 5 });
-		;
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testPriceHolderIllegalArgumentExceptionH() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 2 },
+				new double[] { 3, 4, 5 }, new double[] { 4, 1, 2, 3 },
+				new double[] { 5, 2, 3, 5, 6 },
+				new double[] { 6, 3, 2, 3, 4, 5 });
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testPriceHolderIllegalArgumentExceptionL() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 2 },
+				new double[] { 3 }, new double[] { 4, 1, 2, 3 }, new double[] {
+						5, 2, 3, 5, 6 }, new double[] { 6, 3, 2, 3, 4, 5 });
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testPriceHolderIllegalArgumentExceptionC() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 2 },
+				new double[] { 3 }, new double[] { 4 }, new double[] { 5, 2, 3,
+						5, 6 }, new double[] { 6, 3, 2, 3, 4, 5 });
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testPriceHolderIllegalArgumentExceptionV() {
+		priceHolder = new PriceHolder(new double[] { 1 }, new double[] { 2 },
+				new double[] { 3 }, new double[] { 4 }, new double[] { 5 },
+				new double[] { 6, 3, 2, 3, 4, 5 });
 	}
 
 	@Test
